@@ -80,6 +80,7 @@ When an error does occur you will see an alert box pop-up with a rather technica
 
 
 
+
 ## Exporting the results of queries
 
 ## Creating new databases and tables
