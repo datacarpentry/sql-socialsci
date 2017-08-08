@@ -11,7 +11,9 @@ objectives:
 - "Install the SQLite Shell program"
 - "Invoke the SQLite Shell program"
 keypoints:
-- "First key point."
+- "Both the SQLite Firefox plugin and the SQLite tools can be directly downloaded from the Internet"
+- "The SQLite Firefox plugin is invoked from within the Firefox browser"
+- "The sqlite3 program is run from the windows commandline"
 ---
 
 ## Introduction
