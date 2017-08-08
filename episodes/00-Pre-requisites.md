@@ -39,4 +39,19 @@ The SQLiteManager plugin can be started at anytime from the firefox browser as i
 
 ## Install the SQLite Shell program
 
+The SQLite shell can be downloaded from [here](https://sqlite.org/download.html). There are versions available for Linux, Mac and Windows. As I have a Windows machine I will download the Windows version. You should download the version appropriate to your machine.
+
+![SQLite tools](../fig/SQL_01_sqlite_tools_download.png)
+
+The number after the x86- may be different when you download if a later version has been released.
+The download is a .zip file. You need to unzip the file and store the contents (3 files) in a folder of your choosing. There is no actual install process, the program (file) sqlite3.exe can be run directly from the folder.
+You may however like to add the folder location to your PATH environment variable so that you can call sqlite3 from any command prompt.
+
+
 ## Invoke the SQLite Shell program
+
+You invoke the SQLite Shell from the commandline. Remember that the program is sqlite3 and you must have added the folder name to your envirnment PATH or explicitly navigated to the folder before trying to run the program.
+
+You do not need to specify any parameters, connection to a databse can be done from within the shell.
+
+![Launch SQLite shell](../fig/SQL_01_invoke_shell.png)
