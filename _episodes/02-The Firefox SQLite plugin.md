@@ -49,7 +49,7 @@ We will mainly be interested in the Tables item, which like all of the others is
 
 The Execute SQL tab in the right hand pane also changes once you connect to a database. It now has a section at the top for you to write an SQL Query and a section at the bottom where the results of you query will appear. In between the two there are two buttons; Run SQL - to run your query and Actions which relates to the output from the query which we will look at later. 
 
-[Execute_sql tab](../fig/SQL_02_execute_sql.png)
+![Execute_sql tab](../fig/SQL_02_execute_sql.png)
 
 Should there be a problem with your query when you try to run it, the resulting error message is displayed in the Last Error: text box.
 
@@ -68,7 +68,7 @@ Try changing 'tablename' to SN7577' and then click the Run SQL button.
 
 The results of this simmple query is displayed in the bottom of the pane.
 
-[Query results](../fig/SQL_02_query_results.png)
+![Query results](../fig/SQL_02_query_results.png)
 
 
 ## Exporting the results of queries
