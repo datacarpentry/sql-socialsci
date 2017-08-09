@@ -75,7 +75,7 @@ Here is an example
 
 2. run the sqlite3 program in the following way
 
-![SQlite commands](../fig/SQL_08_SQLite_cmd_output)
+![SQlite commands output](../fig/SQL_08_SQLite_cmd_output.png)
 
 Notice that there is no output to the screen and that the shell is closed. The results of running the query have been placed in the results.csv file.
 
