@@ -55,6 +55,8 @@ to direct the output to a file of my choice. The file will be created if needed 
 
 Yes you can have a file called "my.filename" if you want. The contents of which contains the expected output from the query
 
-![SQLite my.filename](../fig/SQL_08_SQLite_my_filename.png)
+![SQLite my.filename](../fig/SQL_08_my_filename.png)
+
+Notice the use of quotes in the rows where the value data item is multiple words. 
 
 ## Saving the output from the SQLite shell
