@@ -23,7 +23,11 @@ keypoints:
 - "First key point."
 ---
 
+
+
 ## Creating new columns
+
+In addition to selecting existing columns from a table, you can also create new columns based on the exisiting columns
 
 ## Renaming columns using alias'
 
