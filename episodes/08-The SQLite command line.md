@@ -10,9 +10,13 @@ objectives:
 - "Save the output from the SQLite shell to a file"
 
 keypoints:
-- "First key point."
+- "SQLite databases can be created, managed and queried from the SQLite shell utility"
+- "You can run the shell interactively from the commandline, typing queries or dot cammands at the prompt"
+- "You can call the SQLite3 program and specify a database and a set of commands to run. This aids automation"
 ---
 
 ## Running SQL code using the SQLite shell
+
+
 
 ## Saving the output from the SQLite shell
