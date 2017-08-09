@@ -19,7 +19,10 @@ objectives:
 - "Explain Key fields"
 - "Understand the use of NULL"
 keypoints:
-- "First key point."
+- "A relational database is data organised as a collection of related tables"
+- "SQL (Structured Query Language) is used to extract data from the tables"
+- "A schema for a table has to be created before data can be added"
+- "The schema can be used to provide some data validation on input"
 ---
 
 ## What is a relational database?
@@ -91,6 +94,14 @@ A table doesn't have to have a primary key although they are recommended for lar
 
 ## What different types of keys are there?
 
-
+In addition to the primary key, a table may have one or more _Foreign keys_. A foreign key does not have to be unique or identified as a foreign key when the table is created. A foreign key in one table will relate to the primary key in another table. This allows a relationship to be created between the two tables. If a table needs to be related to several other tables, then there will be a foreign key  (column) for each of those tables.
 
 ## How does the database represent missing data?
+
+All relational database systems have the concept of a NULL value. NULL can be thought of as being of all data types or of no data type at all. It represents something which is simply _not known_.
+
+When you create a database table, for each column you are allowed to indicate whether or not it can contain the NULL value. Like primary keys, this can be used as a form of data validation.
+
+In many real lif e situations you will have to accept that the data isn't perfect and will have to allow NULL or missing values in your table.
+
+In the SQLite plugin NULL values are displayed as a pink cell. In SQL queries you can specifically test for NULL values.
