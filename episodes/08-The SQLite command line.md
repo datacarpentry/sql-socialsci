@@ -24,7 +24,7 @@ I will assume that you have added the location of the program to your local PATH
 1. Open a command prompt and 'cd' to the folder location of the SN7577.sqlite database file.
 2. run the command 'sqlite3' This should open the SQLite shell and present a screen similar to that below.
 
-![SQLite shell]{../fig/SQL_08_SQLite_shell.png)
+![SQLite shell](../fig/SQL_08_SQLite_shell.png)
 
 3. By default a "transient in-memory database" is opened. You can change the database by use of the .open command
 
@@ -34,7 +34,7 @@ It is imprtant to remember the .sqlite suffix, otherwise a new database simply c
 
 4. Once the database is opened you can run queries by typing directly in the shell. Unlike the plugin, you must terminate your select command with a ";". Although easy to forget, it generally works to your advantage as it allows you to split a long query command across lines as you did in the plugin
 
-![SQLite shell query example]{../fig/SQL_08_SQLite_shell_query example.png)
+![SQLite shell query example](../fig/SQL_08_SQLite_shell_query_example.png)
 
 The output from the query is displayed on the screen. If we just wanted to look at a small selection of data this may be OK. It is however more likely that not only are the results from the query somewhat larger, but also we would prefer to save the output to a file for later use. We might also want to change the field seperator from the default "|" to a comma so that we get a standard csv file.
 
@@ -51,8 +51,10 @@ to change the field seperatator to ",". There are many other modes available see
 
 to direct the output to a file of my choice. The file will be created if needed or overwrite an already existing file, so exercise care
 
-![SQLite shell dot commands]{../fig/SQL_08_SQLite_shell_dot_commands.png)
+![SQLite shell dot commands](../fig/SQL_08_SQLite_shell_dot_commands.png)
 
 Yes you can have a file called "my.filename" if you want. The contents of which contains the expected output from the query
+
+![SQLite my.filename](../fig/SQL_08_SQLite_my_filename.png)
 
 ## Saving the output from the SQLite shell
