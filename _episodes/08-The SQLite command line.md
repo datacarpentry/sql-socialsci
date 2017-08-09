@@ -26,7 +26,7 @@ I will assume that you have added the location of the program to your local PATH
 
 ![SQLite shell](../fig/SQL_08_SQLite_shell.png)
 
-3. By default a "transient in-memory database" is opened. You can change the database by use of the .open command
+3. By default a "transient in-memory database" is opened. You can change the database by use of the *.open* command
 
 .open SN7577.sqlite
 
@@ -59,4 +59,31 @@ Yes you can have a file called "my.filename" if you want. The contents of which 
 
 Notice the use of quotes in the rows where the value data item is multiple words. 
 
-## Saving the output from the SQLite shell
+## Automating the use of the SQLite shell
+
+So far we have used the shell in much the same way as we might have used the plugin GUI. We run the program, connect to a database, run a query and save the output. Because the shell will accept any valid SQL statements as well as have numerous 'dot' commands of it own to configure how it works it could be considered as powerful as the plugin. You could use it as a replacement for the plugin in most cases. 
+
+Most people prefer to work with nice point and click interfaces, so why would you want to use the shell rather than the plugin?
+
+The shell has one distinct advantage over the plugin; you can run the shell program and in the call to the program provide a parameter indicating the database to connect to and provide a file of the commands that you want to execute. The shell will execute the file of commands and then exit.
+
+Here is an example
+
+1. create a file of commands
+
+![SQlite commands](../fig/SQL_08_SQLite_SQLite_commands.png)
+
+2. run the sqlite3 program in the following way
+
+![SQlite commands](../fig/SQL_08_SQLite_cmd_output)
+
+Notice that there is no output to the screen and that the shell is closed. The results of running the query have been placed in the results.csv file.
+
+There are two key advantages of using this approach.
+
+1. It aids automation. It would be easy to have the one line commandline instruction to be run automatically. The instructions in the executesd file doesn't have to be a simple query. It could be appending rows of data to a table which become available on a regular basis.
+
+2. It aids reproducibility. Although it is convenient to use the plugin to play around and try thing out, eventually you will decide on approach, create relevant queries to perform your analysis or research and at this point you will need to ensure that the complete sequence is documented and is reproducible. This is what the file of SQLite commands will do for you
+
+<<Exercise>>
+
