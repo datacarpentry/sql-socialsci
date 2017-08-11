@@ -1,7 +1,7 @@
 ---
 title: "Introduction"
-teaching: 0
-exercises: 0
+teaching: 15
+exercises: 15
 questions:
 - "How can I add new columns with derived values in the query results?"
 - "How can I give a column a new name?"
@@ -107,10 +107,96 @@ FROM SN7577_Text
 >
 {: .challenge}
 
-We will now look at some of the more common text functions. These all have equeivalents in other programming languages or spreadsheet systems, sometimes with different names.
+We will now look at a couple of the more common text functions. These have equivalents in other programming languages or spreadsheet systems, sometimes with different names.
 
+| SQLite function  | Excel equivalent |
+|------------------|:-----------------|
+| substr(a,b,c)    | mid(a,b,c)       |
+| instr(a,b)       | find(a,b)        |
+
+The question in Q5axv asks whether or not you have influenced policies in the last 12 months and required a boolean response yes or no. In the SN7577 table the responses are recorded as 0 and 1 and in the SN7577_Text file they are recorded as 'no null' and 'null'.
+
+We want to write queries which will create a new column representing the SN7577 values from the SN7577_Text values. We can do this using either the `substr` or the `instr` function. The example below shows the use of `substr`
+
+~~~ 
+SELECT Q5axv,
+   NOT (substr(Q5axv, 1,2) = "no" ) as Q5axv_value
+FROM SN7577_Text
+~~~ 
+{: .sql}
+
+> ## Exercise
+>
+>  1. Try running the query above and check the results.
+>  2. Change the query to use the `instr` function and check that you get the same results.
+> 
+> > ## Solution
+> > 
+> > ~~~ 
+> > SELECT Q5axv,
+> >    NOT (instr(Q5axv, "no")) as Q5axv_value
+> > FROM SN7577_Text
+> > ~~~ 
+> > {: .sql}
+> > 
+> {: .solution}
+{: .challenge}
 
 
 ## Using SQL syntax to conditionally create new values
 
+The SQLite SQL dialect has a progeramming construct called the `case` statement. This is in fact common to many other programming languages as well. It can be used in two different ways, both of which can be used to create new columns in a queries' result set. 
+
+First we will use the case statement to accomplish what we just did with the `substr` and `instr` functions.
+
+~~~ 
+SELECT Q5axv ,
+       case Q5axv
+            when "no null" then 0
+            when "null" then 1
+       end as Q5axv_bool ,
+FROM SN7577_Text
+~~~ 
+{: .sql}
+
+This format of the case statement allows you to check if various values **are equal** to the value given after the `case` keyword.
+There is a more general form which alows to to perform any kind of test.
+
 ## Using SQL syntax to create ‘binned’ values
+
+It is often the case that we wish to convert a continous variable into a an discrete factor type variables. In SN7577 you can see this being done in the `numage` and the `age` variables. 
+
+We can use a `case` statement to create this type of effect. The example below re-creates the `age` values used in the SN7577_Text table with the addition of an "Under age" category for those less than 18 years old.
+
+~~~ 
+SELECT numage ,
+               case 
+                   when numage between 18 and 24 then "18 - 24"
+                   when numage between 25 and 34 then "25 - 34"
+                   when numage between 35 and 44 then "35 - 44"
+                   when numage between 45 and 54 then "45 - 54"
+                   when numage between 55 and 59 then "55 - 59"
+                   when numage between 60 and 64 then "60 - 64"
+                   when numage          >= 65              then "65+"
+                else
+                    "Under age"
+               end as numage_range
+FROM SN7577
+~~~ 
+{: .sql}
+
+> ## Exercise
+>
+>  1. Try running the query above and check the results.
+>  2. Are there any "Under age" entries?
+> 
+> > ## Solution
+> > 
+> > You can look for "Under age" entries by scanning down the results.
+> >
+> > A better way would be to adding  **ORDER BY numage** at the end of the query and then they will appear at the top of the results.
+> >
+> > You could also have written a seperate query **Select numage from SN7577 where numage < 18**
+> > 
+> {: .solution}
+{: .challenge}
