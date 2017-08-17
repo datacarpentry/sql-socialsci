@@ -16,7 +16,7 @@ objectives:
 - "Understand the difference between the ‘where’ and the ‘having’ clauses"
 
 keypoints:
-- "First key point."
+- ""
 ---
 
 ## Using built-in statistical functions
@@ -58,12 +58,12 @@ FROM SN7577_Text
 
 We can see from the reults of running this that all 11 values are represented and that there is no missing data in this field.
 
-You can hve more than one column name after the `Distinct` keyword. In which case the results will include a row for each unique combination of the columns involved
+You can have more than one column name after the `Distinct` keyword. In which case the results will include a row for each unique **combination** of the columns involved
 
 > ## Exercise
 >
 > Q3 asks for the likelihood of voting on a scale of 1 - 10 (10 - Absolutely certain to vote).
-> Write a quey which shows all of the combinations of voting intentions (Q1) and likelihood of voting (Q3).
+> Write a query which shows all of the combinations of voting intentions (Q1) and likelihood of voting (Q3).
 > 
 > > ## Solution
 > > 
@@ -96,7 +96,11 @@ Order by Q1
 
 This query gives us a count of potential voters for each party.
 
-In much the same way as we did for the Distinct clause, we can group by more than one column.
+In the above example, thee aggregation were performed over the single column Q1. It is possible to aggregate over multiple columns by specifying them in both the select and the group by clause. 
+
+The grouping will take place based on the order of the columns listed in the group by clause. 
+
+What is not allowed is specifying a non-aggregated column in the select clause which is not mentioned in the group by clause.
 
 ~~~ 
 SELECT Q1, 
@@ -111,3 +115,49 @@ Order by Q1
 
 ## Using the `having` clause 
 
+In order to filter the rows returned in a non-aggregated query we used the `where` clause. For an aggregated query the equivalent is the 'having` clause.
+
+You use the 'having` clause by providing it with an filter expression which references one of the aggregated columns. 
+
+In a 'having` clause you can use the column alias to refer to the aggregated column.
+
+
+~~~ 
+SELECT Q1 ,
+       sum(daily3) as Telegraph_reader
+from SN7577 
+group by Q1
+having Telegraph_reader > 5
+~~~ 
+{: .sql}
+
+In this example aggregating 'Telegraph' readers by voter intentions (Q1).
+
+We are only interested in the groups where there are more than 5 'Telegraph' readers.
+
+> ## Exercise
+>
+> In the UK the 'Telegraph' is regarded as a right-wing newspaper and the Conservatives are considered to be a right-wing political party.
+> 
+> Do the results of the query above support this?
+>
+> The 'Mirror' is a left-wing newspaper and Labour are considered to be a left-wing political party. 
+> Re-write the query above to see which group of supporters are more likely to read the Mirror 
+> 
+> > ## Solution
+> > 
+> > ~~~
+> > SELECT Q1 ,
+> >        sum(daily12) as Mirror_reader
+> > from SN7577 
+> > group by Q1
+> > having Mirror_reader > 5
+> > 
+> > ~~~
+> > {: .sql}
+> >
+> > You can browse the Newspaper table to find out which of the daily columns refers to the Mirror
+> {: .solution}
+{: .challenge}
+
+ 
