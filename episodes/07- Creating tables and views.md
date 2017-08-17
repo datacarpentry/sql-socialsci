@@ -23,12 +23,18 @@ keypoints:
 - "First key point."
 ---
 
-## Tables v Views
+## Using SQL code to create tables
+
 
 ## Using SQLite plugin to create tables
 
-## Using SQL code to create tables and views
+Both the SN7577 and SNN7577_Text tables that we have been using were created in the SQLite plugin by importing a csv  (comma seperated values) file containing the data. 
 
-## Using SQL code to add table records
+For large datasets this is a very common approach
 
-## Using the SQLIte plugin to popularte a table from a file
+## Tables v Views
+
+## Using SQL code to create views
+
+
+## Using the SQLIte plugin to populate a table from a file
