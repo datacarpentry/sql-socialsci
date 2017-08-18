@@ -232,4 +232,6 @@ Although tables and views can be used almost interchangeably in select queries i
 
 The advantage of using Views is that it allows you to restrict how you see a table. In the example we used above it may be far easier to work with only the 6 columns that we need from the full SN7577 table rather than the full table with 201 columns.
 
+A View isn't restricted to simple `Selects` it can be the result of aggregations and joins as well. This can help reduce the complexity of queries based on the view and so aid readability. 
+
 
