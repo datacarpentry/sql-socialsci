@@ -1,7 +1,7 @@
 ---
 title: "Creating tables and views"
-teaching: 0
-exercises: 0
+teaching: 20
+exercises: 10
 questions:
 - "What is the difference between a table and a view?"
 - "How can I create a table using the SQLite plugin GUI?"
@@ -163,14 +163,14 @@ We will illustrate this import functionality by going through the steps used to 
 
 1. In the menu bar click **Database | import**. This will open a new tab called **Import Wizard** in the right pane
 
-[Import Wizard](../fig/SQL_07_Import_Wizard.png)
+![Import Wizard](../fig/SQL_07_Import_Wizard.png)
 
 2. Click the `Select File` button and navigate to the file you wish to import
 3. In the centre section you will see that the new table has been given a default name based on the filename. You can change this to whatever you want. If the name is a an existing table then the import will prompt you to ask if you want to add rows to this existing table or not. 
 4. You should indicate whether or not the file contains a header row with the column names in it or not and what delimiter is used to seperate the columns of data in the file.
 5. Click OK at the bottom of the right pane. You will be told how many rows are to be imported and asked whether or not you wish to modify the table. (It actually means the table structure, not the table data). You should click OK so that you can at least see what the Wizard is proposing to do to create the tables.
 
-[Import Wizard_2](../fig/SQL_07_Import_Wizard_2.png)
+![Import Wizard_2](../fig/SQL_07_Import_Wizard_2.png)
 
 6. The new windows shows you a tabular like display listing all of the column names taken from the header record of the file if you indicated that they existed, otherwise the plugin will generate column names (e.f.col_1, col_2 etc.) for you. You can overwrite these if you want to. 
 
