@@ -108,7 +108,7 @@ Notice that the the `GROUP BY` column does not appear in the `SELECT` clause.
 > > 
 > > 1.  You only have to substitute **q.value** for **s.Q1** in the `GROUP BY` clause. Essentially the same results are returned but now they are in alphabetical order of the Quustion1 value column text.
 > > 
-> > 2. Because there are no conflicts in the column names between the two tables you don't really need the alias' for the tables. Includingthe alias' adds clarity and readability to the SQL, especially if you are selecting several columns from each of the tables.
+> > 2. Because there are no conflicts in the column names between the two tables you could write the query without using alias' for the tables. Including the alias' adds clarity and readability to the SQL, especially if you are selecting several columns from each of the tables.
 > > 
 > {: .solution}
 {: .challenge}
@@ -117,7 +117,17 @@ Notice that the the `GROUP BY` column does not appear in the `SELECT` clause.
 
 ## Different join types
 
+The example of a join given above is called an **INNER ** join, we could have written **INNER JOIN ** rathere than simply **JOIN**. This is almost never done in practice as the inner join is by far the most common join type used.
 
+Other Join types are available...
+
+Before we look at the other join types we need to explain how the **Inner join** works and why it is so commonly used. 
+
+As for all joins we are defining a relationship between two tables based on the data values in two columns, one from each table. What that relationship is, is  given by the criteria in the `ON` clause. The value of the column in one table must be same as that in the other table.
+
+
+
+There are severeal different join types possible
 
 Using different join types in analysing your data
 
