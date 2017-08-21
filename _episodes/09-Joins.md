@@ -58,7 +58,7 @@ and this would give the results like this
 | 10	|335|
 | 11	|53|
 
-What we would really like would be to have the **text** values of the voting intentions to make the resuults more readable.
+What we would really like would be to have the **text** values of the voting intentions to make the results more readable.
 
 We can achieve this by joining the Question1 table with the SN7577 table. 
 
@@ -79,7 +79,7 @@ GROUP BY  s.Q1
 ~~~
 {: .sql}
 
-Here we have selected the value column from the Question1 table as this has the text value that we want. The aggregationremains the same. The `JOIN` clause names the second table and the `ON` clause gives the criteria by which the tables are to be joined. The results obtained are given below.
+Here we have selected the 'value' column from the Question1 table as this has the text value that we want. The aggregation remains the same. The `JOIN` clause names the second table and the `ON` clause gives the criteria by which the tables are to be joined. The results obtained are given below.
 
 |value | how_many |
 |-----------------------------|:------|
@@ -95,7 +95,29 @@ Here we have selected the value column from the Question1 table as this has the 
 |Undecided	| 335 |
 |Refused	| 53 |
 
-different join types
+The results are the same as before except that the the text of the value column from the Questions1 table has replaced the numeric value from the Q1 column in the SN7577 table.
+
+Notice that the the `GROUP BY` column does not appear in the `SELECT` clause.
+
+> ## Exercise
+>
+> 1. Change the SQL above so that the group by clause is the value column from the Question1 table. Run the query. How are the results different?
+> 2. Can you change the SQL so that table alias' are not used? Does this aid readability or not?
+>
+> > ## Solution
+> > 
+> > 1.  You only have to substitute **q.value** for **s.Q1** in the `GROUP BY` clause. Essentially the same results are returned but now they are in alphabetical order of the Quustion1 value column text.
+> > 
+> > 2. Because there are no conflicts in the column names between the two tables you don't really need the alias' for the tables. Includingthe alias' adds clarity and readability to the SQL, especially if you are selecting several columns from each of the tables.
+> > 
+> {: .solution}
+{: .challenge}
+
+
+
+## Different join types
+
+
 
 Using different join types in analysing your data
 
