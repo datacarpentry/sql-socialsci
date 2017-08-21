@@ -125,6 +125,26 @@ Before we look at the other join types we need to explain how the **Inner join**
 
 As for all joins we are defining a relationship between two tables based on the data values in two columns, one from each table. What that relationship is, is  given by the criteria in the `ON` clause. The value of the column in one table must be same as that in the other table.
 
+The table specified in the `FROM` clause is usally the table with the unique keys and we want to join it with the table in th `JOIN` clause which has a column which contain the key values, but aren't necessarily unique. Quite often they are not expected to be unique. They are expected to exist though. 
+
+When a relational database is defined and the tables set up initially the relationship between the tables are already known, they are part of the design of the overall database.  
+
+Because of this it is possible to ensure when the data is added to the tables that there will be entries in both tables which have matching values. At the very least you can prevent rows being added to the second table with a value in the column you intend to join on for which there is no atching column in the first table.
+
+An inner join only returns rows where there is a match between the two columns. In most cases this will be all of the columns selected from the first table and 0,1 or more columns selected from the second table. 
+
+The relational design makes use of multiple tables as a way of avoiding repetition of data. Joining tables re-introduces the replication of the data. 
+
+
+|Join Type | What it does |
+|-----------------------------|:------|
+|Inner Join | Matched rows in both tables are returned|
+|Left outer join | All row in the left hand table are returned along with the matches from the right hand table or NULLs if there is no match|
+|Right outer join	| All row in the right hand table are returned along with the matches from the left hand table or NULLs if there is no match|
+|Full outer join	| All rows from both tables are returned, with NULLs where there are no matches|
+|Cross join	| Each row in the first table will be matched with every row in the second table. It is possible to imagine situations where this is required but in most cases it is a mistake and un-intended. |
+
+ 
 
 
 There are severeal different join types possible
