@@ -36,7 +36,9 @@ FROM SN7577
 {: .sql}
 
 This sort of query provides us with a general view of the values for a particular column or field across the whole table.
-
+  
+`min` , `max` and `avg` are builtin aggregate functions in SQLite (and any other SQL database system). There are other such functions avaialable. A complete list can be found in the SQLite documentation [here](https://sqlite.org/lang_aggfunc.html)  
+   
 It is more likely that we would want to find such values for a range, or multiple ranges of rows where each range is determined by the values of some other column in the table.
 
 
@@ -82,7 +84,7 @@ You can have more than one column name after the `Distinct` keyword. In which ca
 
 ## The `group by` clause to summarise data
 
-Just knowing the combinations is of limited use. Yo ureally want to know **How many** of of each of the values there are. 
+Just knowing the combinations is of limited use. Yo ureally want to know **How many** of each of the values there are. 
 To do this we use the the `Group By` clause.
 
 ~~~ 
