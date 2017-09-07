@@ -6,7 +6,7 @@ questions:
 - "What is meant by joining tables?"
 - "Why would I want to join tables?"
 - "What different types of joins are there?"
-- "What are the consequences of using the wrong type of join?"
+- "How do Joins help you discover missing data or gaps in the data"
 
 objectives:
 - "Understand the structure of a joined table"
