@@ -190,7 +190,7 @@ In real datasets missing values are quite common and we have already looked at w
 
 **Unique** - This allows you to say that the contents of the columnn, which is not the primary key column has to have unique values in it. Like Allow Null this is anorther way of providing some data validation as the data is imported.
 
-**Default Value** - This is used in conjunction with 'Allow Null', if a value is not provided in the dataset, then if provided, the default value for that column will be used. 
+*Default Value** - This is used in conjunction with 'Allow Null', if a value is not provided in the dataset, then if provided, the default value for that column will be used. 
 
 These last three options ('Allow Null', 'Unique' and 'Default Value' ) need to be used with caution and certainly their use needs to be fully documented and explained. 
 
@@ -228,10 +228,10 @@ Tables and Views are so closely related that if I try to run the code above, alt
 
 It is common practice when creating Views to indicate somewhere inthe the name that it is in fact a View. e.g. vSN7577_reduced or SN7577_reduced_v.
 
-Although tables and views can be used almost interchangeably in select queries it is important to note that a view unlike a table contains no data. It is simply the SQL statement needed to produce that data from the underlying data. This means that when you use a view there is the overhead of having to run this SQL first.
+Although tables and views can be used almost interchangeably in select queries it is important to note that a view unlike a table contains no data. It is simply the SQL statement needed to produce that data from the underlying data. This means that when you use a view there is the overhead of having to run this SQL first. Although in practice the Database system will combine the SQL required by the View and the other SQL in your query so as to optimise how the SQL is executed.
 
 The advantage of using Views is that it allows you to restrict how you see a table. In the example we used above it may be far easier to work with only the 6 columns that we need from the full SN7577 table rather than the full table with 201 columns.
 
-A View isn't restricted to simple `Selects` it can be the result of aggregations and joins as well. This can help reduce the complexity of queries based on the view and so aid readability. 
+A View isn't restricted to simple `Select` statements it can be the result of aggregations and joins as well. This can help reduce the complexity of queries based on the view and so aid readability. 
 
 
