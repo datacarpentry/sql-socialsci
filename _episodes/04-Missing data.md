@@ -4,7 +4,7 @@ teaching: 10
 exercises: 0
 questions:
 - "How can I deal with missing data?"
-objectives:
+.objectives:
 - "Recognise what the database sees as missing data"
 
 - "Understand that the original data source may represent missing data differently"
@@ -41,7 +41,7 @@ However the data provided to them, could well have missing data. In the case of 
 
 You can see from the extract of the SN7577_nulls file above that there are several '-1' values in the Q2 indicating the original data had no value, therefore interpreted as a NULL value for specific rows in Q2. 
 
-This is very different from rows which have a value of 11 for column Q2 (3rd row from bottom). The value 11 means that the participant **refused** to provide an answer. The refusal may not tell you which party they are inclined to vote for, but it does convey some kind of information. **A NULL value tells you nothing**
+This is very different from rows which have a value of 11 for column Q2 (3rd row from bottom). The value 11 means that the participant **refused** to provide an answer. The refusal may not tell you which party they are inclined to vote for, but it does convey some kind of information. **A NULL value tells you nothing.**
 
 Different statistical packages like SPSS or Stata have their own way of representing NULL values such as -99 or -999. You need to be aware of how NULL values in your dataset are being represented.
 
