@@ -123,7 +123,7 @@ Other Join types are available...
 
 Before we look at the other join types we need to explain how the **Inner join** works and why it is so commonly used. 
 
-As for all joins we are defining a relationship between two tables based on the data values in two columns, one from each table. What that relationship is, is  given by the criteria in the `ON` clause. The value of the column in one table must be same as that in the other table.
+To illustrate thAs for all joins we are defining a relationship between two tables based on the data values in two columns, one from each table. What that relationship is, is  given by the criteria in the `ON` clause. The value of the column in one table must be same as that in the other table.
 
 The table specified in the `FROM` clause is usally the table with the unique keys and we want to join it with the table in th `JOIN` clause which has a column which contain the key values, but aren't necessarily unique. Quite often they are not expected to be unique. They are expected to exist though. 
 
@@ -166,3 +166,74 @@ However it will also be important for you to establish rows in both of the table
 
 To do this you will need to use the `Full outer join` or in the case of SQLite a `Left outer join` run twice using both tables in the `From` and `Join` clauses.
 
+To illustrate the different join types we will use two small example tables 
+
+**Animals**
+
+![Animals](../fig/SQL_09_Animals.png)
+
+and **Animals_Eat**
+
+![Animals_Eat](../fig/SQL_09_Animals_Eat.png)
+
+These tables have been included in the SN7577 database
+
+#### The Inner Join
+
+![Inner_Join](../fig/SQL_09_Inner_Join.png)
+
+#### The Left Outer Join
+
+![Left Outer Join 1](../fig/SQL_09_Left_Outer_Join_1.png)
+
+#### The Left Outer Join (with tables reversed)
+
+![Left Outer Join 2](../fig/SQL_09_Left_Outer_Join_2.png)
+
+
+In the two Outer queries The SQLite plugin shows the NULL values as **Pink** cells
+
+
+## Exercise  
+
+1. Modify the first `Left Outer Join` above so that only the joined rows where there is no match in the Animals_Eat table.
+
+
+> ## Exercise
+>
+> 1. Modify the first `Left Outer Join` query above so that only the joined rows where there is no match in the Animals_Eat table.
+>
+> 2. Modify the second  `Left Outer Join` query above so that only the the Id_E column from the Animals_Eat table is returned where there is no matching row in the Animal table.
+>
+> > ## Solution
+> > 
+> > 1.
+> > ~~~
+> > 
+> > SELECT a.* , e.*
+> > FROM Animals  as a
+> > Left outer Join  Animals_Eat as e
+> > on  a.Id_A = e.Id_E
+> > where e.Id_e is NULL
+> > 
+> > ~~~
+> > {: .sql}
+> > 
+> > 2. 
+> > 
+> > ~~~
+> > 
+> > SELECT Id_E
+> > FROM Animals_Eat
+> > Left outer Join Animals
+> > ON  Id_A = Id_E
+> > WHERE Id_A is NULL
+> > ORDER by Id_E
+> > ~~~
+> > {: .sql}
+> > 
+> > Because there is no conflict in the column names across the two tables, we have chosen not to use alias'.
+> > Notice that the Id_A column which we are checking for NULL doesn't have to be a returned column.
+> > 
+> {: .solution}
+{: .challenge}
