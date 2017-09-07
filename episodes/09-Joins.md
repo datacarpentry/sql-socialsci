@@ -1,7 +1,7 @@
 ---
 title: "Joins"
-teaching: 0
-exercises: 0
+teaching: 20
+exercises: 10
 questions:
 - "What is meant by joining tables?"
 - "Why would I want to join tables?"
@@ -18,7 +18,11 @@ objectives:
 - "Understand what other join types can tell you about your data"
 
 keypoints:
-- "First key point."
+- "Joins are used to combine data from two or more tables."
+- "Tables to be joined must have a column in each which represent the same thing"
+- "There are several different types of joins"
+- "The Inner join is the most commonly use"
+- "You may have to use the other join types to discover missing data or gaps in your data"
 ---
 
 ## About table joins
