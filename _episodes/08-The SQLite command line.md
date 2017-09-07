@@ -1,12 +1,11 @@
 ---
 title: "The SQLite command line"
 teaching: 15
-exercises: 5
+exercises: 10
 questions:
 - "How can I save my code in a file and run it again?"
 objectives:
 - "Use the SQLite shell to re-run a file of SQL code"
-
 - "Save the output from the SQLite shell to a file"
 
 keypoints:
@@ -85,5 +84,36 @@ There are two key advantages of using this approach.
 
 2. It aids reproducibility. Although it is convenient to use the plugin to play around and try thing out, eventually you will decide on approach, create relevant queries to perform your analysis or research and at this point you will need to ensure that the complete sequence is documented and is reproducible. This is what the file of SQLite commands will do for you.
 
-<<Exercise>>
+> ## Exercise
+>
+> The query
+> ~~~
+> select Q1, count(*) from sn7577 group by Q1
+> ~~~
+> {: .sql}
+> returns a count for each value in the Q1.
+> Create a file of SQL statements and SQLite shell commands to create 3 files each containing the output from queries like the above but for Q1,Q2 and Q3
+>
+> > ## Solution
+> >  The contents of your file should be something like this:
+> > 
+> >~~~
+> >.mode csv
+> >.output q1_agg.csv
+> >select q1, count(*) from sn7577 group by q1;
+> >.output q2_agg.csv
+> >select q2, count(*) from sn7577 group by q2;
+> >.output q3_agg.csv
+> >select q3, count(*) from sn7577 group by q3;
+> > 
+> >~~~
+> >
+> > The command to run it from the commandline is:
+> > 
+> > ~~~
+> > sqlite3 SN7577.sqlite < SQLite_commands.sql
+> > ~~~
+> >
+> {: .solution}
+{: .challenge}
 
