@@ -1,6 +1,6 @@
 ---
 title: "The Firefox SQLite plugin"
-teaching: 0
+teaching: 10
 exercises: 0
 questions:
 - "What does the Firefox SQLite plugin allow me to do?"
@@ -82,6 +82,6 @@ As well as opening (connecting) to existing databases it is also possible to cre
 
 To create a database select Database | New database from the menu bar. You will initially be asked for a name for the database and then you will be aked where you want to save it. It is saved as a single file with a .sqlite extension. Although the new database is empty, in that there are no tables in it, the .sqlite file itself is not empty.
 
-If you were to connect to this new database it would indicate that there were no tables  _Tables(0)_. If you right click on Tables you will be given the option of creating a table. We will be doing this in Lesson 7.
+If you were to connect to this new database it would indicate that there were no tables  _Tables(0)_. If you right click on Tables you will be given the option of creating a table. We will be doing this later in this lesson.
 
 
