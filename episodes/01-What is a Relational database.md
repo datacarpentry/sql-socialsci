@@ -1,6 +1,6 @@
 ---
 title: "What is a relational database?"
-teaching: 0
+teaching: 10
 exercises: 0
 questions:
 - "What is a relational database?"
@@ -102,6 +102,8 @@ All relational database systems have the concept of a NULL value. NULL can be th
 
 When you create a database table, for each column you are allowed to indicate whether or not it can contain the NULL value. Like primary keys, this can be used as a form of data validation.
 
-In many real lif e situations you will have to accept that the data isn't perfect and will have to allow NULL or missing values in your table.
+In many real life situations you will have to accept that the data isn't perfect and will have to allow NULL or missing values in your table.
 
 In the SQLite plugin NULL values are displayed as a pink cell. In SQL queries you can specifically test for NULL values.
+
+We will look at missing data in more detail in a later episode.
