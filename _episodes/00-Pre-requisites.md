@@ -1,7 +1,7 @@
 ---
 title: "Pre-requisites"
-teaching: 0
-exercises: 0
+teaching: 15
+exercises: 10
 questions:
 - "How do I install the Firefox SQLite plugin?"
 - "How do I install the SQLite Shell program?"
