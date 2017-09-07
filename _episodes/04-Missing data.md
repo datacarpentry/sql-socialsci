@@ -67,7 +67,7 @@ Where Q2 = -1
 
 {: .sql}
 
-returns 898 rows, nearly 70% of the sample. You would have to decide if the reaming 30% was sufficient for uyou to use in meaningful analysis.
+returns 898 rows, nearly 70% of the sample. You would have to decide if the reaming 30% was sufficient for you to use in meaningful analysis.
 
 If you need to test for actual `NULL` values in the data, you use the `IS` operator and the `NULL` keyword
 
