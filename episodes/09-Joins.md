@@ -96,7 +96,7 @@ Here we have selected the 'value' column from the Question1 table as this has th
 |Refused	| 53 |
 
 The results are the same as before except that the the text of the value column from the Questions1 table has replaced the numeric value from the Q1 column in the SN7577 table.
-
+## 
 Notice that the the `GROUP BY` column does not appear in the `SELECT` clause.
 
 > ## Exercise
@@ -136,6 +136,8 @@ An inner join only returns rows where there is a match between the two columns. 
 The relational design makes use of multiple tables as a way of avoiding repetition of data. Joining tables re-introduces the replication of the data. 
 
 
+## There are severeal different join types possible
+
 |Join Type | What it does |
 |-----------------------------|:------|
 |Inner Join | Matched rows in both tables are returned|
@@ -144,10 +146,23 @@ The relational design makes use of multiple tables as a way of avoiding repetiti
 |Full outer join	| All rows from both tables are returned, with NULLs where there are no matches|
 |Cross join	| Each row in the first table will be matched with every row in the second table. It is possible to imagine situations where this is required but in most cases it is a mistake and un-intended. |
 
+ In SQLite only the `Inner join`, the `Left Outer join` and the `Cross join` are supported. You can create a `Right outer join` by swapping the tables in the `From` and `Join` clauses. A `Full outer join` is the combination of the Left outer and Right outer joins.
+ 
  
 
+## Using different join types in analysing your data
 
-There are severeal different join types possible
+In many cases the data you have in your tables may have come from disperate sources, in that they do not form part of a planned relational database. It has been your decision to bring (join) the data in the tables. 
 
-Using different join types in analysing your data
+In order to do this at all you must be confident that the tables of data do have a common set of values that you can join on.
+
+Assuming you do have a common column to join on, you can use an `Inner join` to combine the data.
+
+However it will also be important for you to establish rows in both of the tables for which there is no mtching row in the other table.
+
+* You may expect some to be missing
+* You may not care that some are missing
+* You may need to explain why some are missing
+
+To do this you will need to use the `Full outer join` or in the case of SQLite a `Left outer join` run twice using both tables in the `From` and `Join` clauses.
 
