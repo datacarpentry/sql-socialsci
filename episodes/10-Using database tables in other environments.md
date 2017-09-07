@@ -24,6 +24,7 @@ keypoints:
 
 ## ODBC and advantages of using it
 
+SQLite ODBC driver nt working!! ned to find another
 ## Connection strings
 
 ##  Connecting to Excel using ODBC
