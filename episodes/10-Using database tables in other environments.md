@@ -38,6 +38,9 @@ In the following sections we will give examples of using ODBC to connect to Exce
 
 ## Connection strings
 
+A connection string is really just a list of parameters and their values which explain to the ODBC driver what database you wish to connect to how you wish to use it. For some database systems this might involve providing user credentials as well as specifying which particular database you want to access. For our use of SQLite, the connection string is essentially the full pathname and filename of the SQLite database file.
+
+
 ##  Connecting to Excel using ODBC
 
 ## Connecting to Python or other programming environment using ODBC
