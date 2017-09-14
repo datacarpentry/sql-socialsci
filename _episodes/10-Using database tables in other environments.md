@@ -1,6 +1,6 @@
 ---
 title: "Using database tables in other environments"
-teaching: 0
+teaching: 15
 exercises: 0
 questions:
 - "How do I save my query results for use by other programs or applications?"
@@ -40,7 +40,36 @@ In the following sections we will give examples of using ODBC to connect to Exce
 
 A connection string is really just a list of parameters and their values which explain to the ODBC driver what database you wish to connect to how you wish to use it. For some database systems this might involve providing user credentials as well as specifying which particular database you want to access. For our use of SQLite, the connection string is essentially the full pathname and filename of the SQLite database file.
 
+How and where the connection string information is provided depends on the ODBC driver and the application or program being used.
 
 ##  Connecting to Excel using ODBC
 
+### Walkthrough example
+
+1. Open an empty Excel workbook
+2. From the Data ribbon select Get Data | From other Sources | From Microsoft Query
+3. From the Choose Data Source window select `SQLite3 Datasource` and click **OK**.
+
+  ![SQL_10_DataSource](../fig/SQL_10_DataSource.png)
+  
+  If this option does not appear in the list, then it probably means that the SQLite ODBC driver has not  been installed.
+  
+4. The 'Connect' window is where you specify the connection string information. You can see that there are many things that can be specified. But all we need to specify is the Database name. I.e the full path and name of the database file. There is a browse button you can use to navigate to the required file. When you have selected the database file click **OK**
+  
+5. At this point, you may get an a window pop up saying that there are no tables
+
+![SQL_10_No_Tables](../fig/SQL_10_No_Tables.png)
+
+Click **OK** . The Choose Columns Windows appears to support the 'no tables' assertion.
+
+![SQL_10_Choose_Columns](../fig/SQL_10_Choose_Columns.png)
+
+Click on the `options` button and then toggle the **system tables** option and click **OK**, then the tables will appear.
+
+
+![SQL_10_Choose_Columns_2](../fig/SQL_10_Choose_Columns_2.png)
+
+Select the SN7577 table and then click the '>' button to select all of the columns from the SN7577 table. This is the equivalent of the `Select *` SQL clause that we have used before. If you click the '+' button to the left of the table name, a full list of the column names is dsiplayed allowing you to select individual columns for inclusion. Click **OK**
+
+6. 
 ## Connecting to Python or other programming environment using ODBC
