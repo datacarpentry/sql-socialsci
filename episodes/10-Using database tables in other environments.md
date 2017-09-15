@@ -69,7 +69,19 @@ Click on the `options` button and then toggle the **system tables** option and c
 
 ![SQL_10_Choose_Columns_2](../fig/SQL_10_Choose_Columns_2.png)
 
-Select the SN7577 table and then click the '>' button to select all of the columns from the SN7577 table. This is the equivalent of the `Select *` SQL clause that we have used before. If you click the '+' button to the left of the table name, a full list of the column names is dsiplayed allowing you to select individual columns for inclusion. Click **OK**
+Select the SN7577 table and then click the '>' button to select all of the columns from the SN7577 table. They will be displayed in the right hand pane. This is the equivalent of the `Select *` SQL clause that we have used before. If you click the '+' button to the left of the table name, a full list of the column names is dsiplayed allowing you to select individual columns for inclusion. Click **Next**
 
-6. 
-## Connecting to Python or other programming environment using ODBC
+6. Subsequent windows allow you to filter the rows returned, this is equivalent to adding a `wgere` clause to the query and finally you can have the returned rows sorted, equivalent to a `sort by` clause. We shall just default these options. The final window asks us ifwe want to return the data to Excel or further edit the query we have built up using Microsoft query. We will leave the default action of rturning the data to Excel. Clcik 'Finish'
+
+![SQL_10_return data](../fig/SQL_10_return data.png)
+
+7. Although the wizard has finished we still need to say where we want the data placed in our workbook. We will accept the default position of the 'A1' cell in the current workbook.
+
+![SQL_10_place data](../fig/SQL_10_place data.png)
+
+The data is returned as an Excel `Table`. All of the columns have their headings included and have filter buttons attached. You cn now manipulate the data in Excel as you would any other data.
+
+
+## Connecting to Python or other programming environments using ODBC
+
+
