@@ -73,11 +73,11 @@ Select the SN7577 table and then click the '>' button to select all of the colum
 
 6. Subsequent windows allow you to filter the rows returned, this is equivalent to adding a `wgere` clause to the query and finally you can have the returned rows sorted, equivalent to a `sort by` clause. We shall just default these options. The final window asks us ifwe want to return the data to Excel or further edit the query we have built up using Microsoft query. We will leave the default action of rturning the data to Excel. Clcik 'Finish'
 
-![SQL_10_return data](../fig/SQL_10_return data.png)
+![SQL_10_return_data](../fig/SQL_10_return_data.png)
 
 7. Although the wizard has finished we still need to say where we want the data placed in our workbook. We will accept the default position of the 'A1' cell in the current workbook.
 
-![SQL_10_place data](../fig/SQL_10_place data.png)
+![SQL_10_place_data](../fig/SQL_10_place_data.png)
 
 The data is returned as an Excel `Table`. All of the columns have their headings included and have filter buttons attached. You cn now manipulate the data in Excel as you would any other data.
 
