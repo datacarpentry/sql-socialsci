@@ -73,6 +73,8 @@ Select the SN7577 table and then click the '>' button to select all of the colum
 
 6. Subsequent windows allow you to filter the rows returned, this is equivalent to adding a `wgere` clause to the query and finally you can have the returned rows sorted, equivalent to a `sort by` clause. We shall just default these options. The final window asks us ifwe want to return the data to Excel or further edit the query we have built up using Microsoft query. We will leave the default action of rturning the data to Excel. Clcik 'Finish'
 
+The overall effect of this wizard is to construct an SQL query, in this case 'Select * from SN7577' send it to the SQLite system to be runand then to recieve back the results.
+
 ![SQL_10_return_data](../fig/SQL_10_return_data.png)
 
 7. Although the wizard has finished we still need to say where we want the data placed in our workbook. We will accept the default position of the 'A1' cell in the current workbook.
@@ -84,4 +86,41 @@ The data is returned as an Excel `Table`. All of the columns have their headings
 
 ## Connecting to Python or other programming environments using ODBC
 
+Both Python and R (and many other programming languages) provide methosds of connecting to and extracting data from SQLite databases. Full details and examples are provided in the [Python lesson](./xxxxx) and the [R lesson](./xxxxx). 
 
+For now we will just look at code examples in Python and R, both of which run the same query as we used for the Excel example above.
+
+#### Python
+
+
+~~~~
+
+import sqlite3
+con = sqlite3.connect(r'C:/Users/pfsmy/OneDrive/UoM/Carpentry/Datasets/SN7577.sqlite')
+cur = con.cursor()
+cur.execute("SELECT * FROM SN7577")
+rows = cur.fetchall()
+for row in rows:
+    print(row)
+con.close()
+
+~~~
+
+#### R
+
+~~~
+
+library("RSQLite")
+dbfile = "C:/Users/pfsmy/OneDrive/UoM/Carpentry/Datasets/SN7577.sqlite"
+sqlite = dbDriver("SQLite")
+mydb = dbConnect(sqlite, dbfile)
+results = dbSendQuery(mydb, "SELECT * FROM SN7577")
+data = fetch(results)
+data
+dbClearResult(results)
+
+~~~
+
+We will not discuss the working of the code, that is covered in the Python andR lessons. Even without coding experience of these languages, you will be able to spot that in both cases we need to specify a connection string (the SQLite database filename) and also the text of the query itself. 
+
+In both cases the results are stored in a variable object of the language. 
