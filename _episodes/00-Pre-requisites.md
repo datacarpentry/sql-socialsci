@@ -66,6 +66,6 @@ This is a 32bit ODBC connector so it is assumed that you are using a 32bit versi
 
 You can check that the driver has been successfully installed by typing ODBC into the Windows start search panel and then selecting 'ODBC DataSources (32 bit)'
 
-![SQL_00_ODBC Data_Source](../fig/SQL_00_ODBC Data_Source.png)
+![SQL_00_ODBC_Data_Source](../fig/SQL_00_ODBC_Data_Source.png)
 
 At the bottom of the list in the 'system DSN' tab youshould see the entry for the 'SQlite3 datasource'.
