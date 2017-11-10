@@ -30,7 +30,7 @@ keypoints:
 In any relational database system, the ability to join tables together is a key querying requirement.
 Joins are used to combine the rows from two (or more) tables together to form a single table. A join between tables will only be possible if they have at least one column in common. The column doesn’t have to have the same name in each table, and quite often they won’t, but they do have to have a common usage.
 
-For example the Q1 table has been created from the information about Q1 in the xxxx file. There are only two columns The value column indicates a respondents voting intentions and the key column has the value which is used to represent this intention in the SN7577 table.
+For example the Q1 table has been created from the information about Q1 in the [SN7577 data dictionary file](../data/audit_of_political_engagement_11_ukda_data_dictionary.docx). There are only two columns The value column indicates a respondents voting intentions and the key column has the value which is used to represent this intention in the SN7577 table.
 
 You can see immediately from this that there is a connection or relationship between the the two tables. The key column in the Q1 table has been defined as a primary key. This guarantees that the key column has a unique set of values. Although not required, it is generally the case that the values in one of the columns that the tables have in common will have unique values in it. It is also not required but generally the case that the unique column will be a primary key in one of the tables.
 
@@ -127,13 +127,13 @@ Other Join types are available...
 
 Before we look at the other join types we need to explain how the **Inner join** works and why it is so commonly used. 
 
-To illustrate thAs for all joins we are defining a relationship between two tables based on the data values in two columns, one from each table. What that relationship is, is  given by the criteria in the `ON` clause. The value of the column in one table must be same as that in the other table.
+To illustrate this for all joins we are defining a relationship between two tables based on the data values in two columns, one from each table. What that relationship is, is  given by the criteria in the `ON` clause. The value of the column in one table must be same as that in the other table.
 
-The table specified in the `FROM` clause is usally the table with the unique keys and we want to join it with the table in th `JOIN` clause which has a column which contain the key values, but aren't necessarily unique. Quite often they are not expected to be unique. They are expected to exist though. 
+The table specified in the `FROM` clause is usally the table with the unique keys and we want to join it with the table in the `JOIN` clause which has a column which contain the key values, but aren't necessarily unique. Quite often they are not expected to be unique. They are expected to exist though. 
 
 When a relational database is defined and the tables set up initially the relationship between the tables are already known, they are part of the design of the overall database.  
 
-Because of this it is possible to ensure when the data is added to the tables that there will be entries in both tables which have matching values. At the very least you can prevent rows being added to the second table with a value in the column you intend to join on for which there is no atching column in the first table.
+Because of this it is possible to ensure when the data is added to the tables that there will be entries in both tables which have matching values. At the very least you can prevent rows being added to the second table with a value in the column you intend to join on for which there is no matching column in the first table.
 
 An inner join only returns rows where there is a match between the two columns. In most cases this will be all of the columns selected from the first table and 0,1 or more columns selected from the second table. 
 
@@ -150,25 +150,25 @@ The relational design makes use of multiple tables as a way of avoiding repetiti
 |Full outer join	| All rows from both tables are returned, with NULLs where there are no matches|
 |Cross join	| Each row in the first table will be matched with every row in the second table. It is possible to imagine situations where this is required but in most cases it is a mistake and un-intended. |
 
- In SQLite only the `Inner join`, the `Left Outer join` and the `Cross join` are supported. You can create a `Right outer join` by swapping the tables in the `From` and `Join` clauses. A `Full outer join` is the combination of the Left outer and Right outer joins.
+In SQLite only the `Inner join`, the `Left Outer join` and the `Cross join` are supported. You can create a `Right outer join` by swapping the tables in the `From` and `Join` clauses. A `Full outer join` is the combination of the Left outer and Right outer joins.
  
  
 
 ## Using different join types in analysing your data
 
-In many cases the data you have in your tables may have come from disperate sources, in that they do not form part of a planned relational database. It has been your decision to bring (join) the data in the tables. 
+In many cases the data you have in your tables may have come from disperate sources, in that they do not form part of a planned relational database. It has been your decision to bring together (join) the data in the tables. 
 
-In order to do this at all you must be confident that the tables of data do have a common set of values that you can join on.
+In order to do this at all you must be confident about is that the tables of data do have a common set of values that you can join on.
 
 Assuming you do have a common column to join on, you can use an `Inner join` to combine the data.
 
-However it will also be important for you to establish rows in both of the tables for which there is no mtching row in the other table.
+However it will also be important for you to establish rows in both of the tables for which there is no matching row in the other table.
 
 * You may expect some to be missing
 * You may not care that some are missing
 * You may need to explain why some are missing
 
-To do this you will need to use the `Full outer join` or in the case of SQLite a `Left outer join` run twice using both tables in the `From` and `Join` clauses.
+To do this you will want to use a `Full outer join` or in the case of SQLite a `Left outer join` run twice using both tables in the `From` and `Join` clauses.
 
 To illustrate the different join types we will use two small example tables 
 
@@ -198,14 +198,9 @@ These tables have been included in the SN7577 database
 In the two Outer queries The SQLite plugin shows the NULL values as **Pink** cells
 
 
-## Exercise  
-
-1. Modify the first `Left Outer Join` above so that only the joined rows where there is no match in the Animals_Eat table.
-
-
 > ## Exercise
 >
-> 1. Modify the first `Left Outer Join` query above so that only the joined rows where there is no match in the Animals_Eat table.
+> 1. Modify the first `Left Outer Join` query above so that only the joined rows where there is no match in the Animals_Eat table are returned.
 >
 > 2. Modify the second  `Left Outer Join` query above so that only the the Id_E column from the Animals_Eat table is returned where there is no matching row in the Animal table.
 >
