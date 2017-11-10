@@ -58,7 +58,6 @@ Running this query will give the correct answers, but it uses the expression use
 
 Given that creating new columns is so commonly done, SQL does provide a mechansim for giving them names of your choice. This is done using the **AS** clause
 
-
 ~~~ 
 SELECT (daily1 + daily2 + daily3 + daily4 + daily5 + daily6 + daily7 + daily8 +
         daily9 + daily10 + daily11 + daily12 + daily13 + daily14 + daily15 +
@@ -78,7 +77,7 @@ In addition to using simple arithmetic operations to create new columns, you can
 
 We will look at some of the arithmetic and statistical functions when we deal with aggregations in a later lesson. For now we will focus on some text functions. 
 
-To do this we will use the SN7577_Text table. This table has the same information in it as the SN7577 table but many of the numeric values have been replaced with their text equivalents. To find out how these text equivalents map to the numeric values you need to refer to the SN7577 data dictionary document which can be downloaded from [here - don't know what this link will be]
+To do this we will use the SN7577_Text table. This table has the same information in it as the SN7577 table but many of the numeric values have been replaced with their text equivalents. To find out how these text equivalents map to the numeric values you need to refer to the SN7577 data dictionary document which can be downloaded from [here](../data/audit_of_political_engagement_11_ukda_data_dictionary.docx).
 
 > ## Exercise
 >
