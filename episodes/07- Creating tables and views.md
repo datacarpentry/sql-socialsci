@@ -36,7 +36,9 @@ The schema can contain many different properties of the table, but in its simple
 
 In this lesson we will create a couple of simple tables which we will use in a later lesson. We will also show how the SN7577 and SN7577_Text tables were created and populated from a text file.
 
-Lets create a couple of simple tables first. The code below creates a table called Animals with two columns, the first is called 'Id_A' and is an integer and the second is called 'Name' and is of typpe Text ; 
+Lets create a couple of simple tables first. The code below creates a table called Animals with two columns, the first is called 'Id_A' and is an Integer and the second is called 'Name' and is of type Text.
+
+As this table already exists in the database, it will fail if you try to run complaining that the table already exists. Instead of running it as-is, change the table name slightly (perhaps include your initials as a prefix)
 
 ~~~
 CREATE TABLE Animals
