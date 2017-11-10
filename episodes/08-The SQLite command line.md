@@ -27,7 +27,9 @@ I will assume that you have added the location of the program to your local PATH
 
 3. By default a "transient in-memory database" is opened. You can change the database by use of the *.open* command
 
+~~~
 .open SN7577.sqlite
+~~~
 
 It is imprtant to remember the .sqlite suffix, otherwise a new database simply called SN7577 would be created
 
