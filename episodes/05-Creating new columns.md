@@ -81,13 +81,13 @@ To do this we will use the SN7577_Text table. This table has the same informatio
 
 > ## Exercise
 >
-> Select the SN75&& table in the left pane of th plugin and in the right pane select the `Browse & Search` tab.  
+> Select the SN7577_text table in the left pane of th plugin and in the right pane select the `Browse & Search` tab.  
 > Notice that a lot of the coluns now contain text, but some are still numbers and some have both numbers and text.
 > Apart from the key_id column at the beginning, all of the columns are considered to be text, you can tell by the light blue colouring.
 >
 {: .challenge}
 
-There will be some circumstances where a text 'number' will cause problems, like in arithmetic. we can avid such problems by using the `cast` function. This tells SQLite to change the data type of a data item. It is most commonly in the way we will use it in changing a text string into an integer or real value. 
+There will be some circumstances where a text 'number' will cause problems, like in arithmetic. We can avid such problems by using the `cast` function. This tells SQLite to change the data type of a data item. It is most commonly used in the way we will use it in changing a text string into an integer or real value. 
 
 The format of the `cast` function is shown in the following example.
 
