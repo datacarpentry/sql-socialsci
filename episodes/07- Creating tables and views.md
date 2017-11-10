@@ -153,11 +153,11 @@ From SN7577
 
 ## Using SQLite plugin to create tables
 
-So far  we have created and populated tables from scratch or created tables from eisting tables. But initially your data is likely to be external to the relational database system in a set of simple files. typically is CSV or Tab delimited format.
+So far we have created and populated tables from scratch or created tables from existing tables. But initially your data is likely to be external to the relational database system in a set of simple files. typically in CSV or Tab delimited format.
 
 All relational database systems will have some utitity which will allow you to import such files into tables in the database. The SQLite plugin has a nice GUI (Graphical Use Interface) to allow you to do this.
 
-Both the SN7577 and SNN7577_Text tables that we have been using were created in the SQLite plugin by importing a csv  (comma seperated values) r Tab delimited file containing the data. 
+Both the SN7577 and SN7577_Text tables that we have been using were created in the SQLite plugin by importing a csv  (comma seperated values) or a Tab delimited file containing the data. 
 
 For large datasets this is a very common approach
 
@@ -176,7 +176,7 @@ We will illustrate this import functionality by going through the steps used to 
 
 6. The new windows shows you a tabular like display listing all of the column names taken from the header record of the file if you indicated that they existed, otherwise the plugin will generate column names (e.f.col_1, col_2 etc.) for you. You can overwrite these if you want to. 
 
-No attempt is made to pick a data type for you. You need to select these for yourself from the dropdown against each column name. Although we have said that the data type of a column is required, SQLite unlike other realationaldatabase implementations, allows you to not select a data type. You should however alsway specify a data type.
+No attempt is made to pick a data type for you. You need to select these for yourself from the dropdown against each column name. Although we have said that the data type of a column is required, SQLite unlike other realational database implementations, allows you to not select a data type. You should however always specify a data type.
 
 For the SN7577 table all of the fields were specified as INTEGER with the exception of the wts column which is a REAL.
 
@@ -186,21 +186,21 @@ After the Datatype there is a set of optional properties which can be assigned t
 
 **Autoinc** - This isn't really applicable to tables created in this way, i.e. the creation of the schema immediatly followed by loading data from a file. It is usally used to generate uniques values for a column which could then act as a primary key. If you have an autoinc column in a table, when you insert values you would not supply a value for the column  as SQLite will automatically provide a value for each row added.
 
-**Allow Null** - This you will notice is checked by default. It means that the column does not have to contain a value. If it doesn't then it is set to 'NULL' which means 'I know nothing about what should be here'. 
+**Allow Null** - This you will notice is checked by default. It means that the column does not have to contain a value. If it doesn't then it is set to 'NULL' which means 'I know nothing about what should be here'. (Not the string 'NULL' but the NULL value)
 
-In real datasets missing values are quite common and we have already looked at ways of dealing with them when they occur in tables. If you you were un-chck this box and the data did have missing values for this column, the reord from the file would be rejected and the load of the file will fail.
+In real datasets missing values are quite common and we have already looked at ways of dealing with them when they occur in tables. If you you were un-check this box and the data did have missing values for this column, the reord from the file would be rejected and the load of the file will fail.
 
-**Unique** - This allows you to say that the contents of the columnn, which is not the primary key column has to have unique values in it. Like Allow Null this is anorther way of providing some data validation as the data is imported.
+**Unique** - This allows you to say that the contents of the columnn, which is not the primary key column has to have unique values in it. Like Allow Null this is another way of providing some data validation as the data is imported.
 
-*Default Value** - This is used in conjunction with 'Allow Null', if a value is not provided in the dataset, then if provided, the default value for that column will be used. 
+**Default Value** - This is used in conjunction with 'Allow Null', if a value is not provided in the dataset, then if provided, the default value for that column will be used. 
 
 These last three options ('Allow Null', 'Unique' and 'Default Value' ) need to be used with caution and certainly their use needs to be fully documented and explained. 
 
 There are two further check boxes at the top.
 
-**Temporary table**  - This will create a temporary table which will be lost when your SQLite plugin session end
+**Temporary table**  - This will create a temporary table which will be lost when your SQLite plugin session ends.
 
-**If Not Exists**  - This is a check on the uniqueness of your chosen table name. It doesn't really have any meaning in the way we using the plugin as if the table name wasn't unique the plogin would just ask you if you wanted to add the contents of the dataset as new rows to the table and you wouldn't be given the option to modify the table.
+**If Not Exists**  - This is a check on the uniqueness of your chosen table name. It doesn't really have any meaning in the way we using the plugin as if the table name wasn't unique the plugin would just ask you if you wanted to add the contents of the dataset as new rows to the table and you wouldn't be given the option to modify the table.
 
 When you are satisfied with your changes you can click OK and the table will be created and the data will be read from the file into rows in the table.
 
@@ -212,7 +212,7 @@ Firstly it generated the Schema for the table by creating a 'CREATE TABLE' state
 
 ## Using SQL code to create views
 
-In addition to tables all relational database systems have the concept of 'Views'. Views are based on tables. In the same way that we we able to create a table based on a `Select` query, we can create a 'View in the same way. You just replace 'Table' with 'View'.
+In addition to tables all relational database systems have the concept of 'Views'. Views are based on tables. In the same way that we were able to create a table based on a `Select` query, we can create a 'View in the same way. You just replace 'Table' with 'View'.
 
 ~~~
 Create View SN7577_reduced AS
@@ -232,7 +232,7 @@ It is common practice when creating Views to indicate somewhere inthe the name t
 
 Although tables and views can be used almost interchangeably in select queries it is important to note that a view unlike a table contains no data. It is simply the SQL statement needed to produce that data from the underlying data. This means that when you use a view there is the overhead of having to run this SQL first. Although in practice the Database system will combine the SQL required by the View and the other SQL in your query so as to optimise how the SQL is executed.
 
-The advantage of using Views is that it allows you to restrict how you see a table. In the example we used above it may be far easier to work with only the 6 columns that we need from the full SN7577 table rather than the full table with 201 columns.
+The advantage of using Views is that it allows you to restrict how you see a table. In the example we used above it may be far easier to work with only the 6 columns that we need from the full SN7577 table rather than the full table with 202 columns.
 
 A View isn't restricted to simple `Select` statements it can be the result of aggregations and joins as well. This can help reduce the complexity of queries based on the view and so aid readability. 
 
