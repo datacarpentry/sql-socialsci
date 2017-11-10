@@ -25,7 +25,7 @@ keypoints:
 
 ODBC  - Open Database Conectivity (or Connector) is a piece of software, often referred to as a *driver*, which allows a database to be connected to an application or program. ODBC drivers are specific to a given database system. As we are using an `SQLite` database we need an SQLite specific ODBC driver to connect to it.
 
-The installation of the SQLite ODBC driver for a Windows machine is explained in the [SQL setup document](/xxxx) . 
+The installation of the SQLite ODBC driver for a Windows machine is explained in the [SQL setup document](./00-Pre-requisites.md ) . 
 
 So far in this lesson we have accessed our SQLite database either through the Firefox SQLite plugin or directly using the commandline shell. Each of these methods have their own advanatages. The plugin provides a simple GUI (Graphical User Interface), for development and testing new queries. The shell aids automation of tasks such as adding rows to a table or allowing whole scripts of SQL commands to be run consequetively without user intervention. In both of these methods, we have seen that the 'outputs' can be saved to `csv` files from where they can be read into other applications or programs for futher processing. Using ODBC missies out the middle man. The application of program connects directly to the SQLite database, send it an SQL query, recieves the output from that query and processes the results in an appropriate fashion.
 
