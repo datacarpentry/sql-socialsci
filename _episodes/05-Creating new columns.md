@@ -23,8 +23,6 @@ keypoints:
 - "First key point."
 ---
 
-# Lesson
-
 ## Creating new columns
 
 In addition to selecting existing columns from a table, you can also create new columns based on the exisiting columns. 
@@ -54,7 +52,7 @@ FROM SN7577
 ~~~ 
 {: .sql}
 
-Running this query will give the correct answers, but it uses the expression used in creating the new column as the column name. This looks very messy, especially with such a long expression. It is always the case that if you create a column in the results of the query it won't have a name by default. SQL will create one for it. Other relational databases take different approaches to the problem and will pseudo-randomly name the new columns for you with such things as '_c0'. SQLite uses the expression you used to create the column.
+Running this query will give the correct answers, but it uses the expression used in creating the new column as the column name. This looks very messy, especially with such a long expression. It is always the case that if you create a column in the results of the query it won't have a name by default. SQL will create one for it. Other relational databases take different approaches to the problem and will pseudo-randomly name the new columns for you with such things as '_c0'. SQLite uses the expression you used to create the column name.
 
 ## Renaming columns using alias'
 
@@ -78,7 +76,7 @@ In the SN7577 table the column names of 'Q1', 'Q5aiv', etc. are pretty meaningle
 ## Using built-in functions to create new values
 In addition to using simple arithmetic operations to create new columns, you can also use some of the SQLite builtin functions. Full details of the available builtin functions are available from the SQLite.org wbsite [here](https://sqlite.org/lang_corefunc.html#instr).
 
-We will look at some of the arithmeticc and statistyical function when we deal with aggregations in a later lesson. For now we will focus on some text functions. 
+We will look at some of the arithmetic and statistical functions when we deal with aggregations in a later lesson. For now we will focus on some text functions. 
 
 To do this we will use the SN7577_Text table. This table has the same information in it as the SN7577 table but many of the numeric values have been replaced with their text equivalents. To find out how these text equivalents map to the numeric values you need to refer to the SN7577 data dictionary document which can be downloaded from [here - don't know what this link will be]
 
