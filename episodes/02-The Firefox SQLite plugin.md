@@ -53,7 +53,7 @@ The Execute SQL tab in the right hand pane also changes once you connect to a da
 
 Should there be a problem with your query when you try to run it, the resulting error message is displayed in the Last Error: text box.
 
-Aside - The code snippet tabs
+Above the SQL entry box there are a further set of tabs;  Select, Data Manipulation etc. They are in fact drop down lists allowing you to select a variety of actions that you may wish to perform. When you select one, a syntax template for that command is placed in the SQL query window. 
 
 ## Running SQL queries
 
