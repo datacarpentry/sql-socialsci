@@ -47,7 +47,7 @@ Different statistical packages like SPSS or Stata have their own way of represen
 
 ## Dealing with missing data
 
-Once you know how NULL values are being represented inyou data you can find them or allow for them in your SQL queries. 
+Once you know how NULL values are being represented in your data you can find them and allow for them in your SQL queries. 
 
 ~~~
 Select *
