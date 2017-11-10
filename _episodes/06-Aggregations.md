@@ -21,10 +21,9 @@ keypoints:
 
 ## Using built-in statistical functions
 
-Aggregate functions are used perform some kind of mathematical or statistical calculation across a group of rows. The rows in each group are determined by the different values in a specified column or columns.  Alternatively you can aggregate across the t
-entire table.
+Aggregate functions are used perform some kind of mathematical or statistical calculation across a group of rows. The rows in each group are determined by the different values in a specified column or columns.  Alternatively you can aggregate across the entire table.
 
-If we wanted to know the minimum, average and maximum age values (numage) across the whole SN7577 table we could write a table such as this;
+If we wanted to know the minimum, average and maximum age values (numage) across the whole SN7577 table we could write a query such as this;
 
 ~~~ 
 SELECT numage,
@@ -84,7 +83,7 @@ You can have more than one column name after the `Distinct` keyword. In which ca
 
 ## The `group by` clause to summarise data
 
-Just knowing the combinations is of limited use. Yo ureally want to know **How many** of each of the values there are. 
+Just knowing the combinations is of limited use. You really want to know **How many** of each of the values there are. 
 To do this we use the the `Group By` clause.
 
 ~~~ 
@@ -98,7 +97,7 @@ Order by Q1
 
 This query gives us a count of potential voters for each party.
 
-In the above example, thee aggregation were performed over the single column Q1. It is possible to aggregate over multiple columns by specifying them in both the select and the group by clause. 
+In the above example, thee aggregation were performed over the single column Q1. It is possible to aggregate over multiple columns by specifying them in both the select **and** the group by clause. 
 
 The grouping will take place based on the order of the columns listed in the group by clause. 
 
@@ -119,7 +118,7 @@ Order by Q1
 
 In order to filter the rows returned in a non-aggregated query we used the `where` clause. For an aggregated query the equivalent is the 'having` clause.
 
-You use the 'having` clause by providing it with an filter expression which references one of the aggregated columns. 
+You use the 'having` clause by providing it with a filter expression which references one of the aggregated columns. 
 
 In a 'having` clause you can use the column alias to refer to the aggregated column.
 
@@ -158,7 +157,7 @@ We are only interested in the groups where there are more than 5 'Telegraph' rea
 > > ~~~
 > > {: .sql}
 > >
-> > You can browse the Newspaper table to find out which of the daily columns refers to the Mirror
+> > You can browse the Newspaper table to find out which of the daily column refers to the Mirror
 > {: .solution}
 {: .challenge}
 
