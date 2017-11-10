@@ -86,7 +86,7 @@ The data is returned as an Excel `Table`. All of the columns have their headings
 
 ## Connecting to Python or other programming environments using ODBC
 
-Both Python and R (and many other programming languages) provide methods of connecting to and extracting data from SQLite databases. Full details and examples are provided in the [Python lesson](data-lessons/python-socialsci/_episodes/13-Accessing SQLite Databases.md ) and the [R lesson](./xxxxx). 
+Both Python and R (and many other programming languages) provide methods of connecting to and extracting data from SQLite databases. Full details and examples are provided in the [Python lesson](../unknown) and the [R lesson](../unknown). 
 
 For now we will just look at code examples in Python and R, both of which run the same query as we used for the Excel example above.
 
