@@ -28,11 +28,11 @@ Start Firefox and navigate to the [plugin homepage for SQLite](https://addons.mo
 
 Having done this, the download occurs automatically but you will be asked to confirm that you want to install the plugin. You will then be asked to restart the Firefox browser. After the restart, from the tools menu you will be able to access the SQLite manger plugin.
 
-![Launch SQLite plugin](../fig/01-SQLite_starting_plugin.png)
+![Launch SQLite plugin](/fig/01-SQLite_starting_plugin.png)
 
 By default the plugin opens in a new tab on the browser. This can be changed by selecting Tools | Options from within SQLiteManager selecting start in a new window. 
 
-![Launch SQLite plugin](../fig/01-change_start_up.png)
+![Launch SQLite plugin](/fig/01-change_start_up.png)
 
 
 ## Invoke the Firefox SQLite plugin
@@ -43,7 +43,7 @@ The SQLiteManager plugin can be started at anytime from the firefox browser as i
 
 The SQLite shell can be downloaded from [here](https://sqlite.org/download.html). There are versions available for Linux, Mac and Windows. As I have a Windows machine I will download the Windows version. You should download the version appropriate to your machine.
 
-![SQLite tools](../fig/SQL_01_sqlite_tools_download.png)
+![SQLite tools](/fig/SQL_01_sqlite_tools_download.png)
 
 The number after the x86- may be different when you download if a later version has been released.
 The download is a .zip file. You need to unzip the file and store the contents (3 files) in a folder of your choosing. There is no actual install process, the program (file) sqlite3.exe can be run directly from the folder.
@@ -56,7 +56,7 @@ You invoke the SQLite Shell from the commandline. Remember that the program is s
 
 You do not need to specify any parameters, connection to a databse can be done from within the shell.
 
-![Launch SQLite shell](../fig/SQL_01_invoke_shell.png)
+![Launch SQLite shell](/fig/SQL_01_invoke_shell.png)
 
 ## Installing the SQLite ODBC connector
 
@@ -66,6 +66,6 @@ This is a 32bit ODBC connector so it is assumed that you are using a 32bit versi
 
 You can check that the driver has been successfully installed by typing ODBC into the Windows start search panel and then selecting 'ODBC DataSources (32 bit)'
 
-![SQL_00_ODBC_Data_Source](../fig/SQL_00_ODBC_Data_Source.png)
+![SQL_00_ODBC_Data_Source](/fig/SQL_00_ODBC_Data_Source.png)
 
 At the bottom of the list in the 'system DSN' tab youshould see the entry for the 'SQlite3 datasource'.
