@@ -17,27 +17,22 @@ keypoints:
 ---
 ## Introduction
 
-## Install the Firefox SQLite plugin 
+## Installing DB Browser for SQLite 
 
+The software can be downloaded from the [DB Browser](http://sqlitebrowser.org/) site
+From the front page you can select the version you require. There are specific downloads for Windows and Mac users. For various Linux distributions there are detailed instructions at the bottom of the page.
 
-If you do not have Firefox already installed on your machine, it can be downloaded from [here](https://www.mozilla.org/en-GB/firefox/new/).
+![DB Browser install](../fig/DB _Browser_install_1.png)
 
-Start Firefox and navigate to the [plugin homepage for SQLite](https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/). Assuming you do this from within the Firefox browser you will be able to install the plugin directly from the page by clicking the Add to Firefox button.
+## Installing for Windows.
 
-![Firefox SQLite plugin](../fig/01-SQLite_plugin_install_page.png)
+For a current Windows environment the 64-bit windows download will be most appropriate.
 
-Having done this, the download occurs automatically but you will be asked to confirm that you want to install the plugin. You will then be asked to restart the Firefox browser. After the restart, from the tools menu you will be able to access the SQLite manger plugin.
+The download is a windows executable file which you can run by double clicking it. It opens an installation wizard. You can default all of the options in the wizard. You will require admin permissions on the PC/Laptop you install on.
+By default the application is launched automatically when the installation is complete.
+It does not create an icon on the desktop. To explicitly launch the application after installing it, use the windows button (bottom left of screen) and type in ‘DB Browser’ in the search bar and selecting the application when it appears.
 
-![Launch SQLite plugin](../fig/01-SQLite_starting_plugin.png)
-
-By default the plugin opens in a new tab on the browser. This can be changed by selecting Tools | Options from within SQLiteManager selecting start in a new window. 
-
-![Launch SQLite plugin](../fig/01-change_start_up.png)
-
-
-## Invoke the Firefox SQLite plugin
-
-The SQLiteManager plugin can be started at anytime from the firefox browser as indicated above. If you have chosen to have it start as a seperate window, then it is independent of the browser which can be closed at any time.
+![DB Browser run](../fig/DB _Browser_install_2.png)
 
 ## Install the SQLite Shell program
 
