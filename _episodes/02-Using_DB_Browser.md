@@ -70,5 +70,9 @@ The 'Database Structure' tab on the left allows you to initiate actions on the t
 
 ![Table Actions](../fig/DB_Browser_run_3.png)
 
-If you select 'Browse Table', 
+If you select 'Browse Table', the data from the table is loaded into the 'Browse Data' pane from where it can be examined or filtered.
+You can also select ther table you wish to Browse directly from here.
 
+There are options for 'New Record' and 'Delete Record'. It is unlikely that you will want to use these options. Our interest is in analysing exiosting data not creating or deleting data.
+
+## Running SQL Queries
