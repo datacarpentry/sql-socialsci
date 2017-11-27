@@ -22,7 +22,7 @@ keypoints:
 The software can be downloaded from the [DB Browser](http://sqlitebrowser.org/) site
 From the front page you can select the version you require. There are specific downloads for Windows and Mac users. For various Linux distributions there are detailed instructions at the bottom of the page.
 
-![DB Browser install](../fig/DB _Browser_install_1.png)
+![DB Browser install](../fig/DB_Browser_install_1.png)
 
 ## Installing for Windows.
 
@@ -32,7 +32,7 @@ The download is a windows executable file which you can run by double clicking i
 By default the application is launched automatically when the installation is complete.
 It does not create an icon on the desktop. To explicitly launch the application after installing it, use the windows button (bottom left of screen) and type in ‘DB Browser’ in the search bar and selecting the application when it appears.
 
-![DB Browser run](../fig/DB _Browser_install_2.png)
+![DB Browser run](../fig/DB_Browser_install_2.png)
 
 ## Install the SQLite Shell program
 
