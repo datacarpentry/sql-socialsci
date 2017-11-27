@@ -57,3 +57,18 @@ You can now close the preference window by clicking OK.
 
 ## Opening a database
 
+For this lesson we will be making extensive use of the SN7577 database. If you do not already have a copy of this database you can download it from [here](../data/SN7577.sqlite).
+
+To open the database in DB Browser do the following;
+1. clichk on the 'open database' button in the toolbar.
+2. Navigate to where you have stored the database file on your local machine, select it and click open.
+
+When you open the database, the 'Database Structure' tab on the left andthe 'DB Schema' pane on the right will look very similar. 
+However the 'DB Schema' pane is only there to allow you to see the details of the schema for the tables. In particular what tables are in the database and the fields and their types which are in each table.
+
+The 'Database Structure' tab on the left allows you to initiate actions on the tables. If you right click on a table name in the 'DB Schema' pane, nothing happens. However, if you do the same in the 'Database Structure' menu you will be given a set of possible actions.
+
+![Table Actions](../fig/DB_Browser_run_3.png)
+
+If you select 'Browse Table', 
+
