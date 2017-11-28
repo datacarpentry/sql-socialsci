@@ -114,5 +114,7 @@ To create a database click the New Database button from the main toolbar (also a
 Once you have saved the databae file the Create Table wizard will open allowing you to create a table. You can cancel this as we will be going through the create table process in a later episode.
 
 
+## Write Changes & Revert Changes
 
+During your DB Browser session, if you create or delete any tables the changes are not automatically written to the database file. When you try to end the session (i.e. close the application) you will be asked if you want to save the changes you have made. Alternatively you can explicitly save changes or revert changes during a session by use of the Write Changes and Revert Changes buttons on the toolbar. Once written the changes are permanent (there is no concept of multiple 'undo' like you might have in other programs). Revert Changes will take you back to the last Written copy.
 
