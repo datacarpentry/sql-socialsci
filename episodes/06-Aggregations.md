@@ -26,11 +26,11 @@ Aggregate functions are used perform some kind of mathematical or statistical ca
 If we wanted to know the minimum, average and maximum age values (numage) across the whole SN7577 table we could write a query such as this;
 
 ~~~ 
-SELECT numage,
-             min(numage),
-             avg(numage),
-             max(numage)
-FROM SN7577
+SELECT 
+    min(numage),
+    avg(numage),
+    max(numage)
+FROM SN7577;
 ~~~ 
 {: .sql}
 
@@ -38,7 +38,7 @@ This sort of query provides us with a general view of the values for a particula
   
 `min` , `max` and `avg` are builtin aggregate functions in SQLite (and any other SQL database system). There are other such functions avaialable. A complete list can be found in the SQLite documentation [here](https://sqlite.org/lang_aggfunc.html)  
    
-It is more likely that we would want to find such values for a range, or multiple ranges of rows where each range is determined by the values of some other column in the table.
+It is more likely that we would want to find such values for a range, or multiple ranges of rows where each range is determined by the values of some other column in the table. Before we do this we will look at how we can find out what different values are contained in a given column.
 
 
 ## The `Distinct` keyword 
@@ -53,7 +53,7 @@ To find out which values are in the data we can use the query;
 
 ~~~ 
 SELECT Distinct Q1
-FROM SN7577_Text
+FROM SN7577_Text;
 ~~~ 
 {: .sql}
 
@@ -84,14 +84,14 @@ You can have more than one column name after the `Distinct` keyword. In which ca
 ## The `group by` clause to summarise data
 
 Just knowing the combinations is of limited use. You really want to know **How many** of each of the values there are. 
-To do this we use the the `Group By` clause.
+To do this we use  the `Group By` clause.
 
 ~~~ 
 SELECT Q1,
        count(*) as Num_potential_voters
 FROM SN7577_Text
 Group By Q1
-Order by Q1
+Order by Q1;
 ~~~ 
 {: .sql}
 
@@ -109,7 +109,7 @@ SELECT Q1,
        count(*) as Num_potential_voters
 FROM SN7577_Text
 Group By Q1, Q3
-Order by Q1
+Order by Q1;
 ~~~ 
 {: .sql}
 
@@ -128,7 +128,7 @@ SELECT Q1 ,
        sum(daily3) as Telegraph_reader
 from SN7577 
 group by Q1
-having Telegraph_reader > 5
+having Telegraph_reader > 5;
 ~~~ 
 {: .sql}
 
@@ -152,12 +152,12 @@ We are only interested in the groups where there are more than 5 'Telegraph' rea
 > >        sum(daily12) as Mirror_reader
 > > from SN7577 
 > > group by Q1
-> > having Mirror_reader > 5
+> > having Mirror_reader > 5;
 > > 
 > > ~~~
 > > {: .sql}
 > >
-> > You can browse the Newspaper table to find out which of the daily column refers to the Mirror
+> > You can browse the Newspapers table to find out which of the daily column refers to the Mirror
 > {: .solution}
 {: .challenge}
 
