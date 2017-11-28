@@ -30,7 +30,7 @@ The installation of DB Browser does notcreate a desktop icon. To explicitly laun
 
 The initial screen of DB Browser will look like this;
 
-![DB Browser initial screen]9../fig/DB_Browser_run_1.png)
+![DB Browser initial screen](../fig/DB_Browser_run_1.png)
 
 There is;
 
@@ -51,7 +51,7 @@ We will make a couple of initial changes to the layout of the screen. These will
 
 ![Data Browser Preferences](../fig/DB_Browser_run_2.png)
 
-Towards the botton there is a section dealing with Fiueld colors. You will see three bars below the word Text, to the right there are in fact three invisible bars for the backgroung. Click in the area for the Backgroung color for NULL. A colour selector window will open, select Red. The bar will turn Red. This is now the default background cell colour that will be used to display NULL values in you tables. We will discuss the meaning of NULL values in a table in a later episode.
+Towards the botton there is a section dealing with Field colors. You will see three bars below the word Text, to the right there are in fact three invisible bars for the Background. Click in the area for the Backgroung color for NULL. A colour selector window will open, select Red. The bar will turn Red. This is now the default background cell colour that will be used to display NULL values in you tables. We will discuss the meaning of NULL values in a table in a later episode.
 
 You can now close the preference window by clicking OK.
 
@@ -76,3 +76,34 @@ You can also select ther table you wish to Browse directly from here.
 There are options for 'New Record' and 'Delete Record'. It is unlikely that you will want to use these options. Our interest is in analysing exiosting data not creating or deleting data.
 
 ## Running SQL Queries
+
+We will be running queries extensively in future episodes. For now we will just provide an outline of the environment.
+
+In the left hand pane if you select the Execute SQL tab, you will be presented with a three paned window and a small toolbar. The top pane is itself tabbed with the initial tab labeled 'SQL 1'. This is the SQL editor pane into which you will type your queries.
+
+On the toolbar there are five buttons. Left to right they are:
+
+* Open Tab       (creates a new tab in the editor)
+* Open SQL file  (allows you to load a prepared file of SQL into the editor)
+* Save SQL file  (allows you to save the current contents of the active pane to the local file system)
+* Execute SQL    (Executes all of the SQL statements in the editor pane)
+* Execute current line    (Actually executes whatever is selected)
+
+Because it is possible to have and execute multiple SQL statements in the same editor pane, each must be terminated with a ';'.
+If you only have a single statement you don't need it, but it might be considered best practice to always include it.
+
+The pane below the editor is the Results pane. The results of running your query will appear here in a simple tabular format.
+The bottom pane is for messages about the execution, either an error message or an indication of how many rows were returned by the query.
+
+Below is a simple examople query and the results.
+
+![SQL Query results](../fig/DB_Browser_run_4.png)
+
+Notice that the queryhas been written over multiple lines. This is commonly done to aid readability.
+The second pane has the tabular results, and the bottom pane has a message indicating how many rows were returned, how long it took and a copy of the SQL statement that was executed.
+
+To the right of the bottom pane is a single button which will provideyou with options about what you can do with the output. This includes saving it to a csv file.
+
+
+
+
