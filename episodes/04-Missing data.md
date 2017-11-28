@@ -19,9 +19,19 @@ keypoints:
 
 At the beginning of this lesson we noted that all database system have the concept of a NULL value; Something which is missing and nothing is known about it.
 
-In the SQLite plugin, a table which has `NULL` values has the cell displayed in **pink**. The example below is a version of the SN7577 table with most of the columns removed and some `NULL` values introduced in the `numage` column.
+In DB Browser we can choose how we want NULLs in a table to be displayed. When we had our initial look at DB Browser, we used the View  | Preference option to change the background colour of cells in a table which has a `NULL` values as  **red**. The example below is a version of the SN7577 table with most of the columns removed and some `NULL` values introduced in the `numage` column.
 
 ![SN7577_nulls](../fig/SQL_04_Nulls_01.png)
+
+If you type '=NULL' in the filter box for 'numage', only the rows with NULL in numage will be displayed.
+
+You can get the same results using the following query;
+
+~~~
+select * from 
+SN7577_nulls
+where numage is NULL;
+~~~
 
 This table was created from a csv file which looks like this
 
@@ -39,7 +49,7 @@ However the data provided to them, could well have missing data. In the case of 
 
 ![SN7577_DD_Q2](../fig/SQL_04_Nulls_03.png)
 
-You can see from the extract of the SN7577_nulls file above that there are several '-1' values in the Q2 indicating the original data had no value, therefore interpreted as a NULL value for specific rows in Q2. 
+You can see from the extract of the SN7577_nulls file above that there are several '-1' values in the Q2 field indicating the original data had no value, therefore interpreted as a NULL value for specific rows in Q2. 
 
 This is very different from rows which have a value of 11 for column Q2 (3rd row from bottom). The value 11 means that the participant **refused** to provide an answer. The refusal may not tell you which party they are inclined to vote for, but it does convey some kind of information. **A NULL value tells you nothing.**
 
@@ -52,7 +62,7 @@ Once you know how NULL values are being represented in your data you can find th
 ~~~
 Select *
 From SN7577_nulls
-Where Q2 = 11
+Where Q2 = 11;
 
 ~~~
 {: .sql}
@@ -62,7 +72,7 @@ returns 39 rows
 ~~~
 Select *
 From SN7577_nulls
-Where Q2 = -1
+Where Q2 = -1;
 ~~~
 
 {: .sql}
@@ -76,7 +86,7 @@ If you need to test for actual `NULL` values in the data, you use the `IS` opera
 
 Select *
 From SN7577_nulls
-Where numage IS NULL
+Where numage IS NULL;
 
 ~~~
 {: .sql}
@@ -87,7 +97,7 @@ If you wish to omit rows with NULLs then include the `NOT` operator.
 
 Select *
 From SN7577_nulls
-Where numage IS NOT NULL
+Where numage IS NOT NULL;
 
 ~~~
 {: .sql}
