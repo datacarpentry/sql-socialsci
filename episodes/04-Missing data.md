@@ -92,7 +92,6 @@ Where numage IS NULL;
 {: .sql}
 
 If you wish to omit rows with NULLs then include the `NOT` operator.
-
 ~~~
 
 Select *
