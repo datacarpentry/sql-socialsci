@@ -41,7 +41,7 @@ Below the toolbar is a 4-tabbed pane for; Database Structure, Browse Data, Edit 
 On the right hand side therte are two further panes, at the top is the Edit Database Cell pane which is al greyed out. Below it is a 3-tabbed pane for DB Schema, SQL log and Remote. We are only really interested in the DB Schema tab. 
 
 ## Initial changes to the layout.
-
+ 
 The overall layout of DB Browser is quite flexible. The panes on the righthand side can be dragged and dropped into any position, the individual tabs on the bottom pane closed directly from the pane and re-opened from the menu View item.
 
 We will make a couple of initial changes to the layout of the screen. These will be retained across sessions.
@@ -67,6 +67,7 @@ When you open the database, the 'Database Structure' tab on the left andthe 'DB 
 However the 'DB Schema' pane is only there to allow you to see the details of the schema for the tables. In particular what tables are in the database and the fields and their types which are in each table.
 
 The 'Database Structure' tab on the left allows you to initiate actions on the tables. If you right click on a table name in the 'DB Schema' pane, nothing happens. However, if you do the same in the 'Database Structure' menu you will be given a set of possible actions.
+These are the same actions that are available from the toolbar at the top of the tab.
 
 ![Table Actions](../fig/DB_Browser_run_3.png)
 
@@ -103,6 +104,14 @@ Notice that the queryhas been written over multiple lines. This is commonly done
 The second pane has the tabular results, and the bottom pane has a message indicating how many rows were returned, how long it took and a copy of the SQL statement that was executed.
 
 To the right of the bottom pane is a single button which will provideyou with options about what you can do with the output. This includes saving it to a csv file.
+
+
+## Creating a database
+
+As well as opening (connecting) to existing databases it is also possible to create new SQLite databases and tables using DB Browser.
+To create a database click the New Database button from the main toolbar (also available from the File menu). You will initially be asked for a name for the database and where you want to save it. It is saved as a single file. You can choose your own extension but 'sqlite' is recommended. If you do not provide a default, then a '.db' extension will be used. Although the new database is empty, in that there are no tables in it, the .sqlite file itself is not empty.
+
+Once you have saved the databae file the Create Table wizard will open allowing you to create a table. You can cancel this as we will be going through the create table process in a later episode.
 
 
 
