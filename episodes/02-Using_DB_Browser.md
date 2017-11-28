@@ -53,7 +53,7 @@ We will make a couple of initial changes to the layout of the screen. These will
 
 Towards the botton there is a section dealing with Field colors. You will see three bars below the word Text, to the right there are in fact three invisible bars for the Background. Click in the area for the Backgroung color for NULL. A colour selector window will open, select Red. The bar will turn Red. This is now the default background cell colour that will be used to display NULL values in you tables. We will discuss the meaning of NULL values in a table in a later episode.
 
-You can now close the preference window by clicking OK.
+ You can now close the preference window by clicking OK.
 
 ## Opening a database
 
@@ -85,7 +85,7 @@ In the left hand pane if you select the Execute SQL tab, you will be presented w
 On the toolbar there are five buttons. Left to right they are:
 
 * Open Tab       (creates a new tab in the editor)
-* Open SQL file  (allows you to load a prepared file of SQL into the editor)
+* Open SQL file  (allows you to load a prepared file of SQL into the editor - the tab takes the name of he file)
 * Save SQL file  (allows you to save the current contents of the active pane to the local file system)
 * Execute SQL    (Executes all of the SQL statements in the editor pane)
 * Execute current line    (Actually executes whatever is selected)
