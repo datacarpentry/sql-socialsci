@@ -33,7 +33,7 @@ I will assume that you have added the location of the program to your local PATH
 
 It is imprtant to remember the .sqlite suffix, otherwise a new database simply called SN7577 would be created
 
-4. Once the database is opened you can run queries by typing directly in the shell. Unlike the plugin, you must terminate your select command with a ";". Although easy to forget, it generally works to your advantage as it allows you to split a long query command across lines as you did in the plugin
+4. Once the database is opened you can run queries by typing directly in the shell. Unlike in DB Browser, you must always terminate your select command with a ";". This is how the shell knows that **You** think the statement is complete. Although easy to forget, it generally works to your advantage as it allows you to split a long query command across lines as you did in the DB Browser application.
 
 ![SQLite shell query example](../fig/SQL_08_SQLite_shell_query_example.png)
 
@@ -50,21 +50,21 @@ to change the field seperatator to ",". There are many other modes available see
 
 > .output my.filename
 
-to direct the output to a file of my choice. The file will be created if needed or overwrite an already existing file, so exercise care
+to direct the output to a file of my choice. The file will be created if needed or it will overwrite an already existing file, so exercise care.
 
 ![SQLite shell dot commands](../fig/SQL_08_SQLite_shell_dot_commands.png)
 
-Yes you can have a file called "my.filename" if you want. The contents of which contains the expected output from the query
+Yes you can have a file called "my.filename" if you want. The contents of which contains the expected output from the query.
 
 ![SQLite my.filename](../fig/SQL_08_my_filename.png)
 
-Notice the use of quotes in the rows where the value data item is multiple words. 
+Notice the use of quotes in the rows where the value of the data item is multiple words. 
 
 ## Automating the use of the SQLite shell
 
-So far we have used the shell in much the same way as we might have used the plugin GUI. We run the program, connect to a database, run a query and save the output. Because the shell will accept any valid SQL statements as well as have numerous 'dot' commands of it own to configure how it works it could be considered as powerful as the plugin. You could use it as a replacement for the plugin in most cases. 
+So far we have used the shell in much the same way as we might have used the DB Browser application. We run the program, connect to a database, run a query and save the output. Because the shell will accept any valid SQL statements as well as have numerous 'dot' commands of it own to configure how it works it could be considered as powerful as the DB Browser application. You could use it as a replacement in most cases. 
 
-Most people prefer to work with nice point and click interfaces, so why would you want to use the shell rather than the plugin?
+Most people prefer to work with nice point and click interfaces, so why would you want to use the shell rather than the DB Browser application?
 
 The shell has one distinct advantage over the plugin; you can run the shell program and in the call to the program provide a parameter indicating the database to connect to and provide a file of the commands that you want to execute. The shell will execute the file of commands and then exit.
 
@@ -93,7 +93,7 @@ There are two key advantages of using this approach.
 > select Q1, count(*) from sn7577 group by Q1
 > ~~~
 > {: .sql}
-> returns a count for each value in the Q1.
+> returns a count for each value for the Q1 field.
 > Create a file of SQL statements and SQLite shell commands to create 3 files each containing the output from queries like the above but for Q1,Q2 and Q3
 >
 > > ## Solution
