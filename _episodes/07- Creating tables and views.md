@@ -168,8 +168,37 @@ For large datasets this is a very common approach
 
 ![Import table](../fig/SQL_07_Import_wizard_01.png)
 
-In our case all of the options are correctly set. If your file was in Tab delimited format, you would need to change the 'Field separator' option to 'Tab'
+In our case all of the options are correctly set. If your file was in Tab delimited format, you would need to change the 'Field separator' option to 'Tab'. If youe file did not have a header row with column names you would un-check the appropriate box and DB Browser will allocate names for the columns.
 
+3. When you click OK, a table will be created and the data loaded into the table. 
+
+Unfortunately this Import wizard in DB Browser does not do, or allow you to do everything that you might want when creating a table. The most obvious problem is that we were not allowed to specify the data types to be associated with each of the columns in the table. If you go to  the table in the Database Structure tab and click the '>' you will see all of the fields and they are all listed as Text fields. In order to put this right we will need to modify the table structure.
+
+4. Select the newly created table in Database Structure tab and click the 'Modify Table' button in the toolbar. The 'Edit Table Definition' dialog will appear.
+
+![Modify Table](../fig/SQL_07_Import_Wizard_02.png)
+
+In the picture above, the first column has been changed from Text to INTEGER. They all have to be changed to INTEGER apart from the last column which is of type REAL.
+
+Notice that the bottom pane in the Window shows the SQL DDL statement that would create the table that you modifying. When you change one of the columns from TEXT to INTEGER, this is immediately reflected in the Create Table statement.  It is slightly misleading because in fact we are modifying an existing table and in SQL-speak, this would be an **Alter Table...** statement. However it does illustrate quite well the fact that whatever you do in the GUI, it is essentially translated into an SWQL statement and executed.
+
+In addition to changing the data types there are several other options which can be set when you are creating of modifying a table. For our tables we don't need to make use of them but for completeness we will describe what they are;
+
+**PK** - Or Primary Key, a unique identifier for the row. In the SN7577 table, there is no column which can act as a unique identifier for the row as a whole.
+
+**AI** - Or Auto Increment. This isn't really applicable to tables created in this way, i.e. the creation of the schema immediatly followed by loading data from a file. It is usally used to generate uniques values for a column which could then act as a primary key. If you have an autoinc column in a table, when you insert values you would not supply a value for the column  as SQLite will automatically provide a value for each row added.
+
+**Not Null** - If this is checked then it means that there must be a value for each row in this column. If it is not set and there is no value provided in the data then it will be set to 'NULL' which means 'I know nothing about what should be here'. (Not the string 'NULL' but the NULL value)
+
+In real datasets missing values are quite common and we have already looked at ways of dealing with them when they occur in tables. If you you were un-check this box and the data did have missing values for this column, the reord from the file would be rejected and the load of the file will fail.
+
+**U** - Or Unique. This allows you to say that the contents of the columnn, which is not the primary key column has to have unique values in it. Like Allow Null this is another way of providing some data validation as the data is imported. Although it doesn't really apply with the DB Browser import wizard as the data is imported before you are allowed to set this option
+
+**Default** - This is used in conjunction with 'Not Null', if a value is not provided in the dataset, then if provided, the default value for that column will be used. 
+
+**Check** - This allows you to specify a constraint on the vlaues entered for the column. You could restrict the range of values or compare the value with other columns values.
+
+These three options, 'Not Null', 'Unique' and 'Default' , need to be used with caution and certainly their use needs to be fully documented and explained. 
 
 
 ## Using SQL code to create views
@@ -184,13 +213,13 @@ select Q1,
        Sex,
        Age,
        Class
-From SN7577
+From SN7577;
 ~~~
 {: .sql}
 
 Tables and Views are so closely related that if I try to run the code above, although I have changed Table to View I will get an error complaining that the 'Table' already exists.
 
-It is common practice when creating Views to indicate somewhere inthe the name that it is in fact a View. e.g. vSN7577_reduced or SN7577_reduced_v.
+It is common practice when creating Views to indicate somewhere in the the name that it is in fact a View. e.g. vSN7577_reduced or SN7577_reduced_v.
 
 Although tables and views can be used almost interchangeably in select queries it is important to note that a view unlike a table contains no data. It is simply the SQL statement needed to produce that data from the underlying data. This means that when you use a view there is the overhead of having to run this SQL first. Although in practice the Database system will combine the SQL required by the View and the other SQL in your query so as to optimise how the SQL is executed.
 
