@@ -34,21 +34,21 @@ In relational databases, tables have to be created before you can add data to th
 
 The schema can contain many different properties of the table, but in its simplest form you only need to specify a name for the table and a list of the column names and the data types for each of those columns. 
 
-In this lesson we will create a couple of simple tables which we will use in a later lesson. We will also show how the SN7577 and SN7577_Text tables were created and populated from a text file.
+In this episode we will create a couple of simple tables which we will use in a later episode. We will also show how the SN7577 and SN7577_Text tables were created and populated from csv files.
 
-Lets create a couple of simple tables first. The code below creates a table called Animals with two columns, the first is called 'Id_A' and is an Integer and the second is called 'Name' and is of type Text.
+Lets create a couple of simple tables first. The code below creates a table called 'Animals' with two columns, the first is called 'Id_A' and is an Integer and the second is called 'Name' and is of type Text.
 
-As this table already exists in the database, it will fail if you try to run complaining that the table already exists. Instead of running it as-is, change the table name slightly (perhaps include your initials as a prefix)
+As this table already exists in the database, it will fail if you try to run complaining that the table already exists. Instead of running it as-is, change the table name slightly (perhaps include your initials as a prefix).
 
 ~~~
 CREATE TABLE Animals
 (     Id_A Integer,
       Name Text
-)
+);
 ~~~
 {: .sql}
 
-When you run this in the SQLite plugin, no results are returned, but you should see the table 'Animals' in the left pane under tables and in the last Error text box it will say 'not an error'.
+When you run this in the DB Browser application, no results are returned, but you should see the table 'Animals' in the left pane under tables and in the messages pane at the bottom there should be a message saying the query was successful.
 
 > ## Exercise
 >
@@ -63,7 +63,7 @@ When you run this in the SQLite plugin, no results are returned, but you should 
 > > CREATE TABLE Animals_Eat
 > > (   Id_E Integer,
 > >     Eats
-> > )
+> > );
 > > ~~~
 > > {: .sql}
 > > 
@@ -79,12 +79,12 @@ The code below will insert seven rows into the Animals table.
 ~~~
 INSERT INTO Animals (Id_A, Name)
  VALUES   (1, "Elephant"),
-                 (2, "Monkey"),
-                 (3, "Cat"),
-                 (4, "Dog"),
-                 (8, "Goat"),
-                (10, "Pig"),
-                (11, "Mouse")
+          (2, "Monkey"),
+          (3, "Cat"),
+          (4, "Dog"),
+          (8, "Goat"),
+          (10, "Pig"),
+          (11, "Mouse")
 ~~~
 {:.sql}
 
@@ -92,7 +92,8 @@ INSERT INTO Animals (Id_A, Name)
 > ## Exercise
 >
 > 1. Add the following rows of data to the Animal_Eats table
-
+> 
+> ![Animals_eat](../fig/SQL_07_Animals_eat.png)
 >
 > > ## Solution
 > > 
@@ -132,7 +133,7 @@ select Q1,
        Sex,
        Age,
        Class
-From SN7577
+From SN7577;
 ~~~
 {: .sql}
 
@@ -146,67 +147,28 @@ select Q1,
        Sex,
        Age,
        Class
-From SN7577
+From SN7577;
 ~~~
 {: .sql}
 
 
-## Using SQLite plugin to create tables
+## Using the DB Browser application to create tables
 
-So far we have created and populated tables from scratch or created tables from existing tables. But initially your data is likely to be external to the relational database system in a set of simple files. typically in CSV or Tab delimited format.
+So far we have created and populated tables from scratch or created tables from existing tables. But initially your data is likely to be external to the relational database system in a set of simple files. Typically in CSV or Tab delimited format.
 
-All relational database systems will have some utitity which will allow you to import such files into tables in the database. The SQLite plugin has a nice GUI (Graphical Use Interface) to allow you to do this.
+All relational database systems will have some utitity which will allow you to import such files into tables in the database. DB Browser application has a nice GUI (Graphical Use Interface) to allow you to do this.
 
-Both the SN7577 and SN7577_Text tables that we have been using were created in the SQLite plugin by importing a csv  (comma seperated values) or a Tab delimited file containing the data. 
+Both the SN7577 and SN7577_Text tables that we have been using were created in the DB Browser application by importing a csv  (comma seperated values) or a Tab delimited file containing the data. 
 
 For large datasets this is a very common approach
 
-We will illustrate this import functionality by going through the steps used to import the SN7577 and SN7577_Text files
+1. Frome the File menu select Import and then 'Table from CSV file'. This will start the 'Import CSV file' wizard and you will be asked to select the file of data you wish to import from a standard Windows file open dialog.
 
-1. In the menu bar click **Database | import**. This will open a new tab called **Import Wizard** in the right pane
+2. After you have selected the file, you will be shown the 'Import CSV file' window which will allow you to set a name for the table (the default is taken from the filename). You will see the first few rows of the data and there are  a few options which can be changed if needs be.
 
-![Import Wizard](../fig/SQL_07_Import_Wizard.png)
+![Import table](../fig/SQL_07_Import_wizard_01.png)
 
-2. Click the `Select File` button and navigate to the file you wish to import
-3. In the centre section you will see that the new table has been given a default name based on the filename. You can change this to whatever you want. If the name is a an existing table then the import will prompt you to ask if you want to add rows to this existing table or not. 
-4. You should indicate whether or not the file contains a header row with the column names in it or not and what delimiter is used to seperate the columns of data in the file.
-5. Click OK at the bottom of the right pane. You will be told how many rows are to be imported and asked whether or not you wish to modify the table. (It actually means the table structure, not the table data). You should click OK so that you can at least see what the Wizard is proposing to do to create the tables.
-
-![Import Wizard_2](../fig/SQL_07_Import_Wizard_2.png)
-
-6. The new windows shows you a tabular like display listing all of the column names taken from the header record of the file if you indicated that they existed, otherwise the plugin will generate column names (e.f.col_1, col_2 etc.) for you. You can overwrite these if you want to. 
-
-No attempt is made to pick a data type for you. You need to select these for yourself from the dropdown against each column name. Although we have said that the data type of a column is required, SQLite unlike other realational database implementations, allows you to not select a data type. You should however always specify a data type.
-
-For the SN7577 table all of the fields were specified as INTEGER with the exception of the wts column which is a REAL.
-
-After the Datatype there is a set of optional properties which can be assigned to the column.
-
-**Primary Key** - A unique identifier for the row. In the SN7577 table, there is no column which can act as a unique identifier for the row as a whole.
-
-**Autoinc** - This isn't really applicable to tables created in this way, i.e. the creation of the schema immediatly followed by loading data from a file. It is usally used to generate uniques values for a column which could then act as a primary key. If you have an autoinc column in a table, when you insert values you would not supply a value for the column  as SQLite will automatically provide a value for each row added.
-
-**Allow Null** - This you will notice is checked by default. It means that the column does not have to contain a value. If it doesn't then it is set to 'NULL' which means 'I know nothing about what should be here'. (Not the string 'NULL' but the NULL value)
-
-In real datasets missing values are quite common and we have already looked at ways of dealing with them when they occur in tables. If you you were un-check this box and the data did have missing values for this column, the reord from the file would be rejected and the load of the file will fail.
-
-**Unique** - This allows you to say that the contents of the columnn, which is not the primary key column has to have unique values in it. Like Allow Null this is another way of providing some data validation as the data is imported.
-
-**Default Value** - This is used in conjunction with 'Allow Null', if a value is not provided in the dataset, then if provided, the default value for that column will be used. 
-
-These last three options ('Allow Null', 'Unique' and 'Default Value' ) need to be used with caution and certainly their use needs to be fully documented and explained. 
-
-There are two further check boxes at the top.
-
-**Temporary table**  - This will create a temporary table which will be lost when your SQLite plugin session ends.
-
-**If Not Exists**  - This is a check on the uniqueness of your chosen table name. It doesn't really have any meaning in the way we using the plugin as if the table name wasn't unique the plugin would just ask you if you wanted to add the contents of the dataset as new rows to the table and you wouldn't be given the option to modify the table.
-
-When you are satisfied with your changes you can click OK and the table will be created and the data will be read from the file into rows in the table.
-
-Behind the scenes the plugin is behaving in the same way as we did when we created a table from code and then inserted data into it.
-
-Firstly it generated the Schema for the table by creating a 'CREATE TABLE' statement and ran it. Then it generated code to insert the data from the dataset.
+In our case all of the options are correctly set. If your file was in Tab delimited format, you would need to change the 'Field separator' option to 'Tab'
 
 
 
