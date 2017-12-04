@@ -25,7 +25,7 @@ keypoints:
 The software can be downloaded from the [DB Browser](http://sqlitebrowser.org/) site
 From the front page you can select the version you require. There are specific downloads for Windows and Mac users. For various Linux distributions there are detailed instructions at the bottom of the page.
 
-![DB Browser install](../fig/DB_Browser_install_1.png)
+![DB Browser install](./fig/DB_Browser_install_1.png)
 
 ## Installing for Windows.
 
@@ -35,13 +35,13 @@ The download is a windows executable file which you can run by double clicking i
 By default the application is launched automatically when the installation is complete.
 It does not create an icon on the desktop. To explicitly launch the application after installing it, use the windows button (bottom left of screen) and type in ‘DB Browser’ in the search bar and selecting the application when it appears.
 
-![DB Browser run](../fig/DB_Browser_install_2.png)
+![DB Browser run](./fig/DB_Browser_install_2.png)
 
 ## Install the SQLite Shell program
 
 The SQLite shell can be downloaded from [here](https://sqlite.org/download.html). There are versions available for Linux, Mac and Windows. As I have a Windows machine I will download the Windows version. You should download the version appropriate to your machine.
 
-![SQLite tools](../fig/SQL_01_sqlite_tools_download.png)
+![SQLite tools](./fig/SQL_01_sqlite_tools_download.png)
 
 The number after the x86- may be different when you download if a later version has been released.
 The download is a .zip file. You need to unzip the file and store the contents (3 files) in a folder of your choosing. There is no actual install process, the program (file) sqlite3.exe can be run directly from the folder.
@@ -54,7 +54,7 @@ You invoke the SQLite Shell from the commandline. Remember that the program is s
 
 You do not need to specify any parameters, connection to a databse can be done from within the shell.
 
-![Launch SQLite shell](../fig/SQL_01_invoke_shell.png)
+![Launch SQLite shell](./fig/SQL_01_invoke_shell.png)
 
 ## Installing the SQLite ODBC connector
 
@@ -64,6 +64,6 @@ This is a 32bit ODBC connector so it is assumed that you are using a 32bit versi
 
 You can check that the driver has been successfully installed by typing ODBC into the Windows start search panel and then selecting 'ODBC DataSources (32 bit)'
 
-![SQL_00_ODBC_Data_Source](../fig/SQL_00_ODBC_Data_Source.png)
+![SQL_00_ODBC_Data_Source](./fig/SQL_00_ODBC_Data_Source.png)
 
 At the bottom of the list in the 'system DSN' tab youshould see the entry for the 'SQlite3 datasource'.
