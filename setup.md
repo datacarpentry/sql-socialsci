@@ -3,47 +3,45 @@ title: "Pre-requisites"
 teaching: 15
 exercises: 10
 questions:
-- "How do I install the Firefox SQLite plugin?"
+- "How do I install the DB Browser application?"
 - "How do I install the SQLite Shell program?"
+- "How do I install the ODBC driver for SQLite?"
 objectives:
 - "Install the Firefox SQLite plugin "
 - "Invoke the Firefox SQLite plugin"
 - "Install the SQLite Shell program"
 - "Invoke the SQLite Shell program"
+- "Install the ODBC driver"
 keypoints:
-- "Both the SQLite Firefox plugin and the SQLite tools can be directly downloaded from the Internet"
-- "The SQLite Firefox plugin is invoked from within the Firefox browser"
+- "Both the DB Drowser application and the SQLite tools can be directly downloaded from the Internet"
+- "The DB Browser application is a standard windows program"
 - "The sqlite3 program is run from the windows commandline"
+- "You will need admin privileges to install the ODBC driver"
 ---
 ## Introduction
 
-## Install the Firefox SQLite plugin 
+## Installing DB Browser for SQLite 
 
+The software can be downloaded from the [DB Browser](http://sqlitebrowser.org/) site
+From the front page you can select the version you require. There are specific downloads for Windows and Mac users. For various Linux distributions there are detailed instructions at the bottom of the page.
 
-If you do not have Firefox already installed on your machine, it can be downloaded from [here](https://www.mozilla.org/en-GB/firefox/new/).
+![DB Browser install](../fig/DB_Browser_install_1.png)
 
-Start Firefox and navigate to the [plugin homepage for SQLite](https://addons.mozilla.org/en-US/firefox/addon/sqlite-manager/). Assuming you do this from within the Firefox browser you will be able to install the plugin directly from the page by clicking the Add to Firefox button.
+## Installing for Windows.
 
-![Firefox SQLite plugin](/fig/01-SQLite_plugin_install_page.png)
+For a current Windows environment the 64-bit windows download will be most appropriate.
 
-Having done this, the download occurs automatically but you will be asked to confirm that you want to install the plugin. You will then be asked to restart the Firefox browser. After the restart, from the tools menu you will be able to access the SQLite manger plugin.
+The download is a windows executable file which you can run by double clicking it. It opens an installation wizard. You can default all of the options in the wizard. You will require admin permissions on the PC/Laptop you install on.
+By default the application is launched automatically when the installation is complete.
+It does not create an icon on the desktop. To explicitly launch the application after installing it, use the windows button (bottom left of screen) and type in ‘DB Browser’ in the search bar and selecting the application when it appears.
 
-![Launch SQLite plugin](/fig/01-SQLite_starting_plugin.png)
-
-By default the plugin opens in a new tab on the browser. This can be changed by selecting Tools | Options from within SQLiteManager selecting start in a new window. 
-
-![Launch SQLite plugin](/fig/01-change_start_up.png)
-
-
-## Invoke the Firefox SQLite plugin
-
-The SQLiteManager plugin can be started at anytime from the firefox browser as indicated above. If you have chosen to have it start as a seperate window, then it is independent of the browser which can be closed at any time.
+![DB Browser run](../fig/DB_Browser_install_2.png)
 
 ## Install the SQLite Shell program
 
 The SQLite shell can be downloaded from [here](https://sqlite.org/download.html). There are versions available for Linux, Mac and Windows. As I have a Windows machine I will download the Windows version. You should download the version appropriate to your machine.
 
-![SQLite tools](/fig/SQL_01_sqlite_tools_download.png)
+![SQLite tools](../fig/SQL_01_sqlite_tools_download.png)
 
 The number after the x86- may be different when you download if a later version has been released.
 The download is a .zip file. You need to unzip the file and store the contents (3 files) in a folder of your choosing. There is no actual install process, the program (file) sqlite3.exe can be run directly from the folder.
@@ -56,7 +54,7 @@ You invoke the SQLite Shell from the commandline. Remember that the program is s
 
 You do not need to specify any parameters, connection to a databse can be done from within the shell.
 
-![Launch SQLite shell](/fig/SQL_01_invoke_shell.png)
+![Launch SQLite shell](../fig/SQL_01_invoke_shell.png)
 
 ## Installing the SQLite ODBC connector
 
@@ -66,6 +64,6 @@ This is a 32bit ODBC connector so it is assumed that you are using a 32bit versi
 
 You can check that the driver has been successfully installed by typing ODBC into the Windows start search panel and then selecting 'ODBC DataSources (32 bit)'
 
-![SQL_00_ODBC_Data_Source](/fig/SQL_00_ODBC_Data_Source.png)
+![SQL_00_ODBC_Data_Source](../fig/SQL_00_ODBC_Data_Source.png)
 
 At the bottom of the list in the 'system DSN' tab youshould see the entry for the 'SQlite3 datasource'.
