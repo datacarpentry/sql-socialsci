@@ -3,13 +3,15 @@ title: "Pre-requisites"
 teaching: 15
 exercises: 10
 questions:
-- "How do I install the Firefox SQLite plugin?"
+- "How do I install the DB Browser application?"
 - "How do I install the SQLite Shell program?"
+- "How do I install the ODBC driver for SQLite?"
 objectives:
 - "Install the Firefox SQLite plugin "
 - "Invoke the Firefox SQLite plugin"
 - "Install the SQLite Shell program"
 - "Invoke the SQLite Shell program"
+- ""
 keypoints:
 - "Both the SQLite Firefox plugin and the SQLite tools can be directly downloaded from the Internet"
 - "The SQLite Firefox plugin is invoked from within the Firefox browser"
