@@ -11,11 +11,12 @@ objectives:
 - "Invoke the Firefox SQLite plugin"
 - "Install the SQLite Shell program"
 - "Invoke the SQLite Shell program"
-- ""
+- "Install the ODBC driver"
 keypoints:
-- "Both the SQLite Firefox plugin and the SQLite tools can be directly downloaded from the Internet"
-- "The SQLite Firefox plugin is invoked from within the Firefox browser"
+- "Both the DB Drowser application and the SQLite tools can be directly downloaded from the Internet"
+- "The DB Browser application is a standard windows program"
 - "The sqlite3 program is run from the windows commandline"
+- "You will need admin privileges to install the ODBC driver"
 ---
 ## Introduction
 
