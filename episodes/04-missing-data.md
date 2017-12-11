@@ -1,16 +1,13 @@
 ---
-title: "Introduction"
+title: "Missing Data"
 teaching: 10
 exercises: 0
 questions:
 - "How can I deal with missing data?"
-.objectives:
+objectives:
 - "Recognise what the database sees as missing data"
-
 - "Understand that the original data source may represent missing data differently"
-
 - "Define strategies for dealing with missing data"
-
 keypoints:
 - "First key point."
 ---
@@ -28,9 +25,9 @@ If you type '=NULL' in the filter box for 'numage', only the rows with NULL in n
 You can get the same results using the following query;
 
 ~~~
-select * from 
-SN7577_nulls
-where numage is NULL;
+SELECT * from 
+    SN7577_nulls
+WHERE numage is NULL;
 ~~~
 
 This table was created from a csv file which looks like this
@@ -60,43 +57,37 @@ Different statistical packages like SPSS or Stata have their own way of represen
 Once you know how NULL values are being represented in your data you can find them and allow for them in your SQL queries. 
 
 ~~~
-Select *
-From SN7577_nulls
-Where Q2 = 11;
-
+SELECT *
+FROM SN7577_nulls
+WHERE Q2 = 11;
 ~~~
 {: .sql}
 
 returns 39 rows
 
 ~~~
-Select *
-From SN7577_nulls
-Where Q2 = -1;
+SELECT *
+FROM SN7577_nulls
+WHERE Q2 = -1;
 ~~~
-
 {: .sql}
 
 returns 898 rows, nearly 70% of the sample. You would have to decide if the reaming 30% was sufficient for you to use in meaningful analysis.
 
 If you need to test for actual `NULL` values in the data, you use the `IS` operator and the `NULL` keyword
 
-
 ~~~
-
-Select *
-From SN7577_nulls
-Where numage IS NULL;
-
+SELECT *
+FROM SN7577_nulls
+WHERE numage IS NULL;
 ~~~
 {: .sql}
 
 If you wish to omit rows with NULLs then include the `NOT` operator.
+
 ~~~
-
-Select *
-From SN7577_nulls
-Where numage IS NOT NULL;
-
+SELECT *
+FROM SN7577_nulls
+WHERE numage IS NOT NULL;
 ~~~
 {: .sql}

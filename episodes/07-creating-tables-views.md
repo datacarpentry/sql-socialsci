@@ -7,18 +7,12 @@ questions:
 - "How can I create a table using the SQLite plugin GUI?"
 - "How can I create a table or view in the SQLite plugin  using SQL code?"
 - "How can I add records of data to a table?"
-
 objectives:
 - "Understand the differences and similarities between Tables and Views"
-
 - "Create table schemas using SQLite plugin GUI"
-
 - "Create table schemas and views using SQL code"
-
 - "Populate a table using SQL code"
-
 - "Populate a table from a file of data using the SQLIte plugin GUI"
-
 keypoints:
 - "Database tables can be created using the DDL command 'Create Table'"
 - "They can be populated using the 'INSERT INTO ' command"
@@ -127,27 +121,27 @@ This provides a very easy way of creating new table based on the results of a qu
 The following query selects a few of the columns from the SN7577 table
 
 ~~~
-select Q1,
+SELECT Q1,
        Q2,
        Q3,
        Sex,
        Age,
        Class
-From SN7577;
+FROM SN7577;
 ~~~
 {: .sql}
 
 If I want to make the results of this query into a new table, I can do so by simply prefixing the `Select` with **Create Table NewTablename AS**  like this 
 
 ~~~
-Create Table SN7577_reduced AS
-select Q1,
+CREATE Table SN7577_reduced AS
+SELECT Q1,
        Q2,
        Q3,
        Sex,
        Age,
        Class
-From SN7577;
+FROM SN7577;
 ~~~
 {: .sql}
 
@@ -206,14 +200,14 @@ These three options, 'Not Null', 'Unique' and 'Default' , need to be used with c
 In addition to tables all relational database systems have the concept of 'Views'. Views are based on tables. In the same way that we were able to create a table based on a `Select` query, we can create a 'View in the same way. You just replace 'Table' with 'View'.
 
 ~~~
-Create View SN7577_reduced AS
-select Q1,
+CREATE VIEW SN7577_reduced AS
+SELECT Q1,
        Q2,
        Q3,
        Sex,
        Age,
        Class
-From SN7577;
+FROM SN7577;
 ~~~
 {: .sql}
 

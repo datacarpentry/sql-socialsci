@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Creating New Columns"
 teaching: 15
 exercises: 15
 questions:
@@ -11,14 +11,12 @@ questions:
 - "How can I give a column a new name?"
 - "How do I use built-in functions to create new values?"
 - "How can I create binned results?"
-
 objectives:
 - "Create new columns in the query output"
 - "Rename columns in the query output"
 - "Use built-in functions to create new values"
 - "Use SQL syntax to conditionally create new values"
 - "Use SQL syntax to create a new column of ‘binned’ values"
-
 keypoints:
 - "First key point."
 ---
@@ -43,6 +41,7 @@ FROM SN7577;
 {: .sql}
 
 But it would be far more efficient to let the SQL query do that for us. So instead of selecting 25 columns, we are going to add the numeric values of the 25 columns into one new colum.
+
 ~~~ 
 SELECT (daily1 + daily2 + daily3 + daily4 + daily5 + daily6 + daily7 + daily8 +
         daily9 + daily10 + daily11 + daily12 + daily13 + daily14 + daily15 +
