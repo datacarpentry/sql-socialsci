@@ -30,6 +30,7 @@ I will assume that you have added the location of the program to your local PATH
 ~~~
 .open SN7577.sqlite
 ~~~
+{: .bash}
 
 It is imprtant to remember the .sqlite suffix, otherwise a new database simply called SN7577 would be created
 
@@ -44,11 +45,18 @@ These problems can be resolved with further "dot" commands.
 There are in fact a large number of "dot" commands and they are all explained in the official SQLite documentation [here](https://sqlite.org/cli.html). 
 
 The commands we need are 
+
+~~~
 > .mode csv
+~~~
+{: .bash}
 
 to change the field seperatator to ",". There are many other modes available see the [documentation](https://sqlite.org/cli.html). 
 
+~~~
 > .output my.filename
+~~~
+{: .bash}
 
 to direct the output to a file of my choice. The file will be created if needed or it will overwrite an already existing file, so exercise care.
 
@@ -89,8 +97,9 @@ There are two key advantages of using this approach.
 > ## Exercise
 >
 > The query
+> 
 > ~~~
-> select Q1, count(*) from sn7577 group by Q1
+> SELECT Q1, count(*) FROM sn7577 GROUP BY Q1
 > ~~~
 > {: .sql}
 > returns a count for each value for the Q1 field.
@@ -107,15 +116,16 @@ There are two key advantages of using this approach.
 > >select q2, count(*) from sn7577 group by q2;
 > >.output q3_agg.csv
 > >select q3, count(*) from sn7577 group by q3;
-> > 
 > >~~~
+> > {: .output}
 > >
 > > The command to run it from the commandline is:
 > > 
 > > ~~~
 > > sqlite3 SN7577.sqlite < SQLite_commands.sql
 > > ~~~
-> >
+> > {: .bash}
+> > 
 > {: .solution}
 {: .challenge}
 

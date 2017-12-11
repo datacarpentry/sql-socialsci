@@ -207,21 +207,19 @@ In the two Outer queries The SQLite plugin shows the NULL values as **Pink** cel
 > > ## Solution
 > > 
 > > 1.
-> > ~~~
 > > 
+> > ~~~
 > > SELECT a.* , e.*
 > > FROM Animals  as a
 > > Left outer Join  Animals_Eat as e
 > > on  a.Id_A = e.Id_E
 > > where e.Id_e is NULL;
-> > 
 > > ~~~
 > > {: .sql}
 > > 
 > > 2. 
 > > 
 > > ~~~
-> > 
 > > SELECT Id_E
 > > FROM Animals_Eat
 > > Left outer Join Animals
