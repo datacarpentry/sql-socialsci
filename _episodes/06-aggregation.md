@@ -6,15 +6,10 @@ questions:
 - "How can I summarise the data in my tables"
 objectives:
 - "Use the Distinct keyword to get a unique set of values"
-
 - "Usie the ‘group by’ clause to summarise data"
-
 - "Use built-in statistical functions to provide column summaries"
-
 - "Use the ‘having’ clause to provide selection criteria to the summary values"
-
 - "Understand the difference between the ‘where’ and the ‘having’ clauses"
-
 keypoints:
 - ""
 ---
@@ -52,7 +47,7 @@ For Q1 `How would you vote if there were a General Election tomorrow?` there are
 To find out which values are in the data we can use the query;
 
 ~~~ 
-SELECT Distinct Q1
+SELECT DISTINCT Q1
 FROM SN7577_Text;
 ~~~ 
 {: .sql}
@@ -69,9 +64,9 @@ You can have more than one column name after the `Distinct` keyword. In which ca
 > > ## Solution
 > > 
 > > ~~~
-> > SELECT Distinct Q1, Q3
+> > SELECT DISTINCT Q1, Q3
 > > FROM SN7577_Text
-> > Order by Q1
+> > ORDER BY Q1
 > > 
 > > ~~~
 > > {: .sql}
@@ -90,8 +85,8 @@ To do this we use  the `Group By` clause.
 SELECT Q1,
        count(*) as Num_potential_voters
 FROM SN7577_Text
-Group By Q1
-Order by Q1;
+GROUP BY Q1
+ORDER BY Q1;
 ~~~ 
 {: .sql}
 
@@ -108,8 +103,8 @@ SELECT Q1,
        Q3,
        count(*) as Num_potential_voters
 FROM SN7577_Text
-Group By Q1, Q3
-Order by Q1;
+GROUP BY Q1, Q3
+ORDER BY Q1;
 ~~~ 
 {: .sql}
 
@@ -120,15 +115,14 @@ In order to filter the rows returned in a non-aggregated query we used the `wher
 
 You use the 'having` clause by providing it with a filter expression which references one of the aggregated columns. 
 
-In a 'having` clause you can use the column alias to refer to the aggregated column.
-
+In a `having` clause you can use the column alias to refer to the aggregated column.
 
 ~~~ 
 SELECT Q1 ,
        sum(daily3) as Telegraph_reader
-from SN7577 
-group by Q1
-having Telegraph_reader > 5;
+FROM SN7577 
+GROUP BY Q1
+HAVING Telegraph_reader > 5;
 ~~~ 
 {: .sql}
 
@@ -150,10 +144,9 @@ We are only interested in the groups where there are more than 5 'Telegraph' rea
 > > ~~~
 > > SELECT Q1 ,
 > >        sum(daily12) as Mirror_reader
-> > from SN7577 
-> > group by Q1
-> > having Mirror_reader > 5;
-> > 
+> > FROM SN7577 
+> > GROUP BY Q1
+> > HAVING Mirror_reader > 5;
 > > ~~~
 > > {: .sql}
 > >

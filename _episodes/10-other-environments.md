@@ -93,9 +93,7 @@ For now we will just look at code examples in Python and R, both of which run th
 
 #### Python
 
-
 ~~~
-
 import sqlite3
 con = sqlite3.connect(r'C:/Users/pfsmy/OneDrive/UoM/Carpentry/Datasets/SN7577.sqlite')
 cur = con.cursor()
@@ -104,13 +102,12 @@ rows = cur.fetchall()
 for row in rows:
     print(row)
 con.close()
-
 ~~~
+{: .python}
 
 #### R
 
 ~~~
-
 library("RSQLite")
 dbfile = "C:/Users/pfsmy/OneDrive/UoM/Carpentry/Datasets/SN7577.sqlite"
 sqlite = dbDriver("SQLite")
@@ -119,8 +116,8 @@ results = dbSendQuery(mydb, "SELECT * FROM SN7577")
 data = fetch(results)
 data
 dbClearResult(results)
-
 ~~~
+{: .r}
 
 We will not discuss the working of the code, that is covered in the Python and R lessons. Even without coding experience of these languages, you will be able to spot that in both cases we need to specify a connection string (the SQLite database filename) and also the text of the query itself. 
 

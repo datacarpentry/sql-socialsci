@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "The Select Statement"
 teaching: 15
 exercises: 5
 questions:
