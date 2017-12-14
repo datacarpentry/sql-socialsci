@@ -38,7 +38,7 @@ It is imprtant to remember the .sqlite suffix, otherwise a new database simply c
 
 ![SQLite shell query example](../fig/SQL_08_SQLite_shell_query_example.png)
 
-The output from the query is displayed on the screen. If we just wanted to look at a small selection of data this may be OK. It is however more likely that not only are the results from the query somewhat larger, but also we would prefer to save the output to a file for later use. We might also want to change the field seperator from the default "|" to a comma so that we get a standard csv file.
+The output from the query is displayed on the screen. If we just wanted to look at a small selection of data this may be OK. It is however more likely that not only are the results from the query somewhat larger, but also we would prefer to save the output to a file for later use. We might also want to change the field seperator from the default "\|" to a comma so that we get a standard csv file.
 
 These problems can be resolved with further "dot" commands.
 
