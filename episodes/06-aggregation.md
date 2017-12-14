@@ -139,6 +139,8 @@ We are only interested in the groups where there are more than 5 'Telegraph' rea
 > The 'Mirror' is a left-wing newspaper and Labour are considered to be a left-wing political party. 
 > Re-write the query above to see which group of supporters are more likely to read the Mirror 
 > 
+> You can browse the Newspapers table to find out which of the daily columns refers to the Mirror
+> 
 > > ## Solution
 > > 
 > > ~~~
@@ -150,7 +152,7 @@ We are only interested in the groups where there are more than 5 'Telegraph' rea
 > > ~~~
 > > {: .sql}
 > >
-> > You can browse the Newspapers table to find out which of the daily column refers to the Mirror
+> > 
 > {: .solution}
 {: .challenge}
 
