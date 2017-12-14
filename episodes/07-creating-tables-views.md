@@ -105,10 +105,12 @@ INSERT INTO Animals (Id_A, Name)
 > > ~~~
 > > {: .sql}
 > > 
+> > In this solution, the column list has been omitted. This is permissible if the values being inserted are in the same order as they have been defined in the table. In general though it is recommended that the column names are explicitly listed.
+> >  
 > {: .solution}
 {: .challenge}
 
-In this solution, the column list has been omitted. This is permissible if the values being inserted are in the same order as they have been defined in the table. In general though it is recommended that the column names are explicitly listed.
+
 
 For small tables defining them and populating them with data in this way may be acceptable. But for larger tables this approach not only to defining the tables but adding potentially thousands of rows of data can be somewhat impractical.
 
