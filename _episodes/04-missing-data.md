@@ -16,7 +16,7 @@ keypoints:
 
 At the beginning of this lesson we noted that all database system have the concept of a NULL value; Something which is missing and nothing is known about it.
 
-In DB Browser we can choose how we want NULLs in a table to be displayed. When we had our initial look at DB Browser, we used the View  | Preference option to change the background colour of cells in a table which has a `NULL` values as  **red**. The example below is a version of the SN7577 table with most of the columns removed and some `NULL` values introduced in the `numage` column.
+In DB Browser we can choose how we want NULLs in a table to be displayed. When we had our initial look at DB Browser, we used the View   | Preference option to change the background colour of cells in a table which has a `NULL` values as  **red**. The example below is a version of the SN7577 table with most of the columns removed and some `NULL` values introduced in the `numage` column.
 
 ![SN7577_nulls](../fig/SQL_04_Nulls_01.png)
 
