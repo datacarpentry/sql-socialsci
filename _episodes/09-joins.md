@@ -75,9 +75,9 @@ Using simple alias' for the tables our join SQL looks like this;
 
 ~~~
 SELECT q.value,
-       count(*) as how_many
+       count(*) AS how_many
 FROM SN7577 s
-JOIN Question1  q
+JOIN Question1 AS  q
 ON q.key = s.Q1
 GROUP BY  s.Q1
 ~~~
@@ -210,10 +210,10 @@ In the two Outer queries The SQLite plugin shows the NULL values as **Pink** cel
 > > 
 > > ~~~
 > > SELECT a.* , e.*
-> > FROM Animals  as a
-> > Left outer Join  Animals_Eat as e
+> > FROM Animals AS a
+> > LEFT OUTER JOIN Animals_Eat AS e
 > > on  a.Id_A = e.Id_E
-> > where e.Id_e is NULL;
+> > WHERE e.Id_e is NULL;
 > > ~~~
 > > {: .sql}
 > > 
@@ -222,7 +222,7 @@ In the two Outer queries The SQLite plugin shows the NULL values as **Pink** cel
 > > ~~~
 > > SELECT Id_E
 > > FROM Animals_Eat
-> > Left outer Join Animals
+> > Left OUTER JOIN Animals
 > > ON  Id_A = Id_E
 > > WHERE Id_A is NULL
 > > ORDER by Id_E;
