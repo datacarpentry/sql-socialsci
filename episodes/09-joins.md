@@ -222,7 +222,7 @@ In the two Outer queries The SQLite plugin shows the NULL values as **Pink** cel
 > > ~~~
 > > SELECT Id_E
 > > FROM Animals_Eat
-> > Left OUTER JOIN Animals
+> > LEFT OUTER JOIN Animals
 > > ON  Id_A = Id_E
 > > WHERE Id_A is NULL
 > > ORDER by Id_E;
