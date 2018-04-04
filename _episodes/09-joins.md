@@ -32,7 +32,7 @@ Joins are used to combine the rows from two (or more) tables together to form a 
 
 For example the Question1 table has been created from the information about Q1 in the [SN7577 data dictionary file](../data/audit_of_political_engagement_11_ukda_data_dictionary.docx). There are only two columns The value column indicates a respondents voting intentions and the key column has the value which is used to represent this intention in the SN7577 table.
 
-You can see immediately from this that there is a connection or relationship between the the two tables. The key column in the Question1 table has been defined as a primary key. This guarantees that the key column has a unique set of values. Although not required, it is generally the case that the values in one of the columns that the tables have in common will have unique values in it. It is also not required but generally the case that the unique column will be a primary key in one of the tables.
+You can see immediately from this that there is a connection or relationship between the two tables. The key column in the Question1 table has been defined as a primary key. This guarantees that the key column has a unique set of values. Although not required, it is generally the case that the values in one of the columns that the tables have in common will have unique values in it. It is also not required but generally the case that the unique column will be a primary key in one of the tables.
 
 In the SN7577 table, the values in the Q1 **column** are the key values in the Q1 table. You would not expect these to be unique, many respondents may have the same voting intentions.
 
@@ -75,9 +75,9 @@ Using simple alias' for the tables our join SQL looks like this;
 
 ~~~
 SELECT q.value,
-       count(*) as how_many
+       count(*) AS how_many
 FROM SN7577 s
-JOIN Question1  q
+JOIN Question1 AS  q
 ON q.key = s.Q1
 GROUP BY  s.Q1
 ~~~
@@ -101,7 +101,7 @@ Here we have selected the 'value' column from the Question1 table as this has th
 
 The results are the same as before except that the the text of the value column from the Questions1 table has replaced the numeric value from the Q1 column in the SN7577 table.
  
-Notice that the the `GROUP BY` column does not appear in the `SELECT` clause.
+Notice that the `GROUP BY` column does not appear in the `SELECT` clause.
 
 > ## Exercise
 >
@@ -121,7 +121,7 @@ Notice that the the `GROUP BY` column does not appear in the `SELECT` clause.
 
 ## Different join types
 
-The example of a join given above is called an **INNER ** join, we could have written **INNER JOIN ** rathere than simply **JOIN**. This is almost never done in practice as the inner join is by far the most common join type used.
+The example of a join given above is called an **INNER** join, we could have written **INNER JOIN** rather than simply **JOIN**. This is almost never done in practice as the inner join is by far the most common join type used.
 
 Other Join types are available...
 
@@ -129,7 +129,7 @@ Before we look at the other join types we need to explain how the **Inner join**
 
 To illustrate this for all joins we are defining a relationship between two tables based on the data values in two columns, one from each table. What that relationship is, is  given by the criteria in the `ON` clause. The value of the column in one table must be same as that in the other table.
 
-The table specified in the `FROM` clause is usally the table with the unique keys and we want to join it with the table in the `JOIN` clause which has a column which contain the key values, but aren't necessarily unique. Quite often they are not expected to be unique. They are expected to exist though. 
+The table specified in the `FROM` clause is usually the table with the unique keys and we want to join it with the table in the `JOIN` clause which has a column which contain the key values, but aren't necessarily unique. Quite often they are not expected to be unique. They are expected to exist though. 
 
 When a relational database is defined and the tables set up initially the relationship between the tables are already known, they are part of the design of the overall database.  
 
@@ -140,7 +140,7 @@ An inner join only returns rows where there is a match between the two columns. 
 The relational design makes use of multiple tables as a way of avoiding repetition of data. Joining tables re-introduces the replication of the data. 
 
 
-## There are severeal different join types possible
+## There are several different join types possible
 
 |Join Type | What it does |
 |-----------------------------|:------|
@@ -156,7 +156,7 @@ In SQLite only the `Inner join`, the `Left Outer join` and the `Cross join` are 
 
 ## Using different join types in analysing your data
 
-In many cases the data you have in your tables may have come from disperate sources, in that they do not form part of a planned relational database. It has been your decision to bring together (join) the data in the tables. 
+In many cases the data you have in your tables may have come from disparate sources, in that they do not form part of a planned relational database. It has been your decision to bring together (join) the data in the tables. 
 
 In order to do this at all you must be confident that the tables of data do have columns which have a common set of values that you can join on.
 
@@ -210,10 +210,10 @@ In the two Outer queries The SQLite plugin shows the NULL values as **Pink** cel
 > > 
 > > ~~~
 > > SELECT a.* , e.*
-> > FROM Animals  as a
-> > Left outer Join  Animals_Eat as e
+> > FROM Animals AS a
+> > LEFT OUTER JOIN Animals_Eat AS e
 > > on  a.Id_A = e.Id_E
-> > where e.Id_e is NULL;
+> > WHERE e.Id_e is NULL;
 > > ~~~
 > > {: .sql}
 > > 
@@ -222,7 +222,7 @@ In the two Outer queries The SQLite plugin shows the NULL values as **Pink** cel
 > > ~~~
 > > SELECT Id_E
 > > FROM Animals_Eat
-> > Left outer Join Animals
+> > LEFT OUTER JOIN Animals
 > > ON  Id_A = Id_E
 > > WHERE Id_A is NULL
 > > ORDER by Id_E;

@@ -54,8 +54,8 @@ In SQL, querying data is performed by a SELECT statement. A select statement has
 ~~~ 
 SELECT colnames
 FROM tablename
-GROUP BY colnames
 WHERE conditions
+GROUP BY colnames
 HAVING conditions
 ORDER BY colnames
 ~~~ 
