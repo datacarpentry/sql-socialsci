@@ -46,7 +46,7 @@ However the data provided to them, could well have missing data. In the case of 
 
 ![SN7577_DD_Q2](../fig/SQL_04_Nulls_03.png)
 
-You can see from the extract of the SN7577_nulls file above that there are several '-1' values in the Q2 field indicating the original data had no value, therefore interpreted as a NULL value for specific rows in Q2. 
+You can see from the extract of the SN7577_nulls file above that there are several '-1' values in the Q2 field indicating the original data had missing values. These have been replaced with '-1' in the data provided. It is your responsibility to understand that these should be treated as `NULL` values.  
 
 This is very different from rows which have a value of 11 for column Q2 (3rd row from bottom). The value 11 means that the participant **refused** to provide an answer. The refusal may not tell you which party they are inclined to vote for, but it does convey some kind of information. **A NULL value tells you nothing.**
 
