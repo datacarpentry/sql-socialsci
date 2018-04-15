@@ -16,7 +16,7 @@ keypoints:
 
 ## Running SQL code using the SQLite shell
 
-Before you can run the SQLite3 shell program you must have installed it. Instructions for doing this are included in the [set up procedures](./00-Pre-requisites.md).
+Before you can run the SQLite3 shell program you must have installed it. Instructions for doing this are included in the [set up procedures](../setup.md).
 
 I will assume that you have added the location of the program to your local PATH environment variable as this will make it easier to refer to the database file and other files we may want to use.
 
