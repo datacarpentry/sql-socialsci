@@ -92,9 +92,9 @@ Notice that there is no output to the screen and that the shell is closed. The r
 
 There are two key advantages of using this approach.
 
-1. It aids automation. It would be easy to have the one line commandline instruction to be run automatically. The SQL statements in the executed file doesn't have to be a simple query. It could be appending rows of data to a series of tables which become available on a regular basis.
+1. It aids automation. It would be straightforward to have the one line commandline instruction to be run automatically, perhaps on a timed basis. The SQL statements in the executed file doesn't have to be a simple query. It could be appending rows of data to a series of tables which become available on a regular basis.
 
-2. It aids reproducibility. Although it is convenient to use the plugin to play around and try thing out, eventually you will decide on approach, create relevant queries to perform your analysis or research and at this point you will need to ensure that the complete sequence is documented and is reproducible. This is what the file of SQLite commands will do for you.
+2. It aids reproducibility. Although it is convenient to use the DB Browser application to play around and try things out, eventually you will decide on approach, create relevant queries to perform your analysis or research and at this point you will need to ensure that the complete sequence is documented and is reproducible. This is what the file of SQLite commands will do for you.
 
 > ## Exercise
 >
@@ -104,7 +104,9 @@ There are two key advantages of using this approach.
 > SELECT Q1, count(*) FROM sn7577 GROUP BY Q1
 > ~~~
 > {: .sql}
-> returns a count for each value for the Q1 field.
+>
+> returns a count for each value for the Q1 field. 
+>
 > Create a file of SQL statements and SQLite shell commands to create 3 files each containing the output from queries like the above but for Q1,Q2 and Q3
 >
 > > ## Solution
