@@ -22,13 +22,13 @@ keypoints:
 
 ## Launching DB Browser
 
-The installation of DB Browser does not create a desktop icon. To explicitly launch the application after installing it, use the windows button (bottom left of screen) and type in ‘DB Browser’ in the search bar and selecting the application when it appears.
+In Windows the installation of DB Browser does not create a desktop icon. To explicitly launch the application after installing it, use the windows button (bottom left of screen) and type in ‘DB Browser’ in the search bar and selecting the application when it appears.
 
 ![DB Browser run](../fig/DB_Browser_install_2.png)
 
 ## The Initial screen
 
-The initial screen of DB Browser will look like this;
+The initial screen of DB Browser will look something like this, the panes may be in a different configuration;
 
 ![DB Browser initial screen](../fig/DB_Browser_run_1.png)
 
