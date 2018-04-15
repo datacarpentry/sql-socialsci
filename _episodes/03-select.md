@@ -1,7 +1,7 @@
 ---
 title: "The Select Statement"
 teaching: 15
-exercises: 5
+exercises: 10
 questions:
 - "What is SQL?"
 - "How can I return specific columns from a table?"
@@ -157,6 +157,35 @@ From SN7577
 Where Q1 = 5 or (Q3 <> 2 and Q4 > 8);
 ~~~ 
 {: .sql}
+
+> ## Exercise
+>
+> From the above query, breakdown the `Where` clause so that each component can be tested indiviually
+> 
+> > ## Solution
+> > 
+> > To test each of the `or` clauses
+> > 
+> > ~~~
+> > Select  Q1,  Q3, Q4
+> > From SN7577
+> > Where Q1 = 5 ;
+> > ~~~
+> > {: .sql}
+> > 
+> > and
+> > 
+> > ~~~
+> > Select  Q1,  Q3, Q4
+> > From SN7577
+> > Where (Q3 <> 2 and Q4 > 8) ;
+> > ~~~
+> > {: .sql}
+> > 
+> > Becaues the the second query returns rows, there is no need to test the two clauses individually
+> > 
+> {: .solution}
+{: .challenge}
 
 The following query returns the rows where the value of Q1 either 5,6,7 or 8
 
