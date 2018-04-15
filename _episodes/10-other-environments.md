@@ -25,20 +25,20 @@ keypoints:
 
 ODBC  - Open Database Conectivity (or Connector) is a piece of software, often referred to as a *driver*, which allows a database to be connected to an application or program. ODBC drivers are specific to a given database system. As we are using an `SQLite` database we need an SQLite specific ODBC driver to connect to it.
 
-The installation of the SQLite ODBC driver for a Windows machine is explained in the [SQL setup document](./00-Pre-requisites.md ) . 
+The installation of the SQLite ODBC driver for a Windows machine is explained in the [SQL setup document](../setup.md ) . 
 
-So far in this lesson we have accessed our SQLite database either through the DB Browser application or directly using the commandline shell. Each of these methods have their own advanatages. The DB Browser application provides a simple GUI (Graphical User Interface), for development and testing new queries. The shell aids automation of tasks such as adding rows to a table or allowing whole scripts of SQL commands to be run consequetively without user intervention. In both of these methods, we have seen that the 'outputs' can be saved to `csv` files from where they can be read into other applications or programs for futher processing. Using ODBC misses out the middle man. The application or program connects directly to the SQLite database, sends it an SQL query, recieves the output from that query and processes the results in an appropriate fashion.
+So far in this lesson we have accessed our SQLite database either through the DB Browser application or directly using the commandline shell. Each of these methods have their own advanatages. The DB Browser application provides a simple GUI (Graphical User Interface), for development and testing new queries. The shell aids automation of tasks such as adding rows to a table or allowing whole scripts of SQL commands to be run consequetively without user intervention. In both of these methods, we have seen that the 'outputs' can be saved to `csv` files from where they can be read into other applications or programs for futher processing. Using ODBC misses out the middle man (the file of output). The application or program connects directly to the SQLite database, sends it an SQL query, recieves the output from that query and processes the results in an appropriate fashion.
 
 In the case of Excel the tabular results of the query are displayed in a worksheet. For R and Python the results are assigned to a suitable variable from where they can be examined or further processed.
 
-In the following sections we will give examples of using ODBC to connect to Excel and also R and Python.
+In the following sections we will give examples of using ODBC to connect to Excel and also accessing SQLite from R and Python programs.
 
 
 
 
 ## Connection strings
 
-A connection string is really just a list of parameters and their values which explain to the ODBC driver what database you wish to connect to how you wish to use it. For some database systems this might involve providing user credentials as well as specifying which particular database you want to access. For our use of SQLite, the connection string is essentially the full pathname and filename of the SQLite database file.
+A connection string is really just a list of parameters and their values which explain to the ODBC driver what database you wish to connect to and how you wish to use it. For some database systems this might involve providing user credentials as well as specifying which particular database you want to access. For our use of SQLite, the connection string is essentially the full pathname and filename of the SQLite database file.
 
 How and where the connection string information is provided depends on the ODBC driver and the application or program being used.
 
@@ -87,7 +87,7 @@ The data is returned as an Excel `Table`. All of the columns have their headings
 
 ## Connecting to Python or other programming environments using ODBC
 
-Both Python and R (and many other programming languages) provide methods of connecting to and extracting data from SQLite databases. Full details and examples are provided in the [Python lesson](../unknown) and the [R lesson](../unknown). 
+Both Python and R (and many other programming languages) provide methods of connecting to and extracting data from SQLite databases. Full details and examples are provided in the Python lesson and the R lesson. 
 
 For now we will just look at code examples in Python and R, both of which run the same query as we used for the Excel example above.
 
