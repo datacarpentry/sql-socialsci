@@ -18,12 +18,15 @@ objectives:
 - "Use SQL syntax to conditionally create new values"
 - "Use SQL syntax to create a new column of ‘binned’ values"
 keypoints:
-- "First key point."
+- "New result columns can be created using arithmetic operators or builtin functions"
+- "New columns have to be given names or Alias'"
+- "The `Case` coding structure can be used to create new columns"
+- "The new columns are only in the query results. The original table is not changed"
 ---
 
 ## Creating new columns
 
-In addition to selecting existing columns from a table, you can also create new columns based on the exisiting columns. 
+In addition to selecting existing columns from a table, you can also create new columns in the query output based on the exisiting columns. These new columns only exist in the output. The table used in the query is not changed in any way.
 
 The SN7577 table has a series of 25 columns (daily1 - daily25) with values of 0 or 1 depending on whether or not a particular newspaper is read. If you want to know which newspaper is which, they are listed in the Newspapers table.
 
@@ -76,14 +79,16 @@ In addition to using simple arithmetic operations to create new columns, you can
 
 We will look at some of the arithmetic and statistical functions when we deal with aggregations in a later lesson. For now we will focus on some text functions. 
 
-To do this we will use the SN7577_Text table. This table has the same information in it as the SN7577 table but many of the numeric values have been replaced with their text equivalents. To find out how these text equivalents map to the numeric values you need to refer to the SN7577 data dictionary document which can be downloaded from [here](../data/audit_of_political_engagement_11_ukda_data_dictionary.docx).
+To do this we will use the SN7577_Text table. This table has the same information in it as the SN7577 table but many of the numeric values have been replaced with their text equivalents. It also has a 'key_id' column added as a primary key. To find out how these text equivalents map to the numeric values you need to refer to the SN7577 data dictionary document which can be downloaded from [here](../data/audit_of_political_engagement_11_ukda_data_dictionary.docx).
 
 > ## Exercise
 >
 > From the Browse Data tab, select the SN7577_text table from the drop down list at the top.
-> Notice that a lot of the coluns now contain text, but some are still numbers and some have both numbers and text.
+> Notice that a lot of the columns now contain text, but some are still numbers and some have both numbers and text.
 > Apart from the key_id column at the beginning, all of the columns are considered to be text.
 >
+> From the Database Structure tab, select the SN7577_text table and click the `>`. The details of the structure will be shown.
+> 
 {: .challenge}
 
 There will be some circumstances where a text 'number' will cause problems, like in arithmetic. We can avoid such problems by using the `cast` function. This tells SQLite to change the data type of a data item. It is most commonly used in the way we will use it in changing a text string into an integer or real value. 
@@ -103,6 +108,16 @@ FROM SN7577_Text;
 >
 {: .challenge}
 
+In fact SQLite is quite forgiving if you try to add `numbers` which are defined as text. If you run the following query, it will not fail despite the fact that 'numage' is defined as a text field in SN7577_text.
+
+~~~
+select sum(numage) as total_years
+from SN7577_text;
+~~~
+{: .sql}
+
+**NB** You should not rely on this working!
+
 We will now look at a couple of the more common text functions. These have equivalents in other programming languages or spreadsheet systems, sometimes with different names.
 
 | SQLite function  | Excel equivalent |
@@ -110,7 +125,7 @@ We will now look at a couple of the more common text functions. These have equiv
 | substr(a,b,c)    | mid(a,b,c)       |
 | instr(a,b)       | find(a,b)        |
 
-The question in Q5axv asks whether or not you have influenced policies in the last 12 months and required a boolean response yes or no. In the SN7577 table the responses are recorded as 0 and 1 and in the SN7577_Text file they are recorded as 'no null' and 'null'.
+The question in Q5axv asks whether or not you have influenced \[political\] policies in the last 12 months and required a boolean response yes or no. In the SN7577 table the responses are recorded as 0 and 1 and in the SN7577_Text file they are recorded as 'no null' and 'null'. (Here 'null' is just part of the text, it is not related to missing values.)
 
 We want to write queries which will create a new column representing the SN7577 values from the SN7577_Text values. We can do this using either the `substr` or the `instr` function. The example below shows the use of `substr`
 
@@ -122,7 +137,7 @@ FROM SN7577_Text;
 {: .sql}
 
 **Explanation**  
-The substr function takes 2 characters starting at character 1 from the value in Q5axv. This is compare with the string 'no'. The result of the comparison is either the boolean value `True` or the boolean value `False`. SQLite represents the boolean values `True` and `False` as 1 and 0. However as we want to return 0 if the expression is True we need to NOT the whole expression.
+The substr function takes 2 characters starting at character 1 from the value in Q5axv. This is compared with the string 'no'. The result of the comparison is either the boolean value `True` or the boolean value `False`. SQLite represents the boolean values `True` and `False` as 1 and 0. However as we want to return 0 if the expression is True we need to NOT the whole expression.
 
 > ## Exercise
 >
