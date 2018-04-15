@@ -105,6 +105,6 @@ When you create a database table, for each column you are allowed to indicate wh
 
 In many real life situations you will have to accept that the data isn't perfect and will have to allow NULL or missing values in your table.
 
-In the DB Browser we can indicate how we want NULL values to be displayed. We will use a RED boackground to the cell to make it stand out. In SQL queries you can specifically test for NULL values.
+In DB Browser we can indicate how we want NULL values to be displayed. We will use a RED boackground to the cell to make it stand out. In SQL queries you can specifically test for NULL values.
 
 We will look at missing data in more detail in a later episode.
