@@ -9,7 +9,11 @@ objectives:
 - "Understand that the original data source may represent missing data differently"
 - "Define strategies for dealing with missing data"
 keypoints:
-- "First key point."
+- "You should expect missing data"
+- "You need to know how missing data is being represented in your dataset"
+- "Database systems always represent what they consider to be missing data as `NULL`"
+- "You can explicitly test for `NULL` values in your data"
+- "You may need other tests for different representations of `NULL`"
 ---
 
 ## How does the database represents missing data
