@@ -1,7 +1,7 @@
 ---
 title: "Aggregations"
-teaching: 0
-exercises: 0
+teaching: 10
+exercises: 10
 questions:
 - "How can I summarise the data in my tables"
 objectives:
@@ -11,7 +11,10 @@ objectives:
 - "Use the ‘having’ clause to provide selection criteria to the summary values"
 - "Understand the difference between the ‘where’ and the ‘having’ clauses"
 keypoints:
-- ""
+- "Builtin functions can be used to produce a variety of summary statistics"
+- "The `DISTINCT` keyword can be used to find the unique set of values in a column or columns"
+- "Data in columns can be summarised by values using the `GROUP BY` clause"
+- "Summarised data can be filtered using the `HAVING` clause"
 ---
 
 ## Using built-in statistical functions
@@ -38,11 +41,11 @@ It is more likely that we would want to find such values for a range, or multipl
 
 ## The `Distinct` keyword 
 
-For the SN7577 table the **allowable** values in many of the columns are listed in the  [SN7577](../xxx/audit_of_political_engagement_11_ukda_data_dictionary.rtf) document. But this doesn't mean that they all actually appear in the data.
+For the SN7577 table the **allowable** values in many of the columns are listed in the  [SN7577](../xxx/audit_of_political_engagement_11_ukda_data_dictionary.rtf) data dictionary document. But this doesn't mean that they all actually appear in the data.
 
 To obtain a list of umique values in a particular column you can use the `Distinct` keyword. We will use the text version of the SN7577 table for these examples. 
 
-For Q1 `How would you vote if there were a General Election tomorrow?` there are 11 possibilities listed and another (-1) for a missing value. 
+For Q1 `How would you vote if there were a General Election tomorrow?` there are 11 possibilities listed and potentially another (-1) for a missing value. 
 
 To find out which values are in the data we can use the query;
 
@@ -66,7 +69,7 @@ You can have more than one column name after the `Distinct` keyword. In which ca
 > > ~~~
 > > SELECT DISTINCT Q1, Q3
 > > FROM SN7577_Text
-> > ORDER BY Q1
+> > ORDER BY Q1;
 > > 
 > > ~~~
 > > {: .sql}
@@ -79,7 +82,7 @@ You can have more than one column name after the `Distinct` keyword. In which ca
 ## The `group by` clause to summarise data
 
 Just knowing the combinations is of limited use. You really want to know **How many** of each of the values there are. 
-To do this we use  the `Group By` clause.
+To do this we use  the `GROUP BY` clause.
 
 ~~~ 
 SELECT Q1,
@@ -92,9 +95,9 @@ ORDER BY Q1;
 
 This query gives us a count of potential voters for each party.
 
-In the above example, thee aggregation were performed over the single column Q1. It is possible to aggregate over multiple columns by specifying them in both the select **and** the group by clause. 
+In the first example of this episode, three aggregations were performed over the single column Q1. In addition to calculating multiple aggregation values over a single column, it is also possible to aggregate over multiple columns by specifying them in all in the `SELECT` clause **and** the `GROUP BY` clause. 
 
-The grouping will take place based on the order of the columns listed in the group by clause. 
+The grouping will take place based on the order of the columns listed in the `GROUP BY` clause. There will be one row returned for each unique combination of the columns mentioned in the `GROUP BY` clause
 
 What is not allowed is specifying a non-aggregated column in the select clause which is not mentioned in the group by clause.
 
@@ -108,14 +111,41 @@ ORDER BY Q1;
 ~~~ 
 {: .sql}
 
+> ## Exercise
+> In fact SQLite, unlike other RDBMS systems, will allow you to specify columns in the `SELECT` clause which are not in the `GROUP BY` clause. 
+> Repeat the query above but add an extra column name into the `SELECT` clause.
+>
+> What results are returned? 
+> Can you explain them? (You may want to browse the SN7577_text table in the Browse data tab.
+>
+> > ## Solution
+> >
+> > ~~~
+> > SELECT Q1, 
+> >        Q3,
+> >        Q4,
+> >        count(*) as Num_potential_voters
+> > FROM SN7577_Text
+> > GROUP BY Q1, Q3
+> > ORDER BY Q1;
+> > ~~~
+> > 
+> > The same number of rows will be returned with the same values for Q1 and Q3. The cvalues for Q4 are the last value in the 
+> > table for the given combination of Q1 and Q3.
+> > 
+> > It is unlikely that this is what was intended.
+> > 
+> {: .solution}
+{: .challenge}
+
 
 ## Using the `having` clause 
 
-In order to filter the rows returned in a non-aggregated query we used the `where` clause. For an aggregated query the equivalent is the 'having` clause.
+In order to filter the rows returned in a non-aggregated query we used the `WHERE` clause. For an aggregated query the equivalent is the 'HAVING` clause.
 
-You use the 'having` clause by providing it with a filter expression which references one of the aggregated columns. 
+You use the 'HAVING` clause by providing it with a filter expression which references one or more of the aggregated columns. 
 
-In a `having` clause you can use the column alias to refer to the aggregated column.
+In a `HAVING` clause you can use the column alias to refer to the aggregated column.
 
 ~~~ 
 SELECT Q1 ,
@@ -139,7 +169,8 @@ We are only interested in the groups where there are more than 5 'Telegraph' rea
 > The 'Mirror' is a left-wing newspaper and Labour are considered to be a left-wing political party. 
 > Re-write the query above to see which group of supporters are more likely to read the Mirror 
 > 
-> You can browse the Newspapers table to find out which of the daily columns refers to the Mirror
+> You can browse the Newspapers table to find out which of the daily columns refers to the Mirror.
+> You can browse the Question1 table to find the party names represented by the values in Q!
 > 
 > > ## Solution
 > > 
@@ -152,7 +183,7 @@ We are only interested in the groups where there are more than 5 'Telegraph' rea
 > > ~~~
 > > {: .sql}
 > >
-> > 
+> > You can see from the results and the original query that no Conservative supporters who read the Mirror and no Labour supporters who read the Telegraph.
 > {: .solution}
 {: .challenge}
 
