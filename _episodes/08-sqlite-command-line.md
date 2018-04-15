@@ -44,7 +44,7 @@ The output from the query is displayed on the screen. If we just wanted to look 
 
 These problems can be resolved with further "dot" commands.
 
-There are in fact a large number of "dot" commands and they are all explained in the official SQLite documentation [here](https://sqlite.org/cli.html). 
+There are in fact a large number of "dot" commands and they are all explained in the official SQLite documentation [here](https://sqlite.org/cli.html). One you will have to use at some point is `.quit` which will end the SQLIte shell program.
 
 The commands we need are 
 
