@@ -34,7 +34,7 @@ For example the Question1 table has been created from the information about Q1 i
 
 You can see immediately from this that there is a connection or relationship between the two tables. The key column in the Question1 table has been defined as a primary key. This guarantees that the key column has a unique set of values. Although not required, it is generally the case that the values in one of the columns that the tables have in common will have unique values in it. It is also not required but generally the case that the unique column will be a primary key in one of the tables.
 
-In the SN7577 table, the values in the Q1 **column** are the key values in the Q1 table. You would not expect these to be unique, many respondents may have the same voting intentions.
+In the SN7577 table, the values in the Q1 **column** are the key values in the Question1 table. You would not expect these to be unique, many respondents may have the same voting intentions.
 
 If we wanted to find out the voting intentions of all of the respondents we could write a simple aggregation query like this;
 
@@ -111,8 +111,25 @@ Notice that the `GROUP BY` column does not appear in the `SELECT` clause.
 > > ## Solution
 > > 
 > > 1.  You only have to substitute **q.value** for **s.Q1** in the `GROUP BY` clause. Essentially the same results are returned but now they are in alphabetical order of the Quustion1 value column text.
+> > ~~~
+> > SELECT q.value,
+> >        count(*) AS how_many
+> > FROM SN7577 s
+> > JOIN Question1 AS  q
+> > ON q.key = s.Q1
+> > GROUP BY  q.value;
+> > ~~~
 > > 
 > > 2. Because there are no conflicts in the column names between the two tables you could write the query without using alias' for the tables. Including the alias' adds clarity and readability to the SQL, especially if you are selecting several columns from each of the tables.
+> > 
+> > ~~~
+> > SELECT value,
+> >        count(*) AS how_many
+> > FROM SN7577 
+> > JOIN Question1 
+> > ON key = Q1
+> > GROUP BY  value;
+> > ~~~
 > > 
 > {: .solution}
 {: .challenge}
@@ -195,7 +212,7 @@ These tables have been included in the SN7577 database
 ![Left Outer Join 2](../fig/SQL_09_Left_Outer_Join_2.png)
 
 
-In the two Outer queries The SQLite plugin shows the NULL values as **Pink** cells
+In the two Outer queries DB Browser shows the NULL values as cells with  a **RED** background.
 
 
 > ## Exercise
