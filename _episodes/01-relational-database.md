@@ -18,6 +18,7 @@ objectives:
 - "Explain the purpose of a Schema"
 - "Explain Key fields"
 - "Understand the use of NULL"
+
 keypoints:
 - "A relational database is data organised as a collection of related tables"
 - "SQL (Structured Query Language) is used to extract data from the tables"
@@ -104,6 +105,6 @@ When you create a database table, for each column you are allowed to indicate wh
 
 In many real life situations you will have to accept that the data isn't perfect and will have to allow NULL or missing values in your table.
 
-In the SQLite plugin NULL values are displayed as a pink cell. In SQL queries you can specifically test for NULL values.
+In the DB Browser we can indicate how we want NULL values to be displayed. We will use a RED boackground to the cell to make it stand out. In SQL queries you can specifically test for NULL values.
 
 We will look at missing data in more detail in a later episode.
