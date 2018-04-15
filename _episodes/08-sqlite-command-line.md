@@ -18,9 +18,11 @@ keypoints:
 
 Before you can run the SQLite3 shell program you must have installed it. Instructions for doing this are included in the [set up procedures](../setup.md).
 
-I will assume that you have added the location of the program to your local PATH environment variable as this will make it easier to refer to the database file and other files we may want to use.
+I will assume that you have added the location of the program to your local PATH environment variable as this will make it easier to refer to the database file and other files we may want to use. 
 
-1. Open a command prompt and 'cd' to the folder location of the SN7577.sqlite database file.
+The instructions in this episode are written from a Windows user perspective. If you are using Linux or a Mac, open a terminal window instead a command prompt.
+
+1. Open a command prompt (cmd.exe) and 'cd' to the folder location of the SN7577.sqlite database file.
 2. run the command 'sqlite3' This should open the SQLite shell and present a screen similar to that below.
 
 ![SQLite shell](../fig/SQL_08_SQLite_shell.png)
