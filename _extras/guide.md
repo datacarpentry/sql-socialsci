@@ -4,7 +4,7 @@
 
 There is a seperate file for the setiup instructions for installing the various component used in this lesson. [setup](../setup.md)
 
-* The Firefox SQLite plugin
+* The DB Browser application
 * SQLite Shell program
 * SQLite ODBC connector
 
@@ -15,7 +15,7 @@ The data dictionary file for SN7577 is also referenced 'audit_of_political_engag
 The SN7577.tab and SN7577_Text.csv files are used when creating tables.
 All of the files are in the data folder
 
-The SN7577.SQLite will need to be downloaded to the local machine before it can be opened by the Firefox plugin.
+The SN7577.SQLite will need to be downloaded to the local machine before it can be opened by DB Browser.
 
 A general description of the datasets used in the Social Sciences lessons can be found [here](link)
 
