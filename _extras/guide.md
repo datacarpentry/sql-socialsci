@@ -25,7 +25,7 @@ A general description of the datasets used in the Social Sciences lessons can be
 
 Explains terms like Relational database, Table, Datatype, Keys, Null
 
-[The Firefox SQLite plugin](link)
+[Using DB Browser](../_episodes/02-db-browser.md)
 
 This episode is a tour of the plugin and covers how to connect to an existing database, how to run a simple query and see the results.
 
