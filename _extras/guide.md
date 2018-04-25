@@ -11,12 +11,11 @@ There is a seperate file for the setiup instructions for installing the various 
 ## The datasets used
 
 The data from the SN7577 dataset is used. It has been placed into an SQLite database called SN7577.SQLite.
-The data dictionary file for SN7577 is also referenced 'audit_of_political_engagement_11_ukda_data_dictionary.docx' a copy is also in the data folder and can be downloaded [here](../data/audit_of_political_engagement_11_ukda_data_dictionary.docx)
-The [SN7577.tab](../data/SN7577.tab) and [SN7577_Text.csv](../data/SN7577_Text.csv) files are used when creating tables.
-All of the files are in the data folder and can be downloaded using the links.
+The data dictionary file for SN7577 is also referenced 'audit_of_political_engagement_11_ukda_data_dictionary.docx'. 
+The SN7577.tab and SN7577_Text.csv files are used when creating tables. All of the files are in the single [SQL_data.zip](../data/SQL_data.zip) file.
 
 The SN7577.SQLite database file will need to be downloaded to the local machine before it can be opened by DB Browser.
-It can be downloaded from [here](../data/SN7577.sqlite)
+
 
 
 
