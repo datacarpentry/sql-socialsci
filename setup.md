@@ -1,4 +1,5 @@
 ---
+layout: page
 title: "Pre-requisites"
 teaching: 15
 exercises: 10
