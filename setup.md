@@ -1,5 +1,5 @@
 ---
-layout: lesson
+layout: base
 title: "Pre-requisites"
 ---
 ## Introduction
