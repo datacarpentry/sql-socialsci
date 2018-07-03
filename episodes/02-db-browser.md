@@ -32,11 +32,16 @@ The initial screen of DB Browser will look something like this, the panes may be
 
 ![DB Browser initial screen](../fig/DB_Browser_run_1.png)
 
-There is;
+There is:
 
-A small menu system consisting of File, Edit, View and Help.
-Below the menu system is a toolbar with four options; New Database, Open Database, Write Changes and Revert Changes.
-Below the toolbar is a 4-tabbed pane for; Database Structure, Browse Data, Edit Pragmas and Execute SQL. Initially these will be quite empty as we haven't created or opened a database yet. In general we will see how each of these are used as we go through the lesson with the exception of the Edit Pragmas tab which deals with system wide parameters which we won't want to change.
+* A small menu system consisting of File, Edit, View and Help.
+* Below the menu system is a toolbar with four options; New Database, Open Database, Write Changes and Revert Changes.
+* Below the toolbar is a 4-tabbed pane for; Database Structure, Browse Data, Edit Pragmas and Execute SQL.
+
+Initially these will be quite empty as we haven't created or opened a database
+yet. In general we will see how each of these are used as we go through the
+lesson with the exception of the Edit Pragmas tab which deals with system wide
+parameters which we won't want to change.
 
 On the right hand side there are two further panes, at the top is the Edit Database Cell pane which is grayed out. Below it is a 3-tabbed pane for DB Schema, SQL log and Remote. We are only really interested in the DB Schema tab. 
 
