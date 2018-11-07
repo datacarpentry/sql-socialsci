@@ -32,16 +32,11 @@ The initial screen of DB Browser will look something like this, the panes may be
 
 ![DB Browser initial screen](../fig/DB_Browser_run_1.png)
 
-There is:
+There is;
 
-* A small menu system consisting of File, Edit, View and Help.
-* Below the menu system is a toolbar with four options; New Database, Open Database, Write Changes and Revert Changes.
-* Below the toolbar is a 4-tabbed pane for; Database Structure, Browse Data, Edit Pragmas and Execute SQL.
-
-Initially these will be quite empty as we haven't created or opened a database
-yet. In general we will see how each of these are used as we go through the
-lesson with the exception of the Edit Pragmas tab which deals with system wide
-parameters which we won't want to change.
+A small menu system consisting of File, Edit, View and Help.
+Below the menu system is a toolbar with four options; New Database, Open Database, Write Changes and Revert Changes.
+Below the toolbar is a 4-tabbed pane for; Database Structure, Browse Data, Edit Pragmas and Execute SQL. Initially these will be quite empty as we haven't created or opened a database yet. In general we will see how each of these are used as we go through the lesson with the exception of the Edit Pragmas tab which deals with system wide parameters which we won't want to change.
 
 On the right hand side there are two further panes, at the top is the Edit Database Cell pane which is grayed out. Below it is a 3-tabbed pane for DB Schema, SQL log and Remote. We are only really interested in the DB Schema tab. 
 
@@ -62,7 +57,7 @@ Towards the bottom there is a section dealing with Field colors. You will see th
 
 ## Opening a database
 
-For this lesson we will be making extensive use of the SN7577 database. If you do not already have a copy of this database you can download it from [here](../data/SN7577.sqlite).
+For this lesson we will be making extensive use of the SQL_SAFI database. If you do not already have a copy of this database you can download it from [here](../data/SQL_SAFI.sqlite).
 
 To open the database in DB Browser do the following;
 1. click on the 'open database' button in the toolbar.
@@ -71,7 +66,9 @@ To open the database in DB Browser do the following;
 When you open the database, the 'Database Structure' tab on the left and the 'DB Schema' pane on the right will look very similar. 
 However the 'DB Schema' pane is only there to allow you to see the details of the schema for the tables. In particular what tables are in the database and the fields and their types which are in each table.
 
-The 'Database Structure' tab on the left allows you to initiate actions on the tables. If you right click on a table name in the 'DB Schema' pane, nothing happens. However, if you do the same in the 'Database Structure' menu you will be given a set of possible actions.
+The 'Database Structure' tab on the left allows you to initiate actions on the tables. 
+If you right click on a table name in the 'DB Schema' pane, nothing happens. 
+However, if you do the same in the 'Database Structure' menu you will be given a set of possible actions.
 These are the same actions that are available from the toolbar at the top of the tab.
 
 ![Table Actions](../fig/DB_Browser_run_3.png)
@@ -79,27 +76,14 @@ These are the same actions that are available from the toolbar at the top of the
 If you select 'Browse Table', the data from the table is loaded into the 'Browse Data' pane from where it can be examined or filtered.
 You can also select the table you wish to Browse directly from here.
 
-There are options for 'New Record' and 'Delete Record'. It is unlikely that you will want to use these options. Our interest is in analysing existing data not creating or deleting data.
+There are options for 'New Record' and 'Delete Record'. As our interest is in analysing existing data not creating or deleting data, it is unlikely that you will want to use these options. 
 
 ## Running SQL Queries
 
 We will be running queries extensively in future episodes. For now we will just provide an outline of the environment.
 
-In the left hand pane if you select the Execute SQL tab, you will be presented with a three paned window and a small toolbar. The top pane is itself tabbed with the initial tab labeled 'SQL 1'. This is the SQL editor pane into which you will type your queries.
-
-On the toolbar there are five buttons. Left to right they are:
-
-* Open Tab       (creates a new tab in the editor)
-* Open SQL file  (allows you to load a prepared file of SQL into the editor - the tab takes the name of he file)
-* Save SQL file  (allows you to save the current contents of the active pane to the local file system)
-* Execute SQL    (Executes all of the SQL statements in the editor pane)
-* Execute current line    (Actually executes whatever is selected)
-
-Because it is possible to have and execute multiple SQL statements in the same editor pane, each must be terminated with a ';'.
-If you only have a single statement you don't need it, but it might be considered best practice to always include it.
-
-The pane below the editor is the Results pane. The results of running your query will appear here in a simple tabular format.
-The bottom pane is for messages about the execution, either an error message or an indication of how many rows were returned by the query.
+In the left hand pane if you select the Execute SQL tab, you will be presented with a three paned window and a small toolbar. 
+The top pane is itself tabbed with the initial tab labeled 'SQL 1'. This is the SQL editor pane into which you will type your queries.
 
 Below is a simple example query and the results.
 
@@ -108,7 +92,25 @@ Below is a simple example query and the results.
 Notice that the query has been written over multiple lines. This is commonly done to aid readability.
 The second pane has the tabular results, and the bottom pane has a message indicating how many rows were returned, how long it took and a copy of the SQL statement that was executed.
 
-To the right of the bottom pane is a single button which will provide you with options about what you can do with the output. This includes saving it to a csv file.
+
+On the toolbar at the top there are eight buttons. Left to right they are:
+
+* Open Tab       (creates a new tab in the editor)
+* Open SQL file  (allows you to load a prepared file of SQL into the editor - the tab takes the name of he file)
+* Save SQL file  (allows you to save the current contents of the active pane to the local file system)
+* Execute SQL    (Executes all of the SQL statements in the editor pane)
+* Execute current line    (Actually executes whatever is selected)
+* Save Results    (Either to a CSV file or as a database view. We will look at views in a later episode)
+* Find 			  (Text in the editor window)
+* Find & Replace  (Text in the editor window) 
+
+
+
+Because it is possible to have and execute multiple SQL statements in the same editor pane, each must be terminated with a ';'.
+If you only have a single statement you don't need it, but it might be considered best practice to always include it.
+
+The pane below the editor is the Results pane. The results of running your query will appear here in a simple tabular format.
+The bottom pane is for messages about the execution, either an error message or an indication of how many rows were returned by the query.
 
 
 ## Creating a database
@@ -121,5 +123,14 @@ Once you have saved the database file the Create Table wizard will open allowing
 
 ## Write Changes & Revert Changes
 
-During your DB Browser session, if you create or delete any tables the changes are not automatically written to the database file. When you try to end the session (i.e. close the application) you will be asked if you want to save the changes you have made. Alternatively you can explicitly save changes or revert changes during a session by use of the Write Changes and Revert Changes buttons on the toolbar. Once written the changes are permanent (there is no concept of multiple 'undo' like you might have in other programs). Revert Changes will take you back to the last Written copy.
+Much of our SQL work involves looking at existing data using SQL queries and possibly writing out the results to a CSV file, in general we will not be changing the contents of the database.
+
+However if, during your DB Browser session, you were to create or delete a table or create a view, then the changes are not automatically written to the database file. 
+
+When you try to end the session (i.e. close the application) in which you have made such changes, then you will be asked if you want to save the changes you have made. 
+Alternatively you can explicitly save changes or revert changes during a session by use of the Write Changes and Revert Changes buttons on the toolbar. 
+Once written the changes are permanent (there is no concept of multiple 'undo' like you might have in other programs). 
+Revert Changes will take you back to the last Written copy.
+
+
 
