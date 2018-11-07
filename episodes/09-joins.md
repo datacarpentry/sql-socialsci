@@ -28,108 +28,102 @@ keypoints:
 ## About table joins
 
 In any relational database system, the ability to join tables together is a key querying requirement.
-Joins are used to combine the rows from two (or more) tables together to form a single table. A join between tables will only be possible if they have at least one column in common. The column doesn’t have to have the same name in each table, and quite often they won’t, but they do have to have a common usage.
+Joins are used to combine the columns from two (or more) tables together to form a single table. 
+A join between tables will only be possible if they have at least one column in common. 
+The column doesn’t have to have the same name in each table, and quite often they won’t, but they do have to have a common usage.
 
-For example the Question1 table has been created from the information about Q1 in the [SN7577 data dictionary file](../data/audit_of_political_engagement_11_ukda_data_dictionary.docx). There are only two columns The value column indicates a respondents voting intentions and the key column has the value which is used to represent this intention in the SN7577 table.
 
-You can see immediately from this that there is a connection or relationship between the two tables. The key column in the Question1 table has been defined as a primary key. This guarantees that the key column has a unique set of values. Although not required, it is generally the case that the values in one of the columns that the tables have in common will have unique values in it. It is also not required but generally the case that the unique column will be a primary key in one of the tables.
+In the SAFI database we have three tables. Farms, Plots and Crops. Each farm has a number of plots (or fields) and each plot can be used to grow differnt crops.
+A question you might ask is: Which Farms with more than 12 people in the hosehold grow Maize? No single table has the answer to this question.
 
-In the SN7577 table, the values in the Q1 **column** are the key values in the Question1 table. You would not expect these to be unique, many respondents may have the same voting intentions.
+We can write queries to answer each part seperately
 
-If we wanted to find out the voting intentions of all of the respondents we could write a simple aggregation query like this;
+
+
 
 ~~~
-SELECT Q1,
-       count(*) as how_many
-FROM SN7577
-GROUP BY Q1;
+-- how many crops of Maize?
+select * 
+from Crops
+where D_curr_crop = 'maize'
+;
 ~~~~
 {: .sql}
 
-and this would give the results like this
 
-| Q1 | how_many  |
-|----|:----|
-| 1	|179 |
-| 2	|379|
-| 3	|52|
-| 4	|41|
-| 5	|19|
-| 6	|46|
-| 7	|4|
-| 8	|11|
-| 9	|167|
-| 10	|335|
-| 11	|53|
+![Maize](../fig/SQL_09_maize.png)
 
-What we would really like would be to have the **text** values of the voting intentions to make the results more readable.
-
-We can achieve this by joining the Question1 table with the SN7577 table. 
-
-Table names like column names can be given an alias. This is almost always done when joining tables. There are two reasons for doing this.
-
-1. In the select clause you can make it clear from which table each of the selected columns comes from by prefixing the column name with the table alias followed by a period. You could use the full table name but by selecting short, single letter alias' you can save a lot of typing.
-2. The column names that you wish to join on may have the same name and so you need some way of distinguishing between them.
-
-Using simple alias' for the tables our join SQL looks like this;
+and
 
 ~~~
-SELECT q.value,
-       count(*) AS how_many
-FROM SN7577 s
-JOIN Question1 AS  q
-ON q.key = s.Q1
-GROUP BY  s.Q1
+-- Which farms have more than 12 in the Houshold
+select Id, B_no_membrs 
+from Farms
+where B_no_membrs > 12
+;
+~~~~
+{: .sql}
+
+![Maize](../fig/SQL_09_maize.png)
+
+In order to answer the question we need information from both tables at the time, i.e. from a single query.
+Notice that in the tables returned by both of the above queries we have the `Id` column.
+This column represents the Household or Farm in both of the tables. Because of this we can use this `Id` column from both tables to `join`
+the tables together.  
+
+Providing we are confident that both of the columns represent the household (or farm) it doesn't matter whether or not they have the same name.
+
+We write a `join` query like this:
+
+~~~
+select a.Id, a.B_no_membrs,
+       b.Id, b.D_curr_crop
+from Farms as a
+join Crops as b
+on a.Id = b.Id and a.B_no_membrs > 12 and b.D_curr_crop = 'maize'
+;
 ~~~
 {: .sql}
 
-Here we have selected the 'value' column from the Question1 table as this has the text value that we want. The aggregation remains the same. The `JOIN` clause names the second table and the `ON` clause gives the criteria by which the tables are to be joined. The results obtained are given below.
+There are several things to notice about this query:
 
-|value | how_many |
-|-----------------------------|:------|
-|Conservative	| 179 |
-|Labour	| 379 |
-|Liberal Democrats (Lib Dem)	| 52 |
-|Scottish/Welsh Nationalist	| 41 |
-|Green Party	| 19 |
-|UK Independence Party	| 46 |
-|British National Party (BNP)	| 4 |
-|Other	| 11 |
-|Would not vote	| 167 |
-|Undecided	| 335 |
-|Refused	| 53 |
+1. We have used alias' for the the table names in the same way as we used with columns in a previous lesson. In this case though, it is not to povide
+more meaningful names, in fact alias' for tables are often single letters to save key strokes.
+2. We use the table alias as a prefix, plus a '.' when we refer to a column name from the table. You don't have to do this, but it generally adds clarity to the query.
+3. You will need to use an alias when you need to refer to a column with the same name in both tables. In our case we need to compare the `Id` column in both tables.
+4. In the select clause, we list all of the columns, from both table that we want in the output. We use tha alias' for clarity. If the column name is not ambiguous, i.e it only occurs in one of the tables it 
+can be omitted, but as we have said it is better to leave it in for clarity.
+5. The name of the second table is given in the `join` clause.
+6. The conditions of the `join` are given in the `on` clause. The `on` clause is very much like a `where` clause, in that you specifiy expressions which restrict what rows
+are output. In our example we have three expressions. The last two are the individual expressions we used in the previous, single table queries. The first 
+expresiion `a.Id = b.Id` is the expression whih determines how we want the two tables to be joined. 
+We are only interested in rows from both table where the `Id` values match.
 
-The results are the same as before except that the the text of the value column from the Questions1 table has replaced the numeric value from the Q1 column in the SN7577 table.
- 
-Notice that the `GROUP BY` column does not appear in the `SELECT` clause.
+When we run this query we get output like the following:
+
+![Join1](../fig/SQL_09_join1.png)
 
 > ## Exercise
 >
-> 1. Change the SQL above so that the group by clause is the value column from the Question1 table. Run the query. How are the results different?
-> 2. Can you change the SQL so that table alias' are not used? Does this aid readability or not?
+> 1. The output includes the `Id` column from both tables, how could you have distinguished between them when you wrote the query?
+> 2. Can you explain why there are two rows for `Id` 111?  Can you change the query so that these two different rows are being correctly displayed?
 >
 > > ## Solution
 > > 
-> > 1.  You only have to substitute **q.value** for **s.Q1** in the `GROUP BY` clause. Essentially the same results are returned but now they are in alphabetical order of the Quustion1 value column text.
-> > ~~~
-> > SELECT q.value,
-> >        count(*) AS how_many
-> > FROM SN7577 s
-> > JOIN Question1 AS  q
-> > ON q.key = s.Q1
-> > GROUP BY  q.value;
-> > ~~~
-> > 
-> > 2. Because there are no conflicts in the column names between the two tables you could write the query without using alias' for the tables. Including the alias' adds clarity and readability to the SQL, especially if you are selecting several columns from each of the tables.
 > > 
 > > ~~~
-> > SELECT value,
-> >        count(*) AS how_many
-> > FROM SN7577 
-> > JOIN Question1 
-> > ON key = Q1
-> > GROUP BY  value;
+> > select a.Id as Farms_Id, a.B_no_membrs,
+> >        b.Id as Crops_Id, b.plot_Id, b.D_curr_crop
+> > from Farms as a
+> > join Crops as b
+> > on a.Id = b.Id and a.B_no_membrs > 12 and b.D_curr_crop = 'maize'
+> > ;
 > > ~~~
+> > {: .sql}
+> > 
+> > 1. we can add alias' to the two `Id` columns to distinguish them.
+> > 2. by adding the `plot_Id` column from the Crops table. It is clear that `Id` 111 has two plots (plot 1 and plot 2) growing maize.
+> > 
 > > 
 > {: .solution}
 {: .challenge}
@@ -138,19 +132,34 @@ Notice that the `GROUP BY` column does not appear in the `SELECT` clause.
 
 ## Different join types
 
-The example of a join given above is called an **INNER** join, we could have written **INNER JOIN** rather than simply **JOIN**. This is almost never done in practice as the inner join is by far the most common join type used.
+The example of a join given above is called an **INNER** join, we could have written **INNER JOIN** rather than 
+simply **JOIN**. This is almost never done in practice as the inner join is by far the most common join type used.
 
 Other Join types are available...
 
 Before we look at the other join types we need to explain how the **Inner join** works and why it is so commonly used. 
 
-To illustrate this for all joins we are defining a relationship between two tables based on the data values in two columns, one from each table. What that relationship is, is  given by the criteria in the `ON` clause. The value of the column in one table must be same as that in the other table.
+For any join (type) we are defining a relationship between two tables based on the data values in two columns, one from each table. 
+The relationship is given by the criteria in the `ON` clause. 
+The value of the column in one table must be same as that in the other table. That is; the criteria is given in the form
+`value_in_column_from_table_a = value_in_column_from_table_b`.
+Only if this criteria is TRUE will the requested columns from table_a and table_b be returned as a single row in the output. 
+During the join process each row of the first with every row of the second and if a match is found then a row combining the columns from both
+tables is output. 
 
-The table specified in the `FROM` clause is usually the table with the unique keys and we want to join it with the table in the `JOIN` clause which has a column which contain the key values, but aren't necessarily unique. Quite often they are not expected to be unique. They are expected to exist though. 
+Although typically the values being matched from the first table are a unique (Distinct) set of values, the values in the second table don't have
+to be unique. This is why in the results of our previous query there are two entries with Id 111. In the second table there are two records with Id 111 and so the record from the first table gets combined with both the records in 
+the second table and two records are output.
 
-When a relational database is defined and the tables set up initially the relationship between the tables are already known, they are part of the design of the overall database.  
+Because every Farm grows some crops, there will be at least one record for each Id output. I for whatever reasonn the was a Farm with no crops 
+then thare wou;ld be no record output for that Farm Id. Similarly if there was an entry in the Crops table with an Id which didn't match any of the Ids in the Farms table, 
+then it would not be output. There is only an output record when the two columns have matching values.
 
-Because of this it is possible to ensure when the data is added to the tables that there will be entries in both tables which have matching values. At the very least you can prevent rows being added to the second table with a value in the column you intend to join on for which there is no matching column in the first table.
+
+When a relational database is defined and the tables set up initially the relationship between the tables are already known, 
+they are part of the design of the overall database. Because of this it is possible to ensure when the data is added to the tables that there will be entries 
+in both tables which have matching values. At the very least you can prevent rows being added to the second table with a value in the column you intend to join on for which there 
+is no matching column in the first table.
 
 An inner join only returns rows where there is a match between the two columns. In most cases this will be all of the columns selected from the first table and 0,1 or more columns selected from the second table. 
 
@@ -173,7 +182,8 @@ In SQLite only the `Inner join`, the `Left Outer join` and the `Cross join` are 
 
 ## Using different join types in analysing your data
 
-In many cases the data you have in your tables may have come from disparate sources, in that they do not form part of a planned relational database. It has been your decision to bring together (join) the data in the tables. 
+In many cases the data you have in your tables may have come from disparate sources, in that they do not form part of a **planned** relational database. It has been 
+your decision to bring together (join) the data in the tables. 
 
 In order to do this at all you must be confident that the tables of data do have columns which have a common set of values that you can join on.
 
@@ -185,69 +195,85 @@ However it will also be important for you to establish rows in both of the table
 * You may not care that some are missing
 * You may need to explain why some are missing
 
-To do this you will want to use a `Full outer join` or in the case of SQLite a `Left outer join` run twice using both tables in the `From` and `Join` clauses.
+To do this you will want to use a `Full outer join` or in the case of SQLite a `Left outer join` run twice using both tables in the `From` and `Join` clauses. We can demonstrate ability
+`Left outer join` using the Crops_rice table we created ealier. 
 
-To illustrate the different join types we will use two small example tables 
+The query below is similar to our original join except that we are now joining with the crops_rice table and we have dropped the additional criteria.
 
-**Animals**
+~~~
+select a.Id as Farms_Id, a.B_no_membrs,
+       b.Id as Crops_Id, b.D_curr_crop
+from Farms as a
+left outer join Crops_rice as b
+on a.Id = b.Id 
+~~~
+{: .sql}
 
-![Animals](../fig/SQL_09_Animals.png)
+You can see from the results that there is an entry for every record in the Farms table, but unless there is a crop of rice, the entries in the columns from the crops_rice 
+table are shown as NULL.
 
-and **Animals_Eat**
+![Left Outer Join1](../fig/SQL_09_Left_Outer_Join_1.png)
 
-![Animals_Eat](../fig/SQL_09_Animals_Eat.png)
+### Joins with more than two tables
 
-These tables have been included in the SN7577 database
+Joins are not restricted to just two tables. you can have any number, but the more you have the more unreadable the SQL query is likely to become. Quite often you can create views to hide this complexity.
 
-#### The Inner Join
+Our original question was: 'Which Farms with more than 12 people in the household grow Maize?' We founfd the number of people in the household from the Farms table and the crops they grew in the crops table.
+Suppose we now wanted to change the question to be: For Farms with more than 12 people in the hosehold how much land is devoted to growing Maize? In addition to the previous 
+requiements we now also need the size of the plots growing maize. This information is only contained in the `plots` table. 
+The `plots` table has both an Id column which we can use to join it with the Farms column. There is also a plot_Id column which is used to indicate the number of 
+the plot within the Farm. The `crops` table also has a plot_id column used for the same purpose.
 
-![Inner_Join](../fig/SQL_09_Inner_Join.png)
+However we cannot join the `plots` and the `crops` table with just the the `plot_id` column becaquse the `plot_id` column is not unique within the the Plots table. The `plot_id` is the 
+plot number within a Farm. So every Farm will have a plot_id with the value 1. In order to make what we join on unique we need to use both the Id column and the plot_id column together. This is allowed and quite 
+commonly done.
 
-#### The Left Outer Join
+Our new query now looks like this:
 
-![Left Outer Join 1](../fig/SQL_09_Left_Outer_Join_1.png)
+~~~
+select a.Id as Farms_Id, a.B_no_membrs,
+       b.Id , b.plot_id as plot_id, b.D02_total_plot,
+       c.Id as Crops_Id, c.plot_Id as crops_plot_id, c.D_curr_crop
+from Farms as a
+join Plots as b
+join Crops  as c
+on a.Id = b.Id and ( b.Id = c.Id and b.plot_id = c.plot_id) and a.B_no_membrs > 12 and c.D_curr_crop = 'maize'
+;
+~~~
+{: .sql}
 
-#### The Left Outer Join (with tables reversed)
+Things to notice:
+1.  There is a `join` clause for each of the additional tables
+2. But there is only one `on` clause containing all of the needed criteria.
+3. The two criteria in brackets represents the join of the `plots` table to the `Crops` table. (The brackets aren't needed, I just added them for clarity).
 
-![Left Outer Join 2](../fig/SQL_09_Left_Outer_Join_2.png)
+The results look like this:
 
-
-In the two Outer queries DB Browser shows the NULL values as cells with  a **RED** background.
+![Left Outer Join1](../fig/SQL_09_join5.png )
 
 
 > ## Exercise
 >
-> 1. Modify the first `Left Outer Join` query above so that only the joined rows where there is no match in the Animals_Eat table are returned.
+> 1. Modify the query above so that only the 'Id', 'D02_total_plot' and the 'D_curr_crop' columns are shown and at the same time summarise the data so that there is only one entry for each Farm.
+> i.e sum the 'D02_total_plot' column.
 >
-> 2. Modify the second  `Left Outer Join` query above so that only the the Id_E column from the Animals_Eat table is returned where there is no matching row in the Animal table.
->
+> 
 > > ## Solution
 > > 
-> > 1.
 > > 
 > > ~~~
-> > SELECT a.* , e.*
-> > FROM Animals AS a
-> > LEFT OUTER JOIN Animals_Eat AS e
-> > on  a.Id_A = e.Id_E
-> > WHERE e.Id_e is NULL;
-> > ~~~
-> > {: .sql}
-> > 
-> > 2. 
-> > 
-> > ~~~
-> > SELECT Id_E
-> > FROM Animals_Eat
-> > LEFT OUTER JOIN Animals
-> > ON  Id_A = Id_E
-> > WHERE Id_A is NULL
-> > ORDER by Id_E;
+> > select a.Id as Farms_Id, 
+> >        sum(b.D02_total_plot) as total_planted,
+> >        c.D_curr_crop
+> > from Farms as a
+> > join Plots as b
+> > join Crops  as c
+> > on a.Id = b.Id and ( b.Id = c.Id and b.plot_id = c.plot_id) and a.B_no_membrs > 12 and c.D_curr_crop = 'maize'
+> > group by a.Id, c.D_curr_crop
+> > ;
 > > ~~~
 > > {: .sql}
 > > 
-> > Because there is no conflict in the column names across the two tables, we have chosen not to use alias'.
-> > Notice that the Id_A column which we are checking for NULL doesn't have to be a returned column.
 > > 
 > {: .solution}
 {: .challenge}
