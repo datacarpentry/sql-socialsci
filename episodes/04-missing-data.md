@@ -18,80 +18,98 @@ keypoints:
 
 ## How does the database represents missing data
 
-At the beginning of this lesson we noted that all database system have the concept of a NULL value; Something which is missing and nothing is known about it.
+At the beginning of this lesson we noted that all database systems have the concept of a NULL value; Something which is missing and nothing is known about it.
 
-In DB Browser we can choose how we want NULLs in a table to be displayed. When we had our initial look at DB Browser, we used the `View | Preference` option to change the background colour of cells in a table which has a `NULL` values as  **red**. The example below is a version of the SN7577 table with most of the columns removed and some `NULL` values introduced in the `numage` column.
+In DB Browser we can choose how we want NULLs in a table to be displayed. When we had our initial look at DB Browser, 
+we used the `View | Preference` option to change the background colour of cells in a table which has a `NULL` values as  **red**. 
+The example below, using the 'Browse data' tab,  shows a section of the Farms table in the SQL_SAFI database showing column values which are `NULL`.
 
-![SN7577_nulls](../fig/SQL_04_Nulls_01.png)
+![Farms NULLs](../fig/SQL_04_Nulls_01.png)
 
-If you type '=NULL' in the filter box for 'numage', only the rows with NULL in numage will be displayed.
+If you type '=NULL' in the filter box for 'F14_items_owned', only the rows with NULL in numage will be displayed.
 
 You can get the same results using the following query;
 
 ~~~
-SELECT * from 
-    SN7577_nulls
-WHERE numage is NULL;
+SELECT *
+FROM Farms
+WHERE F14_items_owned IS NULL
+;
 ~~~
 
-This table was created from a csv file which looks like this
+Notice that we use `IS` and not `=`. This is because 'NULL' equals nothing and everything all at the same time!
 
-![SN7577_nulls_csv](../fig/SQL_04_Nulls_02.png)
+This table was created from a csv file, part of which looks like this
 
-The line numbers on the left are from the text editor and are not part of the data.
+![Farms_csv](../fig/SQL_04_Nulls_02.png)
 
-You can see that in lines 4, 9 and 15 there are consequetive ','s  where the numage values should be. These values are missing from the data.
+The highlighted area shows part of the record with Id = 21, the second record returned by the query. It starts with the 'F10_liv_owned' column and ends 
+with the 'G01_no_meals' column. The Arrow points to the two consequetive ','s representing the lack of a value for the 'F14_items_owned' column. 
+These values are missing from the data.
 
-## Other representations of missing data  
 
-The SN7577_nulls table was specially created to demonstrate how NULLs appear in the SQLite plugin. The proper SN7577 table does not contain any missing values in the sense of having consequetive ','s. This is because the SN7577 data is provided by the UKDS (UK Data Service) whose role in part is to clean datasets before making them publicly available. 
 
-However the data provided to them, could well have missing data. In the case of the SN7577 dataset this is typically dealt with by substituting the missing value with a value of -1. This is explained in the provided data dictionary for the SN7577 dataset. An extract for Q2 is shown below.
+## Reasons for Missing data
 
-![SN7577_DD_Q2](../fig/SQL_04_Nulls_03.png)
+There can be many reasons why data is missing; Not collected, lost, Not applicable etc. 
+In the case of our Farms table, many of the missing values have occurred as a result of the survey design. 
 
-You can see from the extract of the SN7577_nulls file above that there are several '-1' values in the Q2 field indicating the original data had missing values. These have been replaced with '-1' in the data provided. It is your responsibility to understand that these should be treated as `NULL` values.  
 
-This is very different from rows which have a value of 11 for column Q2 (3rd row from bottom). The value 11 means that the participant **refused** to provide an answer. The refusal may not tell you which party they are inclined to vote for, but it does convey some kind of information. **A NULL value tells you nothing.**
+If you run the following query :
 
-Different statistical packages like SPSS or Stata have their own way of representing NULL values such as -99 or -999. You need to be aware of how NULL values in your dataset are being represented.
+~~~
+SELECT E01_water_use, E_no_group_count, E_yes_group_count
+FROM Farms
+;
+~~~
+{: .sql}
+
+The first part of the results will look like this:
+
+![Farms_csv](../fig/SQL_04_Nulls_04.png)
+
+You may be able to spot from this the relationship between the values in the `E01_water_use` column and whether or not there is a `NULL` value in either the `E_no_group_count` or the `E_yes_group_count` column.
+
+Only if the Farmer said that they did use water (E01_water_use = 'yes') they were asked how many plots they used water on and the value stored 
+in E_yes_group_count otherwise this field was not even presented in the survey and so contains a `NULL` value. 
+In this situation we expect `NULL` values and they will not cause any problems.
+
+However the `F14_items_owned` column records the possesions of the Farmer. This question was always asked. It is not clear from the `NULL` values we 
+find in this field whether or not it means 'I have no possesions' or 'I do not wish to tell you what possessions I have', in short, we know nothing about the items owned and therefore 
+the value of `NULL` is appropriate. 
+
+
 
 ## Dealing with missing data
 
-Once you know how NULL values are being represented in your data you can find them and allow for them in your SQL queries. 
+There are several statistical techniques that can be used to allow for `NULL` values, which one you might will depend on what has caused the `NULL` value to be recorded.
+
+You may want to change the `NULL` value to something else. For example if we knew that the `NULL` values in the `F14_items_owned` column actually meant that the Farmer had no posessions then we 
+might want to change the `NULL` values to '[]' to represent and empty list. We can do that in SQL with an `UPDATE` query.
+
+The update query is shown below. We are not going to run it as it would change our data. 
+You need to be very sure of the effect you are going to have before you change data in this way.
+
 
 ~~~
-SELECT *
-FROM SN7577_nulls
-WHERE Q2 = 11;
-~~~
-{: .sql}
-
-returns 39 rows
-
-~~~
-SELECT *
-FROM SN7577_nulls
-WHERE Q2 = -1;
-~~~
-{: .sql}
-
-returns 898 rows, nearly 70% of the sample. You would have to decide if the reaming 30% was sufficient for you to use in meaningful analysis.
-
-If you need to test for actual `NULL` values in the data, you use the `IS` operator and the `NULL` keyword
-
-~~~
-SELECT *
-FROM SN7577_nulls
-WHERE numage IS NULL;
+UPDATE Farms
+SET F14_items_owned = '[]'
+WHERE F14_items_owned is NULL 
+;
 ~~~
 {: .sql}
 
-If you wish to omit rows with NULLs then include the `NOT` operator.
+
+
+Rather than changing the data we may just want to miss it out of our analysis.
+
+We can write a query which excludes the rows where `F14_items_owned` has a `NULL value with:
 
 ~~~
-SELECT *
-FROM SN7577_nulls
-WHERE numage IS NOT NULL;
+SELECT * from Farms
+WHERE F14_items_owned IS NOT NULL
+;
 ~~~
 {: .sql}
+
+
