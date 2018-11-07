@@ -19,62 +19,92 @@ keypoints:
 
 ## Using built-in statistical functions
 
-Aggregate functions are used perform some kind of mathematical or statistical calculation across a group of rows. The rows in each group are determined by the different values in a specified column or columns.  Alternatively you can aggregate across the entire table.
+Aggregate functions are used perform some kind of mathematical or statistical calculation across a group of rows. The rows in each group are determined 
+by the different values in a specified column or columns.  Alternatively you can aggregate across the entire table.
 
-If we wanted to know the minimum, average and maximum age values (numage) across the whole SN7577 table we could write a query such as this;
+If we wanted to know the minimum, average and maximum values of the 'A11_years_farm' column across the whole Farms table, we could write a query such as this;
 
 ~~~ 
-SELECT 
-    min(numage),
-    avg(numage),
-    max(numage)
-FROM SN7577;
+select 
+       min(A11_years_farm),
+	   max(A11_years_farm),
+	   avg(A11_years_farm)
+from Farms; 
 ~~~ 
 {: .sql}
 
 This sort of query provides us with a general view of the values for a particular column or field across the whole table.
   
-`min` , `max` and `avg` are builtin aggregate functions in SQLite (and any other SQL database system). There are other such functions avaialable. A complete list can be found in the SQLite documentation [here](https://sqlite.org/lang_aggfunc.html)  
+`min` , `max` and `avg` are builtin aggregate functions in SQLite (and any other SQL database system). There are other such functions avaialable. 
+A complete list can be found in the SQLite documentation [here](https://sqlite.org/lang_aggfunc.html)  
    
-It is more likely that we would want to find such values for a range, or multiple ranges of rows where each range is determined by the values of some other column in the table. Before we do this we will look at how we can find out what different values are contained in a given column.
+It is more likely that we would want to find such values for a range, or multiple ranges of rows where each range is determined by the 
+values of some other column in the table. Before we do this we will look at how we can find out what different values are contained in a given column.
 
 
 ## The `Distinct` keyword 
 
-For the SN7577 table the **allowable** values in many of the columns are listed in the  [SN7577](../xxx/audit_of_political_engagement_11_ukda_data_dictionary.rtf) data dictionary document. But this doesn't mean that they all actually appear in the data.
+For the SAFI survey, it was know in advance all of the possible values that certain variables of columns could contain. For example 
+the 'A06_province', 'A07_district', 'A08_ward' and 'A09_village' variables 
+could only ever contain a few specfic values.
 
-To obtain a list of umique values in a particular column you can use the `Distinct` keyword. We will use the text version of the SN7577 table for these examples. 
+As the SAFI survey was delivered via an Android phone app. it was possible to create the app so that the possible values could be 
+selected from a dropdown list, eliminating any possibility of typing errors. For the 'A06_province' there were only three possibilities, but 
+by the time we get down to 'A09_villages', a far more specific geography, it would not have been possible to anticipate in advance all of the possible values (village names)
+and so the vlues for this field were manually typed in.
 
-For Q1 `How would you vote if there were a General Election tomorrow?` there are 11 possibilities listed and potentially another (-1) for a missing value. 
+To obtain a list of umique values in a particular column we can use the `Distinct` keyword.
+ 
+Using the Farms table we will obtain a list of all of the differentvalues of the 'A06_province' column contained in the table.
 
-To find out which values are in the data we can use the query;
 
 ~~~ 
-SELECT DISTINCT Q1
-FROM SN7577_Text;
+select distinct A06_province
+from Farms;
 ~~~ 
 {: .sql}
 
-We can see from the reults of running this that all 11 values are represented and that there is no missing data in this field.
+We can see from the reults of running this that all 3 values are represented and that there is no missing data in this field.
+
+However if we run a similar query for 'A11_village'
+
+~~~ 
+select distinct A11_village
+from Farms;
+~~~ 
+{: .sql}
+
+we get 
+
+![Villages](../fig/SQL_06_villages.png)
+
+The problem with allowing free-form text quite obvious. Having two villages, one called 'Massequece' and the other called 'Massequese' is unlikely.
+
+Detcting this type of problem in a large dataset can be very difficult if you are just 'eyeballing' the content. This small SQL query makes it very clear, 
+and in the OpenRefine lesson we provide approaches to detecting and correcting such errors. SQL is not the best tool for correcting this type of error.
+
+
 
 You can have more than one column name after the `Distinct` keyword. In which case the results will include a row for each unique **combination** of the columns involved
 
 > ## Exercise
->
-> Q3 asks for the likelihood of voting on a scale of 1 - 10 (10 - Absolutely certain to vote).
-> Write a query which shows all of the combinations of voting intentions (Q1) and likelihood of voting (Q3).
+> Write a query that will return all of the different combinations of the 
+> 'A06_province', 'A07_district', 'A08_ward' and 'A09_village' columns in the Farms table.
 > 
+> When looking at the results, you may have noticed that they are not in any sorted order. Re-write the query so that the values of the four columns
+> are returned in alphabetical order. 
+> 
+>
 > > ## Solution
 > > 
 > > ~~~
-> > SELECT DISTINCT Q1, Q3
-> > FROM SN7577_Text
-> > ORDER BY Q1;
+> > select distinct A06_province, A07_district, A08_ward, A09_village
+> > from Farms
+> > order by A06_province, A07_district, A08_ward, A09_village;
 > > 
 > > ~~~
 > > {: .sql}
 > >
-> > Sorting the results by Q1 gives the political parties in alphabetical order.
 > {: .solution}
 {: .challenge}
 
@@ -85,55 +115,54 @@ Just knowing the combinations is of limited use. You really want to know **How m
 To do this we use  the `GROUP BY` clause.
 
 ~~~ 
-SELECT Q1,
-       count(*) as Num_potential_voters
-FROM SN7577_Text
-GROUP BY Q1
-ORDER BY Q1;
+select A08_ward,
+       count(*) as How_many
+from Farms
+group by A08_ward;
 ~~~ 
 {: .sql}
 
-This query gives us a count of potential voters for each party.
+This query tells us how many records in the table have each different value in the 'A08_ward' column.
 
-In the first example of this episode, three aggregations were performed over the single column Q1. In addition to calculating multiple aggregation values over a single column, it is also possible to aggregate over multiple columns by specifying them in all in the `SELECT` clause **and** the `GROUP BY` clause. 
+In the first example of this episode, three aggregations were performed over the single column 'A11_years_farm'. 
+In addition to calculating multiple aggregation values over a single column, it is also possible to aggregate over multiple columns by specifying 
+them in all in the `SELECT` clause **and** the `GROUP BY` clause. 
 
 The grouping will take place based on the order of the columns listed in the `GROUP BY` clause. There will be one row returned for each unique combination of the columns mentioned in the `GROUP BY` clause
 
 What is not allowed is specifying a non-aggregated column in the select clause which is not mentioned in the group by clause.
 
 ~~~ 
-SELECT Q1, 
-       Q3,
-       count(*) as Num_potential_voters
-FROM SN7577_Text
-GROUP BY Q1, Q3
-ORDER BY Q1;
+select A06_province, 
+       A07_district,
+	   A08_ward,
+	   A09_village,
+	   count(*) as How_many
+from Farms
+Group By A06_province, A07_district, A08_ward, A09_village
+;
 ~~~ 
 {: .sql}
 
 > ## Exercise
-> In fact SQLite, unlike other RDBMS systems, will allow you to specify columns in the `SELECT` clause which are not in the `GROUP BY` clause. 
-> Repeat the query above but add an extra column name into the `SELECT` clause.
+> Write a query which retuns the min, max and avg values as well as a count of the number of records involved
+> for the 'A11_years_farm' column for each village in the 'Nhamatanda' district.   
 >
-> What results are returned? 
-> Can you explain them? (You may want to browse the SN7577_text table in the Browse data tab.
 >
 > > ## Solution
 > >
 > > ~~~
-> > SELECT Q1, 
-> >        Q3,
-> >        Q4,
-> >        count(*) as Num_potential_voters
-> > FROM SN7577_Text
-> > GROUP BY Q1, Q3
-> > ORDER BY Q1;
+> > select A09_village,
+> >        min(A11_years_farm) as min,
+> >        max(A11_years_farm) as max,
+> > 	   avg(A11_years_farm) as avg,
+> > 	   count(*) as how_many
+> > from Farms
+> > where A07_district = 'Nhamatanda'
+> > group by A09_village;
 > > ~~~
 > > 
-> > The same number of rows will be returned with the same values for Q1 and Q3. The cvalues for Q4 are the last value in the 
-> > table for the given combination of Q1 and Q3.
-> > 
-> > It is unlikely that this is what was intended.
+> > Notice that you can use the 'A07_district' column in the `where` clause but it doesn't have to appear in the `select` clause.
 > > 
 > {: .solution}
 {: .challenge}
@@ -148,42 +177,35 @@ You use the 'HAVING` clause by providing it with a filter expression which refer
 In a `HAVING` clause you can use the column alias to refer to the aggregated column.
 
 ~~~ 
-SELECT Q1 ,
-       sum(daily3) as Telegraph_reader
-FROM SN7577 
-GROUP BY Q1
-HAVING Telegraph_reader > 5;
+select A08_ward,
+       min(A11_years_farm) as min_years,
+	   max(A11_years_farm) as max_years,
+	   count(*) as how_many_farms
+from Farms
+group by A08_ward
+having how_many_farms > 2;
 ~~~ 
 {: .sql}
 
-In this example aggregating 'Telegraph' readers by voter intentions (Q1).
+In this example we want to remove the wards which only have one or two farms.
 
-We are only interested in the groups where there are more than 5 'Telegraph' readers.
 
 > ## Exercise
 >
-> In the UK the 'Telegraph' is regarded as a right-wing newspaper and the Conservatives are considered to be a right-wing political party.
-> 
-> Do the results of the query above support this?
->
-> The 'Mirror' is a left-wing newspaper and Labour are considered to be a left-wing political party. 
-> Re-write the query above to see which group of supporters are more likely to read the Mirror 
-> 
-> You can browse the Newspapers table to find out which of the daily columns refers to the Mirror.
-> You can browse the Question1 table to find the party names represented by the values in Q!
+> Using the Crops table write a query which will list all of the crops (D_curr_crop) which are grown in over 100 plots.
 > 
 > > ## Solution
 > > 
 > > ~~~
-> > SELECT Q1 ,
-> >        sum(daily12) as Mirror_reader
-> > FROM SN7577 
-> > GROUP BY Q1
-> > HAVING Mirror_reader > 5;
+> > select D_curr_crop,
+> >        count(*) as how_many
+> > from Crops
+> > group by D_curr_crop
+> > having how_many > 100
+> > ;
 > > ~~~
 > > {: .sql}
 > >
-> > You can see from the results and the original query that no Conservative supporters who read the Mirror and no Labour supporters who read the Telegraph.
 > {: .solution}
 {: .challenge}
 
