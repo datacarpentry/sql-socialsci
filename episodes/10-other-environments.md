@@ -54,7 +54,9 @@ How and where the connection string information is provided depends on the ODBC 
   
   If this option does not appear in the list, then it probably means that the SQLite ODBC driver has not  been installed.
   
-4. The 'Connect' window is where you specify the connection string information. You can see that there are many things that can be specified. But all we need to specify is the Database name. I.e the full path and name of the database file. There is a browse button you can use to navigate to the required file. When you have selected the database file click **OK**
+4. The 'Connect' window is where you specify the connection string information. You can see that there are many things that can be specified. 
+But all we need to specify is the Database name. I.e the full path and name of the database file. 
+There is a browse button you can use to navigate to the required file. When you have selected the database file click **OK**
   
 5. At this point, you may get an a window pop up saying that there are no tables
 
@@ -70,11 +72,13 @@ Click on the `options` button and then toggle the **system tables** option and c
 
 ![SQL_10_Choose_Columns_2](../fig/SQL_10_Choose_Columns_2.png)
 
-Select the SN7577 table and then click the '>' button to select all of the columns from the SN7577 table. They will be displayed in the right hand pane. This is the equivalent of the `Select *` SQL clause that we have used before. If you click the '+' button to the left of the table name, a full list of the column names is dsiplayed allowing you to select individual columns for inclusion. Click **Next**
+Select the Farms table and then click the '>' button to select all of the columns from the Farms table. 
+They will be displayed in the right hand pane. This is the equivalent of the `Select *` SQL clause that we have used before. 
+If you click the '+' button to the left of the table name, a full list of the column names is dsiplayed allowing you to select individual columns for inclusion. Click **Next**
 
 6. Subsequent windows allow you to filter the rows returned, this is equivalent to adding a `where` clause to the query and finally you can have the returned rows sorted, equivalent to a `sort by` clause. We shall just default these options. The final window asks us if we want to return the data to Excel or further edit the query we have built up using Microsoft query. We will leave the default action of rturning the data to Excel. Clcik **Finish**
 
-The overall effect of this wizard is to construct an SQL query, in this case 'Select * from SN7577' send it to the SQLite system to be run and then to recieve back the results.
+The overall effect of this wizard is to construct an SQL query, in this case 'Select * from Farms' send it to the SQLite system to be run and then to recieve back the results.
 
 ![SQL_10_return_data](../fig/SQL_10_return_data.png)
 
@@ -82,12 +86,14 @@ The overall effect of this wizard is to construct an SQL query, in this case 'Se
 
 ![SQL_10_place_data](../fig/SQL_10_place_data.png)
 
-The data is returned as an Excel `Table`. All of the columns have their headings included and have filter buttons attached. You can now manipulate the data in Excel as you would any other data.
+The data is returned as an Excel `Table`. All of the columns have their headings included and have filter buttons attached. 
+You can now manipulate the data in Excel as you would any other data.
 
 
 ## Connecting to Python or other programming environments using ODBC
 
-Both Python and R (and many other programming languages) provide methods of connecting to and extracting data from SQLite databases. Full details and examples are provided in the Python lesson and the R lesson. 
+Both Python and R (and many other programming languages) provide methods of connecting to and extracting data from SQLite databases. 
+Full details and examples are provided in the Python lesson and the R lesson. 
 
 For now we will just look at code examples in Python and R, both of which run the same query as we used for the Excel example above.
 
@@ -119,6 +125,7 @@ dbClearResult(results)
 ~~~
 {: .r}
 
-We will not discuss the working of the code, that is covered in the Python and R lessons. Even without coding experience of these languages, you will be able to spot that in both cases we need to specify a connection string (the SQLite database filename) and also the text of the query itself. 
+We will not discuss the working of the code, that is covered in the Python and R lessons. 
+Even without coding experience of these languages, you will be able to spot that in both cases we need to specify a connection string (the SQLite database filename) and also the text of the query itself. 
 
 In both cases the results are stored in a variable object of the language. 
