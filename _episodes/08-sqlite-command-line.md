@@ -157,4 +157,3 @@ There are two key advantages of using this approach.
 > > 
 > {: .solution}
 {: .challenge}
-
