@@ -208,5 +208,3 @@ In this example we want to remove the wards which only have one or two farms.
 > >
 > {: .solution}
 {: .challenge}
-
- 
