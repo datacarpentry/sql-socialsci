@@ -112,4 +112,3 @@ WHERE F14_items_owned IS NOT NULL
 ~~~
 {: .sql}
 
-
