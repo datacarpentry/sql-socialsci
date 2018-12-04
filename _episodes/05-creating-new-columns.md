@@ -339,5 +339,3 @@ FROM Farms
 ;
 ~~~ 
 {: .sql}
-
-
