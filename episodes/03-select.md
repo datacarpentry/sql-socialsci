@@ -302,3 +302,4 @@ ORDER BY A11_years_farm DESC , B16_years_liv ASC
 ;
 ~~~ 
 {: .sql}
+ 
