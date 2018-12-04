@@ -214,4 +214,3 @@ rather than the full table with 61 columns.
 
 A View isn't restricted to simple `Select` statements it can be the result of aggregations and joins as well. 
 This can help reduce the complexity of queries based on the View and so aid readability. 
-
