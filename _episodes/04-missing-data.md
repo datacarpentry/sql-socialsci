@@ -26,7 +26,7 @@ The example below, using the 'Browse data' tab,  shows a section of the Farms ta
 
 ![Farms NULLs](../fig/SQL_04_Nulls_01.png)
 
-If you type '=NULL' in the filter box for 'F14_items_owned', only the rows with NULL in numage will be displayed.
+If you type '=NULL' in the filter box for `F14_items_owned`, only the rows with NULL in `F14_items_owned` will be displayed.
 
 You can get the same results using the following query;
 
