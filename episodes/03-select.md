@@ -24,10 +24,10 @@ keypoints:
 ---
 
 ## Definition of SQL 
-SQL or Structured Query Language is an internatinal standard for manipulating data in a relational database.
+SQL or Structured Query Language is an international standard for manipulating data in a relational database.
 Each Relational Database system like Oracle, MySQL or SQLite implements its own variation of the standard.
 
-Fortunateley for the types of commands and queries that we will want to write, all of the implementations are much in agreement.
+Fortunately for the types of commands and queries that we will want to write, all of the implementations are much in agreement.
 The SELECT queries we will be writing to access data in our SQLite database will execute un-altered in many of the other environments.
 
 Essentially you only have to learn SQL once.
@@ -36,12 +36,12 @@ Essentially you only have to learn SQL once.
 
 The strength of SQL is that a single SQL statement or query can request data be returned from one or many of the tables in the database. 
 You can essentially define the relationships between tables on-the-fly as part of your query statement. Relationships between tables are often included as
-part of the overall database design. In our situation we may be getting an assortment of tables from different sources so being able to imply the relatuionship as part of 
+part of the overall database design. In our situation we may be getting an assortment of tables from different sources so being able to imply the relationship as part of 
 the query has definite advantages.
 
 ## DDL and DML
 
-DDL stands for Data Definition Language. It is the set of SQL comands used to create alter of delete database objects such as tables.
+DDL stands for Data Definition Language. It is the set of SQL commands used to create alter of delete database objects such as tables.
 
 DML stands for Data Manipulation Language. For our purposes this is the SELECT command which is used to extract data items from one or more of the database tables.
 
@@ -64,7 +64,7 @@ ORDER BY colnames
 {: .sql}
 
 In practice very few queries will have all of these clauses in them simplifying many queries. On the other hand, 
-conditions in the WHERE clause can be arbitarily complex and if you need to JOIN two or more tables together then more clauses (JOIN and ON) are needed.
+conditions in the WHERE clause can be arbitrarily complex and if you need to JOIN two or more tables together then more clauses (JOIN and ON) are needed.
 
 All of the clause names above have been written in uppercase for clarity. SQL is not case sensitive. Neither do you need to write each clause on a new line, but it is often clearer to do so for all but the simplest of queries.
 
@@ -125,7 +125,7 @@ LIMIT 10;
 > > LIMIT 5;
 > > ~~~
 > > {: .sql}
-> > Because te query uses several columns (with longish names), for readability they have been set out on seperate lines. SQL takes 
+> > Because the query uses several columns (with longish names), for readability they have been set out on separate lines. SQL takes 
 > > of white space to you are free to arrange the text of the query as you like.  
 > {: .solution}
 {: .challenge}
@@ -182,7 +182,7 @@ WHERE (B17_parents_liv = 'yes' OR B18_sp_parents_liv = 'yes') AND B16_years_liv 
 
 > ## Exercise
 >
-> From the above query, breakdown the `Where` clause so that each component can be tested indiviually.
+> From the above query, breakdown the `Where` clause so that each component can be tested individually.
 > Make a note of how many rows are returned in each case.
 > 
 > > ## Solution
@@ -209,7 +209,7 @@ WHERE (B17_parents_liv = 'yes' OR B18_sp_parents_liv = 'yes') AND B16_years_liv 
 > > ~~~
 > > {: .sql}
 > > 
-> > `OR` generally creatres a less restrictive condition and `AND` makes a more restrictive condition.
+> > `OR` generally creates a less restrictive condition and `AND` makes a more restrictive condition.
 > > 
 > {: .solution}
 {: .challenge}
@@ -281,7 +281,7 @@ ORDER BY A11_years_farm
 ~~~ 
 {: .sql}
 
-By default the SQL assumes Ascending order. You can make this more explicit by using the ASC or  DESC keywords.
+By default the SQL assumes Ascending order. You can make this more explicit by using the `ASC` or `DESC` keywords.
 
 ~~~
 SELECT Id, A09_village, A11_years_farm, B16_years_liv
