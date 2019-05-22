@@ -103,7 +103,6 @@ FROM Plots
 > > {: .sql}
 > > Notice that we can use columns as part of the calculted column which are not returned in the output.
 > > Also our second new column doesn't actually need to make use of any of the other columns, it can just be a value.
-
 > {: .solution}
 {: .challenge}
 
