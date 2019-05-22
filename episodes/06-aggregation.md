@@ -66,10 +66,10 @@ from Farms;
 
 We can see from the results of running this that all 3 values are represented and that there is no missing data in this field.
 
-However if we run a similar query for 'A11_village'
+However if we run a similar query for 'A09_village'
 
 ~~~ 
-select distinct A11_village
+select distinct A09_village
 from Farms;
 ~~~ 
 {: .sql}
