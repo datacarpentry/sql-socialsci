@@ -111,7 +111,7 @@ LIMIT 10;
 
 > ## Exercise
 >
-> Write a query which returns the first 5 rows from the Farms table with only the columns Q1,Q2,Q3,Q4 and numage.
+> Write a query which returns the first 5 rows from the Farms table with only the columns Id, and B16 to B20.
 > 
 > > ## Solution
 > >  ~~~
