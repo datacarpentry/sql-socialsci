@@ -27,8 +27,8 @@ If we wanted to know the minimum, average and maximum values of the 'A11_years_f
 ~~~ 
 select 
        min(A11_years_farm),
-	   max(A11_years_farm),
-	   avg(A11_years_farm)
+       max(A11_years_farm),
+       avg(A11_years_farm)
 from Farms; 
 ~~~ 
 {: .sql}
@@ -135,9 +135,9 @@ What is not allowed is specifying a non-aggregated column in the select clause w
 ~~~ 
 select A06_province, 
        A07_district,
-	   A08_ward,
-	   A09_village,
-	   count(*) as How_many
+       A08_ward,
+       A09_village,
+       count(*) as How_many
 from Farms
 Group By A06_province, A07_district, A08_ward, A09_village
 ;
@@ -155,8 +155,8 @@ Group By A06_province, A07_district, A08_ward, A09_village
 > > select A09_village,
 > >        min(A11_years_farm) as min,
 > >        max(A11_years_farm) as max,
-> > 	   avg(A11_years_farm) as avg,
-> > 	   count(*) as how_many
+> >        avg(A11_years_farm) as avg,
+> >        count(*) as how_many
 > > from Farms
 > > where A07_district = 'Nhamatanda'
 > > group by A09_village;
@@ -179,8 +179,8 @@ In a `HAVING` clause you can use the column alias to refer to the aggregated col
 ~~~ 
 select A08_ward,
        min(A11_years_farm) as min_years,
-	   max(A11_years_farm) as max_years,
-	   count(*) as how_many_farms
+       max(A11_years_farm) as max_years,
+       count(*) as how_many_farms
 from Farms
 group by A08_ward
 having how_many_farms > 2;
