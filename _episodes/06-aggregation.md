@@ -6,7 +6,7 @@ questions:
 - "How can I summarise the data in my tables"
 objectives:
 - "Use the Distinct keyword to get a unique set of values"
-- "Usie the ‘group by’ clause to summarise data"
+- "Use the ‘group by’ clause to summarise data"
 - "Use built-in statistical functions to provide column summaries"
 - "Use the ‘having’ clause to provide selection criteria to the summary values"
 - "Understand the difference between the ‘where’ and the ‘having’ clauses"
@@ -35,7 +35,7 @@ from Farms;
 
 This sort of query provides us with a general view of the values for a particular column or field across the whole table.
   
-`min` , `max` and `avg` are builtin aggregate functions in SQLite (and any other SQL database system). There are other such functions avaialable. 
+`min` , `max` and `avg` are builtin aggregate functions in SQLite (and any other SQL database system). There are other such functions available. 
 A complete list can be found in the SQLite documentation [here](https://sqlite.org/lang_aggfunc.html)  
    
 It is more likely that we would want to find such values for a range, or multiple ranges of rows where each range is determined by the 
@@ -46,16 +46,16 @@ values of some other column in the table. Before we do this we will look at how 
 
 For the SAFI survey, it was know in advance all of the possible values that certain variables of columns could contain. For example 
 the 'A06_province', 'A07_district', 'A08_ward' and 'A09_village' variables 
-could only ever contain a few specfic values.
+could only ever contain a few specific values.
 
-As the SAFI survey was delivered via an Android phone app. it was possible to create the app so that the possible values could be 
+As the SAFI survey was delivered via an Android phone app. It was possible to create the app so that the possible values could be 
 selected from a dropdown list, eliminating any possibility of typing errors. For the 'A06_province' there were only three possibilities, but 
 by the time we get down to 'A09_villages', a far more specific geography, it would not have been possible to anticipate in advance all of the possible values (village names)
-and so the vlues for this field were manually typed in.
+and so the values for this field were manually typed in.
 
-To obtain a list of umique values in a particular column we can use the `Distinct` keyword.
+To obtain a list of unique values in a particular column we can use the `Distinct` keyword.
  
-Using the Farms table we will obtain a list of all of the differentvalues of the 'A06_province' column contained in the table.
+Using the Farms table we will obtain a list of all of the different values of the 'A06_province' column contained in the table.
 
 
 ~~~ 
@@ -64,7 +64,7 @@ from Farms;
 ~~~ 
 {: .sql}
 
-We can see from the reults of running this that all 3 values are represented and that there is no missing data in this field.
+We can see from the results of running this that all 3 values are represented and that there is no missing data in this field.
 
 However if we run a similar query for 'A11_village'
 
@@ -74,13 +74,13 @@ from Farms;
 ~~~ 
 {: .sql}
 
-we get 
+We get 
 
 ![Villages](../fig/SQL_06_villages.png)
 
 The problem with allowing free-form text quite obvious. Having two villages, one called 'Massequece' and the other called 'Massequese' is unlikely.
 
-Detcting this type of problem in a large dataset can be very difficult if you are just 'eyeballing' the content. This small SQL query makes it very clear, 
+Detecting this type of problem in a large dataset can be very difficult if you are just 'eyeballing' the content. This small SQL query makes it very clear, 
 and in the OpenRefine lesson we provide approaches to detecting and correcting such errors. SQL is not the best tool for correcting this type of error.
 
 
@@ -145,7 +145,7 @@ Group By A06_province, A07_district, A08_ward, A09_village
 {: .sql}
 
 > ## Exercise
-> Write a query which retuns the min, max and avg values as well as a count of the number of records involved
+> Write a query which returns the min, max and avg values as well as a count of the number of records involved
 > for the 'A11_years_farm' column for each village in the 'Nhamatanda' district.   
 >
 >
