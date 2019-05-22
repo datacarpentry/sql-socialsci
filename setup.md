@@ -14,7 +14,7 @@ objectives:
 - "Invoke the SQLite Shell program"
 - "Install the ODBC driver"
 keypoints:
-- "Both the DB Drowser application and the SQLite tools can be directly downloaded from the Internet"
+- "Both the DB Browser application and the SQLite tools can be directly downloaded from the Internet"
 - "The DB Browser application is a standard windows program"
 - "The sqlite3 program is run from the windows commandline"
 - "You will need admin privileges to install the ODBC driver"
