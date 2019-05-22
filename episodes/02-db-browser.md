@@ -47,7 +47,8 @@ The overall layout of DB Browser is quite flexible. The panes on the right-hand 
 We will make a couple of initial changes to the layout of the screen. These will be retained across sessions.
 
 1. From the View menu item un-select the 'Edit Database Cell' icon to the left of the text. This will make the pane close and the bottom pane will be expanded automatically to fill the space.
-2. From the View menu item select 'preferences' and select the Data Browser tab.
+2. a) On Windows, From the View menu item select 'preferences' and select the Data Browser tab.
+2. b) On Mac, From the "DB Browser for SQLite" menu item select 'preferences' and select the Data Browser tab.
 
 ![Data Browser Preferences](../fig/DB_Browser_run_2.png)
 
