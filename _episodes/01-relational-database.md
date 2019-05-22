@@ -109,7 +109,7 @@ for these and use the built-in Date And Time Functions to manipulate them. We wi
 
 
 
-## Why do tables have primaery key columns?
+## Why do tables have primary key columns?
 
 Whenever you create a table, you will have the option of designating one of the columns as the primary key column. The main property of the primary key column is that the values contained in it must uniquely identify that particular row. That is you cannot have duplicate primary keys. This can be an advantage which adding rows to the table as you will not be allowed to add the same row (or  a row with the same primary key) twice.
 
