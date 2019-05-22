@@ -40,7 +40,7 @@ It does not create an icon on the desktop. To explicitly launch the application 
 
 ## Install the SQLite Shell program
 
-The SQLite shell can be downloaded from [here](https://sqlite.org/download.html). There are versions available for Linux, Mac and Windows. As I have a Windows machine I will download the Windows version. You should download the version appropriate to your machine.
+The SQLite shell can be downloaded from [here](https://sqlite.org/download.html). There are versions available for Linux, Mac and Windows. As I have a Windows machine I will download the Windows version. You should download the version appropriate to your machine. Note that MacOS already have sqlite installed so you can skip this section.
 
 ![SQLite tools](./fig/SQL_01_sqlite_tools_download.png)
 
