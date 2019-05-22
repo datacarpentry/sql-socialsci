@@ -17,9 +17,9 @@ keypoints:
 - "Database tables can be created using the DDL command 'Create Table'"
 - "They can be populated using the 'INSERT INTO ' command"
 - "The SQLite plugin allows you to create a table and import data into it in one step"
-- "There are many options availabele to the 'CREATE TABLE command which allows greater control over how or what data can be loaded into thetable"
+- "There are many options available to the 'CREATE TABLE command which allows greater control over how or what data can be loaded into the table"
 - "A View can be treated just like a table in a query"
-- "A View does not contain data like a rtable does, only the instructions on how to get the data"
+- "A View does not contain data like a table does, only the instructions on how to get the data"
 ---
 
 ## Using SQL code to create tables
@@ -39,9 +39,9 @@ First...............
 
 So far we have created and populated tables from scratch or created tables from existing tables. 
 But initially your data is likely to be external to the relational database system in a set of simple files. 
-Typically in CSV (comma seperated values) or Tab delimited format.
+Typically in CSV (comma separated values) or Tab delimited format.
 
-All relational database systems will have some utitity which will allow you to import such files into tables in the database. 
+All relational database systems will have some utility which will allow you to import such files into tables in the database. 
 The DB Browser application has a nice GUI (Graphical Use Interface) to allow you to do this.
 
 The Farms, Plots and Crops tables that we have been using were created in the DB Browser application by importing a CSV 
@@ -84,7 +84,7 @@ It is slightly misleading because in fact we are modifying an existing table and
 However it does illustrate quite well the fact that whatever you do in the GUI, it is essentially translated into an SQL statement and executed.
 You could copy and paste this definition into the SQL editor and if you change the table name before you ran it, you would create a new table with that name.
 This new table would have no data in it. This is how the insert table wizard works. It uses the header row from your data to create a `CREATE TABLE` statement which it runs. 
-It then transforms each of the rows of data into SQL `INSERT INTO...` statements which it aslo runs to get the data into the table.
+It then transforms each of the rows of data into SQL `INSERT INTO...` statements which it also runs to get the data into the table.
 
 In addition to changing the data types there are several other options which can be set when you are creating of modifying a table. 
 For our tables we don't need to make use of them but for completeness we will describe what they are;
@@ -92,17 +92,17 @@ For our tables we don't need to make use of them but for completeness we will de
 **PK** - Or Primary Key, a unique identifier for the row. In the Farms table, there is an `Id` column which uniquely identifies a Farm. 
 This could  act as a unique identifier for the row as a whole. We could mark this as the primary key if we wanted to. 
 
-**AI** - Or Auto Increment. This isn't really applicable to tables created in this way, i.e. the creation of the schema immediatley followed by loading data from a file. It is usally used to generate uniques values for a column which could then act as a primary key. If you have an 'Auto Increment' column in a table, when you insert values you would not supply a value for the column  as SQLite will automatically provide a value for each row added.
+**AI** - Or Auto Increment. This isn't really applicable to tables created in this way, i.e. the creation of the schema immediately followed by loading data from a file. It is usually used to generate unique values for a column which could then act as a primary key. If you have an 'Auto Increment' column in a table, when you insert values you would not supply a value for the column  as SQLite will automatically provide a value for each row added.
 
 **Not Null** - If this is checked then it means that there must be a value for each row in this column. If it is **not** set and there is no value provided in the data then it will be set to 'NULL' which means 'I know nothing about what should be here'. (Not the string 'NULL' but the NULL value)
 
 In real datasets missing values are quite common and we have already looked at ways of dealing with them when they occur in tables. If you you were **check** this box and the data did have missing values for this column, the record from the file would be rejected and the load of the file will fail.
 
-**U** - Or Unique. This allows you to say that the contents of the columnn, which is not the primary key column has to have unique values in it. Like Allow Null this is another way of providing some data validation as the data is imported. Although it doesn't really apply with the DB Browser import wizard as the data is imported before you are allowed to set this option.
+**U** - Or Unique. This allows you to say that the contents of the column, which is not the primary key column has to have unique values in it. Like Allow Null this is another way of providing some data validation as the data is imported. Although it doesn't really apply with the DB Browser import wizard as the data is imported before you are allowed to set this option.
 
 **Default** - This is used in conjunction with 'Not Null', if a value is not provided in the dataset, then if provided, the default value for that column will be used. 
 
-**Check** - This allows you to specify a constraint on the vlaues entered for the column. You could restrict the range of values or compare the value with other columns values.
+**Check** - This allows you to specify a constraint on the values entered for the column. You could restrict the range of values or compare the value with other columns values.
 
 These three options, 'Not Null', 'Unique' and 'Default' , need to be used with caution and certainly their use needs to be fully documented and explained. 
 
@@ -114,7 +114,7 @@ These three options, 'Not Null', 'Unique' and 'Default' , need to be used with c
 > 
 > > ## Solution
 > > 
-> > You need to scroll down to the bottom of the `CREATE TABLE` statemant to see the
+> > You need to scroll down to the bottom of the `CREATE TABLE` statement to see the
 > > ~~~
 > > 	PRIMARY KEY(`Id`)
 > > ~~~ 
@@ -128,7 +128,7 @@ These three options, 'Not Null', 'Unique' and 'Default' , need to be used with c
 
 You could copy and paste this definition into the SQL editor and if you change the table name before you ran it, you would create a new table with that name.
 This new table would have no data in it. This is how the insert table wizard works. It uses the header row from your data to create a `CREATE TABLE` statement which it runs. 
-It then transforms each of the rows of data into SQL `INSERT INTO...` statements which it aslo runs to get the data into the table.
+It then transforms each of the rows of data into SQL `INSERT INTO...` statements which it also runs to get the data into the table.
 
 For small tables defining them and populating them with data in this way may be acceptable. 
 But for larger tables this approach not only to defining the tables but adding potentially thousands of rows of data can be somewhat impractical.
@@ -201,7 +201,7 @@ FROM Farms;
 
 Tables and Views are so closely related that if you try to run the code above, although 'Table' has been changed to 'View' you will get an error complaining that the 'Table' already exists.
 
-It is common practice when creating Views to indicate somewhere in the the name that it is in fact a View. e.g. vFarms_location or Farms_location_v.
+It is common practice when creating Views to indicate somewhere in the name that it is in fact a View. e.g. vFarms_location or Farms_location_v.
 
 Although tables and views can be used almost interchangeably in `Select` queries it is important to note that a `View` unlike a `Table` contains no data. 
 It is essentially the SQL statement needed to produce that data from the underlying data. 
