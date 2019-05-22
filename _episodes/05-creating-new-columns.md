@@ -277,8 +277,9 @@ ORDER BY year, month, day
 ~~~ 
 {: .sql}
 
-By Default the `ORDER BY` clause will sort in ascending order, smallest to biggist, we can make this explicit by usingthe `ASC¬ keyword.
-Or if we want to sort in descending order we can use the `DESC` keyword.
+By default the `ORDER BY` clause will sort in ascending order, smallest to
+biggist, we can make this explicit by usingthe `ASC` keyword. Or if we want to
+sort in descending order we can use the `DESC` keyword.
 
 ~~~ 
 SELECT A01_interview_date,
