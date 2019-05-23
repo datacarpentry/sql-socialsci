@@ -116,7 +116,7 @@ These three options, 'Not Null', 'Unique' and 'Default' , need to be used with c
 > > 
 > > You need to scroll down to the bottom of the `CREATE TABLE` statement to see the
 > > ~~~
-> > 	PRIMARY KEY(`Id`)
+> >     PRIMARY KEY(`Id`)
 > > ~~~ 
 > > {: .sql}
 > > line added
