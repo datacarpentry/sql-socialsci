@@ -21,6 +21,11 @@ keypoints:
 ---
 ## Introduction
 
+Download datasets:
+
+- pre-populated sqlite database: [SQL_SAFI.sqlite](https://datacarpentry.org/sql-socialsci/data/SQL_SAFI.sqlite)
+- Farms table as csv : [SAFI_farms.csv](https://datacarpentry.org/sql-socialsci/data/SAFI_farms.csv)
+
 ## Installing DB Browser for SQLite 
 
 The software can be downloaded from the [DB Browser](http://sqlitebrowser.org/) site
