@@ -104,13 +104,23 @@ the database to connect to and provide a file of the commands that you want to e
 
 Here is an example
 
-1. create a file of commands
+1. create a file `commands.sql` containing the following content:
 
-![SQlite commands](../fig/SQL_08_SQLite_SQLite_commands.png)
+```
+result.csv
+.mode csv
+.output results.csv
+.open SQL_SAFI.sqlite
+SELECT * from Farms where A09_village='God';
+```
+
 
 2. run the sqlite3 program in the following way
 
-![SQlite commands output](../fig/SQL_08_SQLite_cmd_output.png)
+```
+$ sqlite3 < commands.sql
+```
+
 
 Notice that there is no output to the screen and that the shell is closed. The results of running the query have been placed in the results.csv file.
 
