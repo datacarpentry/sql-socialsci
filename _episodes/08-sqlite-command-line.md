@@ -106,20 +106,22 @@ Here is an example
 
 1. create a file `commands.sql` containing the following content:
 
-```
+~~~
 result.csv
 .mode csv
 .output results.csv
 .open SQL_SAFI.sqlite
 SELECT * from Farms where A09_village='God';
-```
+~~~
+{: .sql}
 
 
 2. run the sqlite3 program in the following way
 
-```
+~~~
 $ sqlite3 < commands.sql
-```
+~~~
+{: .sh}
 
 
 Notice that there is no output to the screen and that the shell is closed. The results of running the query have been placed in the results.csv file.
