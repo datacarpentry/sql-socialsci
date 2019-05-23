@@ -172,9 +172,9 @@ The relational design makes use of multiple tables as a way of avoiding repetiti
 |-----------------------------|:------|
 |Inner Join | Matched rows in both tables are returned|
 |Left outer join | All row in the left hand table are returned along with the matches from the right hand table or NULLs if there is no match|
-|Right outer join	| All row in the right hand table are returned along with the matches from the left hand table or NULLs if there is no match|
-|Full outer join	| All rows from both tables are returned, with NULLs where there are no matches|
-|Cross join	| Each row in the first table will be matched with every row in the second table. It is possible to imagine situations where this is required but in most cases it is a mistake and un-intended. |
+|Right outer join | All row in the right hand table are returned along with the matches from the left hand table or NULLs if there is no match|
+|Full outer join | All rows from both tables are returned, with NULLs where there are no matches|
+|Cross join | Each row in the first table will be matched with every row in the second table. It is possible to imagine situations where this is required but in most cases it is a mistake and un-intended. |
 
 In SQLite only the `Inner join`, the `Left Outer join` and the `Cross join` are supported. You can create a `Right outer join` by swapping the tables in the `From` and `Join` clauses. A `Full outer join` is the combination of the Left outer and Right outer joins.
  

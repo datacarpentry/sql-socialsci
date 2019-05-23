@@ -26,12 +26,12 @@ keypoints:
 
 ## Creating new columns
 
-In addition to selecting existing columns from a table, you can also create new columns in the query output based on the exisiting columns. 
+In addition to selecting existing columns from a table, you can also create new columns in the query output based on the existing columns. 
 These new columns only exist in the output. The table used in the query is not changed in any way.
 
-The Plots table contains a column, `D02_total_plot` repesenting the area of the plot and the `D03_unit_land` column gives the units. In our sample dataset the unit is always 'hectare'.
-However in the full dataset some of the plot areas are recorded in 'acres'. We want to create a new output column wich shows the hextare value converted into acres.
-To do this we could yuse the following SQL. ( 1 hectare = 2.4701 acres)
+The Plots table contains a column, `D02_total_plot` representing the area of the plot and the `D03_unit_land` column gives the units. In our sample dataset the unit is always 'hectare'.
+However in the full dataset some of the plot areas are recorded in 'acres'. We want to create a new output column which shows the hectare value converted into acres.
+To do this we could use the following SQL. ( 1 hectare = 2.4701 acres)
 
 
 ~~~ 
@@ -61,7 +61,7 @@ FROM Plots
 {: .sql}
 
 The **AS** keyword itself is optional. You can just put the name of the new column, but using the **AS** keyword adds clarity.
-Creating column names in this way is reffered to as adding an alias. 
+Creating column names in this way is referred to as adding an alias. 
 This may seem a bit strange for columns which had no real name in the first place, but the point is, you can give any table column name an alias to be used in the output rather than the original. 
 
 
@@ -69,7 +69,7 @@ This may seem a bit strange for columns which had no real name in the first plac
 ## Using built-in functions to create new values
 
 In addition to using simple arithmetic operations to create new columns, you can also use some of the SQLite builtin functions. 
-Full details of the available builtin functions are available from the SQLite.org wbsite [here](https://sqlite.org/lang_corefunc.html#instr).
+Full details of the available builtin functions are available from the SQLite.org website [here](https://sqlite.org/lang_corefunc.html#instr).
 
 We will look at some of the arithmetic and statistical functions when we deal with aggregations in a later lesson. 
 
@@ -89,19 +89,19 @@ FROM Plots
 > ## Exercise
 >
 > Write an SQL query which returns the Id, plot_Id, D01_curr_plot and D02_total_plot columns from the Plots table with the addition of a calculated column
-> representing the plot area in acres and a column repesenting the units of the calculated column.
+> representing the plot area in acres and a column representing the units of the calculated column.
 > 
 > > ## Solution
 > > 
 > > ~~~ 
 > > SELECT Id, plot_Id, D01_curr_plot, D02_total_plot,
 > >        ROUND(D02_total_plot * 2.4701, 2) AS D02_total_plot_converted,
-> > 	   'acres' AS D03_unit_land_converted
+> >        'acres' AS D03_unit_land_converted
 > > FROM Plots
 > > ;
 > > ~~~ 
 > > {: .sql}
-> > Notice that we can use columns as part of the calculted column which are not returned in the output.
+> > Notice that we can use columns as part of the calculated column which are not returned in the output.
 > > Also our second new column doesn't actually need to make use of any of the other columns, it can just be a value.
 > {: .solution}
 {: .challenge}
@@ -159,8 +159,8 @@ SQLite does have a date function. Unfortunately by itself, it won't work on A01_
 ~~~ 
 SELECT A01_interview_date, 
        date(A01_interview_date) AS converted_A01,
-	   A04_start,
-	   date(A04_start) AS coverted_A04
+       A04_start,
+       date(A04_start) AS coverted_A04
 FROM Farms
 ;
 ~~~ 
@@ -180,8 +180,8 @@ We can extract individual parts of the date like this;
 ~~~ 
 SELECT A01_interview_date,
        substr(A01_interview_date,7,4) as year,
-	   substr(A01_interview_date,4,2) as month,
-	   substr(A01_interview_date,1,2) as day
+       substr(A01_interview_date,4,2) as month,
+       substr(A01_interview_date,1,2) as day
 FROM Farms
 ;
 ~~~ 
@@ -192,8 +192,8 @@ FROM Farms
 ~~~ 
 SELECT A01_interview_date,
        substr(A01_interview_date,7,4) || '-' ||
-	   substr(A01_interview_date,4,2) || '-' ||
-	   substr(A01_interview_date,1,2) as converted_date
+       substr(A01_interview_date,4,2) || '-' ||
+       substr(A01_interview_date,1,2) as converted_date
 FROM Farms
 ;
 ~~~ 
@@ -205,9 +205,9 @@ We can then convert our new string containing the date into a proper date by pas
 SELECT A01_interview_date,
        date(
        substr(A01_interview_date,7,4) || '-' ||
-	   substr(A01_interview_date,4,2) || '-' ||
-	   substr(A01_interview_date,1,2)
-	   ) as converted_date
+       substr(A01_interview_date,4,2) || '-' ||
+       substr(A01_interview_date,1,2)
+       ) as converted_date
 FROM Farms
 ;
 ~~~ 
@@ -219,9 +219,9 @@ We can now use our `converted_date` column to sort by
 SELECT A01_interview_date,
        date(
        substr(A01_interview_date,7,4) || '-' ||
-	   substr(A01_interview_date,4,2) || '-' ||
-	   substr(A01_interview_date,1,2)
-	   ) as converted_date
+       substr(A01_interview_date,4,2) || '-' ||
+       substr(A01_interview_date,1,2)
+       ) as converted_date
 FROM Farms
 ORDER BY converted_date
 ;
@@ -239,9 +239,9 @@ ORDER BY converted_date
 > > SELECT A01_interview_date,
 > >        date(
 > >        substr(A01_interview_date,7,4) || '-' ||
-> > 	   substr(A01_interview_date,4,2) || '-' ||
-> > 	   substr(A01_interview_date,1,2)
-> > 	   ) as converted_date
+> >        substr(A01_interview_date,4,2) || '-' ||
+> >        substr(A01_interview_date,1,2)
+> >        ) as converted_date
 > > FROM Farms
 > > ORDER BY A01_interview_date
 > > ;
@@ -256,8 +256,8 @@ the meaning of the date parts un-ambiguous. Our first SQL query for the date con
 ~~~ 
 SELECT A01_interview_date,
        substr(A01_interview_date,7,4) as year,
-	   substr(A01_interview_date,4,2) as month,
-	   substr(A01_interview_date,1,2) as day
+       substr(A01_interview_date,4,2) as month,
+       substr(A01_interview_date,1,2) as day
 FROM Farms
 ;
 ~~~ 
@@ -269,8 +269,8 @@ in which we want them sorted
 ~~~ 
 SELECT A01_interview_date,
        substr(A01_interview_date,7,4) as year,
-	   substr(A01_interview_date,4,2) as month,
-	   substr(A01_interview_date,1,2) as day
+       substr(A01_interview_date,4,2) as month,
+       substr(A01_interview_date,1,2) as day
 FROM Farms
 ORDER BY year, month, day
 ;
@@ -284,8 +284,8 @@ sort in descending order we can use the `DESC` keyword.
 ~~~ 
 SELECT A01_interview_date,
        substr(A01_interview_date,7,4) as year,
-	   substr(A01_interview_date,4,2) as month,
-	   substr(A01_interview_date,1,2) as day
+       substr(A01_interview_date,4,2) as month,
+       substr(A01_interview_date,1,2) as day
 FROM Farms
 ORDER BY year DESC, month DESC, day DESC
 ;
@@ -303,16 +303,16 @@ This format of the case statement allows you to check if various values **are eq
 ~~~ 
 SELECT Id, country,
        CASE country
-	       WHEN 'Moz' THEN 'Mozambique'
-		   WHEN 'Taz' THEN 'Tanzania'
-	   ELSE 'Unknown Country'
+           WHEN 'Moz' THEN 'Mozambique'
+           WHEN 'Taz' THEN 'Tanzania'
+       ELSE 'Unknown Country'
        END AS country_fullname
 FROM Farms
 ;
 ~~~ 
 {: .sql}
 
-There is a more general form which alows to to perform any kind of test.
+There is a more general form which allows to to perform any kind of test.
 
 ## Using SQL syntax to create ‘binned’ values
 
@@ -327,14 +327,14 @@ statement as part of the `SELECT` clause
 ~~~ 
 SELECT Id, A11_years_farm,
        CASE
-	       WHEN  A11_years_farm BETWEEN 1 AND 10 THEN '1-10'
-		   WHEN  A11_years_farm BETWEEN 11 AND 20 THEN '11-20'
-		   WHEN  A11_years_farm BETWEEN 21 AND 30 THEN '21-30'
-		   WHEN  A11_years_farm BETWEEN 31 AND 40 THEN '31-40'
-		   WHEN  A11_years_farm BETWEEN 41 AND 50 THEN '41-50'
-		   WHEN  A11_years_farm BETWEEN 41 AND 50 THEN '51-60'
-	   ELSE '> 60'	   
-	   END AS A11_years_farm_range
+           WHEN  A11_years_farm BETWEEN 1 AND 10 THEN '1-10'
+           WHEN  A11_years_farm BETWEEN 11 AND 20 THEN '11-20'
+           WHEN  A11_years_farm BETWEEN 21 AND 30 THEN '21-30'
+           WHEN  A11_years_farm BETWEEN 31 AND 40 THEN '31-40'
+           WHEN  A11_years_farm BETWEEN 41 AND 50 THEN '41-50'
+           WHEN  A11_years_farm BETWEEN 41 AND 50 THEN '51-60'
+       ELSE '> 60'       
+       END AS A11_years_farm_range
 FROM Farms
 ;
 ~~~ 

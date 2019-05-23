@@ -44,7 +44,7 @@ This table was created from a csv file, part of which looks like this
 ![Farms_csv](../fig/SQL_04_Nulls_02.png)
 
 The highlighted area shows part of the record with Id = 21, the second record returned by the query. It starts with the 'F10_liv_owned' column and ends 
-with the 'G01_no_meals' column. The Arrow points to the two consequetive ','s representing the lack of a value for the 'F14_items_owned' column. 
+with the 'G01_no_meals' column. The Arrow points to the two consecutive ','s representing the lack of a value for the 'F14_items_owned' column. 
 These values are missing from the data.
 
 
@@ -74,8 +74,8 @@ Only if the Farmer said that they did use water (E01_water_use = 'yes') they wer
 in E_yes_group_count otherwise this field was not even presented in the survey and so contains a `NULL` value. 
 In this situation we expect `NULL` values and they will not cause any problems.
 
-However the `F14_items_owned` column records the possesions of the Farmer. This question was always asked. It is not clear from the `NULL` values we 
-find in this field whether or not it means 'I have no possesions' or 'I do not wish to tell you what possessions I have', in short, we know nothing about the items owned and therefore 
+However the `F14_items_owned` column records the possessions of the Farmer. This question was always asked. It is not clear from the `NULL` values we 
+find in this field whether or not it means 'I have no possessions' or 'I do not wish to tell you what possessions I have', in short, we know nothing about the items owned and therefore 
 the value of `NULL` is appropriate. 
 
 
@@ -84,7 +84,7 @@ the value of `NULL` is appropriate.
 
 There are several statistical techniques that can be used to allow for `NULL` values, which one you might will depend on what has caused the `NULL` value to be recorded.
 
-You may want to change the `NULL` value to something else. For example if we knew that the `NULL` values in the `F14_items_owned` column actually meant that the Farmer had no posessions then we 
+You may want to change the `NULL` value to something else. For example if we knew that the `NULL` values in the `F14_items_owned` column actually meant that the Farmer had no possessions then we 
 might want to change the `NULL` values to '[]' to represent and empty list. We can do that in SQL with an `UPDATE` query.
 
 The update query is shown below. We are not going to run it as it would change our data. 

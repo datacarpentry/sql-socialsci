@@ -61,7 +61,7 @@ Towards the bottom there is a section dealing with Field colors. You will see th
 For this lesson we will be making extensive use of the SQL_SAFI database. If you do not already have a copy of this database you can download it from [here](../data/SQL_SAFI.sqlite).
 
 To open the database in DB Browser do the following;
-1. click on the 'open database' button in the toolbar.
+1. Click on the 'open database' button in the toolbar.
 2. Navigate to where you have stored the database file on your local machine, select it and click open.
 
 When you open the database, the 'Database Structure' tab on the left and the 'DB Schema' pane on the right will look very similar. 
@@ -96,13 +96,13 @@ The second pane has the tabular results, and the bottom pane has a message indic
 
 On the toolbar at the top there are eight buttons. Left to right they are:
 
-* Open Tab       (creates a new tab in the editor)
-* Open SQL file  (allows you to load a prepared file of SQL into the editor - the tab takes the name of he file)
-* Save SQL file  (allows you to save the current contents of the active pane to the local file system)
-* Execute SQL    (Executes all of the SQL statements in the editor pane)
+* Open Tab        (creates a new tab in the editor)
+* Open SQL file   (allows you to load a prepared file of SQL into the editor - the tab takes the name of he file)
+* Save SQL file   (allows you to save the current contents of the active pane to the local file system)
+* Execute SQL     (Executes all of the SQL statements in the editor pane)
 * Execute current line    (Actually executes whatever is selected)
 * Save Results    (Either to a CSV file or as a database view. We will look at views in a later episode)
-* Find 			  (Text in the editor window)
+* Find            (Text in the editor window)
 * Find & Replace  (Text in the editor window) 
 
 
@@ -117,7 +117,7 @@ The bottom pane is for messages about the execution, either an error message or 
 ## Creating a database
 
 As well as opening (connecting) to existing databases it is also possible to create new SQLite databases and tables using DB Browser.
-To create a database click the New Database button from the main toolbar (also available from the File menu). You will initially be asked for a name for the database and where you want to save it. It is saved as a single file. You can choose your own extension but 'sqlite' is recommended. If you do not provide a default, then a '.db' extension will be used. Although the new database is empty, in that there are no tables in it, the .sqlite file itself is not empty.
+To create a database click the New Database button from the main toolbar (also available from the File menu). You will initially be asked for a name for the database and where you want to save it. It is saved as a single file. You can choose your own extension but 'sqlite' is recommended. If you do not provide a default, then a '.db' extension will be used. Although the new database is empty, in that there are no tables in it, the `.sqlite` file itself is not empty.
 
 Once you have saved the database file the Create Table wizard will open allowing you to create a table. You can cancel this as we will be going through the create table process in a later episode.
 

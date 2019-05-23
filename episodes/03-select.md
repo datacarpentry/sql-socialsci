@@ -117,10 +117,10 @@ LIMIT 10;
 > >  ~~~
 > > SELECT  Id
 > >       , B16_years_liv
-> > 	  , B17_parents_liv
-> > 	  , B18_sp_parents_liv
-> > 	  , B19_grand_liv
-> > 	  , B20_sp_grand_liv
+> >     , B17_parents_liv
+> >     , B18_sp_parents_liv
+> >     , B19_grand_liv
+> >     , B20_sp_grand_liv
 > > FROM Farms
 > > LIMIT 5;
 > > ~~~
@@ -162,8 +162,8 @@ SELECT  Id
 FROM Farms
 WHERE    B17_parents_liv = 'yes' 
      AND B18_sp_parents_liv = 'yes' 
-	 AND B19_grand_liv = 'yes' 
-	 AND B20_sp_grand_liv = 'yes' 
+     AND B19_grand_liv = 'yes' 
+     AND B20_sp_grand_liv = 'yes' 
 ;
 ~~~ 
 {: .sql}
@@ -259,7 +259,7 @@ The list of values in brackets do not have to be contiguous or even in order.
 > > FROM Farms
 > > WHERE     A09_village IN ('God', 'Ruaca') 
 > >       AND A11_years_farm BETWEEN 21 AND 29 
-> > 	  AND B16_years_liv > 40
+> >       AND B16_years_liv > 40
 > > ;
 > > ~~~
 > > 
