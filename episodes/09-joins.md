@@ -30,13 +30,13 @@ keypoints:
 In any relational database system, the ability to join tables together is a key querying requirement.
 Joins are used to combine the columns from two (or more) tables together to form a single table. 
 A join between tables will only be possible if they have at least one column in common. 
-The column doesn’t have to have the same name in each table, and quite often they won’t, but they do have to have a common usage.
+The column doesn't have to have the same name in each table, and quite often they won’t, but they do have to have a common usage.
 
 
-In the SAFI database we have three tables. Farms, Plots and Crops. Each farm has a number of plots (or fields) and each plot can be used to grow differnt crops.
-A question you might ask is: Which Farms with more than 12 people in the hosehold grow Maize? No single table has the answer to this question.
+In the SAFI database we have three tables. Farms, Plots and Crops. Each farm has a number of plots (or fields) and each plot can be used to grow different crops.
+A question you might ask is: Which Farms with more than 12 people in the household grow Maize? No single table has the answer to this question.
 
-We can write queries to answer each part seperately
+We can write queries to answer each part separately
 
 
 
@@ -56,7 +56,7 @@ where D_curr_crop = 'maize'
 and
 
 ~~~
--- Which farms have more than 12 in the Houshold
+-- Which farms have more than 12 in the Household
 select Id, B_no_membrs 
 from Farms
 where B_no_membrs > 12
@@ -87,16 +87,16 @@ on a.Id = b.Id and a.B_no_membrs > 12 and b.D_curr_crop = 'maize'
 
 There are several things to notice about this query:
 
-1. We have used alias' for the the table names in the same way as we used with columns in a previous lesson. In this case though, it is not to povide
+1. We have used alias' for the table names in the same way as we used with columns in a previous lesson. In this case though, it is not to provide
 more meaningful names, in fact alias' for tables are often single letters to save key strokes.
 2. We use the table alias as a prefix, plus a '.' when we refer to a column name from the table. You don't have to do this, but it generally adds clarity to the query.
 3. You will need to use an alias when you need to refer to a column with the same name in both tables. In our case we need to compare the `Id` column in both tables.
-4. In the select clause, we list all of the columns, from both table that we want in the output. We use tha alias' for clarity. If the column name is not ambiguous, i.e it only occurs in one of the tables it 
+4. In the select clause, we list all of the columns, from both table that we want in the output. We use the alias' for clarity. If the column name is not ambiguous, i.e it only occurs in one of the tables it 
 can be omitted, but as we have said it is better to leave it in for clarity.
 5. The name of the second table is given in the `join` clause.
-6. The conditions of the `join` are given in the `on` clause. The `on` clause is very much like a `where` clause, in that you specifiy expressions which restrict what rows
+6. The conditions of the `join` are given in the `on` clause. The `on` clause is very much like a `where` clause, in that you specific expressions which restrict what rows
 are output. In our example we have three expressions. The last two are the individual expressions we used in the previous, single table queries. The first 
-expresiion `a.Id = b.Id` is the expression whih determines how we want the two tables to be joined. 
+expression `a.Id = b.Id` is the expression which determines how we want the two tables to be joined. 
 We are only interested in rows from both table where the `Id` values match.
 
 When we run this query we get output like the following:
@@ -151,8 +151,8 @@ Although typically the values being matched from the first table are a unique (D
 to be unique. This is why in the results of our previous query there are two entries with Id 111. In the second table there are two records with Id 111 and so the record from the first table gets combined with both the records in 
 the second table and two records are output.
 
-Because every Farm grows some crops, there will be at least one record for each Id output. I for whatever reasonn the was a Farm with no crops 
-then thare wou;ld be no record output for that Farm Id. Similarly if there was an entry in the Crops table with an Id which didn't match any of the Ids in the Farms table, 
+Because every Farm grows some crops, there will be at least one record for each Id output. I for whatever reason the was a Farm with no crops 
+then there would be no record output for that Farm Id. Similarly if there was an entry in the Crops table with an Id which didn't match any of the Ids in the Farms table, 
 then it would not be output. There is only an output record when the two columns have matching values.
 
 
@@ -196,7 +196,7 @@ However it will also be important for you to establish rows in both of the table
 * You may need to explain why some are missing
 
 To do this you will want to use a `Full outer join` or in the case of SQLite a `Left outer join` run twice using both tables in the `From` and `Join` clauses. We can demonstrate ability
-`Left outer join` using the Crops_rice table we created ealier. 
+`Left outer join` using the Crops_rice table we created earlier. 
 
 The query below is similar to our original join except that we are now joining with the crops_rice table and we have dropped the additional criteria.
 
@@ -216,15 +216,15 @@ table are shown as NULL.
 
 ### Joins with more than two tables
 
-Joins are not restricted to just two tables. you can have any number, but the more you have the more unreadable the SQL query is likely to become. Quite often you can create views to hide this complexity.
+Joins are not restricted to just two tables. You can have any number, but the more you have the more unreadable the SQL query is likely to become. Quite often you can create views to hide this complexity.
 
-Our original question was: 'Which Farms with more than 12 people in the household grow Maize?' We founfd the number of people in the household from the Farms table and the crops they grew in the crops table.
-Suppose we now wanted to change the question to be: For Farms with more than 12 people in the hosehold how much land is devoted to growing Maize? In addition to the previous 
-requiements we now also need the size of the plots growing maize. This information is only contained in the `plots` table. 
+Our original question was: 'Which Farms with more than 12 people in the household grow Maize?' We found the number of people in the household from the Farms table and the crops they grew in the crops table.
+Suppose we now wanted to change the question to be: For Farms with more than 12 people in the household how much land is devoted to growing Maize? In addition to the previous 
+requirements we now also need the size of the plots growing maize. This information is only contained in the `plots` table. 
 The `plots` table has both an Id column which we can use to join it with the Farms column. There is also a plot_Id column which is used to indicate the number of 
 the plot within the Farm. The `crops` table also has a plot_id column used for the same purpose.
 
-However we cannot join the `plots` and the `crops` table with just the the `plot_id` column becaquse the `plot_id` column is not unique within the the Plots table. The `plot_id` is the 
+However we cannot join the `plots` and the `crops` table with just the `plot_id` column because the `plot_id` column is not unique within the Plots table. The `plot_id` is the 
 plot number within a Farm. So every Farm will have a plot_id with the value 1. In order to make what we join on unique we need to use both the Id column and the plot_id column together. This is allowed and quite 
 commonly done.
 
