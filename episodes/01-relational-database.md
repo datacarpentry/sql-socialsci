@@ -115,7 +115,7 @@ Whenever you create a table, you will have the option of designating one of the 
 
 The primary key column for a table is usually of type Integer although you could have Text. For example if you had a table of car information, then the "Reg_No" column could be made the primary key as it can be used to uniquely identify a particular row in the table.
 
-A table doesn't have to have a primary key although they are recommended for larger tables. A primary key can also be made up of more than one column, although this is less ususal.
+A table doesn't have to have a primary key although they are recommended for larger tables. A primary key can also be made up of more than one column, although this is less usual.
 
 
 ## What different types of keys are there?
