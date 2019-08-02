@@ -7,10 +7,6 @@ questions:
 - "How can I give a column a new name?"
 - "How do I use built-in functions to create new values?"
 - "How can I create binned results?"
-- "How can I add new columns with derived values in the query results?"
-- "How can I give a column a new name?"
-- "How do I use built-in functions to create new values?"
-- "How can I create binned results?"
 objectives:
 - "Create new columns in the query output"
 - "Rename columns in the query output"
