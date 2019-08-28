@@ -135,7 +135,7 @@ FROM Farms
 ~~~ 
 {: .sql}
 
-The format of the A04_start and A05_end columns follow the [ISO-8601](https://www.w3.org/TR/NOTE-datetime). The A01_interview_date column on the other hand uses the shorthand dd/mm/yyyy format.
+The format of the A04_start and A05_end columns follow the [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). The A01_interview_date column on the other hand uses the shorthand dd/mm/yyyy format.
 
 The drawback of having dates represented by strings occurs when you want to sort them. 
 In SQL you can sort the output of your query by using an `ORDER BY`clause at the end of the select statement.
