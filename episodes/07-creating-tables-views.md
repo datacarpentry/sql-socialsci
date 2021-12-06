@@ -203,7 +203,7 @@ Tables and Views are so closely related that if you try to run the code above, a
 
 It is common practice when creating Views to indicate somewhere in the name that it is in fact a View. e.g. vFarms_location or Farms_location_v.
 
-Although tables and views can be used almost interchangeably in `Select` queries it is important to note that a `View` unlike a `Table` contains no data. 
+Although tables and views can be used almost interchangeably in `SELECT` queries it is important to note that a `View` unlike a `Table` contains no data.
 It is essentially the SQL statement needed to produce that data from the underlying data. 
 This means that when you use a View there is the overhead of having to run this SQL first. 
 Although in practice the Database system will combine the SQL required by the View and the other SQL in your query so as to optimise how the SQL is executed.
@@ -212,5 +212,5 @@ The advantage of using Views is that it allows you to restrict how you see the d
 In the example we used above it may be far easier to work with only the 6 columns that we need from the full Farms table 
 rather than the full table with 61 columns.
 
-A View isn't restricted to simple `Select` statements it can be the result of aggregations and joins as well. 
+A View isn't restricted to simple `SELECT` statements it can be the result of aggregations and joins as well.
 This can help reduce the complexity of queries based on the View and so aid readability. 

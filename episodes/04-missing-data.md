@@ -103,7 +103,7 @@ WHERE F14_items_owned is NULL
 
 Rather than changing the data we may just want to miss it out of our analysis.
 
-We can write a query which excludes the rows where `F14_items_owned` has a `NULL value with:
+We can write a query which excludes the rows where `F14_items_owned` has a `NULL` value with:
 
 ~~~
 SELECT * from Farms

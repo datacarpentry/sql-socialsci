@@ -20,7 +20,7 @@ objectives:
 keypoints:
 - "New result columns can be created using arithmetic operators or builtin functions"
 - "New columns have to be given names or Alias'"
-- "The `Case` coding structure can be used to create new columns"
+- "The `CASE` coding structure can be used to create new columns"
 - "The new columns are only in the query results. The original table is not changed"
 ---
 
@@ -138,7 +138,7 @@ FROM Farms
 The format of the A04_start and A05_end columns follow the [ISO-8601](https://www.w3.org/TR/NOTE-datetime). The A01_interview_date column on the other hand uses the shorthand dd/mm/yyyy format.
 
 The drawback of having dates represented by strings occurs when you want to sort them. 
-In SQL you can sort the output of your query by using an `ORDER BY`clause at the end of the select statement.
+In SQL you can sort the output of your query by using an `ORDER BY` clause at the end of the select statement.
 
 ~~~ 
 SELECT A01_interview_date
@@ -297,7 +297,7 @@ ORDER BY year DESC, month DESC, day DESC
 
 ## Using SQL syntax to conditionally create new values
 
-This format of the case statement allows you to check if various values **are equal** to the value in the field given after the `case` keyword.
+This format of the case statement allows you to check if various values **are equal** to the value in the field given after the `CASE` keyword.
 
 
 ~~~ 
@@ -318,10 +318,10 @@ There is a more general form which allows to to perform any kind of test.
 
 It is often the case that we wish to convert a continous variable into a discrete factor type variable. 
 
-We can use a `case` statement to create this type of effect. 
+We can use a `CASE` statement to create this type of effect.
 
 The column `A11_years_farm` in the Farms table is an indication of how many years the respondent has been on the farm. The values are in years and range from 1 tp 60.
-Instead of using individual years we may want to group these values into ranges like 1-10, 11-20 etc. We can do this using a `case` 
+Instead of using individual years we may want to group these values into ranges like 1-10, 11-20 etc. We can do this using a `CASE`
 statement as part of the `SELECT` clause
 
 ~~~ 
