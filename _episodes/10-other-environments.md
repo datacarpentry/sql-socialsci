@@ -73,12 +73,12 @@ Click on the `options` button and then toggle the **system tables** option and c
 ![SQL_10_Choose_Columns_2](../fig/SQL_10_Choose_Columns_2.png)
 
 Select the Farms table and then click the '>' button to select all of the columns from the Farms table. 
-They will be displayed in the right hand pane. This is the equivalent of the `Select *` SQL clause that we have used before. 
+They will be displayed in the right hand pane. This is the equivalent of the `SELECT *` SQL clause that we have used before.
 If you click the '+' button to the left of the table name, a full list of the column names is dsiplayed allowing you to select individual columns for inclusion. Click **Next**
 
-6. Subsequent windows allow you to filter the rows returned, this is equivalent to adding a `where` clause to the query and finally you can have the returned rows sorted, equivalent to a `sort by` clause. We shall just default these options. The final window asks us if we want to return the data to Excel or further edit the query we have built up using Microsoft query. We will leave the default action of rturning the data to Excel. Clcik **Finish**
+6. Subsequent windows allow you to filter the rows returned, this is equivalent to adding a `WHERE` clause to the query and finally you can have the returned rows sorted, equivalent to a `SORT BY` clause. We shall just default these options. The final window asks us if we want to return the data to Excel or further edit the query we have built up using Microsoft query. We will leave the default action of rturning the data to Excel. Clcik **Finish**
 
-The overall effect of this wizard is to construct an SQL query, in this case 'Select * from Farms' send it to the SQLite system to be run and then to recieve back the results.
+The overall effect of this wizard is to construct an SQL query, in this case `SELECT * FROM Farms` send it to the SQLite system to be run and then to recieve back the results.
 
 ![SQL_10_return_data](../fig/SQL_10_return_data.png)
 

@@ -42,7 +42,7 @@ It is more likely that we would want to find such values for a range, or multipl
 values of some other column in the table. Before we do this we will look at how we can find out what different values are contained in a given column.
 
 
-## The `Distinct` keyword 
+## The `DISTINCT` keyword
 
 For the SAFI survey, it was know in advance all of the possible values that certain variables of columns could contain. For example 
 the 'A06_province', 'A07_district', 'A08_ward' and 'A09_village' variables 
@@ -168,11 +168,11 @@ GROUP BY A06_province, A07_district, A08_ward, A09_village
 {: .challenge}
 
 
-## Using the `having` clause 
+## Using the `HAVING` clause
 
-In order to filter the rows returned in a non-aggregated query we used the `WHERE` clause. For an aggregated query the equivalent is the 'HAVING` clause.
+In order to filter the rows returned in a non-aggregated query we used the `WHERE` clause. For an aggregated query the equivalent is the `HAVING` clause.
 
-You use the 'HAVING` clause by providing it with a filter expression which references one or more of the aggregated columns. 
+You use the `HAVING` clause by providing it with a filter expression which references one or more of the aggregated columns.
 
 In a `HAVING` clause you can use the column alias to refer to the aggregated column.
 
