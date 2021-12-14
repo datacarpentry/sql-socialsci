@@ -1,4 +1,6 @@
-
+---
+title: Instructors' Notes
+---
 
 ## Setup
 
@@ -11,7 +13,7 @@ There is a seperate file for the setiup instructions for installing the various 
 ## The datasets used
 
 The data from the SN7577 dataset is used. It has been placed into an SQLite database called SN7577.SQLite.
-The data dictionary file for SN7577 is also referenced 'audit_of_political_engagement_11_ukda_data_dictionary.docx'. 
+The data dictionary file for SN7577 is also referenced 'audit_of_political_engagement_11_ukda_data_dictionary.docx'.
 The SN7577.tab and SN7577_Text.csv files are used when creating tables. All of the files are in the single [SQL_data.zip](../data/SQL_data.zip) file.
 
 The SN7577.SQLite database file will need to be downloaded to the local machine before it can be opened by DB Browser.
@@ -44,7 +46,7 @@ Making use of the available data dictionary information.
 
 [Creating new columns](../_episodes/05-creating-new-columns.md)
 
-This episode cover the creation of new columns as part of a query. 
+This episode cover the creation of new columns as part of a query.
 New columns are created from existing columns using builtin functions.
 Changing datatypes of columns using `cast` is described along with how different datatypes appear in the plugin.
 Both variants of the `case` statement are covered; to decide a value based on a decision and to allocate a value to a 'bin'.
@@ -82,13 +84,13 @@ How to automate a script is covered.
 
 The need for table joins is discussed
 The different types of joins is discussed and why you may need to do more than just inner joins to investigate your data.
-There are examples of usingthe `join` and `on` SQL syntax. 
+There are examples of usingthe `join` and `on` SQL syntax.
 There is more discussion on Alias'.
 
 [Using database tables in other environments](../_episodes/10-other-environments.md)
 
 The episode requires that the ODBC driver has been installed.  It could be done as an Instructor demo only, but obviously that is not so much fun for the students.
-The purpose and use of connection strings is covered 
+The purpose and use of connection strings is covered
 There is a detailed demonstration of using ODBC from Excel to connect to the SN7577 database. It doesn't matter what table is used.
 There are code only examples from R and Python. The aim is to emphasise the connection process and sending the query for execution rather than the code itself.
 The code could be run in appropriate environments, but the database location would have to be changed.

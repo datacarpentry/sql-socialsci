@@ -1,11 +1,12 @@
 ---
 layout: lesson
 root: .
+permalink: index.html
 ---
 
-This is an alpha lesson to teach Data Management with SQL for Social Scientists, 
+This is an alpha lesson to teach Data Management with SQL for Social Scientists,
 We welcome and criticism, or error; and will take your feedback into account to
-improve both the presentation and the content. 
+improve both the presentation and the content.
 
 Databases are useful for both storing and using data effectively. Using a
 relational database serves several purposes.
