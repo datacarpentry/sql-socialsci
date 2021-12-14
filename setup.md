@@ -19,12 +19,11 @@ keypoints:
 - "The sqlite3 program is run from the windows commandline"
 - "You will need admin privileges to install the ODBC driver"
 ---
-## Introduction
+## Download files
 
-Download datasets:
-
-- pre-populated sqlite database: [SQL_SAFI.sqlite](https://datacarpentry.org/sql-socialsci/data/SQL_SAFI.sqlite)
-- Farms table as csv : [SAFI_farms.csv](https://datacarpentry.org/sql-socialsci/data/SAFI_farms.csv)
+You will need these two files:
+1. Pre-populated SQLite database: [SQL_SAFI.sqlite](https://datacarpentry.org/sql-socialsci/data/SQL_SAFI.sqlite)
+2. SAFI Farms table as a CSV file: [SAFI_farms.csv](https://datacarpentry.org/sql-socialsci/data/SAFI_farms.csv)
 
 ## Installing DB Browser for SQLite 
 
@@ -33,7 +32,7 @@ From the front page you can select the version you require. There are specific d
 
 ![DB Browser install](./fig/DB_Browser_install_1.png)
 
-## Installing for Windows.
+### Installing for Windows.
 
 For a current Windows environment the 64-bit windows download will be most appropriate.
 
