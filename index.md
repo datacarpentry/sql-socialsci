@@ -8,6 +8,8 @@ This is an alpha lesson to teach Data Management with SQL for Social Scientists,
 We welcome and criticism, or error; and will take your feedback into account to
 improve both the presentation and the content.
 
+**This lesson is not currently under active maintenance. You are welcome to teach the lesson and contribute changes to the content, but you may have to wait longer than usual for any contributions to be processed. If you are interested in [volunteering as a Maintainer](https://docs.carpentries.org/topic_folders/maintainers/maintainers.html) on this lesson, please [contact The Carpentries Curriculum Team](mailto:team@carpentries.org) or open an issue in this repository.**
+
 Databases are useful for both storing and using data effectively. Using a
 relational database serves several purposes.
 
