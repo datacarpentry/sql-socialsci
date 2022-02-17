@@ -4,7 +4,7 @@ title: Instructors' Notes
 
 ## Setup
 
-There is a seperate file for the setiup instructions for installing the various component used in this lesson. [setup](../setup.md)
+There is a seperate file for the setiup instructions for installing the various component used in this lesson. [setup]({{ page.root }}/{% link setup.md %})
 
 * The DB Browser application
 * SQLite Shell program
