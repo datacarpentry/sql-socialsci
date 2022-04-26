@@ -5,7 +5,7 @@ permalink: index.html
 ---
 
 This is an alpha lesson to teach Data Management with SQL for Social Scientists,
-We welcome and criticism, or error; and will take your feedback into account to
+We welcome any criticism, or the flagging of any errors; and will take your feedback into account to
 improve both the presentation and the content.
 
 **This lesson is not currently under active maintenance. You are welcome to teach the lesson and contribute changes to the content, but you may have to wait longer than usual for any contributions to be processed. If you are interested in [volunteering as a Maintainer](https://docs.carpentries.org/topic_folders/maintainers/maintainers.html) on this lesson, please [contact The Carpentries Curriculum Team](mailto:team@carpentries.org) or open an issue in this repository.**
@@ -29,7 +29,7 @@ you need.
 
 > ## Prerequisites
 >
-> We expect you to have learn a bit about the SAFI dataset in the spreadsheet
+> We expect you to have learnt a bit about the SAFI dataset in the spreadsheet
 > and OpenRefine session. It is not necessary, but will greatly improve your
 > ability to understand the power of SQL and when to use it versus another tool.
 {: .prereq}
