@@ -11,7 +11,7 @@ objectives:
 - "Use the ‘having’ clause to provide selection criteria to the summary values"
 - "Understand the difference between the ‘where’ and the ‘having’ clauses"
 keypoints:
-- "Builtin functions can be used to produce a variety of summary statistics"
+- "Built-in functions can be used to produce a variety of summary statistics"
 - "The `DISTINCT` keyword can be used to find the unique set of values in a column or columns"
 - "Data in columns can be summarised by values using the `GROUP BY` clause"
 - "Summarised data can be filtered using the `HAVING` clause"
@@ -35,8 +35,8 @@ from Farms;
 
 This sort of query provides us with a general view of the values for a particular column or field across the whole table.
   
-`min` , `max` and `avg` are builtin aggregate functions in SQLite (and any other SQL database system). There are other such functions available. 
-A complete list can be found in the SQLite documentation [here](https://sqlite.org/lang_aggfunc.html)  
+`min` , `max` and `avg` are built-in aggregate functions in SQLite (and any other SQL database system). There are other such functions available. 
+A complete list can be found in the SQLite documentation [here](https://sqlite.org/lang_aggfunc.html).  
    
 It is more likely that we would want to find such values for a range, or multiple ranges of rows where each range is determined by the 
 values of some other column in the table. Before we do this we will look at how we can find out what different values are contained in a given column.
@@ -44,7 +44,7 @@ values of some other column in the table. Before we do this we will look at how 
 
 ## The `Distinct` keyword 
 
-For the SAFI survey, it was know in advance all of the possible values that certain variables of columns could contain. For example 
+For the SAFI survey, it was known in advance all of the possible values that certain variables of columns could contain. For example 
 the 'A06_province', 'A07_district', 'A08_ward' and 'A09_village' variables 
 could only ever contain a few specific values.
 
@@ -170,9 +170,9 @@ Group By A06_province, A07_district, A08_ward, A09_village
 
 ## Using the `having` clause 
 
-In order to filter the rows returned in a non-aggregated query we used the `WHERE` clause. For an aggregated query the equivalent is the 'HAVING` clause.
+In order to filter the rows returned in a non-aggregated query we used the `WHERE` clause. For an aggregated query the equivalent is the `HAVING` clause.
 
-You use the 'HAVING` clause by providing it with a filter expression which references one or more of the aggregated columns. 
+You use the `HAVING` clause by providing it with a filter expression which references one or more of the aggregated columns. 
 
 In a `HAVING` clause you can use the column alias to refer to the aggregated column.
 
