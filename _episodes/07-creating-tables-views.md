@@ -14,10 +14,10 @@ objectives:
 - "Populate a table using SQL code"
 - "Populate a table from a file of data using DB Browser for SQLite"
 keypoints:
-- "Database tables can be created using the DDL command 'Create Table'"
-- "They can be populated using the 'INSERT INTO ' command"
+- "Database tables can be created using the DDL command `CREATE TABLE`"
+- "They can be populated using the `INSERT INTO` command"
 - "The SQLite plugin allows you to create a table and import data into it in one step"
-- "There are many options available to the 'CREATE TABLE command which allows greater control over how or what data can be loaded into the table"
+- "There are many options available to the `CREATE TABLE` command which allows greater control over how or what data can be loaded into the table"
 - "A View can be treated just like a table in a query"
 - "A View does not contain data like a table does, only the instructions on how to get the data"
 ---
@@ -47,9 +47,9 @@ The DB Browser application has a nice GUI (Graphical Use Interface) to allow you
 The Farms, Plots and Crops tables that we have been using were created in the DB Browser application by importing a CSV 
 file containing the data. 
 
-For large datasets this is a very common approach
+For large datasets this is a very common approach.
 
-1. From the File menu select Import and then 'Table from CSV file'. 
+1. From the File menu select 'Import' and then 'Table from CSV file'. 
 This will start the 'Import CSV file' wizard and you will be asked to select the file of data you wish to import from a standard Windows file open dialog.
 
 2. After you have selected the file, you will be shown the 'Import CSV file' window which will allow you to set a name for the table (the default is taken from the filename). You will see the first few rows of the data and there are  a few options which can be changed if needs be.
@@ -96,7 +96,7 @@ This could  act as a unique identifier for the row as a whole. We could mark thi
 
 **Not Null** - If this is checked then it means that there must be a value for each row in this column. If it is **not** set and there is no value provided in the data then it will be set to 'NULL' which means 'I know nothing about what should be here'. (Not the string 'NULL' but the NULL value)
 
-In real datasets missing values are quite common and we have already looked at ways of dealing with them when they occur in tables. If you you were **check** this box and the data did have missing values for this column, the record from the file would be rejected and the load of the file will fail.
+In real datasets missing values are quite common and we have already looked at ways of dealing with them when they occur in tables. If you were to **check** this box and the data did have missing values for this column, the record from the file would be rejected and the load of the file will fail.
 
 **U** - Or Unique. This allows you to say that the contents of the column, which is not the primary key column has to have unique values in it. Like Allow Null this is another way of providing some data validation as the data is imported. Although it doesn't really apply with the DB Browser import wizard as the data is imported before you are allowed to set this option.
 
@@ -119,7 +119,7 @@ These three options, 'Not Null', 'Unique' and 'Default' , need to be used with c
 > >     PRIMARY KEY(`Id`)
 > > ~~~ 
 > > {: .sql}
-> > line added
+> > line added.
 > {: .solution}
 {: .challenge}
 
@@ -140,7 +140,7 @@ In the results pane, you can see the column names and the rows of data in the re
 
 This provides a very easy way of creating a new table based on the results of a query.
 
-The following query selects a few of the columns from the Farms table
+The following query selects a few of the columns from the Farms table:
 
 ~~~
 SELECT Id, 
@@ -153,7 +153,7 @@ FROM Farms;
 ~~~
 {: .sql}
 
-If you want to make the results of this query into a new table, you can do so by simply prefixing the `SELECT` with **CREATE TABLE  NewTablename AS**  like this 
+If you want to make the results of this query into a new table, you can do so by simply prefixing the `SELECT` with **CREATE TABLE  NewTablename AS**  like this: 
 
 ~~~
 CREATE TABLE Farms_location AS
@@ -180,7 +180,7 @@ WHERE D_curr_crop = 'rice'
 
 Here we want all of the columns from the Crops table but only if the D_curr_crop value is 'rice'. 
 
-Note: please ensure that you run the code above as we will use this new table in a later lesson.
+**Note**: please ensure that you run the code above as we will use this new table in a later episode.
 
 ## Using SQL code to create views
 
