@@ -10,7 +10,7 @@ objectives:
 
 keypoints:
 - "SQLite databases can be created, managed and queried from the SQLite shell utility"
-- "You can run the shell interactively from the commandline, typing queries or dot cammands at the prompt"
+- "You can run the shell interactively from the command line, typing queries or dot commands at the prompt"
 - "You can call the SQLite3 program and specify a database and a set of commands to run. This aids automation"
 ---
 
@@ -37,7 +37,7 @@ open a terminal window instead a command prompt.
 ~~~
 {: .bash}
 
-It is imprtant to remember the .sqlite suffix, otherwise a new database simply called SQL_SAFI would be created
+It is important to remember the .sqlite suffix, otherwise a new database simply called SQL_SAFI would be created
 
 4. Once the database is opened you can run queries by typing directly in the shell. Unlike in DB Browser, 
 you must always terminate your select command with a ";". This is how the shell knows that **You** think the statement is complete. Although easy to forget, it generally works to your advantage as it allows you to split a long query command across lines as you did in the DB Browser application.
@@ -47,10 +47,10 @@ you must always terminate your select command with a ";". This is how the shell 
 The output from the query is displayed on the screen. If we just wanted to look at a small selection of data this 
 may be OK. It is however more likely that not only are the results from the query somewhat larger, 
 but also we would prefer to save the output to a file for later use. There are some other changes to the output format that we might want to change as well.
-for example; change the field seperator from the default "\|" to a comma and provide column headers. This will make the
+for example; change the field separator from the default "\|" to a comma and provide column headers. This will make the
 output more like a standard csv file.
 
-Notice that the `NULL` values in columns 6 and 8 are just left empty, two consequetive delimiters, just as they are in a csv file.
+Notice that the `NULL` values in columns 6 and 8 are just left empty, two consecutive delimiters, just as they are in a csv file.
 
 
 We can make the changes we want by using further "dot" commands.
@@ -64,7 +64,7 @@ The commands we need are
 ~~~
 {: .bash}
 
-to change the field seperatator to ",". There are many other modes available see the [documentation](https://sqlite.org/cli.html). 
+to change the field separator to ",". There are many other modes available see the [documentation](https://sqlite.org/cli.html). 
 
 ~~~
 > .header on
@@ -128,7 +128,7 @@ Notice that there is no output to the screen and that the shell is closed. The r
 
 There are two key advantages of using this approach.
 
-1. It aids automation. It would be straightforward to have the one line commandline instruction to be run automatically, perhaps on a timed basis. The SQL statements in the executed file doesn't have to be a simple query. It could be appending rows of data to a series of tables which become available on a regular basis.
+1. It aids automation. It would be straightforward to have the one line command line instruction to be run automatically, perhaps on a timed basis. The SQL statements in the executed file doesn't have to be a simple query. It could be appending rows of data to a series of tables which become available on a regular basis.
 
 2. It aids reproducibility. Although it is convenient to use the DB Browser application to play around and try things out, eventually you will decide on approach, create relevant queries to perform your analysis or research and at this point you will need to ensure that the complete sequence is documented and is reproducible. This is what the file of SQLite commands will do for you.
 
@@ -160,7 +160,7 @@ There are two key advantages of using this approach.
 > >~~~
 > > {: .output}
 > >
-> > The command to run it from the commandline is:
+> > The command to run it from the command line is:
 > > 
 > > ~~~
 > > sqlite3 SQL_SAFI.sqlite < SQLite_commands.sql
