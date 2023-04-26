@@ -41,7 +41,7 @@ the query has definite advantages.
 
 ## DDL and DML
 
-DDL stands for Data Definition Language. It is the set of SQL commands used to create alter of delete database objects such as tables.
+DDL stands for Data Definition Language. It is the set of SQL commands used to create, alter or delete database objects such as tables.
 
 DML stands for Data Manipulation Language. For our purposes this is the SELECT command which is used to extract data items from one or more of the database tables.
 
@@ -98,7 +98,7 @@ If you run it you will get an error.
 When an error does occur you will see an error message displayed in the bottom pane. 
 
 In addition to limiting the columns returned by a query, you can also limit the rows returned. 
-The simplest case is to say how many rows are wanted using the `Limit` clause. 
+The simplest case is to say how many rows are wanted using the `LIMIT` clause.
 In the example below only the first ten rows of the result of the query will be returned. 
 This is useful if you just want to get a feel for what the data looks like. 
 
@@ -130,7 +130,7 @@ LIMIT 10;
 > {: .solution}
 {: .challenge}
 
-## The `Where` clause
+## The `WHERE` clause
 
 Usually you will want to restrict the rows returned based on some criteria. i.e. certain values or ranges within one or more columns. 
 
@@ -153,7 +153,7 @@ WHERE B17_parents_liv = 'yes'
 ~~~ 
 {: .sql}
 
-## Using more complex logical expressions in the `Where` clause
+## Using more complex logical expressions in the `WHERE` clause
 
 We can also use the AND and OR keywords to build more complex selection criteria. 
 
@@ -182,12 +182,12 @@ WHERE (B17_parents_liv = 'yes' OR B18_sp_parents_liv = 'yes') AND B16_years_liv 
 
 > ## Exercise
 >
-> From the above query, breakdown the `Where` clause so that each component can be tested individually.
+> From the above query, breakdown the `WHERE` clause so that each component can be tested individually.
 > Make a note of how many rows are returned in each case.
 > 
 > > ## Solution
 > > 
-> > To test each of the `or` clauses
+> > To test each of the `OR` clauses
 > > 
 > > ~~~
 > > SELECT  Id

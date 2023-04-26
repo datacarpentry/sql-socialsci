@@ -30,7 +30,7 @@ keypoints:
 
 A relational database is a collection of data items organised as a set of tables. Relationships can be defined between the data in one table and the data in another or many other tables. The relational database system will provide mechanisms by which you can query the data in the tables, re-assemble the data in various ways without altering the data in the actual tables. 
 This querying is usually done using SQL (Structured Query Language). SQL allows a great many queries to be constructed from the use of only a few keywords.
-You could have a relational database with only one table, but then you would’t have any relationships and it would be more like a spreadsheet. 
+You could have a relational database with only one table, but then you would not have any relationships and it would be more like a spreadsheet. 
 Databases are designed to allow efficient querying against very large tables, more than the 1M rows allowed in an Excel spreadsheet.
 
 ## What is a table?
@@ -101,7 +101,7 @@ We won't be using any BLOB data and it is debatable whether or not NULL should b
 
 There are some common datatypes which are missing from the SQLite list.
 
-BOOL or BOOLEAN : This type typicaly accepts values of 'True' and 'False' In SQLite we would use the Integer type and assign vlaues of 1 to represent 'True' and 
+BOOL or BOOLEAN : This type typically accepts values of 'True' and 'False' In SQLite we would use the Integer type and assign values of 1 to represent 'True' and 
 0 to represent 'False'.
 
 DATE, DATETIME, TIMESTAMP : SQLite does not have a datatype for storing dates and/or times. You can use TEXT, REAL, or INTEGER values
