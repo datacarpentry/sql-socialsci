@@ -25,11 +25,11 @@ by the different values in a specified column or columns.  Alternatively you can
 If we wanted to know the minimum, average and maximum values of the 'A11_years_farm' column across the whole Farms table, we could write a query such as this;
 
 ~~~ 
-select 
+SELECT
        min(A11_years_farm),
        max(A11_years_farm),
        avg(A11_years_farm)
-from Farms; 
+FROM Farms;
 ~~~ 
 {: .sql}
 
@@ -42,7 +42,7 @@ It is more likely that we would want to find such values for a range, or multipl
 values of some other column in the table. Before we do this we will look at how we can find out what different values are contained in a given column.
 
 
-## The `Distinct` keyword 
+## The `DISTINCT` keyword
 
 For the SAFI survey, it was known in advance all of the possible values that certain variables of columns could contain. For example 
 the 'A06_province', 'A07_district', 'A08_ward' and 'A09_village' variables 
@@ -53,14 +53,14 @@ selected from a dropdown list, eliminating any possibility of typing errors. For
 by the time we get down to 'A09_villages', a far more specific geography, it would not have been possible to anticipate in advance all of the possible values (village names)
 and so the values for this field were manually typed in.
 
-To obtain a list of unique values in a particular column we can use the `Distinct` keyword.
+To obtain a list of unique values in a particular column we can use the `DISTINCT` keyword.
  
 Using the Farms table we will obtain a list of all of the different values of the 'A06_province' column contained in the table.
 
 
 ~~~ 
-select distinct A06_province
-from Farms;
+SELECT DISTINCT A06_province
+FROM Farms;
 ~~~ 
 {: .sql}
 
@@ -69,8 +69,8 @@ We can see from the results of running this that all 3 values are represented an
 However if we run a similar query for 'A09_village'
 
 ~~~ 
-select distinct A09_village
-from Farms;
+SELECT DISTINCT A09_village
+FROM Farms;
 ~~~ 
 {: .sql}
 
@@ -85,7 +85,7 @@ and in the OpenRefine lesson we provide approaches to detecting and correcting s
 
 
 
-You can have more than one column name after the `Distinct` keyword. In which case the results will include a row for each unique **combination** of the columns involved
+You can have more than one column name after the `DISTINCT` keyword. In which case the results will include a row for each unique **combination** of the columns involved
 
 > ## Exercise
 > Write a query that will return all of the different combinations of the 
@@ -98,9 +98,9 @@ You can have more than one column name after the `Distinct` keyword. In which ca
 > > ## Solution
 > > 
 > > ~~~
-> > select distinct A06_province, A07_district, A08_ward, A09_village
-> > from Farms
-> > order by A06_province, A07_district, A08_ward, A09_village;
+> > SELECT DISTINCT A06_province, A07_district, A08_ward, A09_village
+> > FROM Farms
+> > ORDER BY A06_province, A07_district, A08_ward, A09_village;
 > > 
 > > ~~~
 > > {: .sql}
@@ -109,16 +109,16 @@ You can have more than one column name after the `Distinct` keyword. In which ca
 {: .challenge}
 
 
-## The `group by` clause to summarise data
+## The `GROUP BY` clause to summarise data
 
 Just knowing the combinations is of limited use. You really want to know **How many** of each of the values there are. 
 To do this we use  the `GROUP BY` clause.
 
 ~~~ 
-select A08_ward,
-       count(*) as How_many
-from Farms
-group by A08_ward;
+SELECT A08_ward,
+       count(*) AS How_many
+FROM Farms
+GROUP BY A08_ward;
 ~~~ 
 {: .sql}
 
@@ -133,13 +133,13 @@ The grouping will take place based on the order of the columns listed in the `GR
 What is not allowed is specifying a non-aggregated column in the select clause which is not mentioned in the group by clause.
 
 ~~~ 
-select A06_province, 
+SELECT A06_province,
        A07_district,
        A08_ward,
        A09_village,
-       count(*) as How_many
-from Farms
-Group By A06_province, A07_district, A08_ward, A09_village
+       count(*) AS How_many
+FROM Farms
+GROUP BY A06_province, A07_district, A08_ward, A09_village
 ;
 ~~~ 
 {: .sql}
@@ -152,23 +152,23 @@ Group By A06_province, A07_district, A08_ward, A09_village
 > > ## Solution
 > >
 > > ~~~
-> > select A09_village,
-> >        min(A11_years_farm) as min,
-> >        max(A11_years_farm) as max,
-> >        avg(A11_years_farm) as avg,
-> >        count(*) as how_many
-> > from Farms
-> > where A07_district = 'Nhamatanda'
-> > group by A09_village;
+> > SELECT A09_village,
+> >        min(A11_years_farm) AS min,
+> >        max(A11_years_farm) AS max,
+> >        avg(A11_years_farm) AS avg,
+> >        count(*) AS how_many
+> > FROM Farms
+> > WHERE A07_district = 'Nhamatanda'
+> > GROUP BY A09_village;
 > > ~~~
 > > 
-> > Notice that you can use the 'A07_district' column in the `where` clause but it doesn't have to appear in the `select` clause.
+> > Notice that you can use the 'A07_district' column in the `WHERE` clause but it doesn't have to appear in the `SELECT` clause.
 > > 
 > {: .solution}
 {: .challenge}
 
 
-## Using the `having` clause 
+## Using the `HAVING` clause
 
 In order to filter the rows returned in a non-aggregated query we used the `WHERE` clause. For an aggregated query the equivalent is the `HAVING` clause.
 
@@ -177,13 +177,13 @@ You use the `HAVING` clause by providing it with a filter expression which refer
 In a `HAVING` clause you can use the column alias to refer to the aggregated column.
 
 ~~~ 
-select A08_ward,
-       min(A11_years_farm) as min_years,
-       max(A11_years_farm) as max_years,
-       count(*) as how_many_farms
-from Farms
-group by A08_ward
-having how_many_farms > 2;
+SELECT A08_ward,
+       min(A11_years_farm) AS min_years,
+       max(A11_years_farm) AS max_years,
+       count(*) AS how_many_farms
+FROM Farms
+GROUP BY A08_ward
+HAVING how_many_farms > 2;
 ~~~ 
 {: .sql}
 
@@ -197,11 +197,11 @@ In this example we want to remove the wards which only have one or two farms.
 > > ## Solution
 > > 
 > > ~~~
-> > select D_curr_crop,
-> >        count(*) as how_many
-> > from Crops
-> > group by D_curr_crop
-> > having how_many > 100
+> > SELECT D_curr_crop,
+> >        count(*) AS how_many
+> > FROM Crops
+> > GROUP BY D_curr_crop
+> > HAVING how_many > 100
 > > ;
 > > ~~~
 > > {: .sql}
