@@ -41,7 +41,7 @@ the query has definite advantages.
 
 ## DDL and DML
 
-DDL stands for Data Definition Language. It is the set of SQL commands used to create alter of delete database objects such as tables.
+DDL stands for Data Definition Language. It is the set of SQL commands used to create, alter or delete database objects such as tables.
 
 DML stands for Data Manipulation Language. For our purposes this is the SELECT command which is used to extract data items from one or more of the database tables.
 
