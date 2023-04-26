@@ -43,9 +43,9 @@ We can write queries to answer each part separately
 
 ~~~
 -- how many crops of Maize?
-select * 
-from Crops
-where D_curr_crop = 'maize'
+SELECT *
+FROM Crops
+WHERE D_curr_crop = 'maize'
 ;
 ~~~~
 {: .sql}
@@ -57,9 +57,9 @@ and
 
 ~~~
 -- Which farms have more than 12 in the Household
-select Id, B_no_membrs 
-from Farms
-where B_no_membrs > 12
+SELECT Id, B_no_membrs
+FROM Farms
+WHERE B_no_membrs > 12
 ;
 ~~~~
 {: .sql}
@@ -68,19 +68,19 @@ where B_no_membrs > 12
 
 In order to answer the question we need information from both tables at the time, i.e. from a single query.
 Notice that in the tables returned by both of the above queries we have the `Id` column.
-This column represents the Household or Farm in both of the tables. Because of this we can use this `Id` column from both tables to `join`
+This column represents the Household or Farm in both of the tables. Because of this we can use this `Id` column from both tables to `JOIN`
 the tables together.  
 
 Providing we are confident that both of the columns represent the household (or farm) it doesn't matter whether or not they have the same name.
 
-We write a `join` query like this:
+We write a `JOIN` query like this:
 
 ~~~
-select a.Id, a.B_no_membrs,
+SELECT a.Id, a.B_no_membrs,
        b.Id, b.D_curr_crop
-from Farms as a
-join Crops as b
-on a.Id = b.Id and a.B_no_membrs > 12 and b.D_curr_crop = 'maize'
+FROM Farms AS a
+JOIN Crops AS b
+ON a.Id = b.Id AND a.B_no_membrs > 12 AND b.D_curr_crop = 'maize'
 ;
 ~~~
 {: .sql}
@@ -93,8 +93,8 @@ more meaningful names, in fact alias' for tables are often single letters to sav
 3. You will need to use an alias when you need to refer to a column with the same name in both tables. In our case we need to compare the `Id` column in both tables.
 4. In the select clause, we list all of the columns, from both table that we want in the output. We use the alias' for clarity. If the column name is not ambiguous, i.e it only occurs in one of the tables it 
 can be omitted, but as we have said it is better to leave it in for clarity.
-5. The name of the second table is given in the `join` clause.
-6. The conditions of the `join` are given in the `on` clause. The `on` clause is very much like a `where` clause, in that you specific expressions which restrict what rows
+5. The name of the second table is given in the `JOIN` clause.
+6. The conditions of the `JOIN` are given in the `ON` clause. The `ON` clause is very much like a `WHERE` clause, in that you specific expressions which restrict what rows
 are output. In our example we have three expressions. The last two are the individual expressions we used in the previous, single table queries. The first 
 expression `a.Id = b.Id` is the expression which determines how we want the two tables to be joined. 
 We are only interested in rows from both table where the `Id` values match.
@@ -112,11 +112,11 @@ When we run this query we get output like the following:
 > > 
 > > 
 > > ~~~
-> > select a.Id as Farms_Id, a.B_no_membrs,
-> >        b.Id as Crops_Id, b.plot_Id, b.D_curr_crop
-> > from Farms as a
-> > join Crops as b
-> > on a.Id = b.Id and a.B_no_membrs > 12 and b.D_curr_crop = 'maize'
+> > SELECT a.Id AS Farms_Id, a.B_no_membrs,
+> >        b.Id AS Crops_Id, b.plot_Id, b.D_curr_crop
+> > FROM Farms AS a
+> > JOIN Crops AS b
+> > ON a.Id = b.Id AND a.B_no_membrs > 12 AND b.D_curr_crop = 'maize'
 > > ;
 > > ~~~
 > > {: .sql}
@@ -176,7 +176,7 @@ The relational design makes use of multiple tables as a way of avoiding repetiti
 |Full outer join | All rows from both tables are returned, with NULLs where there are no matches|
 |Cross join | Each row in the first table will be matched with every row in the second table. It is possible to imagine situations where this is required but in most cases it is a mistake and un-intended. |
 
-In SQLite only the `Inner join`, the `Left Outer join` and the `Cross join` are supported. You can create a `Right outer join` by swapping the tables in the `From` and `Join` clauses. A `Full outer join` is the combination of the Left outer and Right outer joins.
+In SQLite only the `INNER JOIN`, the `LEFT OUTER JOIN` and the `CROSS JOIN` are supported. You can create a `Right outer join` by swapping the tables in the `FROM` and `JOIN` clauses. A `Full outer join` is the combination of the Left outer and Right outer joins.
  
  
 
@@ -187,7 +187,7 @@ your decision to bring together (join) the data in the tables.
 
 In order to do this at all you must be confident that the tables of data do have columns which have a common set of values that you can join on.
 
-Assuming you do have a common column to join on, you can use an `Inner join` to combine the data.
+Assuming you do have a common column to join on, you can use an `INNER JOIN` to combine the data.
 
 However it will also be important for you to establish rows in both of the tables for which there is no matching row in the other table.
 
@@ -195,17 +195,17 @@ However it will also be important for you to establish rows in both of the table
 * You may not care that some are missing
 * You may need to explain why some are missing
 
-To do this you will want to use a `Full outer join` or in the case of SQLite a `Left outer join` run twice using both tables in the `From` and `Join` clauses. We can demonstrate ability
-`Left outer join` using the Crops_rice table we created earlier. 
+To do this you will want to use a `FULL OUTER JOIN` or in the case of SQLite a `LEFT OUTER JOIN` run twice using both tables in the `FROM` and `JOIN` clauses. We can demonstrate ability
+`LEFT OUTER JOIN` using the Crops_rice table we created earlier.
 
 The query below is similar to our original join except that we are now joining with the crops_rice table and we have dropped the additional criteria.
 
 ~~~
-select a.Id as Farms_Id, a.B_no_membrs,
-       b.Id as Crops_Id, b.D_curr_crop
-from Farms as a
-left outer join Crops_rice as b
-on a.Id = b.Id 
+SELECT a.Id AS Farms_Id, a.B_no_membrs,
+       b.Id AS Crops_Id, b.D_curr_crop
+FROM Farms AS a
+LEFT OUTER JOIN Crops_rice AS b
+ON a.Id = b.Id
 ~~~
 {: .sql}
 
@@ -231,20 +231,20 @@ commonly done.
 Our new query now looks like this:
 
 ~~~
-select a.Id as Farms_Id, a.B_no_membrs,
-       b.Id , b.plot_id as plot_id, b.D02_total_plot,
-       c.Id as Crops_Id, c.plot_Id as crops_plot_id, c.D_curr_crop
-from Farms as a
-join Plots as b
-join Crops  as c
-on a.Id = b.Id and ( b.Id = c.Id and b.plot_id = c.plot_id) and a.B_no_membrs > 12 and c.D_curr_crop = 'maize'
+SELECT a.Id AS Farms_Id, a.B_no_membrs,
+       b.Id , b.plot_id AS plot_id, b.D02_total_plot,
+       c.Id AS Crops_Id, c.plot_Id AS crops_plot_id, c.D_curr_crop
+FROM Farms AS a
+JOIN Plots AS b
+JOIN Crops  AS c
+ON a.Id = b.Id AND (b.Id = c.Id AND b.plot_id = c.plot_id) AND a.B_no_membrs > 12 AND c.D_curr_crop = 'maize'
 ;
 ~~~
 {: .sql}
 
 Things to notice:
-1.  There is a `join` clause for each of the additional tables
-2. But there is only one `on` clause containing all of the needed criteria.
+1.  There is a `JOIN` clause for each of the additional tables
+2. But there is only one `ON` clause containing all of the needed criteria.
 3. The two criteria in brackets represents the join of the `plots` table to the `Crops` table. (The brackets aren't needed, I just added them for clarity).
 
 The results look like this:
@@ -262,14 +262,14 @@ The results look like this:
 > > 
 > > 
 > > ~~~
-> > select a.Id as Farms_Id, 
-> >        sum(b.D02_total_plot) as total_planted,
+> > SELECT a.Id AS Farms_Id,
+> >        sum(b.D02_total_plot) AS total_planted,
 > >        c.D_curr_crop
-> > from Farms as a
-> > join Plots as b
-> > join Crops  as c
-> > on a.Id = b.Id and ( b.Id = c.Id and b.plot_id = c.plot_id) and a.B_no_membrs > 12 and c.D_curr_crop = 'maize'
-> > group by a.Id, c.D_curr_crop
+> > FROM Farms AS a
+> > JOIN Plots AS b
+> > JOIN Crops  AS c
+> > ON a.Id = b.Id AND (b.Id = c.Id AND b.plot_id = c.plot_id) AND a.B_no_membrs > 12 AND c.D_curr_crop = 'maize'
+> > GROUP BY a.Id, c.D_curr_crop
 > > ;
 > > ~~~
 > > {: .sql}
