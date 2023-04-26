@@ -23,11 +23,11 @@ keypoints:
 
 ## ODBC and advantages of using it
 
-ODBC  - Open Database Conectivity (or Connector) is a piece of software, often referred to as a *driver*, which allows a database to be connected to an application or program. ODBC drivers are specific to a given database system. As we are using an `SQLite` database we need an SQLite specific ODBC driver to connect to it.
+ODBC  - Open Database Connectivity (or Connector) is a piece of software, often referred to as a *driver*, which allows a database to be connected to an application or program. ODBC drivers are specific to a given database system. As we are using an `SQLite` database we need an SQLite specific ODBC driver to connect to it.
 
 The installation of the SQLite ODBC driver for a Windows machine is explained in the [SQL setup document](../setup.md ) . 
 
-So far in this lesson we have accessed our SQLite database either through the DB Browser application or directly using the commandline shell. Each of these methods have their own advantages. The DB Browser application provides a simple GUI (Graphical User Interface), for development and testing new queries. The shell aids automation of tasks such as adding rows to a table or allowing whole scripts of SQL commands to be run consequetively without user intervention. In both of these methods, we have seen that the 'outputs' can be saved to `csv` files from where they can be read into other applications or programs for futher processing. Using ODBC misses out the middle man (the file of output). The application or program connects directly to the SQLite database, sends it an SQL query, recieves the output from that query and processes the results in an appropriate fashion.
+So far in this lesson we have accessed our SQLite database either through the DB Browser application or directly using the command line shell. Each of these methods have their own advantages. The DB Browser application provides a simple GUI (Graphical User Interface), for development and testing new queries. The shell aids automation of tasks such as adding rows to a table or allowing whole scripts of SQL commands to be run consecutively without user intervention. In both of these methods, we have seen that the 'outputs' can be saved to `csv` files from where they can be read into other applications or programs for futher processing. Using ODBC misses out the middle man (the file of output). The application or program connects directly to the SQLite database, sends it an SQL query, receives the output from that query and processes the results in an appropriate fashion.
 
 In the case of Excel the tabular results of the query are displayed in a worksheet. For R and Python the results are assigned to a suitable variable from where they can be examined or further processed.
 
@@ -55,7 +55,7 @@ How and where the connection string information is provided depends on the ODBC 
   If this option does not appear in the list, then it probably means that the SQLite ODBC driver has not  been installed.
   
 4. The 'Connect' window is where you specify the connection string information. You can see that there are many things that can be specified. 
-But all we need to specify is the Database name. I.e the full path and name of the database file. 
+But all we need to specify is the Database name i.e. the full path and name of the database file. 
 There is a browse button you can use to navigate to the required file. When you have selected the database file click **OK**
   
 5. At this point, you may get an a window pop up saying that there are no tables
@@ -68,15 +68,15 @@ Click **OK** . The Choose Columns Windows appears to support the 'no tables' ass
 
 Click on the `options` button and then toggle the **system tables** option and click **OK**, then the tables will appear.
 
-(There is no technical reason why the above procedure to see the tables should be necessary, it appears to be a fault in the ODBC driver, which fortunately we can work around)
+(There is no technical reason why the above procedure to see the tables should be necessary, it appears to be a fault in the ODBC driver, which fortunately we can work around.)
 
 ![SQL_10_Choose_Columns_2](../fig/SQL_10_Choose_Columns_2.png)
 
 Select the Farms table and then click the '>' button to select all of the columns from the Farms table. 
 They will be displayed in the right hand pane. This is the equivalent of the `SELECT *` SQL clause that we have used before.
-If you click the '+' button to the left of the table name, a full list of the column names is dsiplayed allowing you to select individual columns for inclusion. Click **Next**
+If you click the '+' button to the left of the table name, a full list of the column names is displayed allowing you to select individual columns for inclusion. Click **Next**
 
-6. Subsequent windows allow you to filter the rows returned, this is equivalent to adding a `WHERE` clause to the query and finally you can have the returned rows sorted, equivalent to a `SORT BY` clause. We shall just default these options. The final window asks us if we want to return the data to Excel or further edit the query we have built up using Microsoft query. We will leave the default action of rturning the data to Excel. Clcik **Finish**
+6. Subsequent windows allow you to filter the rows returned, this is equivalent to adding a `WHERE` clause to the query and finally you can have the returned rows sorted, equivalent to a `SORT BY` clause. We shall just default these options. The final window asks us if we want to return the data to Excel or further edit the query we have built up using Microsoft query. We will leave the default action of rturning the data to Excel. Click **Finish**
 
 The overall effect of this wizard is to construct an SQL query, in this case `SELECT * FROM Farms` send it to the SQLite system to be run and then to recieve back the results.
 
