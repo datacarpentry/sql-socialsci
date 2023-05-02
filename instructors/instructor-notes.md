@@ -65,7 +65,7 @@ The SQLite plugin is used to read the datasets which will need to have been copi
 All of the options in the plugin wizard are explained.
 Creating views, the close relationship to tables and guidance on naming views is covered.
 
-[The SQLite command line](../episodes08_sqlite-command-lines.md)
+[The SQLite command line](../episodes/08-sqlite-command-line.md)
 
 Instructions on starting the command line shell are given. It is assumed that the setup instructions have already been completed.
 If the sqlite3.exe has not been placed in the users path, then they eill either need to specify the full path to the executable or specify the full path to the database file when they try to connect. It is probably easier to ensure that the executable is in the path.
