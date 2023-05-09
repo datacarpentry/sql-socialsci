@@ -40,7 +40,13 @@
     <loc>https://datacarpentry.github.io/sql-socialsci/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://datacarpentry.github.io/sql-socialsci/aio.html</loc>
+  </url>
+  <url>
     <loc>https://datacarpentry.github.io/sql-socialsci/discuss.html</loc>
+  </url>
+  <url>
+    <loc>https://datacarpentry.github.io/sql-socialsci/images.html</loc>
   </url>
   <url>
     <loc>https://datacarpentry.github.io/sql-socialsci/index.html</loc>
@@ -85,10 +91,22 @@
     <loc>https://datacarpentry.github.io/sql-socialsci/instructor/LICENSE.html</loc>
   </url>
   <url>
+    <loc>https://datacarpentry.github.io/sql-socialsci/instructor/aio.html</loc>
+  </url>
+  <url>
     <loc>https://datacarpentry.github.io/sql-socialsci/instructor/discuss.html</loc>
   </url>
   <url>
+    <loc>https://datacarpentry.github.io/sql-socialsci/instructor/images.html</loc>
+  </url>
+  <url>
     <loc>https://datacarpentry.github.io/sql-socialsci/instructor/index.html</loc>
+  </url>
+  <url>
+    <loc>https://datacarpentry.github.io/sql-socialsci/instructor/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://datacarpentry.github.io/sql-socialsci/instructor/key-points.html</loc>
   </url>
   <url>
     <loc>https://datacarpentry.github.io/sql-socialsci/instructor/profiles.html</loc>
@@ -98,6 +116,12 @@
   </url>
   <url>
     <loc>https://datacarpentry.github.io/sql-socialsci/instructor/setup-backup.html</loc>
+  </url>
+  <url>
+    <loc>https://datacarpentry.github.io/sql-socialsci/instructor-notes.html</loc>
+  </url>
+  <url>
+    <loc>https://datacarpentry.github.io/sql-socialsci/key-points.html</loc>
   </url>
   <url>
     <loc>https://datacarpentry.github.io/sql-socialsci/profiles.html</loc>
