@@ -1052,12 +1052,12 @@ useful if you just want to get a feel for what the data looks like.</p>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre>
 </div>
-<div id="challenge1" class="callout challenge">
+<div id="exercise" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise"></a>
 </h3>
 <div class="callout-content">
 <p>Write a query which returns the first 5 rows from the Farms table
@@ -1147,12 +1147,12 @@ Judicious use of brackets can also aid readability</p>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (B17_parents_liv <span class="op">=</span> <span class="st">'yes'</span> <span class="kw">OR</span> B18_sp_parents_liv <span class="op">=</span> <span class="st">'yes'</span>) <span class="kw">AND</span> B16_years_liv <span class="op">&gt;</span> <span class="dv">60</span></span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="exercise-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise-1" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise-1"></a>
 </h3>
 <div class="callout-content">
 <p>From the above query, breakdown the <code>WHERE</code> clause so that
@@ -1227,12 +1227,12 @@ operators</p>
 </div>
 <p>The list of values in brackets do not have to be contiguous or even
 in order.</p>
-<div id="challenge3" class="callout challenge">
+<div id="exercise-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise-2" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise-2"></a>
 </h3>
 <div class="callout-content">
 <p>Write a query using the Farms table which returns the columns Id,
@@ -1594,12 +1594,12 @@ required number of decimal places.</p>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
 </div>
-<div id="challenge1" class="callout challenge">
+<div id="exercise" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise"></a>
 </h3>
 <div class="callout-content">
 <p>Write an SQL query which returns the Id, plot_Id, D01_curr_plot and
@@ -1616,7 +1616,7 @@ representing the units of the calculated column.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1772,12 +1772,12 @@ date by passing it to the <code>date</code> function.</p>
 <span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> converted_date</span>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="exercise-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise-1" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise-1"></a>
 </h3>
 <div class="callout-content">
 <p>Change the query above to sort by the <code>A01_interview_date</code>
@@ -1792,7 +1792,7 @@ field and compare the results</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2040,12 +2040,12 @@ correcting this type of error.</p>
 <code>DISTINCT</code> keyword. In which case the results will include a
 row for each unique <strong>combination</strong> of the columns
 involved</p>
-<div id="challenge1" class="callout challenge">
+<div id="exercise" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise"></a>
 </h3>
 <div class="callout-content">
 <p>Write a query that will return all of the different combinations of
@@ -2117,12 +2117,12 @@ select clause which is not mentioned in the group by clause.</p>
 <span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> A06_province, A07_district, A08_ward, A09_village</span>
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="exercise-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise-1" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise-1"></a>
 </h3>
 <div class="callout-content">
 <p>Write a query which returns the min, max and avg values as well as a
@@ -2178,12 +2178,12 @@ to the aggregated column.</p>
 </div>
 <p>In this example we want to remove the wards which only have one or
 two farms.</p>
-<div id="challenge3" class="callout challenge">
+<div id="exercise-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise-2" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise-2"></a>
 </h3>
 <div class="callout-content">
 <p>Using the Crops table write a query which will list all of the crops
@@ -2409,12 +2409,12 @@ values or compare the value with other columns values.</p>
 <p>These three options, ‘Not Null’, ‘Unique’ and ‘Default’ , need to be
 used with caution and certainly their use needs to be fully documented
 and explained.</p>
-<div id="challenge1" class="callout challenge">
+<div id="exercise" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise"></a>
 </h3>
 <div class="callout-content">
 <p>From the Modify table dialog, change the <code>Id</code> column in
@@ -2749,12 +2749,12 @@ analysis or research and at this point you will need to ensure that the
 complete sequence is documented and is reproducible. This is what the
 file of SQLite commands will do for you.</p></li>
 </ol>
-<div id="challenge1" class="callout challenge">
+<div id="exercise" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise"></a>
 </h3>
 <div class="callout-content">
 <p>The query</p>
@@ -2778,7 +2778,7 @@ three different roof types (grass, mabatisloping and mabatipitched)</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>The contents of your file should be something like this:</p>
 <div class="codewrapper">
@@ -2946,12 +2946,12 @@ We are only interested in rows from both table where the <code>Id</code>
 values match.</li>
 </ol>
 <p>When we run this query we get output like the following:</p>
-<figure><img src="../fig/SQL_09_join1.png" alt="Join1" class="figure mx-auto d-block"></figure><div id="challenge1" class="callout challenge">
+<figure><img src="../fig/SQL_09_join1.png" alt="Join1" class="figure mx-auto d-block"></figure><div id="exercise" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise"></a>
 </h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal">
@@ -2971,7 +2971,7 @@ correctly displayed?</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3177,12 +3177,12 @@ needed criteria.</li>
 aren’t needed, I just added them for clarity).</li>
 </ol>
 <p>The results look like this:</p>
-<figure><img src="../fig/SQL_09_join5.png" alt="Left Outer Join1" class="figure mx-auto d-block"></figure><div id="challenge2" class="callout challenge">
+<figure><img src="../fig/SQL_09_join5.png" alt="Left Outer Join1" class="figure mx-auto d-block"></figure><div id="exercise-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise-1" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise-1"></a>
 </h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal">
@@ -3201,7 +3201,7 @@ data so that there is only one entry for each Farm. i.e sum the
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3488,7 +3488,7 @@ facilitate ODBC connections</li>
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -3512,8 +3512,8 @@ facilitate ODBC connections</li>
   "url": "https://datacarpentry.github.io/sql-socialsci/instructor/aio.html",
   "identifier": "https://datacarpentry.github.io/sql-socialsci/instructor/aio.html",
   "dateCreated": "2017-05-25",
-  "dateModified": "2023-05-16",
-  "datePublished": "2023-05-16"
+  "dateModified": "2023-05-23",
+  "datePublished": "2023-05-23"
 }
 
   </script><script>
