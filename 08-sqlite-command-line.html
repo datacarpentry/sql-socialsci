@@ -357,7 +357,7 @@ change the database by use of the <em>.open</em> command</li>
 </ol><div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.open</span> SQL_SAFI.sqlite</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">.open</span> SQL_SAFI.sqlite</span></code></pre>
 </div>
 <p>It is important to remember the .sqlite suffix, otherwise a new
 database simply called SQL_SAFI would be created</p>
@@ -388,20 +388,20 @@ program.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> .mode <span class="ex">csv</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="op">&gt;</span> .mode <span class="ex">csv</span></span></code></pre>
 </div>
 <p>to change the field separator to “,”. There are many other modes
 available see the <a href="https://sqlite.org/cli.html" class="external-link">documentation</a>.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> .header <span class="ex">on</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="op">&gt;</span> .header <span class="ex">on</span></span></code></pre>
 </div>
 <p>to show the column headers</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> .output <span class="ex">my.filename</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="op">&gt;</span> .output <span class="ex">my.filename</span></span></code></pre>
 </div>
 <p>to direct the output to a file of my choice. The file will be created
 if needed or it will overwrite an already existing file, so exercise
@@ -433,17 +433,17 @@ content:</li>
 </ol><div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>result.csv</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>.<span class="kw">mode</span> csv</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>.output results.csv</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>.<span class="kw">open</span> SQL_SAFI.sqlite</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">from</span> Farms <span class="kw">where</span> A09_village<span class="op">=</span><span class="st">'God'</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>result.csv</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>.<span class="kw">mode</span> csv</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>.output results.csv</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>.<span class="kw">open</span> SQL_SAFI.sqlite</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">from</span> Farms <span class="kw">where</span> A09_village<span class="op">=</span><span class="st">'God'</span>;</span></code></pre>
 </div>
 <ol start="2" style="list-style-type: decimal"><li>run the sqlite3 program in the following way</li>
 </ol><div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sqlite3 <span class="op">&lt;</span> commands.sql</span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> sqlite3 <span class="op">&lt;</span> commands.sql</span></code></pre>
 </div>
 <p>Notice that there is no output to the screen and that the shell is
 closed. The results of running the query have been placed in the
@@ -472,7 +472,7 @@ file of SQLite commands will do for you.</p></li>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">from</span> Farms <span class="kw">WHERE</span> C01_respondent_roof_type <span class="op">=</span> <span class="st">'grass'</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">from</span> Farms <span class="kw">WHERE</span> C01_respondent_roof_type <span class="op">=</span> <span class="st">'grass'</span>;</span></code></pre>
 </div>
 <p>returns all of the records from the Farms table which have a roof
 made of grass.</p>
@@ -505,7 +505,7 @@ select * from Farms where C01_respondent_roof_type = 'mabatipitched';</code></pr
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlite3</span> SQL_SAFI.sqlite <span class="op">&lt;</span> SQLite_commands.sql</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">sqlite3</span> SQL_SAFI.sqlite <span class="op">&lt;</span> SQLite_commands.sql</span></code></pre>
 </div>
 </div>
 </div>
@@ -587,7 +587,7 @@ commands to run. This aids automation</li>
   "identifier": "https://datacarpentry.github.io/sql-socialsci/08-sqlite-command-line.html",
   "dateCreated": "2017-05-25",
   "dateModified": "2023-05-02",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

@@ -359,11 +359,11 @@ query such as this;</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">min</span>(A11_years_farm),</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">max</span>(A11_years_farm),</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">avg</span>(A11_years_farm)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>       <span class="fu">min</span>(A11_years_farm),</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>       <span class="fu">max</span>(A11_years_farm),</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>       <span class="fu">avg</span>(A11_years_farm)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
 </div>
 <p>This sort of query provides us with a general view of the values for
 a particular column or field across the whole table.</p>
@@ -397,8 +397,8 @@ values of the ‘A06_province’ column contained in the table.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> A06_province</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> A06_province</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
 </div>
 <p>We can see from the results of running this that all 3 values are
 represented and that there is no missing data in this field.</p>
@@ -406,8 +406,8 @@ represented and that there is no missing data in this field.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> A09_village</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> A09_village</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
 </div>
 <p>We get</p>
 <figure><img src="../fig/SQL_06_villages.png" alt="Villages" class="figure mx-auto d-block"></figure><p>The problem with allowing free-form text quite obvious. Having two
@@ -444,14 +444,14 @@ columns are returned in alphabetical order.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> A06_province, A07_district, A08_ward, A09_village</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A06_province, A07_district, A08_ward, A09_village;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> A06_province, A07_district, A08_ward, A09_village</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A06_province, A07_district, A08_ward, A09_village;</span></code></pre>
 </div>
 </div>
 </div>
@@ -465,10 +465,10 @@ this we use the <code>GROUP BY</code> clause.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A08_ward,</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> How_many</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> A08_ward;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> A08_ward,</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> How_many</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> A08_ward;</span></code></pre>
 </div>
 <p>This query tells us how many records in the table have each different
 value in the ‘A08_ward’ column.</p>
@@ -487,14 +487,14 @@ select clause which is not mentioned in the group by clause.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A06_province,</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>       A07_district,</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>       A08_ward,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>       A09_village,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> How_many</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> A06_province, A07_district, A08_ward, A09_village</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">SELECT</span> A06_province,</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>       A07_district,</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>       A08_ward,</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>       A09_village,</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> How_many</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> A06_province, A07_district, A08_ward, A09_village</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>;</span></code></pre>
 </div>
 <div id="exercise-1" class="callout challenge">
 <div class="callout-square">
@@ -515,7 +515,7 @@ for each village in the ‘Nhamatanda’ district.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <pre><code>SELECT A09_village,
        min(A11_years_farm) AS min,
@@ -544,13 +544,13 @@ to the aggregated column.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A08_ward,</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">min</span>(A11_years_farm) <span class="kw">AS</span> min_years,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">max</span>(A11_years_farm) <span class="kw">AS</span> max_years,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> how_many_farms</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> A08_ward</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> how_many_farms <span class="op">&gt;</span> <span class="dv">2</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">SELECT</span> A08_ward,</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>       <span class="fu">min</span>(A11_years_farm) <span class="kw">AS</span> min_years,</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>       <span class="fu">max</span>(A11_years_farm) <span class="kw">AS</span> max_years,</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> how_many_farms</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> A08_ward</span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="kw">HAVING</span> how_many_farms <span class="op">&gt;</span> <span class="dv">2</span>;</span></code></pre>
 </div>
 <p>In this example we want to remove the wards which only have one or
 two farms.</p>
@@ -572,17 +572,17 @@ two farms.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> D_curr_crop,</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> how_many</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Crops</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> D_curr_crop</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> how_many <span class="op">&gt;</span> <span class="dv">100</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">SELECT</span> D_curr_crop,</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> how_many</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="kw">FROM</span> Crops</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> D_curr_crop</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="kw">HAVING</span> how_many <span class="op">&gt;</span> <span class="dv">100</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>;</span></code></pre>
 </div>
 </div>
 </div>
@@ -666,7 +666,7 @@ clause</li>
   "identifier": "https://datacarpentry.github.io/sql-socialsci/instructor/06-aggregation.html",
   "dateCreated": "2017-05-25",
   "dateModified": "2023-05-02",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

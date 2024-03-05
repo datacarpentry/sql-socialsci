@@ -498,7 +498,7 @@ it make in the <code>CREATE TABLE</code> statement?</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">PRIMARY</span> <span class="kw">KEY</span>(`Id`)</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>    <span class="kw">PRIMARY</span> <span class="kw">KEY</span>(`Id`)</span></code></pre>
 </div>
 <p>line added.</p>
 </div>
@@ -530,13 +530,13 @@ table:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>       Country, </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>       A06_province, </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>       A07_district,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>       A08_ward, </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>       A09_village</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, </span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>       Country, </span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>       A06_province, </span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>       A07_district,</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>       A08_ward, </span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>       A09_village</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
 </div>
 <p>If you want to make the results of this query into a new table, you
 can do so by simply prefixing the <code>SELECT</code> with
@@ -544,14 +544,14 @@ can do so by simply prefixing the <code>SELECT</code> with
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Farms_location <span class="kw">AS</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       Country, </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       A06_province, </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>       A07_district,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>       A08_ward, </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>       A09_village</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Farms_location <span class="kw">AS</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, </span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>       Country, </span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>       A06_province, </span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>       A07_district,</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>       A08_ward, </span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>       A09_village</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
 </div>
 <p>If we wanted to create a table from the Crops table which contains
 only the rows where the D_curr_crop value was ‘rice’ we could use a
@@ -559,11 +559,11 @@ query like this:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> crops_rice <span class="kw">AS</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Crops</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> D_curr_crop <span class="op">=</span> <span class="st">'rice'</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> crops_rice <span class="kw">AS</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">FROM</span> Crops</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">WHERE</span> D_curr_crop <span class="op">=</span> <span class="st">'rice'</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>Here we want all of the columns from the Crops table but only if the
 D_curr_crop value is ‘rice’.</p>
@@ -579,14 +579,14 @@ create a ‘View’ in the same way. You just replace ‘Table’ with
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">VIEW</span> Farms_location <span class="kw">AS</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>       Country, </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>       A06_province, </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>       A07_district,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>       A08_ward, </span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>       A09_village</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">VIEW</span> Farms_location <span class="kw">AS</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, </span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>       Country, </span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>       A06_province, </span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>       A07_district,</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>       A08_ward, </span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>       A09_village</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
 </div>
 <p>Tables and Views are so closely related that if you try to run the
 code above, although ‘Table’ has been changed to ‘View’ you will get an
@@ -693,7 +693,7 @@ instructions on how to get the data</li>
   "identifier": "https://datacarpentry.github.io/sql-socialsci/07-creating-tables-views.html",
   "dateCreated": "2017-05-25",
   "dateModified": "2023-05-02",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

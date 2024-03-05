@@ -366,9 +366,9 @@ following SQL. ( 1 hectare = 2.4701 acres)</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> D02_total_plot <span class="op">*</span> <span class="fl">2.4701</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">SELECT</span> D02_total_plot <span class="op">*</span> <span class="fl">2.4701</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>Running this query will give the correct answers, but it uses the
 expression used in creating the new column as the column name. This
@@ -386,9 +386,9 @@ a mechanism for giving them names of your choice. This is done using the
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> D02_total_plot <span class="op">*</span> <span class="fl">2.4701</span> <span class="kw">AS</span> D02_total_plot_converted</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> D02_total_plot <span class="op">*</span> <span class="fl">2.4701</span> <span class="kw">AS</span> D02_total_plot_converted</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>The <strong>AS</strong> keyword itself is optional. You can just put
 the name of the new column, but using the <strong>AS</strong> keyword
@@ -415,9 +415,9 @@ required number of decimal places.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">ROUND</span>(D02_total_plot <span class="op">*</span> <span class="fl">2.4701</span>, <span class="dv">2</span>) <span class="kw">as</span> D02_total_plot_converted</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">ROUND</span>(D02_total_plot <span class="op">*</span> <span class="fl">2.4701</span>, <span class="dv">2</span>) <span class="kw">as</span> D02_total_plot_converted</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>;</span></code></pre>
 </div>
 <div id="exercise" class="callout challenge">
 <div class="callout-square">
@@ -439,16 +439,16 @@ representing the units of the calculated column.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, plot_Id, D01_curr_plot, D02_total_plot,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">ROUND</span>(D02_total_plot <span class="op">*</span> <span class="fl">2.4701</span>, <span class="dv">2</span>) <span class="kw">AS</span> D02_total_plot_converted,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>       <span class="st">'acres'</span> <span class="kw">AS</span> D03_unit_land_converted</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, plot_Id, D01_curr_plot, D02_total_plot,</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>       <span class="fu">ROUND</span>(D02_total_plot <span class="op">*</span> <span class="fl">2.4701</span>, <span class="dv">2</span>) <span class="kw">AS</span> D02_total_plot_converted,</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>       <span class="st">'acres'</span> <span class="kw">AS</span> D03_unit_land_converted</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>Notice that we can use columns as part of the calculated column which
 are not returned in the output. Also our second new column doesn’t
@@ -486,9 +486,9 @@ query;</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date, A04_start, A05_end</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date, A04_start, A05_end</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>The format of the A04_start and A05_end columns follow the <a href="https://en.wikipedia.org/wiki/ISO_8601" class="external-link">ISO 8601</a>. The
 A01_interview_date column on the other hand uses the shorthand
@@ -499,10 +499,10 @@ an <code>ORDER BY</code> clause at the end of the select statement.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A01_interview_date</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A01_interview_date</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>NB. we are using the UK and European representation of dates in this
 discussion. The same issue will occur if you were using US date
@@ -517,12 +517,12 @@ Unfortunately by itself, it won’t work on A01_interview_date.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date, </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="dt">date</span>(A01_interview_date) <span class="kw">AS</span> converted_A01,</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>       A04_start,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>       <span class="dt">date</span>(A04_start) <span class="kw">AS</span> coverted_A04</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date, </span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>       <span class="dt">date</span>(A01_interview_date) <span class="kw">AS</span> converted_A01,</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>       A04_start,</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>       <span class="dt">date</span>(A04_start) <span class="kw">AS</span> coverted_A04</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>Although it doesn’t produce an error, the attempted conversion of
 A01_interview_date into a date format has failed. A set of NULLs was
@@ -538,52 +538,52 @@ which is used to concatenate strings together.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="kw">as</span> <span class="dt">year</span>,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">month</span>,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">day</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="kw">as</span> <span class="dt">year</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">month</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">day</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>But in order to convert it into a date we need all three parts
 concatenated together along with ‘-’ to separate the parts.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> converted_date</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> converted_date</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>We can then convert our new string containing the date into a proper
 date by passing it to the <code>date</code> function.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>       <span class="dt">date</span>(</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>       ) <span class="kw">as</span> converted_date</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>       <span class="dt">date</span>(</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>       ) <span class="kw">as</span> converted_date</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>We can now use our <code>converted_date</code> column to sort by</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>       <span class="dt">date</span>(</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>       ) <span class="kw">as</span> converted_date</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> converted_date</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>       <span class="dt">date</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>       ) <span class="kw">as</span> converted_date</span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> converted_date</span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a>;</span></code></pre>
 </div>
 <div id="exercise-1" class="callout challenge">
 <div class="callout-square">
@@ -603,20 +603,20 @@ field and compare the results</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       <span class="dt">date</span>(</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>       ) <span class="kw">as</span> converted_date</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A01_interview_date</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>       <span class="dt">date</span>(</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>       ) <span class="kw">as</span> converted_date</span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A01_interview_date</span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a>;</span></code></pre>
 </div>
 </div>
 </div>
@@ -629,12 +629,12 @@ did this;</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="kw">as</span> <span class="dt">year</span>,</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">month</span>,</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">day</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="kw">as</span> <span class="dt">year</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">month</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">day</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>Having the date components split in this way does not prevent us from
 sorting them. We just need to specify all of the columns we want to sort
@@ -642,13 +642,13 @@ by in the order in which we want them sorted.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="kw">as</span> <span class="dt">year</span>,</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">month</span>,</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">day</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dt">year</span>, <span class="dt">month</span>, <span class="dt">day</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="kw">as</span> <span class="dt">year</span>,</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">month</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">day</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dt">year</span>, <span class="dt">month</span>, <span class="dt">day</span></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>By default the <code>ORDER BY</code> clause will sort in ascending
 order, smallest to biggest; we can make this explicit by usingthe
@@ -657,13 +657,13 @@ can use the <code>DESC</code> keyword.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="kw">as</span> <span class="dt">year</span>,</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">month</span>,</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">day</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dt">year</span> <span class="kw">DESC</span>, <span class="dt">month</span> <span class="kw">DESC</span>, <span class="dt">day</span> <span class="kw">DESC</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="kw">as</span> <span class="dt">year</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">month</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">day</span></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dt">year</span> <span class="kw">DESC</span>, <span class="dt">month</span> <span class="kw">DESC</span>, <span class="dt">day</span> <span class="kw">DESC</span></span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>;</span></code></pre>
 </div>
 </section><section id="using-sql-syntax-to-conditionally-create-new-values"><h2 class="section-heading">Using SQL syntax to conditionally create new values<a class="anchor" aria-label="anchor" href="#using-sql-syntax-to-conditionally-create-new-values"></a>
 </h2>
@@ -673,14 +673,14 @@ the <code>CASE</code> keyword.</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, country,</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>       <span class="cf">CASE</span> country</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span> <span class="st">'Moz'</span> <span class="cf">THEN</span> <span class="st">'Mozambique'</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span> <span class="st">'Taz'</span> <span class="cf">THEN</span> <span class="st">'Tanzania'</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>       <span class="cf">ELSE</span> <span class="st">'Unknown Country'</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>       <span class="cf">END</span> <span class="kw">AS</span> country_fullname</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, country,</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>       <span class="cf">CASE</span> country</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>           <span class="cf">WHEN</span> <span class="st">'Moz'</span> <span class="cf">THEN</span> <span class="st">'Mozambique'</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>           <span class="cf">WHEN</span> <span class="st">'Taz'</span> <span class="cf">THEN</span> <span class="st">'Tanzania'</span></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>       <span class="cf">ELSE</span> <span class="st">'Unknown Country'</span></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>       <span class="cf">END</span> <span class="kw">AS</span> country_fullname</span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>There is a more general form which allows to to perform any kind of
 test.</p>
@@ -699,18 +699,18 @@ etc. We can do this using a <code>CASE</code> statement as part of the
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, A11_years_farm,</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>       <span class="cf">CASE</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">1</span> <span class="kw">AND</span> <span class="dv">10</span> <span class="cf">THEN</span> <span class="st">'1-10'</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">11</span> <span class="kw">AND</span> <span class="dv">20</span> <span class="cf">THEN</span> <span class="st">'11-20'</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">21</span> <span class="kw">AND</span> <span class="dv">30</span> <span class="cf">THEN</span> <span class="st">'21-30'</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">31</span> <span class="kw">AND</span> <span class="dv">40</span> <span class="cf">THEN</span> <span class="st">'31-40'</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">41</span> <span class="kw">AND</span> <span class="dv">50</span> <span class="cf">THEN</span> <span class="st">'41-50'</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">41</span> <span class="kw">AND</span> <span class="dv">50</span> <span class="cf">THEN</span> <span class="st">'51-60'</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>       <span class="cf">ELSE</span> <span class="st">'&gt; 60'</span>       </span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>       <span class="cf">END</span> <span class="kw">AS</span> A11_years_farm_range</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, A11_years_farm,</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>       <span class="cf">CASE</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">1</span> <span class="kw">AND</span> <span class="dv">10</span> <span class="cf">THEN</span> <span class="st">'1-10'</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">11</span> <span class="kw">AND</span> <span class="dv">20</span> <span class="cf">THEN</span> <span class="st">'11-20'</span></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">21</span> <span class="kw">AND</span> <span class="dv">30</span> <span class="cf">THEN</span> <span class="st">'21-30'</span></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">31</span> <span class="kw">AND</span> <span class="dv">40</span> <span class="cf">THEN</span> <span class="st">'31-40'</span></span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">41</span> <span class="kw">AND</span> <span class="dv">50</span> <span class="cf">THEN</span> <span class="st">'41-50'</span></span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">41</span> <span class="kw">AND</span> <span class="dv">50</span> <span class="cf">THEN</span> <span class="st">'51-60'</span></span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>       <span class="cf">ELSE</span> <span class="st">'&gt; 60'</span>       </span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a>       <span class="cf">END</span> <span class="kw">AS</span> A11_years_farm_range</span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a>;</span></code></pre>
 </div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
@@ -789,7 +789,7 @@ not changed</li>
   "identifier": "https://datacarpentry.github.io/sql-socialsci/instructor/05-creating-new-columns.html",
   "dateCreated": "2017-05-25",
   "dateModified": "2023-05-02",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

@@ -1005,12 +1005,12 @@ statement has 6 key components;</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> colnames</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> tablename</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> conditions</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> colnames</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> conditions</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> colnames</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">SELECT</span> colnames</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">FROM</span> tablename</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">WHERE</span> conditions</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> colnames</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="kw">HAVING</span> conditions</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> colnames</span></code></pre>
 </div>
 <p>In practice very few queries will have all of these clauses in them
 simplifying many queries. On the other hand, conditions in the WHERE
@@ -1027,16 +1027,16 @@ the whole table</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
 </div>
 <p>It is better practice and generally more efficient to explicitly list
 the column names that you want returned.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> Country, A06_province, A07_district, A08_ward, A09_village</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> Country, A06_province, A07_district, A08_ward, A09_village</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
 </div>
 <p>The ‘*’ character acts as a wildcard meaning all of the columns but
 you cannot use it as a general wildcard. So for example, the following
@@ -1044,8 +1044,8 @@ is not valid.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A<span class="op">*</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> A<span class="op">*</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
 </div>
 <p>If you run it you will get an error. When an error does occur you
 will see an error message displayed in the bottom pane.</p>
@@ -1057,9 +1057,9 @@ useful if you just want to get a feel for what the data looks like.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">10</span>;</span></code></pre>
 </div>
 <div id="exercise" class="callout challenge">
 <div class="callout-square">
@@ -1084,14 +1084,14 @@ with only the columns Id, and B16 to B20.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>     , B16_years_liv</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>   , B17_parents_liv</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>   , B18_sp_parents_liv</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>   , B19_grand_liv</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>   , B20_sp_grand_liv</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">5</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span></span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>     , B16_years_liv</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>   , B17_parents_liv</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>   , B18_sp_parents_liv</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>   , B19_grand_liv</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a>   , B20_sp_grand_liv</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a><span class="kw">LIMIT</span> <span class="dv">5</span>;</span></code></pre>
 </div>
 <p>Because the query uses several columns (with longish names), for
 readability they have been set out on separate lines. SQL takes of white
@@ -1110,20 +1110,20 @@ B16_years_liv column is greater than 25</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span>, B16_years_liv</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> B16_years_liv <span class="op">&gt;</span> <span class="dv">25</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span>, B16_years_liv</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="kw">WHERE</span> B16_years_liv <span class="op">&gt;</span> <span class="dv">25</span></span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>In addition to using the ‘&gt;’ we can use many other operators such
 as &lt;, &lt;=, =, &gt;=, &lt;&gt;</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span>, B17_parents_liv</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> B17_parents_liv <span class="op">=</span> <span class="st">'yes'</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span>, B17_parents_liv</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="kw">WHERE</span> B17_parents_liv <span class="op">=</span> <span class="st">'yes'</span></span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>;</span></code></pre>
 </div>
 </section><section id="using-more-complex-logical-expressions-in-the-where-clause"><h2 class="section-heading">Using more complex logical expressions in the <code>WHERE</code>
 clause<a class="anchor" aria-label="anchor" href="#using-more-complex-logical-expressions-in-the-where-clause"></a>
@@ -1134,13 +1134,13 @@ selection criteria.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span>    B17_parents_liv <span class="op">=</span> <span class="st">'yes'</span> </span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>     <span class="kw">AND</span> B18_sp_parents_liv <span class="op">=</span> <span class="st">'yes'</span> </span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>     <span class="kw">AND</span> B19_grand_liv <span class="op">=</span> <span class="st">'yes'</span> </span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>     <span class="kw">AND</span> B20_sp_grand_liv <span class="op">=</span> <span class="st">'yes'</span> </span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span></span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="kw">WHERE</span>    B17_parents_liv <span class="op">=</span> <span class="st">'yes'</span> </span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>     <span class="kw">AND</span> B18_sp_parents_liv <span class="op">=</span> <span class="st">'yes'</span> </span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a>     <span class="kw">AND</span> B19_grand_liv <span class="op">=</span> <span class="st">'yes'</span> </span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>     <span class="kw">AND</span> B20_sp_grand_liv <span class="op">=</span> <span class="st">'yes'</span> </span>
+<span id="cb9-7"><a href="#cb9-7" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>Notice that the columns being used in the <code>WHERE</code> clause
 do not need to returned as part of the <code>SELECT</code> clause.</p>
@@ -1149,10 +1149,10 @@ Judicious use of brackets can also aid readability</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (B17_parents_liv <span class="op">=</span> <span class="st">'yes'</span> <span class="kw">OR</span> B18_sp_parents_liv <span class="op">=</span> <span class="st">'yes'</span>) <span class="kw">AND</span> B16_years_liv <span class="op">&gt;</span> <span class="dv">60</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span></span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a><span class="kw">WHERE</span> (B17_parents_liv <span class="op">=</span> <span class="st">'yes'</span> <span class="kw">OR</span> B18_sp_parents_liv <span class="op">=</span> <span class="st">'yes'</span>) <span class="kw">AND</span> B16_years_liv <span class="op">&gt;</span> <span class="dv">60</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>;</span></code></pre>
 </div>
 <div id="exercise-1" class="callout challenge">
 <div class="callout-square">
@@ -1179,22 +1179,22 @@ are returned in each case.</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> B17_parents_liv <span class="op">=</span> <span class="st">'yes'</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>;</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> B18_sp_parents_liv <span class="op">=</span> <span class="st">'yes'</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>;</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (B17_parents_liv <span class="op">=</span> <span class="st">'yes'</span> <span class="kw">OR</span> B18_sp_parents_liv <span class="op">=</span> <span class="st">'yes'</span>) </span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>;</span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> B16_years_liv <span class="op">&gt;</span> <span class="dv">60</span></span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a><span class="kw">WHERE</span> B17_parents_liv <span class="op">=</span> <span class="st">'yes'</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>;</span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span></span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="kw">WHERE</span> B18_sp_parents_liv <span class="op">=</span> <span class="st">'yes'</span></span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a>;</span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span></span>
+<span id="cb11-10"><a href="#cb11-10" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb11-11"><a href="#cb11-11" tabindex="-1"></a><span class="kw">WHERE</span> (B17_parents_liv <span class="op">=</span> <span class="st">'yes'</span> <span class="kw">OR</span> B18_sp_parents_liv <span class="op">=</span> <span class="st">'yes'</span>) </span>
+<span id="cb11-12"><a href="#cb11-12" tabindex="-1"></a>;</span>
+<span id="cb11-13"><a href="#cb11-13" tabindex="-1"></a><span class="kw">SELECT</span>  <span class="kw">Id</span></span>
+<span id="cb11-14"><a href="#cb11-14" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb11-15"><a href="#cb11-15" tabindex="-1"></a><span class="kw">WHERE</span> B16_years_liv <span class="op">&gt;</span> <span class="dv">60</span></span>
+<span id="cb11-16"><a href="#cb11-16" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p><code>OR</code> generally creates a less restrictive condition and
 <code>AND</code> makes a more restrictive condition.</p>
@@ -1207,28 +1207,28 @@ is in the range 51 to 59 inclusive.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, B16_years_liv</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> B16_years_liv <span class="op">&gt;</span> <span class="dv">50</span> <span class="kw">AND</span> B16_years_liv <span class="op">&lt;</span> <span class="dv">60</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, B16_years_liv</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a><span class="kw">WHERE</span> B16_years_liv <span class="op">&gt;</span> <span class="dv">50</span> <span class="kw">AND</span> B16_years_liv <span class="op">&lt;</span> <span class="dv">60</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>The same results could be obtained by using the BETWEEN or IN
 operators</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, B16_years_liv</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> B16_years_liv <span class="kw">BETWEEN</span> <span class="dv">51</span> <span class="kw">AND</span> <span class="dv">59</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, B16_years_liv</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="kw">WHERE</span> B16_years_liv <span class="kw">BETWEEN</span> <span class="dv">51</span> <span class="kw">AND</span> <span class="dv">59</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>;</span></code></pre>
 </div>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, B16_years_liv</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> B16_years_liv <span class="kw">IN</span> (<span class="dv">51</span>, <span class="dv">52</span>, <span class="dv">53</span>, <span class="dv">54</span>, <span class="dv">55</span>, <span class="dv">56</span>, <span class="dv">57</span>, <span class="dv">58</span>, <span class="dv">59</span>)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, B16_years_liv</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="kw">WHERE</span> B16_years_liv <span class="kw">IN</span> (<span class="dv">51</span>, <span class="dv">52</span>, <span class="dv">53</span>, <span class="dv">54</span>, <span class="dv">55</span>, <span class="dv">56</span>, <span class="dv">57</span>, <span class="dv">58</span>, <span class="dv">59</span>)</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>The list of values in brackets do not have to be contiguous or even
 in order.</p>
@@ -1275,11 +1275,11 @@ you can use the ORDER BY clause</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, A09_village, A11_years_farm, B16_years_liv</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> A09_village <span class="op">=</span> <span class="st">'God'</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A11_years_farm</span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, A09_village, A11_years_farm, B16_years_liv</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="kw">WHERE</span> A09_village <span class="op">=</span> <span class="st">'God'</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A11_years_farm</span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>By default the SQL assumes Ascending order. You can make this more
 explicit by using the <code>ASC</code> or <code>DESC</code>
@@ -1287,21 +1287,21 @@ keywords.</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, A09_village, A11_years_farm, B16_years_liv</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> A09_village <span class="op">=</span> <span class="st">'God'</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A11_years_farm <span class="kw">DESC</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, A09_village, A11_years_farm, B16_years_liv</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="kw">WHERE</span> A09_village <span class="op">=</span> <span class="st">'God'</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A11_years_farm <span class="kw">DESC</span></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>You can also order by multiple columns</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, A09_village, A11_years_farm, B16_years_liv</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> A09_village <span class="op">=</span> <span class="st">'God'</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A11_years_farm <span class="kw">DESC</span> , B16_years_liv <span class="kw">ASC</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, A09_village, A11_years_farm, B16_years_liv</span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a><span class="kw">WHERE</span> A09_village <span class="op">=</span> <span class="st">'God'</span></span>
+<span id="cb18-4"><a href="#cb18-4" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A11_years_farm <span class="kw">DESC</span> , B16_years_liv <span class="kw">ASC</span></span>
+<span id="cb18-5"><a href="#cb18-5" tabindex="-1"></a>;</span></code></pre>
 </div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
@@ -1404,9 +1404,9 @@ values have occurred as a result of the survey design.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> E01_water_use, E_no_group_count, E_yes_group_count</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> E01_water_use, E_no_group_count, E_yes_group_count</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>The first part of the results will look like this:</p>
 <figure><img src="../fig/SQL_04_Nulls_04.png" alt="Farms_csv" class="figure mx-auto d-block"></figure><p>You may be able to spot from this the relationship between the values
@@ -1443,10 +1443,10 @@ going to have before you change data in this way.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">UPDATE</span> Farms</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SET</span> F14_items_owned <span class="op">=</span> <span class="st">'[]'</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> F14_items_owned <span class="kw">is</span> <span class="kw">NULL</span> </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">UPDATE</span> Farms</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="kw">SET</span> F14_items_owned <span class="op">=</span> <span class="st">'[]'</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="kw">WHERE</span> F14_items_owned <span class="kw">is</span> <span class="kw">NULL</span> </span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>Rather than changing the data we may just want to miss it out of our
 analysis.</p>
@@ -1455,9 +1455,9 @@ analysis.</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">from</span> Farms</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> F14_items_owned <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">from</span> Farms</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">WHERE</span> F14_items_owned <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>;</span></code></pre>
 </div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
@@ -1542,9 +1542,9 @@ following SQL. ( 1 hectare = 2.4701 acres)</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> D02_total_plot <span class="op">*</span> <span class="fl">2.4701</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">SELECT</span> D02_total_plot <span class="op">*</span> <span class="fl">2.4701</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>Running this query will give the correct answers, but it uses the
 expression used in creating the new column as the column name. This
@@ -1563,9 +1563,9 @@ a mechanism for giving them names of your choice. This is done using the
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> D02_total_plot <span class="op">*</span> <span class="fl">2.4701</span> <span class="kw">AS</span> D02_total_plot_converted</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> D02_total_plot <span class="op">*</span> <span class="fl">2.4701</span> <span class="kw">AS</span> D02_total_plot_converted</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>The <strong>AS</strong> keyword itself is optional. You can just put
 the name of the new column, but using the <strong>AS</strong> keyword
@@ -1593,9 +1593,9 @@ required number of decimal places.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">ROUND</span>(D02_total_plot <span class="op">*</span> <span class="fl">2.4701</span>, <span class="dv">2</span>) <span class="kw">as</span> D02_total_plot_converted</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">ROUND</span>(D02_total_plot <span class="op">*</span> <span class="fl">2.4701</span>, <span class="dv">2</span>) <span class="kw">as</span> D02_total_plot_converted</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>;</span></code></pre>
 </div>
 <div id="exercise" class="callout challenge">
 <div class="callout-square">
@@ -1617,16 +1617,16 @@ representing the units of the calculated column.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, plot_Id, D01_curr_plot, D02_total_plot,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">ROUND</span>(D02_total_plot <span class="op">*</span> <span class="fl">2.4701</span>, <span class="dv">2</span>) <span class="kw">AS</span> D02_total_plot_converted,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>       <span class="st">'acres'</span> <span class="kw">AS</span> D03_unit_land_converted</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, plot_Id, D01_curr_plot, D02_total_plot,</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>       <span class="fu">ROUND</span>(D02_total_plot <span class="op">*</span> <span class="fl">2.4701</span>, <span class="dv">2</span>) <span class="kw">AS</span> D02_total_plot_converted,</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>       <span class="st">'acres'</span> <span class="kw">AS</span> D03_unit_land_converted</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">FROM</span> Plots</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>Notice that we can use columns as part of the calculated column which
 are not returned in the output. Also our second new column doesn’t
@@ -1674,9 +1674,9 @@ query;</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date, A04_start, A05_end</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date, A04_start, A05_end</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>The format of the A04_start and A05_end columns follow the <a href="https://en.wikipedia.org/wiki/ISO_8601" class="external-link">ISO 8601</a>. The
 A01_interview_date column on the other hand uses the shorthand
@@ -1687,10 +1687,10 @@ an <code>ORDER BY</code> clause at the end of the select statement.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A01_interview_date</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A01_interview_date</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>NB. we are using the UK and European representation of dates in this
 discussion. The same issue will occur if you were using US date
@@ -1705,12 +1705,12 @@ Unfortunately by itself, it won’t work on A01_interview_date.</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date, </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="dt">date</span>(A01_interview_date) <span class="kw">AS</span> converted_A01,</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>       A04_start,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>       <span class="dt">date</span>(A04_start) <span class="kw">AS</span> coverted_A04</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date, </span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>       <span class="dt">date</span>(A01_interview_date) <span class="kw">AS</span> converted_A01,</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>       A04_start,</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>       <span class="dt">date</span>(A04_start) <span class="kw">AS</span> coverted_A04</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>Although it doesn’t produce an error, the attempted conversion of
 A01_interview_date into a date format has failed. A set of NULLs was
@@ -1726,52 +1726,52 @@ which is used to concatenate strings together.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="kw">as</span> <span class="dt">year</span>,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">month</span>,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">day</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="kw">as</span> <span class="dt">year</span>,</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">month</span>,</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">day</span></span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>But in order to convert it into a date we need all three parts
 concatenated together along with ‘-’ to separate the parts.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> converted_date</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> converted_date</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>We can then convert our new string containing the date into a proper
 date by passing it to the <code>date</code> function.</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>       <span class="dt">date</span>(</span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>)</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>       ) <span class="kw">as</span> converted_date</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>       <span class="dt">date</span>(</span>
+<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
+<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
+<span id="cb10-5"><a href="#cb10-5" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb10-6"><a href="#cb10-6" tabindex="-1"></a>       ) <span class="kw">as</span> converted_date</span>
+<span id="cb10-7"><a href="#cb10-7" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb10-8"><a href="#cb10-8" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>We can now use our <code>converted_date</code> column to sort by</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>       <span class="dt">date</span>(</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>       ) <span class="kw">as</span> converted_date</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> converted_date</span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>       <span class="dt">date</span>(</span>
+<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
+<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
+<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" tabindex="-1"></a>       ) <span class="kw">as</span> converted_date</span>
+<span id="cb11-7"><a href="#cb11-7" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb11-8"><a href="#cb11-8" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> converted_date</span>
+<span id="cb11-9"><a href="#cb11-9" tabindex="-1"></a>;</span></code></pre>
 </div>
 <div id="exercise-1" class="callout challenge">
 <div class="callout-square">
@@ -1791,20 +1791,20 @@ field and compare the results</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>       <span class="dt">date</span>(</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>)</span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>       ) <span class="kw">as</span> converted_date</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A01_interview_date</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>       <span class="dt">date</span>(</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="op">||</span> <span class="st">'-'</span> <span class="op">||</span></span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>       ) <span class="kw">as</span> converted_date</span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb12-8"><a href="#cb12-8" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A01_interview_date</span>
+<span id="cb12-9"><a href="#cb12-9" tabindex="-1"></a>;</span></code></pre>
 </div>
 </div>
 </div>
@@ -1817,12 +1817,12 @@ did this;</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="kw">as</span> <span class="dt">year</span>,</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">month</span>,</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">day</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="kw">as</span> <span class="dt">year</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">month</span>,</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">day</span></span>
+<span id="cb13-5"><a href="#cb13-5" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb13-6"><a href="#cb13-6" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>Having the date components split in this way does not prevent us from
 sorting them. We just need to specify all of the columns we want to sort
@@ -1830,13 +1830,13 @@ by in the order in which we want them sorted.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="kw">as</span> <span class="dt">year</span>,</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">month</span>,</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">day</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dt">year</span>, <span class="dt">month</span>, <span class="dt">day</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="kw">as</span> <span class="dt">year</span>,</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">month</span>,</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">day</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dt">year</span>, <span class="dt">month</span>, <span class="dt">day</span></span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>By default the <code>ORDER BY</code> clause will sort in ascending
 order, smallest to biggest; we can make this explicit by usingthe
@@ -1845,13 +1845,13 @@ can use the <code>DESC</code> keyword.</p>
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="kw">as</span> <span class="dt">year</span>,</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">month</span>,</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">day</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dt">year</span> <span class="kw">DESC</span>, <span class="dt">month</span> <span class="kw">DESC</span>, <span class="dt">day</span> <span class="kw">DESC</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="kw">SELECT</span> A01_interview_date,</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">7</span>,<span class="dv">4</span>) <span class="kw">as</span> <span class="dt">year</span>,</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">4</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">month</span>,</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a>       <span class="fu">substr</span>(A01_interview_date,<span class="dv">1</span>,<span class="dv">2</span>) <span class="kw">as</span> <span class="dt">day</span></span>
+<span id="cb15-5"><a href="#cb15-5" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb15-6"><a href="#cb15-6" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="dt">year</span> <span class="kw">DESC</span>, <span class="dt">month</span> <span class="kw">DESC</span>, <span class="dt">day</span> <span class="kw">DESC</span></span>
+<span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>;</span></code></pre>
 </div>
 </section><section id="using-sql-syntax-to-conditionally-create-new-values"><h2 class="section-heading">Using SQL syntax to conditionally create new values<a class="anchor" aria-label="anchor" href="#using-sql-syntax-to-conditionally-create-new-values"></a>
 </h2>
@@ -1862,14 +1862,14 @@ the <code>CASE</code> keyword.</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, country,</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>       <span class="cf">CASE</span> country</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span> <span class="st">'Moz'</span> <span class="cf">THEN</span> <span class="st">'Mozambique'</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span> <span class="st">'Taz'</span> <span class="cf">THEN</span> <span class="st">'Tanzania'</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>       <span class="cf">ELSE</span> <span class="st">'Unknown Country'</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>       <span class="cf">END</span> <span class="kw">AS</span> country_fullname</span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, country,</span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a>       <span class="cf">CASE</span> country</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a>           <span class="cf">WHEN</span> <span class="st">'Moz'</span> <span class="cf">THEN</span> <span class="st">'Mozambique'</span></span>
+<span id="cb16-4"><a href="#cb16-4" tabindex="-1"></a>           <span class="cf">WHEN</span> <span class="st">'Taz'</span> <span class="cf">THEN</span> <span class="st">'Tanzania'</span></span>
+<span id="cb16-5"><a href="#cb16-5" tabindex="-1"></a>       <span class="cf">ELSE</span> <span class="st">'Unknown Country'</span></span>
+<span id="cb16-6"><a href="#cb16-6" tabindex="-1"></a>       <span class="cf">END</span> <span class="kw">AS</span> country_fullname</span>
+<span id="cb16-7"><a href="#cb16-7" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb16-8"><a href="#cb16-8" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>There is a more general form which allows to to perform any kind of
 test.</p>
@@ -1889,18 +1889,18 @@ etc. We can do this using a <code>CASE</code> statement as part of the
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, A11_years_farm,</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>       <span class="cf">CASE</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">1</span> <span class="kw">AND</span> <span class="dv">10</span> <span class="cf">THEN</span> <span class="st">'1-10'</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">11</span> <span class="kw">AND</span> <span class="dv">20</span> <span class="cf">THEN</span> <span class="st">'11-20'</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">21</span> <span class="kw">AND</span> <span class="dv">30</span> <span class="cf">THEN</span> <span class="st">'21-30'</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">31</span> <span class="kw">AND</span> <span class="dv">40</span> <span class="cf">THEN</span> <span class="st">'31-40'</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">41</span> <span class="kw">AND</span> <span class="dv">50</span> <span class="cf">THEN</span> <span class="st">'41-50'</span></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">41</span> <span class="kw">AND</span> <span class="dv">50</span> <span class="cf">THEN</span> <span class="st">'51-60'</span></span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>       <span class="cf">ELSE</span> <span class="st">'&gt; 60'</span>       </span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>       <span class="cf">END</span> <span class="kw">AS</span> A11_years_farm_range</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, A11_years_farm,</span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a>       <span class="cf">CASE</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">1</span> <span class="kw">AND</span> <span class="dv">10</span> <span class="cf">THEN</span> <span class="st">'1-10'</span></span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">11</span> <span class="kw">AND</span> <span class="dv">20</span> <span class="cf">THEN</span> <span class="st">'11-20'</span></span>
+<span id="cb17-5"><a href="#cb17-5" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">21</span> <span class="kw">AND</span> <span class="dv">30</span> <span class="cf">THEN</span> <span class="st">'21-30'</span></span>
+<span id="cb17-6"><a href="#cb17-6" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">31</span> <span class="kw">AND</span> <span class="dv">40</span> <span class="cf">THEN</span> <span class="st">'31-40'</span></span>
+<span id="cb17-7"><a href="#cb17-7" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">41</span> <span class="kw">AND</span> <span class="dv">50</span> <span class="cf">THEN</span> <span class="st">'41-50'</span></span>
+<span id="cb17-8"><a href="#cb17-8" tabindex="-1"></a>           <span class="cf">WHEN</span>  A11_years_farm <span class="kw">BETWEEN</span> <span class="dv">41</span> <span class="kw">AND</span> <span class="dv">50</span> <span class="cf">THEN</span> <span class="st">'51-60'</span></span>
+<span id="cb17-9"><a href="#cb17-9" tabindex="-1"></a>       <span class="cf">ELSE</span> <span class="st">'&gt; 60'</span>       </span>
+<span id="cb17-10"><a href="#cb17-10" tabindex="-1"></a>       <span class="cf">END</span> <span class="kw">AS</span> A11_years_farm_range</span>
+<span id="cb17-11"><a href="#cb17-11" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb17-12"><a href="#cb17-12" tabindex="-1"></a>;</span></code></pre>
 </div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
@@ -1975,11 +1975,11 @@ query such as this;</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">min</span>(A11_years_farm),</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">max</span>(A11_years_farm),</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">avg</span>(A11_years_farm)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">SELECT</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>       <span class="fu">min</span>(A11_years_farm),</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>       <span class="fu">max</span>(A11_years_farm),</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>       <span class="fu">avg</span>(A11_years_farm)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
 </div>
 <p>This sort of query provides us with a general view of the values for
 a particular column or field across the whole table.</p>
@@ -2014,8 +2014,8 @@ values of the ‘A06_province’ column contained in the table.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> A06_province</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> A06_province</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
 </div>
 <p>We can see from the results of running this that all 3 values are
 represented and that there is no missing data in this field.</p>
@@ -2023,8 +2023,8 @@ represented and that there is no missing data in this field.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> A09_village</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> A09_village</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
 </div>
 <p>We get</p>
 <figure><img src="../fig/SQL_06_villages.png" alt="Villages" class="figure mx-auto d-block"></figure><p>The problem with allowing free-form text quite obvious. Having two
@@ -2061,14 +2061,14 @@ columns are returned in alphabetical order.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> A06_province, A07_district, A08_ward, A09_village</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A06_province, A07_district, A08_ward, A09_village;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> A06_province, A07_district, A08_ward, A09_village</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> A06_province, A07_district, A08_ward, A09_village;</span></code></pre>
 </div>
 </div>
 </div>
@@ -2083,10 +2083,10 @@ this we use the <code>GROUP BY</code> clause.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A08_ward,</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> How_many</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> A08_ward;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> A08_ward,</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> How_many</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> A08_ward;</span></code></pre>
 </div>
 <p>This query tells us how many records in the table have each different
 value in the ‘A08_ward’ column.</p>
@@ -2105,14 +2105,14 @@ select clause which is not mentioned in the group by clause.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A06_province,</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>       A07_district,</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>       A08_ward,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>       A09_village,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> How_many</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> A06_province, A07_district, A08_ward, A09_village</span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">SELECT</span> A06_province,</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>       A07_district,</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>       A08_ward,</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a>       A09_village,</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> How_many</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> A06_province, A07_district, A08_ward, A09_village</span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>;</span></code></pre>
 </div>
 <div id="exercise-1" class="callout challenge">
 <div class="callout-square">
@@ -2133,7 +2133,7 @@ for each village in the ‘Nhamatanda’ district.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <pre><code>SELECT A09_village,
        min(A11_years_farm) AS min,
@@ -2163,13 +2163,13 @@ to the aggregated column.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> A08_ward,</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">min</span>(A11_years_farm) <span class="kw">AS</span> min_years,</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>       <span class="fu">max</span>(A11_years_farm) <span class="kw">AS</span> max_years,</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> how_many_farms</span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> A08_ward</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> how_many_farms <span class="op">&gt;</span> <span class="dv">2</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">SELECT</span> A08_ward,</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>       <span class="fu">min</span>(A11_years_farm) <span class="kw">AS</span> min_years,</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a>       <span class="fu">max</span>(A11_years_farm) <span class="kw">AS</span> max_years,</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> how_many_farms</span>
+<span id="cb8-5"><a href="#cb8-5" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb8-6"><a href="#cb8-6" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> A08_ward</span>
+<span id="cb8-7"><a href="#cb8-7" tabindex="-1"></a><span class="kw">HAVING</span> how_many_farms <span class="op">&gt;</span> <span class="dv">2</span>;</span></code></pre>
 </div>
 <p>In this example we want to remove the wards which only have one or
 two farms.</p>
@@ -2191,17 +2191,17 @@ two farms.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Show me the solution</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> D_curr_crop,</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> how_many</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Crops</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> D_curr_crop</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> how_many <span class="op">&gt;</span> <span class="dv">100</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">SELECT</span> D_curr_crop,</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a>       <span class="fu">count</span>(<span class="op">*</span>) <span class="kw">AS</span> how_many</span>
+<span id="cb9-3"><a href="#cb9-3" tabindex="-1"></a><span class="kw">FROM</span> Crops</span>
+<span id="cb9-4"><a href="#cb9-4" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> D_curr_crop</span>
+<span id="cb9-5"><a href="#cb9-5" tabindex="-1"></a><span class="kw">HAVING</span> how_many <span class="op">&gt;</span> <span class="dv">100</span></span>
+<span id="cb9-6"><a href="#cb9-6" tabindex="-1"></a>;</span></code></pre>
 </div>
 </div>
 </div>
@@ -2428,7 +2428,7 @@ it make in the <code>CREATE TABLE</code> statement?</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>    <span class="kw">PRIMARY</span> <span class="kw">KEY</span>(`Id`)</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>    <span class="kw">PRIMARY</span> <span class="kw">KEY</span>(`Id`)</span></code></pre>
 </div>
 <p>line added.</p>
 </div>
@@ -2462,13 +2462,13 @@ table:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>       Country, </span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>       A06_province, </span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>       A07_district,</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>       A08_ward, </span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>       A09_village</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, </span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>       Country, </span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>       A06_province, </span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>       A07_district,</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>       A08_ward, </span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>       A09_village</span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
 </div>
 <p>If you want to make the results of this query into a new table, you
 can do so by simply prefixing the <code>SELECT</code> with
@@ -2476,14 +2476,14 @@ can do so by simply prefixing the <code>SELECT</code> with
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Farms_location <span class="kw">AS</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, </span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>       Country, </span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       A06_province, </span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>       A07_district,</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>       A08_ward, </span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>       A09_village</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> Farms_location <span class="kw">AS</span></span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, </span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>       Country, </span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>       A06_province, </span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>       A07_district,</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>       A08_ward, </span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>       A09_village</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
 </div>
 <p>If we wanted to create a table from the Crops table which contains
 only the rows where the D_curr_crop value was ‘rice’ we could use a
@@ -2491,11 +2491,11 @@ query like this:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> crops_rice <span class="kw">AS</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Crops</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> D_curr_crop <span class="op">=</span> <span class="st">'rice'</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">TABLE</span> crops_rice <span class="kw">AS</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">FROM</span> Crops</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">WHERE</span> D_curr_crop <span class="op">=</span> <span class="st">'rice'</span></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>Here we want all of the columns from the Crops table but only if the
 D_curr_crop value is ‘rice’.</p>
@@ -2512,14 +2512,14 @@ create a ‘View’ in the same way. You just replace ‘Table’ with
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">VIEW</span> Farms_location <span class="kw">AS</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, </span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>       Country, </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>       A06_province, </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>       A07_district,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>       A08_ward, </span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>       A09_village</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">VIEW</span> Farms_location <span class="kw">AS</span></span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, </span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>       Country, </span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>       A06_province, </span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>       A07_district,</span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a>       A08_ward, </span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>       A09_village</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a><span class="kw">FROM</span> Farms;</span></code></pre>
 </div>
 <p>Tables and Views are so closely related that if you try to run the
 code above, although ‘Table’ has been changed to ‘View’ you will get an
@@ -2628,7 +2628,7 @@ change the database by use of the <em>.open</em> command</li>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">.open</span> SQL_SAFI.sqlite</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">.open</span> SQL_SAFI.sqlite</span></code></pre>
 </div>
 <p>It is important to remember the .sqlite suffix, otherwise a new
 database simply called SQL_SAFI would be created</p>
@@ -2661,20 +2661,20 @@ program.</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> .mode <span class="ex">csv</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="op">&gt;</span> .mode <span class="ex">csv</span></span></code></pre>
 </div>
 <p>to change the field separator to “,”. There are many other modes
 available see the <a href="https://sqlite.org/cli.html" class="external-link">documentation</a>.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> .header <span class="ex">on</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="op">&gt;</span> .header <span class="ex">on</span></span></code></pre>
 </div>
 <p>to show the column headers</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;</span> .output <span class="ex">my.filename</span></span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="op">&gt;</span> .output <span class="ex">my.filename</span></span></code></pre>
 </div>
 <p>to direct the output to a file of my choice. The file will be created
 if needed or it will overwrite an already existing file, so exercise
@@ -2709,11 +2709,11 @@ content:</li>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>result.csv</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>.<span class="kw">mode</span> csv</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>.output results.csv</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>.<span class="kw">open</span> SQL_SAFI.sqlite</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">from</span> Farms <span class="kw">where</span> A09_village<span class="op">=</span><span class="st">'God'</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>result.csv</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>.<span class="kw">mode</span> csv</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>.output results.csv</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>.<span class="kw">open</span> SQL_SAFI.sqlite</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">from</span> Farms <span class="kw">where</span> A09_village<span class="op">=</span><span class="st">'God'</span>;</span></code></pre>
 </div>
 <ol start="2" style="list-style-type: decimal">
 <li>run the sqlite3 program in the following way</li>
@@ -2721,7 +2721,7 @@ content:</li>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> sqlite3 <span class="op">&lt;</span> commands.sql</span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">$</span> sqlite3 <span class="op">&lt;</span> commands.sql</span></code></pre>
 </div>
 <p>Notice that there is no output to the screen and that the shell is
 closed. The results of running the query have been placed in the
@@ -2752,7 +2752,7 @@ file of SQLite commands will do for you.</p></li>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">from</span> Farms <span class="kw">WHERE</span> C01_respondent_roof_type <span class="op">=</span> <span class="st">'grass'</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span> <span class="kw">from</span> Farms <span class="kw">WHERE</span> C01_respondent_roof_type <span class="op">=</span> <span class="st">'grass'</span>;</span></code></pre>
 </div>
 <p>returns all of the records from the Farms table which have a roof
 made of grass.</p>
@@ -2785,7 +2785,7 @@ select * from Farms where C01_respondent_roof_type = 'mabatipitched';</code></pr
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">sqlite3</span> SQL_SAFI.sqlite <span class="op">&lt;</span> SQLite_commands.sql</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">sqlite3</span> SQL_SAFI.sqlite <span class="op">&lt;</span> SQLite_commands.sql</span></code></pre>
 </div>
 </div>
 </div>
@@ -2869,21 +2869,21 @@ answer to this question.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- how many crops of Maize?</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Crops</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> D_curr_crop <span class="op">=</span> <span class="st">'maize'</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="co">-- how many crops of Maize?</span></span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="kw">FROM</span> Crops</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="kw">WHERE</span> D_curr_crop <span class="op">=</span> <span class="st">'maize'</span></span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>;</span></code></pre>
 </div>
 <figure><img src="../fig/SQL_09_maize.png" alt="Maize" class="figure mx-auto d-block"></figure><p>and</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- Which farms have more than 12 in the Household</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, B_no_membrs</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> B_no_membrs <span class="op">&gt;</span> <span class="dv">12</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="co">-- Which farms have more than 12 in the Household</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">SELECT</span> <span class="kw">Id</span>, B_no_membrs</span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a><span class="kw">FROM</span> Farms</span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="kw">WHERE</span> B_no_membrs <span class="op">&gt;</span> <span class="dv">12</span></span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>;</span></code></pre>
 </div>
 <figure><img src="../fig/SQL_09_maize.png" alt="Maize" class="figure mx-auto d-block"></figure><p>In order to answer the question we need information from both tables
 at the time, i.e. from a single query. Notice that in the tables
@@ -2898,12 +2898,12 @@ name.</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> a.<span class="kw">Id</span>, a.B_no_membrs,</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>       b.<span class="kw">Id</span>, b.D_curr_crop</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms <span class="kw">AS</span> a</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> Crops <span class="kw">AS</span> b</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> a.<span class="kw">Id</span> <span class="op">=</span> b.<span class="kw">Id</span> <span class="kw">AND</span> a.B_no_membrs <span class="op">&gt;</span> <span class="dv">12</span> <span class="kw">AND</span> b.D_curr_crop <span class="op">=</span> <span class="st">'maize'</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> a.<span class="kw">Id</span>, a.B_no_membrs,</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a>       b.<span class="kw">Id</span>, b.D_curr_crop</span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="kw">FROM</span> Farms <span class="kw">AS</span> a</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="kw">JOIN</span> Crops <span class="kw">AS</span> b</span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="kw">ON</span> a.<span class="kw">Id</span> <span class="op">=</span> b.<span class="kw">Id</span> <span class="kw">AND</span> a.B_no_membrs <span class="op">&gt;</span> <span class="dv">12</span> <span class="kw">AND</span> b.D_curr_crop <span class="op">=</span> <span class="st">'maize'</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>There are several things to notice about this query:</p>
 <ol style="list-style-type: decimal">
@@ -2958,17 +2958,17 @@ correctly displayed?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> a.<span class="kw">Id</span> <span class="kw">AS</span> Farms_Id, a.B_no_membrs,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>       b.<span class="kw">Id</span> <span class="kw">AS</span> Crops_Id, b.plot_Id, b.D_curr_crop</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms <span class="kw">AS</span> a</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> Crops <span class="kw">AS</span> b</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> a.<span class="kw">Id</span> <span class="op">=</span> b.<span class="kw">Id</span> <span class="kw">AND</span> a.B_no_membrs <span class="op">&gt;</span> <span class="dv">12</span> <span class="kw">AND</span> b.D_curr_crop <span class="op">=</span> <span class="st">'maize'</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="kw">SELECT</span> a.<span class="kw">Id</span> <span class="kw">AS</span> Farms_Id, a.B_no_membrs,</span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a>       b.<span class="kw">Id</span> <span class="kw">AS</span> Crops_Id, b.plot_Id, b.D_curr_crop</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">FROM</span> Farms <span class="kw">AS</span> a</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="kw">JOIN</span> Crops <span class="kw">AS</span> b</span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="kw">ON</span> a.<span class="kw">Id</span> <span class="op">=</span> b.<span class="kw">Id</span> <span class="kw">AND</span> a.B_no_membrs <span class="op">&gt;</span> <span class="dv">12</span> <span class="kw">AND</span> b.D_curr_crop <span class="op">=</span> <span class="st">'maize'</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>;</span></code></pre>
 </div>
 <ol style="list-style-type: decimal">
 <li>we can add alias’ to the two <code>Id</code> columns to distinguish
@@ -3106,11 +3106,11 @@ criteria.</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> a.<span class="kw">Id</span> <span class="kw">AS</span> Farms_Id, a.B_no_membrs,</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>       b.<span class="kw">Id</span> <span class="kw">AS</span> Crops_Id, b.D_curr_crop</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms <span class="kw">AS</span> a</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="kw">LEFT</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span> Crops_rice <span class="kw">AS</span> b</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> a.<span class="kw">Id</span> <span class="op">=</span> b.<span class="kw">Id</span></span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> a.<span class="kw">Id</span> <span class="kw">AS</span> Farms_Id, a.B_no_membrs,</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>       b.<span class="kw">Id</span> <span class="kw">AS</span> Crops_Id, b.D_curr_crop</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">FROM</span> Farms <span class="kw">AS</span> a</span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a><span class="kw">LEFT</span> <span class="kw">OUTER</span> <span class="kw">JOIN</span> Crops_rice <span class="kw">AS</span> b</span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="kw">ON</span> a.<span class="kw">Id</span> <span class="op">=</span> b.<span class="kw">Id</span></span></code></pre>
 </div>
 <p>You can see from the results that there is an entry for every record
 in the Farms table, but unless there is a crop of rice, the entries in
@@ -3144,14 +3144,14 @@ column together. This is allowed and quite commonly done.</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> a.<span class="kw">Id</span> <span class="kw">AS</span> Farms_Id, a.B_no_membrs,</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>       b.<span class="kw">Id</span> , b.plot_id <span class="kw">AS</span> plot_id, b.D02_total_plot,</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>       c.<span class="kw">Id</span> <span class="kw">AS</span> Crops_Id, c.plot_Id <span class="kw">AS</span> crops_plot_id, c.D_curr_crop</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms <span class="kw">AS</span> a</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> Plots <span class="kw">AS</span> b</span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> Crops  <span class="kw">AS</span> c</span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> a.<span class="kw">Id</span> <span class="op">=</span> b.<span class="kw">Id</span> <span class="kw">AND</span> (b.<span class="kw">Id</span> <span class="op">=</span> c.<span class="kw">Id</span> <span class="kw">AND</span> b.plot_id <span class="op">=</span> c.plot_id) <span class="kw">AND</span> a.B_no_membrs <span class="op">&gt;</span> <span class="dv">12</span> <span class="kw">AND</span> c.D_curr_crop <span class="op">=</span> <span class="st">'maize'</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">SELECT</span> a.<span class="kw">Id</span> <span class="kw">AS</span> Farms_Id, a.B_no_membrs,</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a>       b.<span class="kw">Id</span> , b.plot_id <span class="kw">AS</span> plot_id, b.D02_total_plot,</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a>       c.<span class="kw">Id</span> <span class="kw">AS</span> Crops_Id, c.plot_Id <span class="kw">AS</span> crops_plot_id, c.D_curr_crop</span>
+<span id="cb6-4"><a href="#cb6-4" tabindex="-1"></a><span class="kw">FROM</span> Farms <span class="kw">AS</span> a</span>
+<span id="cb6-5"><a href="#cb6-5" tabindex="-1"></a><span class="kw">JOIN</span> Plots <span class="kw">AS</span> b</span>
+<span id="cb6-6"><a href="#cb6-6" tabindex="-1"></a><span class="kw">JOIN</span> Crops  <span class="kw">AS</span> c</span>
+<span id="cb6-7"><a href="#cb6-7" tabindex="-1"></a><span class="kw">ON</span> a.<span class="kw">Id</span> <span class="op">=</span> b.<span class="kw">Id</span> <span class="kw">AND</span> (b.<span class="kw">Id</span> <span class="op">=</span> c.<span class="kw">Id</span> <span class="kw">AND</span> b.plot_id <span class="op">=</span> c.plot_id) <span class="kw">AND</span> a.B_no_membrs <span class="op">&gt;</span> <span class="dv">12</span> <span class="kw">AND</span> c.D_curr_crop <span class="op">=</span> <span class="st">'maize'</span></span>
+<span id="cb6-8"><a href="#cb6-8" tabindex="-1"></a>;</span></code></pre>
 </div>
 <p>Things to notice:</p>
 <ol style="list-style-type: decimal">
@@ -3186,20 +3186,20 @@ data so that there is only one entry for each Farm. i.e sum the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Show me the solution</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> a.<span class="kw">Id</span> <span class="kw">AS</span> Farms_Id,</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>       <span class="fu">sum</span>(b.D02_total_plot) <span class="kw">AS</span> total_planted,</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>       c.D_curr_crop</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> Farms <span class="kw">AS</span> a</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> Plots <span class="kw">AS</span> b</span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> Crops  <span class="kw">AS</span> c</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> a.<span class="kw">Id</span> <span class="op">=</span> b.<span class="kw">Id</span> <span class="kw">AND</span> (b.<span class="kw">Id</span> <span class="op">=</span> c.<span class="kw">Id</span> <span class="kw">AND</span> b.plot_id <span class="op">=</span> c.plot_id) <span class="kw">AND</span> a.B_no_membrs <span class="op">&gt;</span> <span class="dv">12</span> <span class="kw">AND</span> c.D_curr_crop <span class="op">=</span> <span class="st">'maize'</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> a.<span class="kw">Id</span>, c.D_curr_crop</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">SELECT</span> a.<span class="kw">Id</span> <span class="kw">AS</span> Farms_Id,</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>       <span class="fu">sum</span>(b.D02_total_plot) <span class="kw">AS</span> total_planted,</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>       c.D_curr_crop</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="kw">FROM</span> Farms <span class="kw">AS</span> a</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="kw">JOIN</span> Plots <span class="kw">AS</span> b</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="kw">JOIN</span> Crops  <span class="kw">AS</span> c</span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="kw">ON</span> a.<span class="kw">Id</span> <span class="op">=</span> b.<span class="kw">Id</span> <span class="kw">AND</span> (b.<span class="kw">Id</span> <span class="op">=</span> c.<span class="kw">Id</span> <span class="kw">AND</span> b.plot_id <span class="op">=</span> c.plot_id) <span class="kw">AND</span> a.B_no_membrs <span class="op">&gt;</span> <span class="dv">12</span> <span class="kw">AND</span> c.D_curr_crop <span class="op">=</span> <span class="st">'maize'</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> a.<span class="kw">Id</span>, c.D_curr_crop</span>
+<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a>;</span></code></pre>
 </div>
 </div>
 </div>
@@ -3394,14 +3394,14 @@ which run the same query as we used for the Excel example above.</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="vs">r'C:/Users/pfsmy/OneDrive/UoM/Carpentry/Datasets/SN7577.sqlite'</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>cur <span class="op">=</span> con.cursor()</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>cur.execute(<span class="st">"SELECT * FROM SN7577"</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>rows <span class="op">=</span> cur.fetchall()</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> rows:</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(row)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>con.close()</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="im">import</span> sqlite3</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a>con <span class="op">=</span> sqlite3.<span class="ex">connect</span>(<span class="vs">r'C:/Users/pfsmy/OneDrive/UoM/Carpentry/Datasets/SN7577.sqlite'</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>cur <span class="op">=</span> con.cursor()</span>
+<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a>cur.execute(<span class="st">"SELECT * FROM SN7577"</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a>rows <span class="op">=</span> cur.fetchall()</span>
+<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="cf">for</span> row <span class="kw">in</span> rows:</span>
+<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a>    <span class="bu">print</span>(row)</span>
+<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>con.close()</span></code></pre>
 </div>
 </div>
 <div class="section level4">
@@ -3496,8 +3496,8 @@ facilitate ODBC connections</li>
   "url": "https://datacarpentry.github.io/sql-socialsci/instructor/aio.html",
   "identifier": "https://datacarpentry.github.io/sql-socialsci/instructor/aio.html",
   "dateCreated": "2017-05-25",
-  "dateModified": "2024-02-27",
-  "datePublished": "2024-02-27"
+  "dateModified": "2024-03-05",
+  "datePublished": "2024-03-05"
 }
 
   </script><script>
