@@ -366,10 +366,10 @@
             </div>
 
             <hr class="half-width">
-<div class="accordion accordion-flush resources" id="accordionFlush12">
+<div class="accordion accordion-flush lesson-resources" id="accordionFlush12">
               <div class="accordion-item">
                 <h2 class="accordion-header" id="flush-headingTwelve">
-                  <button class="accordion-button collapsed" id="resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+                  <button class="accordion-button collapsed" id="lesson-resources" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
                     RESOURCES
                   </button>
                 </h2>
@@ -392,7 +392,7 @@
                 </div>
               </div>
             </div>
-            <hr class="half-width resources">
+            <hr class="half-width lesson-resources">
 <a href="aio.html">See all in one page</a>
 
 
@@ -461,7 +461,6 @@
 </div>
 </div>
 <section><h2 class="section-heading" id="what-is-a-relational-database">What is a relational database?<a class="anchor" aria-label="anchor" href="#what-is-a-relational-database"></a>
-<a class="anchor" aria-label="anchor" href="#what-is-a-relational-database"></a>
 </h2>
 <hr class="half-width">
 <p>A relational database is a collection of data items organised as a
@@ -477,7 +476,6 @@ relationships and it would be more like a spreadsheet. Databases are
 designed to allow efficient querying against very large tables, more
 than the 1M rows allowed in an Excel spreadsheet.</p>
 </section><section><h2 class="section-heading" id="what-is-a-table">What is a table?<a class="anchor" aria-label="anchor" href="#what-is-a-table"></a>
-<a class="anchor" aria-label="anchor" href="#what-is-a-table"></a>
 </h2>
 <hr class="half-width">
 <p>As were have noted above, a single table is very much like a
@@ -492,7 +490,6 @@ the table. Because of this the data in each column will always be of the
 same <em>type</em>, such as an Integer or Text, of values for all of the
 rows in the table. Datatypes are discussed in the next section.</p>
 </section><section><h2 class="section-heading" id="what-is-a-data-type">What is a data type?<a class="anchor" aria-label="anchor" href="#what-is-a-data-type"></a>
-<a class="anchor" aria-label="anchor" href="#what-is-a-data-type"></a>
 </h2>
 <hr class="half-width">
 <p>A data type is a description of the kind of data in a table column.
@@ -703,7 +700,6 @@ storing dates and/or times. You can use TEXT, REAL, or INTEGER values
 for these and use the built-in Date And Time Functions to manipulate
 them. We will look at manipulating dates in Lesson 5.</p>
 </section><section><h2 class="section-heading" id="why-do-tables-have-primary-key-columns">Why do tables have primary key columns?<a class="anchor" aria-label="anchor" href="#why-do-tables-have-primary-key-columns"></a>
-<a class="anchor" aria-label="anchor" href="#why-do-tables-have-primary-key-columns"></a>
 </h2>
 <hr class="half-width">
 <p>Whenever you create a table, you will have the option of designating
@@ -721,7 +717,6 @@ it can be used to uniquely identify a particular row in the table.</p>
 recommended for larger tables. A primary key can also be made up of more
 than one column, although this is less usual.</p>
 </section><section><h2 class="section-heading" id="what-different-types-of-keys-are-there">What different types of keys are there?<a class="anchor" aria-label="anchor" href="#what-different-types-of-keys-are-there"></a>
-<a class="anchor" aria-label="anchor" href="#what-different-types-of-keys-are-there"></a>
 </h2>
 <hr class="half-width">
 <p>In addition to the primary key, a table may have one or more
@@ -732,7 +727,6 @@ relationship to be created between the two tables. If a table needs to
 be related to several other tables, then there will be a foreign key
 (column) for each of those tables.</p>
 </section><section><h2 class="section-heading" id="how-does-the-database-represent-missing-data">How does the database represent missing data?<a class="anchor" aria-label="anchor" href="#how-does-the-database-represent-missing-data"></a>
-<a class="anchor" aria-label="anchor" href="#how-does-the-database-represent-missing-data"></a>
 </h2>
 <hr class="half-width">
 <p>All relational database systems have the concept of a NULL value.
@@ -753,8 +747,7 @@ out. In SQL queries you can specifically test for NULL values.</p>
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>A relational database is data organised as a collection of related
@@ -808,7 +801,6 @@ facilities that it provides</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="launching-db-browser">Launching DB Browser<a class="anchor" aria-label="anchor" href="#launching-db-browser"></a>
-<a class="anchor" aria-label="anchor" href="#launching-db-browser"></a>
 </h2>
 <hr class="half-width">
 <p>In Windows the installation of DB Browser does not create a desktop
@@ -816,7 +808,6 @@ icon. To explicitly launch the application after installing it, use the
 windows button (bottom left of screen) and type in ‘DB Browser’ in the
 search bar and selecting the application when it appears.</p>
 <figure><img src="fig/DB_Browser_install_2.png" alt="DB Browser run" class="figure mx-auto d-block"></figure></section><section><h2 class="section-heading" id="the-initial-screen">The Initial screen<a class="anchor" aria-label="anchor" href="#the-initial-screen"></a>
-<a class="anchor" aria-label="anchor" href="#the-initial-screen"></a>
 </h2>
 <hr class="half-width">
 <p>The initial screen of DB Browser will look something like this, the
@@ -835,8 +826,7 @@ change.</p>
 Edit Database Cell pane which is grayed out. Below it is a 3-tabbed pane
 for DB Schema, SQL log and Remote. We are only really interested in the
 DB Schema tab.</p>
-</section><section><h2 class="section-heading" id="initial-changes-to-the-layout-">Initial changes to the layout.<a class="anchor" aria-label="anchor" href="#initial-changes-to-the-layout."></a>
-<a class="anchor" aria-label="anchor" href="#initial-changes-to-the-layout-"></a>
+</section><section><h2 class="section-heading" id="initial-changes-to-the-layout-">Initial changes to the layout.<a class="anchor" aria-label="anchor" href="#initial-changes-to-the-layout-"></a>
 </h2>
 <hr class="half-width">
 <p>The overall layout of DB Browser is quite flexible. The panes on the
@@ -867,7 +857,6 @@ colour that will be used to display NULL values in you tables. We will
 discuss the meaning of NULL values in a table in a later episode.</p>
 <p>You can now close the preference window by clicking OK.</p>
 </section><section><h2 class="section-heading" id="opening-a-database">Opening a database<a class="anchor" aria-label="anchor" href="#opening-a-database"></a>
-<a class="anchor" aria-label="anchor" href="#opening-a-database"></a>
 </h2>
 <hr class="half-width">
 <p>For this lesson we will be making extensive use of the SQL_SAFI
@@ -897,7 +886,6 @@ can also select the table you wish to Browse directly from here.</p>
 interest is in analysing existing data not creating or deleting data, it
 is unlikely that you will want to use these options.</p>
 </section><section><h2 class="section-heading" id="running-sql-queries">Running SQL Queries<a class="anchor" aria-label="anchor" href="#running-sql-queries"></a>
-<a class="anchor" aria-label="anchor" href="#running-sql-queries"></a>
 </h2>
 <hr class="half-width">
 <p>We will be running queries extensively in future episodes. For now we
@@ -937,7 +925,6 @@ your query will appear here in a simple tabular format. The bottom pane
 is for messages about the execution, either an error message or an
 indication of how many rows were returned by the query.</p>
 </section><section><h2 class="section-heading" id="creating-a-database">Creating a database<a class="anchor" aria-label="anchor" href="#creating-a-database"></a>
-<a class="anchor" aria-label="anchor" href="#creating-a-database"></a>
 </h2>
 <hr class="half-width">
 <p>As well as opening (connecting) to existing databases it is also
@@ -953,7 +940,6 @@ tables in it, the <code>.sqlite</code> file itself is not empty.</p>
 open allowing you to create a table. You can cancel this as we will be
 going through the create table process in a later episode.</p>
 </section><section><h2 class="section-heading" id="write-changes-revert-changes">Write Changes &amp; Revert Changes<a class="anchor" aria-label="anchor" href="#write-changes-revert-changes"></a>
-<a class="anchor" aria-label="anchor" href="#write-changes-revert-changes"></a>
 </h2>
 <hr class="half-width">
 <p>Much of our SQL work involves looking at existing data using SQL
@@ -975,8 +961,7 @@ copy.</p>
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>The DB Browser for SQLite application allows you to connect to an
@@ -1032,7 +1017,6 @@ clauses</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="definition-of-sql">Definition of SQL<a class="anchor" aria-label="anchor" href="#definition-of-sql"></a>
-<a class="anchor" aria-label="anchor" href="#definition-of-sql"></a>
 </h2>
 <hr class="half-width">
 <p>SQL or Structured Query Language is an international standard for
@@ -1045,7 +1029,6 @@ queries we will be writing to access data in our SQLite database will
 execute un-altered in many of the other environments.</p>
 <p>Essentially you only have to learn SQL once.</p>
 </section><section><h2 class="section-heading" id="sql-and-relational-database-tables">SQL and Relational database tables<a class="anchor" aria-label="anchor" href="#sql-and-relational-database-tables"></a>
-<a class="anchor" aria-label="anchor" href="#sql-and-relational-database-tables"></a>
 </h2>
 <hr class="half-width">
 <p>The strength of SQL is that a single SQL statement or query can
@@ -1057,7 +1040,6 @@ be getting an assortment of tables from different sources so being able
 to imply the relationship as part of the query has definite
 advantages.</p>
 </section><section><h2 class="section-heading" id="ddl-and-dml">DDL and DML<a class="anchor" aria-label="anchor" href="#ddl-and-dml"></a>
-<a class="anchor" aria-label="anchor" href="#ddl-and-dml"></a>
 </h2>
 <hr class="half-width">
 <p>DDL stands for Data Definition Language. It is the set of SQL
@@ -1067,7 +1049,6 @@ tables.</p>
 the SELECT command which is used to extract data items from one or more
 of the database tables.</p>
 </section><section><h2 class="section-heading" id="simple-sql-queries-using-the-select-statement">Simple SQL queries using the Select statement<a class="anchor" aria-label="anchor" href="#simple-sql-queries-using-the-select-statement"></a>
-<a class="anchor" aria-label="anchor" href="#simple-sql-queries-using-the-select-statement"></a>
 </h2>
 <hr class="half-width">
 <p>For the rest of this episode we will be looking at the SELECT
@@ -1140,8 +1121,7 @@ useful if you just want to get a feel for what the data looks like.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise"></a>
-</h3>
+<h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
 <p>Write a query which returns the first 5 rows from the Farms table
 with only the columns Id, and B16 to B20.</p>
@@ -1153,7 +1133,7 @@ with only the columns Id, and B16 to B20.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1175,7 +1155,6 @@ space to you are free to arrange the text of the query as you like.</p>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="the-where-clause">The <code>WHERE</code> clause<a class="anchor" aria-label="anchor" href="#the-where-clause"></a>
-<a class="anchor" aria-label="anchor" href="#the-where-clause"></a>
 </h2>
 <hr class="half-width">
 <p>Usually you will want to restrict the rows returned based on some
@@ -1202,7 +1181,6 @@ as &lt;, &lt;=, =, &gt;=, &lt;&gt;</p>
 </div>
 </section><section><h2 class="section-heading" id="using-more-complex-logical-expressions-in-the-where-clause">Using more complex logical expressions in the <code>WHERE</code>
 clause<a class="anchor" aria-label="anchor" href="#using-more-complex-logical-expressions-in-the-where-clause"></a>
-<a class="anchor" aria-label="anchor" href="#using-more-complex-logical-expressions-in-the-where-clause"></a>
 </h2>
 <hr class="half-width">
 <p>We can also use the AND and OR keywords to build more complex
@@ -1235,8 +1213,7 @@ Judicious use of brackets can also aid readability</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise-1" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise-1"></a>
-</h3>
+<h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
 <p>From the above query, breakdown the <code>WHERE</code> clause so that
 each component can be tested individually. Make a note of how many rows
@@ -1249,7 +1226,7 @@ are returned in each case.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <p>To test each of the <code>OR</code> clauses</p>
 <div class="codewrapper sourceCode" id="cb11">
@@ -1313,8 +1290,7 @@ in order.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise-2" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise-2"></a>
-</h3>
+<h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
 <p>Write a query using the Farms table which returns the columns Id,
 A09_village, A11_years_farm, B16_years_liv. We are only interested in
@@ -1331,7 +1307,7 @@ many ways of doing this, but try to use an inequality, an
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <pre><code>SELECT Id, A09_village, A11_years_farm, B16_years_liv
 FROM Farms
@@ -1344,7 +1320,6 @@ WHERE     A09_village IN ('God', 'Ruaca')
 </div>
 </div>
 </section><section><h2 class="section-heading" id="sorting-results">Sorting results<a class="anchor" aria-label="anchor" href="#sorting-results"></a>
-<a class="anchor" aria-label="anchor" href="#sorting-results"></a>
 </h2>
 <hr class="half-width">
 <p>If you want the results of your query to appear in a specific order,
@@ -1385,8 +1360,7 @@ keywords.</p>
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>Strictly speaking SQL is a standard, not a particular
@@ -1441,7 +1415,6 @@ differently</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="how-does-the-database-represents-missing-data">How does the database represents missing data<a class="anchor" aria-label="anchor" href="#how-does-the-database-represents-missing-data"></a>
-<a class="anchor" aria-label="anchor" href="#how-does-the-database-represents-missing-data"></a>
 </h2>
 <hr class="half-width">
 <p>At the beginning of this lesson we noted that all database systems
@@ -1472,7 +1445,6 @@ column and ends with the ‘G01_no_meals’ column. The Arrow points to the
 two consecutive ‘,’s representing the lack of a value for the
 ’F14_items_owned’ column. These values are missing from the data.</p>
 </section><section><h2 class="section-heading" id="reasons-for-missing-data">Reasons for Missing data<a class="anchor" aria-label="anchor" href="#reasons-for-missing-data"></a>
-<a class="anchor" aria-label="anchor" href="#reasons-for-missing-data"></a>
 </h2>
 <hr class="half-width">
 <p>There can be many reasons why data is missing; Not collected, lost,
@@ -1504,7 +1476,6 @@ not it means ‘I have no possessions’ or ‘I do not wish to tell you what
 possessions I have’, in short, we know nothing about the items owned and
 therefore the value of <code>NULL</code> is appropriate.</p>
 </section><section><h2 class="section-heading" id="dealing-with-missing-data">Dealing with missing data<a class="anchor" aria-label="anchor" href="#dealing-with-missing-data"></a>
-<a class="anchor" aria-label="anchor" href="#dealing-with-missing-data"></a>
 </h2>
 <hr class="half-width">
 <p>There are several statistical techniques that can be used to allow
@@ -1543,8 +1514,7 @@ analysis.</p>
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>You should expect missing data</li>
@@ -1604,7 +1574,6 @@ results?</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="creating-new-columns">Creating new columns<a class="anchor" aria-label="anchor" href="#creating-new-columns"></a>
-<a class="anchor" aria-label="anchor" href="#creating-new-columns"></a>
 </h2>
 <hr class="half-width">
 <p>In addition to selecting existing columns from a table, you can also
@@ -1634,7 +1603,6 @@ databases take different approaches to the problem and will
 pseudo-randomly name the new columns for you with such things as ‘_c0’.
 SQLite uses the expression you used to create the column name.</p>
 </section><section><h2 class="section-heading" id="renaming-columns-using-aliases">Renaming columns using aliases<a class="anchor" aria-label="anchor" href="#renaming-columns-using-aliases"></a>
-<a class="anchor" aria-label="anchor" href="#renaming-columns-using-aliases"></a>
 </h2>
 <hr class="half-width">
 <p>Given that creating new columns is so commonly done, SQL does provide
@@ -1654,7 +1622,6 @@ an alias. This may seem a bit strange for columns which had no real name
 in the first place, but the point is, you can give any table column name
 an alias to be used in the output rather than the original.</p>
 </section><section><h2 class="section-heading" id="using-built-in-functions-to-create-new-values">Using built-in functions to create new values<a class="anchor" aria-label="anchor" href="#using-built-in-functions-to-create-new-values"></a>
-<a class="anchor" aria-label="anchor" href="#using-built-in-functions-to-create-new-values"></a>
 </h2>
 <hr class="half-width">
 <p>In addition to using simple arithmetic operations to create new
@@ -1683,8 +1650,7 @@ required number of decimal places.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise"></a>
-</h3>
+<h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
 <p>Write an SQL query which returns the Id, plot_Id, D01_curr_plot and
 D02_total_plot columns from the Plots table with the addition of a
@@ -1859,8 +1825,7 @@ date by passing it to the <code>date</code> function.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise-1" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise-1"></a>
-</h3>
+<h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
 <p>Change the query above to sort by the <code>A01_interview_date</code>
 field and compare the results</p>
@@ -1935,7 +1900,6 @@ can use the <code>DESC</code> keyword.</p>
 <span id="cb15-7"><a href="#cb15-7" tabindex="-1"></a>;</span></code></pre>
 </div>
 </section><section><h2 class="section-heading" id="using-sql-syntax-to-conditionally-create-new-values">Using SQL syntax to conditionally create new values<a class="anchor" aria-label="anchor" href="#using-sql-syntax-to-conditionally-create-new-values"></a>
-<a class="anchor" aria-label="anchor" href="#using-sql-syntax-to-conditionally-create-new-values"></a>
 </h2>
 <hr class="half-width">
 <p>This format of the case statement allows you to check if various
@@ -1956,7 +1920,6 @@ the <code>CASE</code> keyword.</p>
 <p>There is a more general form which allows to to perform any kind of
 test.</p>
 </section><section><h2 class="section-heading" id="using-sql-syntax-to-create-binned-values">Using SQL syntax to create ‘binned’ values<a class="anchor" aria-label="anchor" href="#using-sql-syntax-to-create-binned-values"></a>
-<a class="anchor" aria-label="anchor" href="#using-sql-syntax-to-create-binned-values"></a>
 </h2>
 <hr class="half-width">
 <p>It is often the case that we wish to convert a continuous variable
@@ -1990,8 +1953,7 @@ etc. We can do this using a <code>CASE</code> statement as part of the
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>New result columns can be created using arithmetic operators or
@@ -2045,7 +2007,6 @@ clauses</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="using-built-in-statistical-functions">Using built-in statistical functions<a class="anchor" aria-label="anchor" href="#using-built-in-statistical-functions"></a>
-<a class="anchor" aria-label="anchor" href="#using-built-in-statistical-functions"></a>
 </h2>
 <hr class="half-width">
 <p>Aggregate functions are used perform some kind of mathematical or
@@ -2076,7 +2037,6 @@ of some other column in the table. Before we do this we will look at how
 we can find out what different values are contained in a given
 column.</p>
 </section><section><h2 class="section-heading" id="the-distinct-keyword">The <code>DISTINCT</code> keyword<a class="anchor" aria-label="anchor" href="#the-distinct-keyword"></a>
-<a class="anchor" aria-label="anchor" href="#the-distinct-keyword"></a>
 </h2>
 <hr class="half-width">
 <p>For the SAFI survey, it was known in advance all of the possible
@@ -2128,8 +2088,7 @@ involved</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise"></a>
-</h3>
+<h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
 <p>Write a query that will return all of the different combinations of
 the ‘A06_province’, ‘A07_district’, ‘A08_ward’ and ‘A09_village’ columns
@@ -2145,7 +2104,7 @@ columns are returned in alphabetical order.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2159,7 +2118,6 @@ columns are returned in alphabetical order.</p>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="the-group-by-clause-to-summarise-data">The <code>GROUP BY</code> clause to summarise data<a class="anchor" aria-label="anchor" href="#the-group-by-clause-to-summarise-data"></a>
-<a class="anchor" aria-label="anchor" href="#the-group-by-clause-to-summarise-data"></a>
 </h2>
 <hr class="half-width">
 <p>Just knowing the combinations is of limited use. You really want to
@@ -2204,8 +2162,7 @@ select clause which is not mentioned in the group by clause.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise-1" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise-1"></a>
-</h3>
+<h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
 <p>Write a query which returns the min, max and avg values as well as a
 count of the number of records involved for the ‘A11_years_farm’ column
@@ -2218,7 +2175,7 @@ for each village in the ‘Nhamatanda’ district.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <pre><code>SELECT A09_village,
        min(A11_years_farm) AS min,
@@ -2236,7 +2193,6 @@ GROUP BY A09_village;</code></pre>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="using-the-having-clause">Using the <code>HAVING</code> clause<a class="anchor" aria-label="anchor" href="#using-the-having-clause"></a>
-<a class="anchor" aria-label="anchor" href="#using-the-having-clause"></a>
 </h2>
 <hr class="half-width">
 <p>In order to filter the rows returned in a non-aggregated query we
@@ -2264,8 +2220,7 @@ two farms.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise-2" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise-2"></a>
-</h3>
+<h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
 <p>Using the Crops table write a query which will list all of the crops
 (D_curr_crop) which are grown in over 100 plots.</p>
@@ -2277,7 +2232,7 @@ two farms.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2298,8 +2253,7 @@ two farms.</p>
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>Built-in functions can be used to produce a variety of summary
@@ -2358,7 +2312,6 @@ SQLite</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="using-sql-code-to-create-tables">Using SQL code to create tables<a class="anchor" aria-label="anchor" href="#using-sql-code-to-create-tables"></a>
-<a class="anchor" aria-label="anchor" href="#using-sql-code-to-create-tables"></a>
 </h2>
 <hr class="half-width">
 <p>In relational databases, tables have to be created before you can add
@@ -2374,7 +2327,6 @@ DB Browser, it appears to be a single step process, much like importing
 a file into Excel. In fact it is always a two step process.
 First……………</p>
 </section><section><h2 class="section-heading" id="using-the-db-browser-application-to-create-tables">Using the DB Browser application to create tables<a class="anchor" aria-label="anchor" href="#using-the-db-browser-application-to-create-tables"></a>
-<a class="anchor" aria-label="anchor" href="#using-the-db-browser-application-to-create-tables"></a>
 </h2>
 <hr class="half-width">
 <p>So far we have created and populated tables from scratch or created
@@ -2494,8 +2446,7 @@ and explained.</p>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise"></a>
-</h3>
+<h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
 <p>From the Modify table dialog, change the <code>Id</code> column in
 the <code>Farms</code> table to be the primary key. What difference did
@@ -2508,7 +2459,7 @@ it make in the <code>CREATE TABLE</code> statement?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <p>You need to scroll down to the bottom of the
 <code>CREATE TABLE</code> statement to see the</p>
@@ -2523,7 +2474,6 @@ it make in the <code>CREATE TABLE</code> statement?</p>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="creating-a-table-using-an-sql-command">Creating a table using an SQL command<a class="anchor" aria-label="anchor" href="#creating-a-table-using-an-sql-command"></a>
-<a class="anchor" aria-label="anchor" href="#creating-a-table-using-an-sql-command"></a>
 </h2>
 <hr class="half-width">
 <p>You could copy and paste this definition into the SQL editor and if
@@ -2538,7 +2488,6 @@ way may be acceptable. But for larger tables this approach not only to
 defining the tables but adding potentially thousands of rows of data can
 be somewhat impractical.</p>
 </section><section><h2 class="section-heading" id="creating-tables-from-other-tables">Creating tables from other tables<a class="anchor" aria-label="anchor" href="#creating-tables-from-other-tables"></a>
-<a class="anchor" aria-label="anchor" href="#creating-tables-from-other-tables"></a>
 </h2>
 <hr class="half-width">
 <p>Whenever you write a Select query and run it, the results are always
@@ -2591,7 +2540,6 @@ D_curr_crop value is ‘rice’.</p>
 <p><strong>Note</strong>: please ensure that you run the code above as
 we will use this new table in a later episode.</p>
 </section><section><h2 class="section-heading" id="using-sql-code-to-create-views">Using SQL code to create views<a class="anchor" aria-label="anchor" href="#using-sql-code-to-create-views"></a>
-<a class="anchor" aria-label="anchor" href="#using-sql-code-to-create-views"></a>
 </h2>
 <hr class="half-width">
 <p>In addition to tables all relational database systems have the
@@ -2638,8 +2586,7 @@ readability.</p>
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>Database tables can be created using the DDL command
@@ -2694,7 +2641,6 @@ instructions on how to get the data</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="running-sql-code-using-the-sqlite-shell">Running SQL code using the SQLite shell<a class="anchor" aria-label="anchor" href="#running-sql-code-using-the-sqlite-shell"></a>
-<a class="anchor" aria-label="anchor" href="#running-sql-code-using-the-sqlite-shell"></a>
 </h2>
 <hr class="half-width">
 <p>Before you can run the SQLite3 shell program you must have installed
@@ -2774,7 +2720,6 @@ contents of which contains the expected output from the query.</p>
 <figure><img src="fig/SQL_08_my_filename.png" alt="SQLite my.filename" class="figure mx-auto d-block"></figure><p>Notice the use of quotes in the rows where the value of the data item
 themselves contain quotes; in this case single quotes.</p>
 </section><section><h2 class="section-heading" id="automating-the-use-of-the-sqlite-shell">Automating the use of the SQLite shell<a class="anchor" aria-label="anchor" href="#automating-the-use-of-the-sqlite-shell"></a>
-<a class="anchor" aria-label="anchor" href="#automating-the-use-of-the-sqlite-shell"></a>
 </h2>
 <hr class="half-width">
 <p>So far we have used the shell in much the same way as we might have
@@ -2836,8 +2781,7 @@ file of SQLite commands will do for you.</p></li>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise"></a>
-</h3>
+<h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
 <p>The query</p>
 <div class="codewrapper sourceCode" id="cb7">
@@ -2887,8 +2831,7 @@ select * from Farms where C01_respondent_roof_type = 'mabatipitched';</code></pr
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>SQLite databases can be created, managed and queried from the SQLite
@@ -2941,7 +2884,6 @@ commands to run. This aids automation</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="about-table-joins">About table joins<a class="anchor" aria-label="anchor" href="#about-table-joins"></a>
-<a class="anchor" aria-label="anchor" href="#about-table-joins"></a>
 </h2>
 <hr class="half-width">
 <p>In any relational database system, the ability to join tables
@@ -3031,8 +2973,7 @@ values match.</li>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise"></a>
-</h3>
+<h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal">
 <li>The output includes the <code>Id</code> column from both tables, how
@@ -3049,7 +2990,7 @@ correctly displayed?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3073,7 +3014,6 @@ growing maize.</li>
 </div>
 </div>
 </section><section><h2 class="section-heading" id="different-join-types">Different join types<a class="anchor" aria-label="anchor" href="#different-join-types"></a>
-<a class="anchor" aria-label="anchor" href="#different-join-types"></a>
 </h2>
 <hr class="half-width">
 <p>The example of a join given above is called an <strong>INNER</strong>
@@ -3123,7 +3063,6 @@ table.</p>
 avoiding repetition of data. Joining tables re-introduces the
 replication of the data.</p>
 </section><section><h2 class="section-heading" id="there-are-several-different-join-types-possible">There are several different join types possible<a class="anchor" aria-label="anchor" href="#there-are-several-different-join-types-possible"></a>
-<a class="anchor" aria-label="anchor" href="#there-are-several-different-join-types-possible"></a>
 </h2>
 <hr class="half-width">
 <table class="table">
@@ -3170,7 +3109,6 @@ the tables in the <code>FROM</code> and <code>JOIN</code> clauses. A
 <code>Full outer join</code> is the combination of the Left outer and
 Right outer joins.</p>
 </section><section><h2 class="section-heading" id="using-different-join-types-in-analysing-your-data">Using different join types in analysing your data<a class="anchor" aria-label="anchor" href="#using-different-join-types-in-analysing-your-data"></a>
-<a class="anchor" aria-label="anchor" href="#using-different-join-types-in-analysing-your-data"></a>
 </h2>
 <hr class="half-width">
 <p>In many cases the data you have in your tables may have come from
@@ -3263,8 +3201,7 @@ aren’t needed, I just added them for clarity).</li>
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="exercise-1" class="callout-inner">
-<h3 class="callout-title">Exercise<a class="anchor" aria-label="anchor" href="#exercise-1"></a>
-</h3>
+<h3 class="callout-title">Exercise</h3>
 <div class="callout-content">
 <ol style="list-style-type: decimal">
 <li>Modify the query above so that only the ‘Id’, ‘D02_total_plot’ and
@@ -3280,7 +3217,7 @@ data so that there is only one entry for each Farm. i.e sum the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -3304,8 +3241,7 @@ data so that there is only one entry for each Farm. i.e sum the
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>Joins are used to combine data from two or more tables.</li>
@@ -3365,7 +3301,6 @@ data from a database</li>
 </div>
 </div>
 <section><h2 class="section-heading" id="odbc-and-advantages-of-using-it">ODBC and advantages of using it<a class="anchor" aria-label="anchor" href="#odbc-and-advantages-of-using-it"></a>
-<a class="anchor" aria-label="anchor" href="#odbc-and-advantages-of-using-it"></a>
 </h2>
 <hr class="half-width">
 <p>ODBC - Open Database Connectivity (or Connector) is a piece of
@@ -3397,7 +3332,6 @@ variable from where they can be examined or further processed.</p>
 connect to Excel and also accessing SQLite from R and Python
 programs.</p>
 </section><section><h2 class="section-heading" id="connection-strings">Connection strings<a class="anchor" aria-label="anchor" href="#connection-strings"></a>
-<a class="anchor" aria-label="anchor" href="#connection-strings"></a>
 </h2>
 <hr class="half-width">
 <p>A connection string is really just a list of parameters and their
@@ -3410,7 +3344,6 @@ SQLite database file.</p>
 <p>How and where the connection string information is provided depends
 on the ODBC driver and the application or program being used.</p>
 </section><section><h2 class="section-heading" id="connecting-to-excel-using-odbc">Connecting to Excel using ODBC<a class="anchor" aria-label="anchor" href="#connecting-to-excel-using-odbc"></a>
-<a class="anchor" aria-label="anchor" href="#connecting-to-excel-using-odbc"></a>
 </h2>
 <hr class="half-width">
 <div class="section level3">
@@ -3476,7 +3409,6 @@ data.</p>
 </div>
 </section><section><h2 class="section-heading" id="connecting-to-python-or-other-programming-environments-using-odbc">Connecting to Python or other programming environments using
 ODBC<a class="anchor" aria-label="anchor" href="#connecting-to-python-or-other-programming-environments-using-odbc"></a>
-<a class="anchor" aria-label="anchor" href="#connecting-to-python-or-other-programming-environments-using-odbc"></a>
 </h2>
 <hr class="half-width">
 <p>Both Python and R (and many other programming languages) provide
@@ -3529,8 +3461,7 @@ language.</p>
 <i class="callout-icon" data-feather="key"></i>
 </div>
 <div class="callout-inner">
-<h3 class="callout-title">Key Points<a class="anchor" aria-label="anchor" href="#keypoints1"></a>
-</h3>
+<h3 class="callout-title">Key Points</h3>
 <div class="callout-content">
 <ul>
 <li>ODBC - Open DataBase Connector allows a database to be connected to
@@ -3570,7 +3501,7 @@ facilitate ODBC connections</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.5" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.3" class="external-link">varnish (1.0.3)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.6" class="external-link">sandpaper (0.16.6)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.4" class="external-link">varnish (1.0.4)</a></p>
 			</div>
 		</footer>
 </div> <!-- / div.container -->
@@ -3593,8 +3524,8 @@ facilitate ODBC connections</li>
   "url": "https://datacarpentry.github.io/sql-socialsci/aio.html",
   "identifier": "https://datacarpentry.github.io/sql-socialsci/aio.html",
   "dateCreated": "2017-05-25",
-  "dateModified": "2024-08-20",
-  "datePublished": "2024-08-20"
+  "dateModified": "2024-08-27",
+  "datePublished": "2024-08-27"
 }
 
   </script><script>
