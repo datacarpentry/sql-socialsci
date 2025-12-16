@@ -52,7 +52,7 @@ We will make a couple of initial changes to the layout of the screen. These will
 
 ![](fig/DB_Browser_run_2.png){alt='Data Browser Preferences'}
 
-Towards the bottom there is a section dealing with Field colors. You will see three bars below the word Text, to the right there are in fact three invisible bars for the Background. Click in the area for the Background color for NULL. A colour selector window will open, select Red. The bar will turn Red. This is now the default background cell colour that will be used to display NULL values in you tables. We will discuss the meaning of NULL values in a table in a later episode.
+Towards the bottom there is a section dealing with Field colors. You will see three bars below the word Text, to the right there are in fact three invisible bars for the Background. Click in the area for the Background color for NULL. A colour selector window will open, select Red. The bar will turn Red. This is now the default background cell colour that will be used to display NULL values in your tables. We will discuss the meaning of NULL values in a table in a later episode.
 
 You can now close the preference window by clicking OK.
 
@@ -76,7 +76,7 @@ These are the same actions that are available from the toolbar at the top of the
 ![](fig/DB_Browser_run_3.png){alt='Table Actions'}
 
 If you select 'Browse Table', the data from the table is loaded into the 'Browse Data' pane from where it can be examined or filtered.
-You can also select the table you wish to Browse directly from here.
+You can also select the table you wish to browse directly from here.
 
 There are options for 'New Record' and 'Delete Record'. As our interest is in analysing existing data not creating or deleting data, it is unlikely that you will want to use these options.
 
@@ -97,7 +97,7 @@ The second pane has the tabular results, and the bottom pane has a message indic
 On the toolbar at the top there are eight buttons. Left to right they are:
 
 - Open Tab        (creates a new tab in the editor)
-- Open SQL file   (allows you to load a prepared file of SQL into the editor - the tab takes the name of he file)
+- Open SQL file   (allows you to load a prepared file of SQL into the editor - the tab takes the name of the file)
 - Save SQL file   (allows you to save the current contents of the active pane to the local file system)
 - Execute SQL     (Executes all of the SQL statements in the editor pane)
 - Execute current line    (Actually executes whatever is selected)

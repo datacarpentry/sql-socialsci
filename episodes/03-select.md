@@ -172,7 +172,7 @@ WHERE    B17_parents_liv = 'yes'
 ;
 ```
 
-Notice that the columns being used in the `WHERE` clause do not need to returned as part of the `SELECT` clause.
+Notice that the columns being used in the `WHERE` clause do not need to be returned as part of the `SELECT` clause.
 
 You can ensure the precedence of the operators by using brackets. Judicious use of brackets can also aid readability
 

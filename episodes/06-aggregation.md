@@ -22,7 +22,7 @@ exercises: 10
 
 ## Using built-in statistical functions
 
-Aggregate functions are used perform some kind of mathematical or statistical calculation across a group of rows. The rows in each group are determined
+Aggregate functions are used to perform some kind of mathematical or statistical calculation across a group of rows. The rows in each group are determined
 by the different values in a specified column or columns.  Alternatively you can aggregate across the entire table.
 
 If we wanted to know the minimum, average and maximum values of the 'A11\_years\_farm' column across the whole Farms table, we could write a query such as this;
@@ -76,7 +76,7 @@ We get
 
 ![](fig/SQL_06_villages.png){alt='Villages'}
 
-The problem with allowing free-form text quite obvious. Having two villages, one called 'Massequece' and the other called 'Massequese' is unlikely.
+The problem with allowing free-form text may be quite obvious. Having two villages, one called 'Massequece' and the other called 'Massequese' is unlikely.
 
 Detecting this type of problem in a large dataset can be very difficult if you are just 'eyeballing' the content. This small SQL query makes it very clear,
 and in the OpenRefine lesson we provide approaches to detecting and correcting such errors. SQL is not the best tool for correcting this type of error.
@@ -110,7 +110,7 @@ ORDER BY A06_province, A07_district, A08_ward, A09_village;
 
 ## The `GROUP BY` clause to summarise data
 
-Just knowing the combinations is of limited use. You really want to know **How many** of each of the values there are.
+Just knowing the combinations is of limited use. You really want to know **how many** of each of the values there are.
 To do this we use  the `GROUP BY` clause.
 
 ```sql
@@ -124,7 +124,7 @@ This query tells us how many records in the table have each different value in t
 
 In the first example of this episode, three aggregations were performed over the single column 'A11\_years\_farm'.
 In addition to calculating multiple aggregation values over a single column, it is also possible to aggregate over multiple columns by specifying
-them in all in the `SELECT` clause **and** the `GROUP BY` clause.
+them all in the `SELECT` clause **and** the `GROUP BY` clause.
 
 The grouping will take place based on the order of the columns listed in the `GROUP BY` clause. There will be one row returned for each unique combination of the columns mentioned in the `GROUP BY` clause
 
