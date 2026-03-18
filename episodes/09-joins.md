@@ -76,17 +76,17 @@ ON a.Id = b.Id AND a.B_no_membrs > 12 AND b.D_curr_crop = 'maize'
 
 There are several things to notice about this query:
 
-1. We have used alias' for the table names in the same way as we used with columns in a previous lesson. In this case though, it is not to provide
-  more meaningful names, in fact alias' for tables are often single letters to save key strokes.
+1. We have used `alias` for the table names in the same way as we used with columns in a previous lesson. In this case though, it is not to provide
+more meaningful names, in fact `alias` for tables are often single letters to save key strokes.
 2. We use the table alias as a prefix, plus a '.' when we refer to a column name from the table. You don't have to do this, but it generally adds clarity to the query.
 3. You will need to use an alias when you need to refer to a column with the same name in both tables. In our case we need to compare the `Id` column in both tables.
-4. In the select clause, we list all of the columns, from both table that we want in the output. We use the alias' for clarity. If the column name is not ambiguous, i.e it only occurs in one of the tables it
-  can be omitted, but as we have said it is better to leave it in for clarity.
+4. In the select clause, we list all of the columns, from both tables that we want in the output. We use the alias' for clarity. If the column name is not ambiguous, i.e it only occurs in one of the tables it
+can be omitted, but as we have said it is better to leave it in for clarity.
 5. The name of the second table is given in the `JOIN` clause.
 6. The conditions of the `JOIN` are given in the `ON` clause. The `ON` clause is very much like a `WHERE` clause, in that you specific expressions which restrict what rows
   are output. In our example we have three expressions. The last two are the individual expressions we used in the previous, single table queries. The first
   expression `a.Id = b.Id` is the expression which determines how we want the two tables to be joined.
-  We are only interested in rows from both table where the `Id` values match.
+  We are only interested in rows from both tables where the `Id` values match.
 
 When we run this query we get output like the following:
 
@@ -140,7 +140,7 @@ Although typically the values being matched from the first table are a unique (D
 to be unique. This is why in the results of our previous query there are two entries with Id 111. In the second table there are two records with Id 111 and so the record from the first table gets combined with both the records in
 the second table and two records are output.
 
-Because every Farm grows some crops, there will be at least one record for each Id output. I for whatever reason the was a Farm with no crops
+Because every Farm grows some crops, there will be at least one record for each Id output. If for whatever reason there was a Farm with no crops
 then there would be no record output for that Farm Id. Similarly if there was an entry in the Crops table with an Id which didn't match any of the Ids in the Farms table,
 then it would not be output. There is only an output record when the two columns have matching values.
 
@@ -158,8 +158,8 @@ The relational design makes use of multiple tables as a way of avoiding repetiti
 | Join Type        | What it does                                                                                                                                                                                   | 
 | ---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Inner Join       | Matched rows in both tables are returned                                                                                                                                                       | 
-| Left outer join  | All row in the left hand table are returned along with the matches from the right hand table or NULLs if there is no match                                                                     | 
-| Right outer join | All row in the right hand table are returned along with the matches from the left hand table or NULLs if there is no match                                                                     | 
+| Left outer join  | All rows in the left hand table are returned along with the matches from the right hand table or NULLs if there is no match                                                                     | 
+| Right outer join | All rows in the right hand table are returned along with the matches from the left hand table or NULLs if there is no match                                                                     | 
 | Full outer join  | All rows from both tables are returned, with NULLs where there are no matches                                                                                                                  | 
 | Cross join       | Each row in the first table will be matched with every row in the second table. It is possible to imagine situations where this is required but in most cases it is a mistake and un-intended. | 
 
@@ -180,7 +180,7 @@ However it will also be important for you to establish rows in both of the table
 - You may not care that some are missing
 - You may need to explain why some are missing
 
-To do this you will want to use a `FULL OUTER JOIN` or in the case of SQLite a `LEFT OUTER JOIN` run twice using both tables in the `FROM` and `JOIN` clauses. We can demonstrate ability
+To do this you will want to use a `FULL OUTER JOIN` or in the case of SQLite a `LEFT OUTER JOIN` run twice using both tables in the `FROM` and `JOIN` clauses. We can demonstrate the
 `LEFT OUTER JOIN` using the Crops\_rice table we created earlier.
 
 The query below is similar to our original join except that we are now joining with the crops\_rice table and we have dropped the additional criteria.
@@ -203,7 +203,7 @@ table are shown as NULL.
 Joins are not restricted to just two tables. You can have any number, but the more you have the more unreadable the SQL query is likely to become. Quite often you can create views to hide this complexity.
 
 Our original question was: 'Which Farms with more than 12 people in the household grow Maize?' We found the number of people in the household from the Farms table and the crops they grew in the crops table.
-Suppose we now wanted to change the question to be: For Farms with more than 12 people in the household how much land is devoted to growing Maize? In addition to the previous
+Suppose we now wanted to change the question to be: For Farms with more than 12 people in the household, how much land is devoted to growing Maize? In addition to the previous
 requirements we now also need the size of the plots growing maize. This information is only contained in the `plots` table.
 The `plots` table has both an Id column which we can use to join it with the Farms column. There is also a plot\_Id column which is used to indicate the number of
 the plot within the Farm. The `crops` table also has a plot\_id column used for the same purpose.
@@ -229,7 +229,7 @@ Things to notice:
 
 1. There is a `JOIN` clause for each of the additional tables
 2. But there is only one `ON` clause containing all of the needed criteria.
-3. The two criteria in brackets represents the join of the `plots` table to the `Crops` table. (The brackets aren't needed, I just added them for clarity).
+3. The two criteria in brackets represent the join of the `plots` table to the `Crops` table. (The brackets aren't needed, I just added them for clarity).
 
 The results look like this:
 

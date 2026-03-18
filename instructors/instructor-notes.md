@@ -79,7 +79,7 @@ How to automate a script is covered.
 
 The need for table joins is discussed
 The different types of joins is discussed and why you may need to do more than just inner joins to investigate your data.
-There are examples of usingthe `join` and `on` SQL syntax.
+There are examples of using the `join` and `on` SQL syntax.
 There is more discussion on Alias'.
 
 [Using database tables in other environments](../episodes/10-other-environments.md)

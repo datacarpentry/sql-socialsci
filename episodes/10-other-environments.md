@@ -28,7 +28,7 @@ ODBC  - Open Database Connectivity (or Connector) is a piece of software, often 
 
 The installation of the SQLite ODBC driver for a Windows machine is explained in the [SQL setup document](../learners/setup.md) .
 
-So far in this lesson we have accessed our SQLite database either through the DB Browser application or directly using the command line shell. Each of these methods have their own advantages. The DB Browser application provides a simple GUI (Graphical User Interface), for development and testing new queries. The shell aids automation of tasks such as adding rows to a table or allowing whole scripts of SQL commands to be run consecutively without user intervention. In both of these methods, we have seen that the 'outputs' can be saved to `csv` files from where they can be read into other applications or programs for futher processing. Using ODBC misses out the middle man (the file of output). The application or program connects directly to the SQLite database, sends it an SQL query, receives the output from that query and processes the results in an appropriate fashion.
+So far in this lesson we have accessed our SQLite database either through the DB Browser application or directly using the command line shell. Each of these methods have their own advantages. The DB Browser application provides a simple GUI (Graphical User Interface), for development and testing new queries. The shell aids automation of tasks such as adding rows to a table or allowing whole scripts of SQL commands to be run consecutively without user intervention. In both of these methods, we have seen that the 'outputs' can be saved to `csv` files from where they can be read into other applications or programs for further processing. Using ODBC misses out the middle man (the file of output). The application or program connects directly to the SQLite database, sends it an SQL query, receives the output from that query and processes the results in an appropriate fashion.
 
 In the case of Excel the tabular results of the query are displayed in a worksheet. For R and Python the results are assigned to a suitable variable from where they can be examined or further processed.
 
@@ -74,9 +74,9 @@ Select the Farms table and then click the '>' button to select all of the column
 They will be displayed in the right hand pane. This is the equivalent of the `SELECT *` SQL clause that we have used before.
 If you click the '+' button to the left of the table name, a full list of the column names is displayed allowing you to select individual columns for inclusion. Click **Next**
 
-6. Subsequent windows allow you to filter the rows returned, this is equivalent to adding a `WHERE` clause to the query and finally you can have the returned rows sorted, equivalent to a `SORT BY` clause. We shall just default these options. The final window asks us if we want to return the data to Excel or further edit the query we have built up using Microsoft query. We will leave the default action of rturning the data to Excel. Click **Finish**
+6. Subsequent windows allow you to filter the rows returned, this is equivalent to adding a `WHERE` clause to the query and finally you can have the returned rows sorted, equivalent to a `SORT BY` clause. We shall just default these options. The final window asks us if we want to return the data to Excel or further edit the query we have built up using Microsoft query. We will leave the default action of returning the data to Excel. Click **Finish**
 
-The overall effect of this wizard is to construct an SQL query, in this case `SELECT * FROM Farms` send it to the SQLite system to be run and then to recieve back the results.
+The overall effect of this wizard is to construct an SQL query, in this case `SELECT * FROM Farms` send it to the SQLite system to be run and then to receive back the results.
 
 ![](fig/SQL_10_return_data.png){alt='SQL\_10\_return\_data'}
 
@@ -120,7 +120,7 @@ data
 dbClearResult(results)
 ```
 
-We will not discuss the working of the code, that is covered in the Python and R lessons.
+We will not discuss the working of the code; that is covered in the Python and R lessons.
 Even without coding experience of these languages, you will be able to spot that in both cases we need to specify a connection string (the SQLite database filename) and also the text of the query itself.
 
 In both cases the results are stored in a variable object of the language.

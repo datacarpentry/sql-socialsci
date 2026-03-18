@@ -77,16 +77,16 @@ If any of the datatypes are not as expected or wanted we can change them.
 In this particular case DB Browser correctly selected the datatypes. Notice that the `A01_interview_date` was allocated a datatype of 'TEXT'. This isn't a problem
 as we have to use the Date and Time functions to manipulate dates anyway.
 
-Notice that the bottom pane in the Window shows the SQL DDL statement that would create the table that you modifying.
+Notice that the bottom pane in the Window shows the SQL DDL statement that would create the table that you are modifying.
 
 When you change one of the columns from TEXT to INTEGER, this is immediately reflected in the Create Table statement.  
 It is slightly misleading because in fact we are modifying an existing table and in SQL-speak, this would be an **Alter Table...** statement.
 However it does illustrate quite well the fact that whatever you do in the GUI, it is essentially translated into an SQL statement and executed.
-You could copy and paste this definition into the SQL editor and if you change the table name before you ran it, you would create a new table with that name.
+You could copy and paste this definition into the SQL editor and if you changed the table name before you ran it, you would create a new table with that name.
 This new table would have no data in it. This is how the insert table wizard works. It uses the header row from your data to create a `CREATE TABLE` statement which it runs.
 It then transforms each of the rows of data into SQL `INSERT INTO...` statements which it also runs to get the data into the table.
 
-In addition to changing the data types there are several other options which can be set when you are creating of modifying a table.
+In addition to changing the data types there are several other options which can be set when you are creating or modifying a table.
 For our tables we don't need to make use of them but for completeness we will describe what they are;
 
 **PK** - Or Primary Key, a unique identifier for the row. In the Farms table, there is an `Id` column which uniquely identifies a Farm.
@@ -98,7 +98,7 @@ This could  act as a unique identifier for the row as a whole. We could mark thi
 
 In real datasets missing values are quite common and we have already looked at ways of dealing with them when they occur in tables. If you were to **check** this box and the data did have missing values for this column, the record from the file would be rejected and the load of the file will fail.
 
-**U** - Or Unique. This allows you to say that the contents of the column, which is not the primary key column has to have unique values in it. Like Allow Null this is another way of providing some data validation as the data is imported. Although it doesn't really apply with the DB Browser import wizard as the data is imported before you are allowed to set this option.
+**U** - Or Unique. This allows you to say that the contents of the column, which is not the primary key column, has to have unique values in it. Like Allow Null, this is another way of providing some data validation as the data is imported (although it doesn't really apply with the DB Browser import wizard as the data is imported before you are allowed to set this option).
 
 **Default** - This is used in conjunction with 'Not Null', if a value is not provided in the dataset, then if provided, the default value for that column will be used.
 
@@ -133,7 +133,7 @@ line added.
 
 ## Creating a table using an SQL command
 
-You could copy and paste this definition into the SQL editor and if you change the table name before you ran it, you would create a new table with that name.
+You could copy and paste this definition into the SQL editor and if you changed the table name before you ran it, you would create a new table with that name.
 This new table would have no data in it. This is how the insert table wizard works. It uses the header row from your data to create a `CREATE TABLE` statement which it runs.
 It then transforms each of the rows of data into SQL `INSERT INTO...` statements which it also runs to get the data into the table.
 
@@ -172,7 +172,7 @@ SELECT Id,
 FROM Farms;
 ```
 
-If we wanted to create a table from the Crops table which contains only the rows where the D\_curr\_crop value was 'rice' we could use a query like this:
+If we wanted to create a table from the Crops table, which contains only the rows where the D\_curr\_crop value was 'rice' we could use a query like this:
 
 ```sql
 CREATE TABLE crops_rice AS
@@ -215,7 +215,7 @@ The advantage of using Views is that it allows you to restrict how you see the d
 In the example we used above it may be far easier to work with only the 6 columns that we need from the full Farms table
 rather than the full table with 61 columns.
 
-A View isn't restricted to simple `SELECT` statements it can be the result of aggregations and joins as well.
+A View isn't restricted to simple `SELECT` statements. It can be the result of aggregations and joins as well.
 This can help reduce the complexity of queries based on the View and so aid readability.
 
 :::::::::::::::::::::::::::::::::::::::: keypoints

@@ -23,7 +23,7 @@ exercises: 0
 At the beginning of this lesson we noted that all database systems have the concept of a NULL value; Something which is missing and nothing is known about it.
 
 In DB Browser we can choose how we want NULLs in a table to be displayed. When we had our initial look at DB Browser,
-we used the `View | Preference` option to change the background colour of cells in a table which has a `NULL` values as  **red**.
+we used the `View | Preference` option to change the background colour of cells in a table which has `NULL` values as  **red**.
 The example below, using the 'Browse data' tab,  shows a section of the Farms table in the SQL\_SAFI database showing column values which are `NULL`.
 
 ![](fig/SQL_04_Nulls_01.png){alt='Farms NULLs'}
@@ -78,10 +78,10 @@ the value of `NULL` is appropriate.
 
 ## Dealing with missing data
 
-There are several statistical techniques that can be used to allow for `NULL` values, which one you might will depend on what has caused the `NULL` value to be recorded.
+There are several statistical techniques that can be used to allow for `NULL` values. Which one you might use will depend on what has caused the `NULL` value to be recorded.
 
 You may want to change the `NULL` value to something else. For example if we knew that the `NULL` values in the `F14_items_owned` column actually meant that the Farmer had no possessions then we
-might want to change the `NULL` values to '[]' to represent and empty list. We can do that in SQL with an `UPDATE` query.
+might want to change the `NULL` values to '[]' to represent an empty list. We can do that in SQL with an `UPDATE` query.
 
 The update query is shown below. We are not going to run it as it would change our data.
 You need to be very sure of the effect you are going to have before you change data in this way.
