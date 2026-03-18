@@ -36,7 +36,7 @@ Databases are designed to allow efficient querying against very large tables, mo
 
 ## What is a table?
 
-As were have noted above, a single table is very much like a spreadsheet. It has rows and it has columns. A row represents a single observation and the columns represents the various variables contained within that observation.
+As we have noted above, a single table is very much like a spreadsheet. It has rows and it has columns. A row represents a single observation and the columns represent the various variables contained within that observation.
 Often one or more columns in a row will be designated as a 'primary key' This column or combination of columns can be used to uniquely identify a specific row in the table.
 The columns typically have a name associated with them indicating the variable name. A column always represents the same variable for each row contained in the table. Because of this the data in each column will always be of the same *type*, such as an Integer or Text, of values for all of the rows in the table. Datatypes are discussed in the next section.
 
@@ -108,7 +108,7 @@ for these and use the built-in Date And Time Functions to manipulate them. We wi
 
 ## Why do tables have primary key columns?
 
-Whenever you create a table, you will have the option of designating one of the columns as the primary key column. The main property of the primary key column is that the values contained in it must uniquely identify that particular row. That is you cannot have duplicate primary keys. This can be an advantage which adding rows to the table as you will not be allowed to add the same row (or  a row with the same primary key) twice.
+Whenever you create a table, you will have the option of designating one of the columns as the primary key column. The main property of the primary key column is that the values contained in it must uniquely identify that particular row. That is you cannot have duplicate primary keys. This can be an advantage when adding rows to the table as you will not be allowed to add the same row (or  a row with the same primary key) twice.
 
 The primary key column for a table is usually of type Integer although you could have Text. For example if you had a table of car information, then the "Reg\_No" column could be made the primary key as it can be used to uniquely identify a particular row in the table.
 
