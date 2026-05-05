@@ -438,95 +438,95 @@ rows in the table. Datatypes are discussed in the next section.</p>
 Each database system recognises its own set of datatypes, although some
 are common to many. Typical examples will be Integer or Text.</p>
 <p>The table below gives some examples.</p>
-<table class="table"><colgroup><col width="24%"><col width="75%"></colgroup><thead><tr class="header"><th>Data type</th>
+<table class="table"><colgroup><col width="24%"><col width="75%"></colgroup><thead><tr><th>Data type</th>
 <th align="left">Description</th>
-</tr></thead><tbody><tr class="odd"><td>CHARACTER(n)</td>
+</tr></thead><tbody><tr><td>CHARACTER(n)</td>
 <td align="left">Character string. Fixed-length n</td>
-</tr><tr class="even"><td>Text</td>
+</tr><tr><td>Text</td>
 <td align="left">Character string. Variable length</td>
-</tr><tr class="odd"><td>VARCHAR(n) or CHARACTER VARYING(n)</td>
+</tr><tr><td>VARCHAR(n) or CHARACTER VARYING(n)</td>
 <td align="left">Character string. Variable length. Maximum length
 n</td>
-</tr><tr class="even"><td>BINARY(n)</td>
+</tr><tr><td>BINARY(n)</td>
 <td align="left">Binary string. Fixed-length n</td>
-</tr><tr class="odd"><td>BOOLEAN</td>
+</tr><tr><td>BOOLEAN</td>
 <td align="left">Stores TRUE or FALSE values</td>
-</tr><tr class="even"><td>VARBINARY(n) or BINARY VARYING(n)</td>
+</tr><tr><td>VARBINARY(n) or BINARY VARYING(n)</td>
 <td align="left">Binary string. Variable length. Maximum length n</td>
-</tr><tr class="odd"><td>INTEGER(p)</td>
+</tr><tr><td>INTEGER(p)</td>
 <td align="left">Integer numerical (no decimal).</td>
-</tr><tr class="even"><td>SMALLINT</td>
+</tr><tr><td>SMALLINT</td>
 <td align="left">Integer numerical (no decimal).</td>
-</tr><tr class="odd"><td>INTEGER</td>
+</tr><tr><td>INTEGER</td>
 <td align="left">Integer numerical (no decimal).</td>
-</tr><tr class="even"><td>BIGINT</td>
+</tr><tr><td>BIGINT</td>
 <td align="left">Integer numerical (no decimal).</td>
-</tr><tr class="odd"><td>DECIMAL(p,s)</td>
+</tr><tr><td>DECIMAL(p,s)</td>
 <td align="left">Exact numerical, precision p, scale s.</td>
-</tr><tr class="even"><td>NUMERIC(p,s)</td>
+</tr><tr><td>NUMERIC(p,s)</td>
 <td align="left">Exact numerical, precision p, scale s. (Same as
 DECIMAL)</td>
-</tr><tr class="odd"><td>FLOAT(p)</td>
+</tr><tr><td>FLOAT(p)</td>
 <td align="left">Approximate numerical, mantissa precision p. A floating
 number in base 10 exponential notation.</td>
-</tr><tr class="even"><td>REAL</td>
+</tr><tr><td>REAL</td>
 <td align="left">Approximate numerical</td>
-</tr><tr class="odd"><td>FLOAT</td>
+</tr><tr><td>FLOAT</td>
 <td align="left">Approximate numerical</td>
-</tr><tr class="even"><td>DOUBLE PRECISION</td>
+</tr><tr><td>DOUBLE PRECISION</td>
 <td align="left">Approximate numerical</td>
-</tr><tr class="odd"><td>DATE</td>
+</tr><tr><td>DATE</td>
 <td align="left">Stores year, month, and day values</td>
-</tr><tr class="even"><td>TIME</td>
+</tr><tr><td>TIME</td>
 <td align="left">Stores hour, minute, and second values</td>
-</tr><tr class="odd"><td>TIMESTAMP</td>
+</tr><tr><td>TIMESTAMP</td>
 <td align="left">Stores year, month, day, hour, minute, and second
 values</td>
-</tr><tr class="even"><td>INTERVAL</td>
+</tr><tr><td>INTERVAL</td>
 <td align="left">Composed of a number of integer fields, representing a
 period of time, depending on the type of interval</td>
-</tr><tr class="odd"><td>ARRAY</td>
+</tr><tr><td>ARRAY</td>
 <td align="left">A set-length and ordered collection of elements</td>
-</tr><tr class="even"><td>MULTISET</td>
+</tr><tr><td>MULTISET</td>
 <td align="left">A variable-length and unordered collection of
 elements</td>
-</tr><tr class="odd"><td>XML</td>
+</tr><tr><td>XML</td>
 <td align="left">Stores XML data</td>
 </tr></tbody></table><p>But in practice you can usually restrict your usage to a few</p>
-<table class="table"><colgroup><col width="24%"><col width="75%"></colgroup><thead><tr class="header"><th>Data type</th>
+<table class="table"><colgroup><col width="24%"><col width="75%"></colgroup><thead><tr><th>Data type</th>
 <th align="left">Description</th>
-</tr></thead><tbody><tr class="odd"><td>BOOLEAN</td>
+</tr></thead><tbody><tr><td>BOOLEAN</td>
 <td align="left">Stores TRUE or FALSE values</td>
-</tr><tr class="even"><td>INTEGER</td>
+</tr><tr><td>INTEGER</td>
 <td align="left">Integer numerical (no decimal).</td>
-</tr><tr class="odd"><td>FLOAT</td>
+</tr><tr><td>FLOAT</td>
 <td align="left">Approximate numerical</td>
-</tr><tr class="even"><td>DATE</td>
+</tr><tr><td>DATE</td>
 <td align="left">Stores year, month, and day values</td>
-</tr><tr class="odd"><td>TIME</td>
+</tr><tr><td>TIME</td>
 <td align="left">Stores hour, minute, and second values</td>
-</tr><tr class="even"><td>TIMESTAMP</td>
+</tr><tr><td>TIMESTAMP</td>
 <td align="left">Stores year, month, day, hour, minute, and second
 values</td>
 </tr></tbody></table><p>In SQLite there is only a small number.</p>
-<table class="table"><colgroup><col width="24%"><col width="75%"></colgroup><thead><tr class="header"><th>Data type</th>
+<table class="table"><colgroup><col width="24%"><col width="75%"></colgroup><thead><tr><th>Data type</th>
 <th align="left">Description</th>
-</tr></thead><tbody><tr class="odd"><td>NULL</td>
+</tr></thead><tbody><tr><td>NULL</td>
 <td align="left">The value is a NULL value</td>
-</tr><tr class="even"><td>INTEGER</td>
+</tr><tr><td>INTEGER</td>
 <td align="left">The value is a signed integer, stored in 1, 2, 3, 4,
 6,</td>
-</tr><tr class="odd"><td></td>
+</tr><tr><td></td>
 <td align="left">or 8 bytes depending on the magnitude of the value</td>
-</tr><tr class="even"><td>REAL</td>
+</tr><tr><td>REAL</td>
 <td align="left">The value is a floating point value, stored in
 8-bytes</td>
-</tr><tr class="odd"><td>TEXT</td>
+</tr><tr><td>TEXT</td>
 <td align="left">The value is a text string</td>
-</tr><tr class="even"><td>BLOB</td>
+</tr><tr><td>BLOB</td>
 <td align="left">The data is stored exactly as it was input, Used for
 binary</td>
-</tr><tr class="odd"><td></td>
+</tr><tr><td></td>
 <td align="left">data such as images.</td>
 </tr></tbody></table><p>We won’t be using any BLOB data and it is debatable whether or not
 NULL should be considered a type at all.</p>
@@ -655,7 +655,7 @@ before data can be added</li>
   "identifier": "https://datacarpentry.github.io/sql-socialsci/01-relational-database.html",
   "dateCreated": "2017-05-25",
   "dateModified": "2023-05-02",
-  "datePublished": "2026-04-28"
+  "datePublished": "2026-05-05"
 }
 
   </script><script>
