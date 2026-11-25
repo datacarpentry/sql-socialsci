@@ -316,7 +316,7 @@ SELECT Id, A11_years_farm,
            WHEN  A11_years_farm BETWEEN 21 AND 30 THEN '21-30'
            WHEN  A11_years_farm BETWEEN 31 AND 40 THEN '31-40'
            WHEN  A11_years_farm BETWEEN 41 AND 50 THEN '41-50'
-           WHEN  A11_years_farm BETWEEN 41 AND 50 THEN '51-60'
+           WHEN  A11_years_farm BETWEEN 51 AND 60 THEN '51-60'
        ELSE '> 60'       
        END AS A11_years_farm_range
 FROM Farms
